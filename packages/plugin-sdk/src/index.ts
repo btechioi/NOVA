@@ -1,11 +1,11 @@
-console.warn('@proj-airi/plugin-sdk is currently working in progress. APIs may change without warning.')
+console.warn('@proj-nova/plugin-sdk is currently working in progress. APIs may change without warning.')
 
 export * from './plugin'
 /**
  * Re-exports the plugin bootstrap contracts from the package root.
  *
  * Use when:
- * - Consumers want the high-level plugin authoring types from `@proj-airi/plugin-sdk`
+ * - Consumers want the high-level plugin authoring types from `@proj-nova/plugin-sdk`
  *
  * Expects:
  * - Downstream code imports from the package root instead of the internal path

@@ -223,7 +223,7 @@ async function findAvailablePort(preferredPort: number, attempts = 20) {
 async function terminateExistingStageTamagotchiInstances() {
   const patterns = [
     resolve(repoDir, 'apps', 'stage-tamagotchi'),
-    '@proj-airi/stage-tamagotchi',
+    '@proj-nova/stage-tamagotchi',
     resolve(repoDir, 'node_modules', '.pnpm', 'electron@'),
   ]
 
@@ -585,7 +585,7 @@ async function prepareMcpConfig() {
     mcpServers: {
       computer_use: {
         command: 'pnpm',
-        args: ['-F', '@proj-airi/computer-use-mcp', 'start'],
+        args: ['-F', '@proj-nova/computer-use-mcp', 'start'],
         cwd: repoDir,
         enabled: true,
         env: {
@@ -659,7 +659,7 @@ async function main() {
     const stageLogStream = createWriteStream(stageLogPath, { flags: 'a' })
     addTimeline('start-stage-tamagotchi')
 
-    stageProcess = spawn('pnpm', ['-F', '@proj-airi/stage-tamagotchi', 'dev'], {
+    stageProcess = spawn('pnpm', ['-F', '@proj-nova/stage-tamagotchi', 'dev'], {
       cwd: repoDir,
       env: {
         ...env,

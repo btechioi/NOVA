@@ -14,7 +14,7 @@ import {
   stageThreeTraceVrmLoadErrorEvent,
   stageThreeTraceVrmLoadStartEvent,
   stageThreeTraceVrmUpdateFrameEvent,
-} from '@proj-airi/stage-ui-three/trace'
+} from '@proj-nova/stage-ui-three/trace'
 
 import {
   stageThreeRuntimeTraceForwardedEvent,

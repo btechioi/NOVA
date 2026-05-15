@@ -22,7 +22,7 @@ cp .env .env.local
 ボットの実行
 
 ```shell
-pnpm -F @proj-airi/minecraft-bot start
+pnpm -F @proj-nova/minecraft-bot start
 ```
 
 ::: tip
@@ -30,7 +30,7 @@ pnpm -F @proj-airi/minecraft-bot start
 [@antfu/ni](https://github.com/antfu-collective/ni) ユーザーの場合：
 
 ```shell
-nr -F @proj-airi/minecraft-bot dev
+nr -F @proj-nova/minecraft-bot dev
 ```
 
 :::

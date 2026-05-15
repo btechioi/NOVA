@@ -9,7 +9,7 @@
  * onMounted, after stores are initialized).
  */
 
-import { detectWebGPU, getCachedWebGPUCapabilities } from '@proj-airi/stage-shared/webgpu'
+import { detectWebGPU, getCachedWebGPUCapabilities } from '@proj-nova/stage-shared/webgpu'
 
 import { getKokoroAdapter } from '../libs/inference/adapters/kokoro'
 import { useProvidersStore } from '../stores/providers'

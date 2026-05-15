@@ -8,10 +8,10 @@
 
 ## WebSocket Bridge
 
-Stage Pocket adds a host-backed WebSocket bridge for `@proj-airi/server-sdk`.
+Stage Pocket adds a host-backed WebSocket bridge for `@proj-nova/server-sdk`.
 
 Design constraints:
 - keep page loading on secure origins (`https` or app-hosted local origins) to preserve secure-context web APIs
-- only implement the WebSocket bridge needed by `@proj-airi/server-sdk`
+- only implement the WebSocket bridge needed by `@proj-nova/server-sdk`
 - native owns socket I/O; `server-sdk` owns reconnect, heartbeat, authentication, and connection state
 - the bridge only forwards `connect`, `send`, `close`, `open`, `message`, `error`, and `close`

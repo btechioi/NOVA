@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/memory-pgvector",
+  "name": "@proj-nova/memory-pgvector",
   "type": "module",
   "version": "0.10.2",
   "private": true,
@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@guiiai/logg": "catalog:",
-    "@proj-airi/server-sdk": "workspace:^",
+    "@proj-nova/server-sdk": "workspace:^",
     "drizzle-orm": "catalog:",
     "postgres": "^3.4.9"
   },

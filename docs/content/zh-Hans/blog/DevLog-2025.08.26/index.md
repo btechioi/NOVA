@@ -22,7 +22,7 @@ import NmsIou from './components/nms-iou.vue'
 
 <video src="./assets/airi-factorio-yolo-v0-playground-vnc.mp4" controls />
 
-视频中，我在网页里连接了 VNC 来游玩 Factorio，右侧的是目标检测的结果，几乎是实时的，我也部署到 [HuggingFace Space](https://huggingface.co/spaces/proj-airi/factorio-yolo-v0-playground) 了，欢迎来玩。
+视频中，我在网页里连接了 VNC 来游玩 Factorio，右侧的是目标检测的结果，几乎是实时的，我也部署到 [HuggingFace Space](https://huggingface.co/spaces/proj-nova/factorio-yolo-v0-playground) 了，欢迎来玩。
 
 那，我是怎么做到的呢？
 

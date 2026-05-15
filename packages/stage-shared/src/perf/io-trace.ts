@@ -14,7 +14,7 @@ export const IOSpanNames = {
   AudioPlayback: 'Audio playback',
 } as const
 
-const customPrefix = 'ai.moeru.airi.io'
+const customPrefix = 'nova.app.io'
 
 export const IOAttributes = {
   GenAIRequestModel: 'gen_ai.request.model',

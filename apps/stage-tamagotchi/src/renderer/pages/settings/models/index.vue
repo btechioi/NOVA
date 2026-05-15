@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { DisplayModel } from '@proj-airi/stage-ui/stores/display-models'
+import type { DisplayModel } from '@proj-nova/stage-ui/stores/display-models'
 
 import type {
   ElectronGodotStageSceneInputPayload,
@@ -7,11 +7,11 @@ import type {
 } from '../../../../shared/eventa'
 
 import { errorMessageFrom } from '@moeru/std'
-import { useElectronEventaInvoke } from '@proj-airi/electron-vueuse'
-import { ModelSettingsPanel } from '@proj-airi/stage-ui/components/scenarios/settings/model-settings'
-import { DisplayModelFormat } from '@proj-airi/stage-ui/stores/display-models'
-import { useSettings } from '@proj-airi/stage-ui/stores/settings'
-import { Button, Callout } from '@proj-airi/ui'
+import { useElectronEventaInvoke } from '@proj-nova/electron-vueuse'
+import { ModelSettingsPanel } from '@proj-nova/stage-ui/components/scenarios/settings/model-settings'
+import { DisplayModelFormat } from '@proj-nova/stage-ui/stores/display-models'
+import { useSettings } from '@proj-nova/stage-ui/stores/settings'
+import { Button, Callout } from '@proj-nova/ui'
 import { storeToRefs } from 'pinia'
 import { computed, onMounted, ref, watch } from 'vue'
 

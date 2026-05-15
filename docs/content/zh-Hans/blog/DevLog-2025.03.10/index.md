@@ -32,12 +32,12 @@ date: 2025-03-10
 
 > 我们要去哪里？
 
-好问题！我们已经在 GitHub 上注册了 [`@proj-airi`](https://github.com/proj-airi) 作为一个组织，由于许多包和静态应用程序对 Moeru AI 也没有用处，也许我们可以将这些包移动到 [`@proj-airi`](https://github.com/proj-airi)。
+好问题！我们已经在 GitHub 上注册了 [`@proj-nova`](https://github.com/proj-nova) 作为一个组织，由于许多包和静态应用程序对 Moeru AI 也没有用处，也许我们可以将这些包移动到 [`@proj-nova`](https://github.com/proj-nova)。
 
-所以，我们将一些包和应用程序移动到了 [`@proj-airi`](https://github.com/proj-airi) 组织！你可以查看它们：
+所以，我们将一些包和应用程序移动到了 [`@proj-nova`](https://github.com/proj-nova) 组织！你可以查看它们：
 
-- https://github.com/proj-airi/webai-examples：用于制作 WebGPU 和相关内容的演示。
-- https://github.com/proj-airi/lobe-icons：[Lobe Icons](https://github.com/lobehub/lobe-icons) 的移植版本，用于 Iconify JSON 和 UnoCSS 使用。
+- https://github.com/proj-nova/webai-examples：用于制作 WebGPU 和相关内容的演示。
+- https://github.com/proj-nova/lobe-icons：[Lobe Icons](https://github.com/lobehub/lobe-icons) 的移植版本，用于 Iconify JSON 和 UnoCSS 使用。
 
 这两个仓库将保持开源并按照惯例使用 MIT 许可证，不用担心。
 

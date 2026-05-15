@@ -1,4 +1,4 @@
-import type { WebSocketEvent } from '@proj-airi/server-shared/types'
+import type { WebSocketEvent } from '@proj-nova/server-shared/types'
 
 import { stringify } from 'superjson'
 import { describe, expect, it } from 'vitest'

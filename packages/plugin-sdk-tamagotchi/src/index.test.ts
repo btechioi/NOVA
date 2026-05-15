@@ -1,4 +1,4 @@
-import type { ContextInit } from '@proj-airi/plugin-sdk'
+import type { ContextInit } from '@proj-nova/plugin-sdk'
 
 import type { TamagotchiToolContext } from './index'
 

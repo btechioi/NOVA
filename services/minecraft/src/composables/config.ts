@@ -58,7 +58,7 @@ export const configSchema = z.object({
       error: `BOT_AUTH must be one of: ${botAuthValues.join(', ')}`,
     }).optional(),
     password: z.string().optional(),
-    version: z.string().trim().min(1, 'BOT_VERSION cannot be empty').optional(),
+    version: z.string().optional(),
   }),
   airi: z.object({
     wsBaseUrl: wsUrlString('AIRI_WS_BASEURL'),
@@ -85,7 +85,6 @@ const defaultConfig: Omit<Config, 'openai'> = {
     port: 25565,
     auth: undefined,
     password: '',
-    version: '1.20',
   },
   airi: {
     wsBaseUrl: 'ws://localhost:6121/ws',
@@ -124,7 +123,7 @@ export function initEnv(): void {
       port: env.BOT_PORT || defaultConfig.bot.port,
       auth: env.BOT_AUTH || defaultConfig.bot.auth,
       password: defaultConfig.bot.password,
-      version: env.BOT_VERSION || defaultConfig.bot.version,
+      version: env.BOT_VERSION || undefined,
     },
     airi: {
       wsBaseUrl: env.AIRI_WS_BASEURL ?? defaultConfig.airi.wsBaseUrl,

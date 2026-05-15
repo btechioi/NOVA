@@ -4,7 +4,7 @@ import type {
   HostDataRecord,
   ManifestV1,
   ModulePermissionDeclaration,
-} from '@proj-airi/plugin-sdk/plugin-host'
+} from '@proj-nova/plugin-sdk/plugin-host'
 
 import type { WidgetsAddPayload, WidgetSnapshot, WidgetsUpdatePayload } from '../../../../shared/eventa'
 import type { PluginHostService } from './types'
@@ -14,7 +14,7 @@ import { tmpdir } from 'node:os'
 import { basename, join, resolve } from 'node:path'
 
 import { defineInvoke } from '@moeru/eventa'
-import { PluginHost } from '@proj-airi/plugin-sdk/plugin-host'
+import { PluginHost } from '@proj-nova/plugin-sdk/plugin-host'
 import { afterEach, beforeEach, describe, expect, expectTypeOf, it, vi } from 'vitest'
 
 import {
@@ -117,9 +117,9 @@ const samplePluginRoot = resolve(
 const chessLikePluginRoot = resolve(
   repoRoot,
   'plugins',
-  'airi-plugin-game-chess',
+  'nova-plugin-game-chess',
 )
-const pluginManifestFileName = 'plugin.airi.json'
+const pluginManifestFileName = 'plugin.nova.json'
 
 async function writeManifest(params: { dir: string, name: string, entrypoint: string }) {
   const manifest = {
@@ -183,21 +183,21 @@ async function removeDirWithRetry(path: string, options: { attempts?: number, wa
 }
 
 function createDynamicModuleManifest(entrypoint: string): ManifestV1 {
-  const providersCapability = 'proj-airi:plugin-sdk:apis:protocol:resources:providers:list-providers'
+  const providersCapability = 'proj-nova:plugin-sdk:apis:protocol:resources:providers:list-providers'
   const permissions: ModulePermissionDeclaration = {
     apis: [
-      { key: 'proj-airi:plugin-sdk:apis:protocol:capabilities:wait', actions: ['invoke'] },
+      { key: 'proj-nova:plugin-sdk:apis:protocol:capabilities:wait', actions: ['invoke'] },
       { key: providersCapability, actions: ['invoke'] },
-      { key: 'proj-airi:plugin-sdk:apis:client:kits:list', actions: ['invoke'] },
-      { key: 'proj-airi:plugin-sdk:apis:client:kits:get-capabilities', actions: ['invoke'] },
-      { key: 'proj-airi:plugin-sdk:apis:client:bindings:list', actions: ['invoke'] },
-      { key: 'proj-airi:plugin-sdk:apis:client:bindings:announce', actions: ['invoke'] },
+      { key: 'proj-nova:plugin-sdk:apis:client:kits:list', actions: ['invoke'] },
+      { key: 'proj-nova:plugin-sdk:apis:client:kits:get-capabilities', actions: ['invoke'] },
+      { key: 'proj-nova:plugin-sdk:apis:client:bindings:list', actions: ['invoke'] },
+      { key: 'proj-nova:plugin-sdk:apis:client:bindings:announce', actions: ['invoke'] },
     ],
     resources: [
       { key: providersCapability, actions: ['read'] },
-      { key: 'proj-airi:plugin-sdk:resources:kits', actions: ['read'] },
-      { key: 'proj-airi:plugin-sdk:resources:bindings', actions: ['read'] },
-      { key: 'proj-airi:plugin-sdk:resources:kits:kit.widget:bindings', actions: ['read', 'write'] },
+      { key: 'proj-nova:plugin-sdk:resources:kits', actions: ['read'] },
+      { key: 'proj-nova:plugin-sdk:resources:bindings', actions: ['read'] },
+      { key: 'proj-nova:plugin-sdk:resources:kits:kit.widget:bindings', actions: ['read', 'write'] },
     ],
     capabilities: [
       { key: providersCapability, actions: ['wait'] },
@@ -216,7 +216,7 @@ function createDynamicModuleManifest(entrypoint: string): ManifestV1 {
 }
 
 function createToolEnabledManifest(entrypoint: string): ManifestV1 {
-  const providersCapability = 'proj-airi:plugin-sdk:apis:protocol:resources:providers:list-providers'
+  const providersCapability = 'proj-nova:plugin-sdk:apis:protocol:resources:providers:list-providers'
 
   return {
     apiVersion: 'v1',
@@ -224,13 +224,13 @@ function createToolEnabledManifest(entrypoint: string): ManifestV1 {
     name: 'test-plugin-tools',
     permissions: {
       apis: [
-        { key: 'proj-airi:plugin-sdk:apis:protocol:capabilities:wait', actions: ['invoke'] },
+        { key: 'proj-nova:plugin-sdk:apis:protocol:capabilities:wait', actions: ['invoke'] },
         { key: providersCapability, actions: ['invoke'] },
-        { key: 'proj-airi:plugin-sdk:apis:client:tools:register', actions: ['invoke'] },
+        { key: 'proj-nova:plugin-sdk:apis:client:tools:register', actions: ['invoke'] },
       ],
       resources: [
         { key: providersCapability, actions: ['read'] },
-        { key: 'proj-airi:plugin-sdk:resources:tools', actions: ['write'] },
+        { key: 'proj-nova:plugin-sdk:resources:tools', actions: ['write'] },
       ],
       capabilities: [
         { key: providersCapability, actions: ['wait'] },
@@ -243,7 +243,7 @@ function createToolEnabledManifest(entrypoint: string): ManifestV1 {
 }
 
 function createToolDrivenGameletManifest(entrypoint: string): ManifestV1 {
-  const providersCapability = 'proj-airi:plugin-sdk:apis:protocol:resources:providers:list-providers'
+  const providersCapability = 'proj-nova:plugin-sdk:apis:protocol:resources:providers:list-providers'
 
   return {
     apiVersion: 'v1',
@@ -251,14 +251,14 @@ function createToolDrivenGameletManifest(entrypoint: string): ManifestV1 {
     name: 'test-plugin-gamelets',
     permissions: {
       apis: [
-        { key: 'proj-airi:plugin-sdk:apis:protocol:capabilities:wait', actions: ['invoke'] },
+        { key: 'proj-nova:plugin-sdk:apis:protocol:capabilities:wait', actions: ['invoke'] },
         { key: providersCapability, actions: ['invoke'] },
-        { key: 'proj-airi:plugin-sdk:apis:client:kits:list', actions: ['invoke'] },
-        { key: 'proj-airi:plugin-sdk:apis:client:bindings:list', actions: ['invoke'] },
-        { key: 'proj-airi:plugin-sdk:apis:client:bindings:announce', actions: ['invoke'] },
-        { key: 'proj-airi:plugin-sdk:apis:client:bindings:activate', actions: ['invoke'] },
-        { key: 'proj-airi:plugin-sdk:apis:client:bindings:update', actions: ['invoke'] },
-        { key: 'proj-airi:plugin-sdk:apis:client:tools:register', actions: ['invoke'] },
+        { key: 'proj-nova:plugin-sdk:apis:client:kits:list', actions: ['invoke'] },
+        { key: 'proj-nova:plugin-sdk:apis:client:bindings:list', actions: ['invoke'] },
+        { key: 'proj-nova:plugin-sdk:apis:client:bindings:announce', actions: ['invoke'] },
+        { key: 'proj-nova:plugin-sdk:apis:client:bindings:activate', actions: ['invoke'] },
+        { key: 'proj-nova:plugin-sdk:apis:client:bindings:update', actions: ['invoke'] },
+        { key: 'proj-nova:plugin-sdk:apis:client:tools:register', actions: ['invoke'] },
         { key: pluginGameletApiOpenEventName, actions: ['invoke'] },
         { key: pluginGameletApiConfigureEventName, actions: ['invoke'] },
         { key: pluginGameletApiRequestEventName, actions: ['invoke'] },
@@ -267,10 +267,10 @@ function createToolDrivenGameletManifest(entrypoint: string): ManifestV1 {
       ],
       resources: [
         { key: providersCapability, actions: ['read'] },
-        { key: 'proj-airi:plugin-sdk:resources:kits', actions: ['read'] },
-        { key: 'proj-airi:plugin-sdk:resources:bindings', actions: ['read'] },
-        { key: 'proj-airi:plugin-sdk:resources:kits:kit.gamelet:bindings', actions: ['read', 'write'] },
-        { key: 'proj-airi:plugin-sdk:resources:tools', actions: ['write'] },
+        { key: 'proj-nova:plugin-sdk:resources:kits', actions: ['read'] },
+        { key: 'proj-nova:plugin-sdk:resources:bindings', actions: ['read'] },
+        { key: 'proj-nova:plugin-sdk:resources:kits:kit.gamelet:bindings', actions: ['read', 'write'] },
+        { key: 'proj-nova:plugin-sdk:resources:tools', actions: ['write'] },
       ],
       capabilities: [
         { key: providersCapability, actions: ['wait'] },
@@ -416,7 +416,7 @@ describe('setupPluginHost', () => {
   })
 
   beforeEach(async () => {
-    userDataDir = await mkdtemp(join(tmpdir(), 'airi-plugins-'))
+    userDataDir = await mkdtemp(join(tmpdir(), 'nova-plugins-'))
     pluginsDir = join(userDataDir, 'plugins', 'v1')
     await mkdir(pluginsDir, { recursive: true })
     appMock.getPath.mockReturnValue(userDataDir)
@@ -651,7 +651,7 @@ describe('setupPluginHost', () => {
   })
 
   it('loads enabled plugins with absolute manifest entrypoints outside the plugin directory', async () => {
-    const externalDir = await mkdtemp(join(tmpdir(), 'airi-plugin-external-'))
+    const externalDir = await mkdtemp(join(tmpdir(), 'nova-plugin-external-'))
 
     try {
       const pluginDir = join(pluginsDir, 'test-absolute-entrypoint')
@@ -714,7 +714,7 @@ describe('setupPluginHost', () => {
   })
 
   it('loads the chess-like demo plugin and exposes an active gamelet module snapshot', async () => {
-    const pluginDir = join(pluginsDir, 'airi-plugin-game-chess')
+    const pluginDir = join(pluginsDir, 'nova-plugin-game-chess')
     await mkdir(pluginsDir, { recursive: true })
     try {
       await stat(join(chessLikePluginRoot, 'dist'))
@@ -738,10 +738,10 @@ describe('setupPluginHost', () => {
     const invokeLoadEnabled = defineInvoke(contextState.lastContext!, electronPluginLoadEnabled)
     const invokeInspect = defineInvoke(contextState.lastContext!, electronPluginInspect)
 
-    await invokeSetEnabled({ name: 'airi-plugin-game-chess', enabled: true })
+    await invokeSetEnabled({ name: 'nova-plugin-game-chess', enabled: true })
 
     const registry = await invokeLoadEnabled()
-    const plugin = registry.plugins.find(item => item.name === 'airi-plugin-game-chess')
+    const plugin = registry.plugins.find(item => item.name === 'nova-plugin-game-chess')
     expect(plugin).toEqual(expect.objectContaining({ enabled: true, loaded: true }))
 
     const snapshot = await invokeInspect()
@@ -750,7 +750,7 @@ describe('setupPluginHost', () => {
     expect(snapshot.modules).toEqual(expect.arrayContaining([
       expect.objectContaining({
         moduleId: 'chess-like-main',
-        ownerPluginId: 'airi-plugin-game-chess',
+        ownerPluginId: 'nova-plugin-game-chess',
         kitId: 'kit.gamelet',
         kitModuleType: 'gamelet',
         runtime: 'electron',
@@ -763,7 +763,7 @@ describe('setupPluginHost', () => {
             iframe: expect.objectContaining({
               assetPath: 'ui/index.html',
               src: expect.stringMatching(
-                /^http:\/\/127\.0\.0\.1:\d+\/_airi\/extensions\/airi-plugin-game-chess\/sessions\/[\w-]{10,}\/ui\/index\.html$/,
+                /^http:\/\/127\.0\.0\.1:\d+\/_airi\/extensions\/nova-plugin-game-chess\/sessions\/[\w-]{10,}\/ui\/index\.html$/,
               ),
               sandbox: 'allow-scripts allow-same-origin allow-forms allow-popups',
             }),
@@ -1283,22 +1283,22 @@ describe('setupPluginHost', () => {
       name: 'test-plugin-widget-asset-url',
       permissions: {
         apis: [
-          { key: 'proj-airi:plugin-sdk:apis:protocol:capabilities:wait', actions: ['invoke'] },
-          { key: 'proj-airi:plugin-sdk:apis:protocol:resources:providers:list-providers', actions: ['invoke'] },
-          { key: 'proj-airi:plugin-sdk:apis:client:kits:list', actions: ['invoke'] },
-          { key: 'proj-airi:plugin-sdk:apis:client:kits:get-capabilities', actions: ['invoke'] },
-          { key: 'proj-airi:plugin-sdk:apis:client:bindings:list', actions: ['invoke'] },
-          { key: 'proj-airi:plugin-sdk:apis:client:bindings:announce', actions: ['invoke'] },
-          { key: 'proj-airi:plugin-sdk:apis:client:bindings:activate', actions: ['invoke'] },
+          { key: 'proj-nova:plugin-sdk:apis:protocol:capabilities:wait', actions: ['invoke'] },
+          { key: 'proj-nova:plugin-sdk:apis:protocol:resources:providers:list-providers', actions: ['invoke'] },
+          { key: 'proj-nova:plugin-sdk:apis:client:kits:list', actions: ['invoke'] },
+          { key: 'proj-nova:plugin-sdk:apis:client:kits:get-capabilities', actions: ['invoke'] },
+          { key: 'proj-nova:plugin-sdk:apis:client:bindings:list', actions: ['invoke'] },
+          { key: 'proj-nova:plugin-sdk:apis:client:bindings:announce', actions: ['invoke'] },
+          { key: 'proj-nova:plugin-sdk:apis:client:bindings:activate', actions: ['invoke'] },
         ],
         resources: [
-          { key: 'proj-airi:plugin-sdk:apis:protocol:resources:providers:list-providers', actions: ['read'] },
-          { key: 'proj-airi:plugin-sdk:resources:kits', actions: ['read'] },
-          { key: 'proj-airi:plugin-sdk:resources:bindings', actions: ['read'] },
-          { key: 'proj-airi:plugin-sdk:resources:kits:kit.widget:bindings', actions: ['read', 'write'] },
+          { key: 'proj-nova:plugin-sdk:apis:protocol:resources:providers:list-providers', actions: ['read'] },
+          { key: 'proj-nova:plugin-sdk:resources:kits', actions: ['read'] },
+          { key: 'proj-nova:plugin-sdk:resources:bindings', actions: ['read'] },
+          { key: 'proj-nova:plugin-sdk:resources:kits:kit.widget:bindings', actions: ['read', 'write'] },
         ],
         capabilities: [
-          { key: 'proj-airi:plugin-sdk:apis:protocol:resources:providers:list-providers', actions: ['wait'] },
+          { key: 'proj-nova:plugin-sdk:apis:protocol:resources:providers:list-providers', actions: ['wait'] },
         ],
       },
       entrypoints: {

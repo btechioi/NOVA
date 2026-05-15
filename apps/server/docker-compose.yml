@@ -1,4 +1,4 @@
-name: proj-airi-server
+name: proj-nova-server
 
 services:
   db:
@@ -34,7 +34,7 @@ services:
     build:
       context: ../..
       dockerfile: apps/server/Dockerfile
-    command: ['pnpm', '-F', '@proj-airi/server', 'run', 'server', 'api']
+    command: ['pnpm', '-F', '@proj-nova/server', 'run', 'server', 'api']
     depends_on:
       db:
         condition: service_healthy

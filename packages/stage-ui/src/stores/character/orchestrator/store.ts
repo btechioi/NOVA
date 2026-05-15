@@ -1,7 +1,7 @@
-import type { SparkNotifyResponseControl } from '@proj-airi/core-agent/agents/spark-notify'
-import type { WebSocketBaseEvent, WebSocketEventOf, WebSocketEvents } from '@proj-airi/server-sdk'
+import type { SparkNotifyResponseControl } from '@proj-nova/core-agent/agents/spark-notify'
+import type { WebSocketBaseEvent, WebSocketEventOf, WebSocketEvents } from '@proj-nova/server-sdk'
 
-import { setupAgentSparkNotifyHandler } from '@proj-airi/core-agent/agents/spark-notify'
+import { setupAgentSparkNotifyHandler } from '@proj-nova/core-agent/agents/spark-notify'
 import { defineStore, storeToRefs } from 'pinia'
 import { ref } from 'vue'
 
@@ -11,7 +11,7 @@ import { useModsServerChannelStore } from '../../mods/api/channel-server'
 import { useConsciousnessStore } from '../../modules/consciousness'
 import { useProvidersStore } from '../../providers'
 
-export { sparkNotifyCommandSchema } from '@proj-airi/core-agent/agents/spark-notify'
+export { sparkNotifyCommandSchema } from '@proj-nova/core-agent/agents/spark-notify'
 
 export const useCharacterOrchestratorStore = defineStore('character-orchestrator', () => {
   const { stream } = useLLM()

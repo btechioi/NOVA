@@ -1,7 +1,7 @@
-# @proj-airi/ui-transitions
+# @proj-nova/ui-transitions
 
 <p align="center">
-  [<a href="https://proj-airi-packages-ui-transitions.netlify.app/">Try it</a>]
+  [<a href="https://proj-nova-packages-ui-transitions.netlify.app/">Try it</a>]
 </p>
 
 A set of UI transition animations for fade-in / fade-out of scenes.

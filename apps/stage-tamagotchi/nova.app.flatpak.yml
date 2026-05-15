@@ -1,0 +1,49 @@
+app-id: io.github.btechioi.NOVA
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
+sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: '24.08'
+command: nova.sh
+
+finish-args:
+  # GUI environment
+  - --share=network
+  - --socket=x11
+  - --socket=wayland
+  - --device=all
+  - --socket=pulseaudio
+  - --socket=system-bus
+  - --socket=session-bus
+  - --share=ipc
+
+  # DBus
+  - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.freedesktop.portal.Desktop
+  - --system-talk-name=org.freedesktop.login1
+  - --system-talk-name=org.freedesktop.UPower
+  - --filesystem=home:rw
+
+modules:
+  - name: NOVA-App
+    buildsystem: simple
+    build-commands:
+      - mkdir -p /app/bin
+      - mkdir -p /app/bin/nova
+      - cp -r ./* /app/bin/nova/
+      - install nova.sh /app/bin/nova.sh
+      - chmod +x /app/bin/nova/nova.sh
+      - chmod +x /app/bin/nova/nova
+    sources:
+      - type: dir
+        only-arches: [x86_64]
+        path: dist/linux-unpacked
+      - type: dir
+        only-arches: [aarch64]
+        path: dist/linux-arm64-unpacked
+      - type: script
+        dest-filename: nova.sh
+        commands:
+          - ulimit -c 0
+          - export TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID"
+          - exec zypak-wrapper /app/bin/nova/nova "$@"

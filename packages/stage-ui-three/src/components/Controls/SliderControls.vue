@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RoundRange } from '@proj-airi/ui'
+import { RoundRange } from '@proj-nova/ui'
 import { onUnmounted } from 'vue'
 
 import { controlConfig as conf, useThreeViewControl } from '../../stores/view-control'

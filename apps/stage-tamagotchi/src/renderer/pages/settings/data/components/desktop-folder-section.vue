@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { DataSettingsStatusEmits } from '@proj-airi/stage-pages/pages/settings/data/status'
+import type { DataSettingsStatusEmits } from '@proj-nova/stage-pages/pages/settings/data/status'
 
 import { defineInvoke } from '@moeru/eventa'
 import { createContext } from '@moeru/eventa/adapters/electron/renderer'
-import { createDataSettingsStatusHelpers } from '@proj-airi/stage-pages/pages/settings/data/status'
-import { isElectronWindow } from '@proj-airi/stage-shared'
-import { Button } from '@proj-airi/ui'
+import { createDataSettingsStatusHelpers } from '@proj-nova/stage-pages/pages/settings/data/status'
+import { isElectronWindow } from '@proj-nova/stage-shared'
+import { Button } from '@proj-nova/ui'
 import { useI18n } from 'vue-i18n'
 
 import { electronAppOpenUserDataFolder } from '../../../../../shared/eventa'

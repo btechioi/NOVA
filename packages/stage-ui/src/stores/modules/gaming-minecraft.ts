@@ -1,4 +1,4 @@
-import type { WebSocketBaseEvent, WebSocketEvents } from '@proj-airi/server-sdk'
+import type { WebSocketBaseEvent, WebSocketEvents } from '@proj-nova/server-sdk'
 
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'

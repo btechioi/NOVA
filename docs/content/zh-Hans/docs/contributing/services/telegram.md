@@ -23,14 +23,14 @@ cp .env .env.local
 执行数据库迁移：
 
 ```shell
-pnpm -F @proj-airi/telegram-bot db:generate
-pnpm -F @proj-airi/telegram-bot db:push
+pnpm -F @proj-nova/telegram-bot db:generate
+pnpm -F @proj-nova/telegram-bot db:push
 ```
 
 启动机器人：
 
 ```shell
-pnpm -F @proj-airi/telegram-bot start
+pnpm -F @proj-nova/telegram-bot start
 ```
 
 ::: tip
@@ -38,7 +38,7 @@ pnpm -F @proj-airi/telegram-bot start
 如果你使用 [@antfu/ni](https://github.com/antfu-collective/ni)，你可以：
 
 ```shell
-nr -F @proj-airi/telegram-bot dev
+nr -F @proj-nova/telegram-bot dev
 ```
 
 :::

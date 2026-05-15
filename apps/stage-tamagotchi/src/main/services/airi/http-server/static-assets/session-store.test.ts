@@ -26,7 +26,7 @@ describe('createStaticAssetSessionStore', () => {
     const now = vi.fn(() => 1000)
     const store = createStaticAssetSessionStore({ now })
     const session = store.createSession({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       ownerSessionId: 'plugin-session-1',
       pathPrefix: '',
@@ -37,7 +37,7 @@ describe('createStaticAssetSessionStore', () => {
     expect(session.cookieName).toContain(session.assetSessionId)
     expect(session.cookieValue).toBeTruthy()
     expect(store.validateRequest({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       assetSessionId: session.assetSessionId,
       assetPath: 'assets/index.js',
@@ -53,7 +53,7 @@ describe('createStaticAssetSessionStore', () => {
     const now = vi.fn(() => 1000)
     const store = createStaticAssetSessionStore({ now })
     const session = store.createSession({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       ownerSessionId: 'plugin-session-1',
       pathPrefix: '',
@@ -76,7 +76,7 @@ describe('createStaticAssetSessionStore', () => {
 
     expect(store.revokeByOwnerSessionId('plugin-session-1')).toHaveLength(1)
     expect(store.validateRequest({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       assetSessionId: session.assetSessionId,
       assetPath: 'index.html',
@@ -98,7 +98,7 @@ describe('createStaticAssetSessionStore', () => {
     const now = vi.fn(() => 1000)
     const store = createStaticAssetSessionStore({ now })
     const session = store.createSession({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       ownerSessionId: 'plugin-session-1',
       pathPrefix: 'assets/',
@@ -106,7 +106,7 @@ describe('createStaticAssetSessionStore', () => {
     })
 
     expect(store.validateRequest({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       assetSessionId: session.assetSessionId,
       assetPath: 'assets/index.js',
@@ -120,7 +120,7 @@ describe('createStaticAssetSessionStore', () => {
     })
 
     expect(store.validateRequest({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       assetSessionId: session.assetSessionId,
       assetPath: 'assets/index.js',
@@ -134,7 +134,7 @@ describe('createStaticAssetSessionStore', () => {
     })
 
     expect(store.validateRequest({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.2.0',
       assetSessionId: session.assetSessionId,
       assetPath: 'assets/index.js',
@@ -148,7 +148,7 @@ describe('createStaticAssetSessionStore', () => {
     })
 
     expect(store.validateRequest({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       assetSessionId: session.assetSessionId,
       assetPath: '',
@@ -162,7 +162,7 @@ describe('createStaticAssetSessionStore', () => {
     })
 
     expect(store.validateRequest({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       assetSessionId: session.assetSessionId,
       assetPath: 'other/index.js',
@@ -178,7 +178,7 @@ describe('createStaticAssetSessionStore', () => {
     now.mockReturnValue(31_001)
 
     expect(store.validateRequest({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       assetSessionId: session.assetSessionId,
       assetPath: 'assets/index.js',
@@ -200,14 +200,14 @@ describe('createStaticAssetSessionStore', () => {
     const now = vi.fn(() => 1000)
     const store = createStaticAssetSessionStore({ now })
     const firstSession = store.createSession({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       ownerSessionId: 'plugin-session-1',
       pathPrefix: '',
       ttlMs: 30_000,
     })
     const secondSession = store.createSession({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       ownerSessionId: 'plugin-session-2',
       pathPrefix: '',
@@ -230,7 +230,7 @@ describe('createStaticAssetSessionStore', () => {
     expect(store.revokeSession(firstSession.assetSessionId)).toMatchObject({
       assetSessionId: firstSession.assetSessionId,
     })
-    expect(store.revokeByExtensionId('airi-plugin-game-chess')).toEqual([secondSession])
+    expect(store.revokeByExtensionId('nova-plugin-game-chess')).toEqual([secondSession])
     expect(store.revokeAll()).toEqual([thirdSession])
   })
 
@@ -242,7 +242,7 @@ describe('createStaticAssetSessionStore', () => {
     const now = vi.fn(() => 1000)
     const store = createStaticAssetSessionStore({ now })
     const createdSession = store.createSession({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       ownerSessionId: 'plugin-session-1',
       pathPrefix: '',
@@ -253,7 +253,7 @@ describe('createStaticAssetSessionStore', () => {
     tryMutateCookieValue(createdSession, 'mutated-create-cookie')
 
     const firstValidation = store.validateRequest({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       assetSessionId: createdSession.assetSessionId,
       assetPath: 'index.html',
@@ -268,7 +268,7 @@ describe('createStaticAssetSessionStore', () => {
     tryMutateCookieValue(firstValidation.session, 'mutated-validation-cookie')
 
     const secondValidation = store.validateRequest({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       assetSessionId: createdSession.assetSessionId,
       assetPath: 'index.html',
@@ -290,7 +290,7 @@ describe('createStaticAssetSessionStore', () => {
     tryMutateCookieValue(refreshedSession, 'mutated-refresh-cookie')
 
     const thirdValidation = store.validateRequest({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       assetSessionId: createdSession.assetSessionId,
       assetPath: 'index.html',
@@ -320,7 +320,7 @@ describe('createStaticAssetSessionStore', () => {
   it('rejects invalid TTL values during session creation', () => {
     const store = createStaticAssetSessionStore({ now: vi.fn(() => 1000) })
     const input = {
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       ownerSessionId: 'plugin-session-1',
       pathPrefix: '',
@@ -341,7 +341,7 @@ describe('createStaticAssetSessionStore', () => {
   it('rejects traversal-like asset paths and prefixes at the store boundary', () => {
     const store = createStaticAssetSessionStore({ now: vi.fn(() => 1000) })
     const session = store.createSession({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       ownerSessionId: 'plugin-session-1',
       pathPrefix: 'assets/',
@@ -354,7 +354,7 @@ describe('createStaticAssetSessionStore', () => {
       'assets%2Fsecret.js',
     ]) {
       expect(store.validateRequest({
-        extensionId: 'airi-plugin-game-chess',
+        extensionId: 'nova-plugin-game-chess',
         version: '0.1.0',
         assetSessionId: session.assetSessionId,
         assetPath,
@@ -369,7 +369,7 @@ describe('createStaticAssetSessionStore', () => {
     }
 
     expect(() => store.createSession({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       ownerSessionId: 'plugin-session-1',
       pathPrefix: '../',
@@ -384,14 +384,14 @@ describe('createStaticAssetSessionStore', () => {
   it('applies directory and exact-file prefix semantics', () => {
     const store = createStaticAssetSessionStore({ now: vi.fn(() => 1000) })
     const directorySession = store.createSession({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       ownerSessionId: 'plugin-session-1',
       pathPrefix: 'assets/',
       ttlMs: 30_000,
     })
     const exactSession = store.createSession({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       ownerSessionId: 'plugin-session-2',
       pathPrefix: 'assets',
@@ -399,7 +399,7 @@ describe('createStaticAssetSessionStore', () => {
     })
 
     expect(store.validateRequest({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       assetSessionId: directorySession.assetSessionId,
       assetPath: 'assets/index.js',
@@ -407,7 +407,7 @@ describe('createStaticAssetSessionStore', () => {
     }).ok).toBe(true)
 
     expect(store.validateRequest({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       assetSessionId: exactSession.assetSessionId,
       assetPath: 'assets',
@@ -415,7 +415,7 @@ describe('createStaticAssetSessionStore', () => {
     }).ok).toBe(true)
 
     expect(store.validateRequest({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '0.1.0',
       assetSessionId: exactSession.assetSessionId,
       assetPath: 'assets/index.js',

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { ccv3 } from '@proj-airi/ccc'
+import type { ccv3 } from '@proj-nova/ccc'
 
-import { Alert } from '@proj-airi/stage-ui/components'
-import { useAiriCardStore } from '@proj-airi/stage-ui/stores/modules/airi-card'
-import { InputFileCard } from '@proj-airi/ui'
-import { ComboboxSelect } from '@proj-airi/ui/components/form'
+import { Alert } from '@proj-nova/stage-ui/components'
+import { useAiriCardStore } from '@proj-nova/stage-ui/stores/modules/airi-card'
+import { InputFileCard } from '@proj-nova/ui'
+import { ComboboxSelect } from '@proj-nova/ui/components/form'
 import { storeToRefs } from 'pinia'
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { CapacitorBarcodeScanner, CapacitorBarcodeScannerTypeHint } from '@capacitor/barcode-scanner'
 import { errorMessageFrom } from '@moeru/std'
-import { parseServerChannelQrPayload } from '@proj-airi/stage-shared/server-channel-qr'
-import { useModsServerChannelStore } from '@proj-airi/stage-ui/stores/mods/api/channel-server'
-import { Button } from '@proj-airi/ui'
+import { parseServerChannelQrPayload } from '@proj-nova/stage-shared/server-channel-qr'
+import { useModsServerChannelStore } from '@proj-nova/stage-ui/stores/mods/api/channel-server'
+import { Button } from '@proj-nova/ui'
 import { shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { toast } from 'vue-sonner'

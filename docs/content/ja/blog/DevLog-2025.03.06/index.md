@@ -15,12 +15,12 @@ date: 2025-03-06
 > [https://airi.build/references/design-guidelines/resources/](../references/design-guidelines/resources/)。
 
 最終的な移植結果はかなり良く、以下にデプロイされています：
-[https://proj-airi-packages-ui-transitions.netlify.app/#/](https://proj-airi-packages-ui-transitions.netlify.app/#/)。
+[https://proj-nova-packages-ui-transitions.netlify.app/#/](https://proj-nova-packages-ui-transitions.netlify.app/#/)。
 
 ![](/en/blog/DevLog-2025.03.06/assets/animation-transitions.gif)
 
 > また、これからは各パッケージのすべてのプレイグラウンドが
-> "proj-airi" + "${subDirectory}" + "${packageName}" というパターンで Netlify に
+> "proj-nova" + "${subDirectory}" + "${packageName}" というパターンで Netlify に
 > デプロイされるようになります。
 
 前日の主な目標は CSS の実装を Vue コンポーネントに分割することでしたが、実際の再利用性の部分はまだ完全には実現されていません。
@@ -30,7 +30,7 @@ date: 2025-03-06
 
 [`unplugin-vue-router`](https://github.com/posva/unplugin-vue-router) が提供する [`definePage`](https://uvr.esm.is/guide/extending-routes.html#definepage) マクロフックを試してみたところ、私の使用シナリオに非常に適していることがわかったので、この方向で探索を続けることにしました。
 
-[https://cowardly-witch.netlify.app/](https://cowardly-witch.netlify.app/) からさらに3つの新しいアニメーション・トランジション効果を移植しました。これらはすでに [https://proj-airi-packages-ui-transitions.netlify.app/#/](https://proj-airi-packages-ui-transitions.netlify.app/#/) で利用可能です。
+[https://cowardly-witch.netlify.app/](https://cowardly-witch.netlify.app/) からさらに3つの新しいアニメーション・トランジション効果を移植しました。これらはすでに [https://proj-nova-packages-ui-transitions.netlify.app/#/](https://proj-nova-packages-ui-transitions.netlify.app/#/) で利用可能です。
 
 昨日、公式ドキュメントサイトを [https://airi.build](https://airi.build) にデプロイしましたが、[@kwaa](https://github.com/kwaa) から `https://airi.more.ai/docs` の方法を試してみてはどうかというコメントをもらいました。~~しかし、/docs のために 200 リダイレクトプロキシを設定する方法が思いつきませんでした。~~
 

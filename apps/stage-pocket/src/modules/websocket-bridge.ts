@@ -3,7 +3,7 @@ import type {
   WebSocketLike,
   WebSocketLikeConstructor,
   WebSocketMessageEventLike,
-} from '@proj-airi/server-sdk'
+} from '@proj-nova/server-sdk'
 
 type HostBridgeCommand
   = | { kind: 'connect', id: string, url: string }

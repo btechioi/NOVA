@@ -1,4 +1,4 @@
-import type { ModelSettingsRuntimeSnapshot } from '@proj-airi/stage-ui/components'
+import type { ModelSettingsRuntimeSnapshot } from '@proj-nova/stage-ui/components'
 
 export const modelSettingsRuntimeSnapshotChannelName = 'airi-model-settings-runtime-snapshot'
 

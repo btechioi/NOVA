@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/model-driver-lipsync",
+  "name": "@proj-nova/model-driver-lipsync",
   "type": "module",
   "version": "0.10.2",
   "private": true,

@@ -1,4 +1,4 @@
-import { defineScenario } from '@proj-airi/vishot-runner-electron'
+import { defineScenario } from '@proj-nova/vishot-runner-electron'
 
 export default defineScenario({
   id: 'demo-dismiss-surfaces',

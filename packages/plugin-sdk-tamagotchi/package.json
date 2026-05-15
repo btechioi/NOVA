@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/plugin-sdk-tamagotchi",
+  "name": "@proj-nova/plugin-sdk-tamagotchi",
   "type": "module",
   "version": "0.10.2",
   "private": true,
@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@moeru/eventa": "catalog:",
-    "@proj-airi/plugin-sdk": "workspace:*",
+    "@proj-nova/plugin-sdk": "workspace:*",
     "valibot": "catalog:",
     "xsschema": "catalog:"
   }

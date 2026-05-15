@@ -44,16 +44,16 @@ let mockAudioDevice: ReturnType<typeof createMockAudioDevice>
 let mockProvidersStore: ReturnType<typeof createMockStore>
 
 // Mock the modules
-vi.mock('@proj-airi/stage-ui/stores/modules/hearing', () => ({
+vi.mock('@proj-nova/stage-ui/stores/modules/hearing', () => ({
   useHearingStore: vi.fn().mockImplementation(() => mockHearingStore),
   useHearingSpeechInputPipeline: vi.fn().mockImplementation(() => mockHearingPipeline),
 }))
 
-vi.mock('@proj-airi/stage-ui/stores/providers', () => ({
+vi.mock('@proj-nova/stage-ui/stores/providers', () => ({
   useProvidersStore: vi.fn().mockImplementation(() => mockProvidersStore),
 }))
 
-vi.mock('@proj-airi/stage-ui/stores/settings', () => ({
+vi.mock('@proj-nova/stage-ui/stores/settings', () => ({
   useSettingsAudioDevice: vi.fn().mockImplementation(() => mockAudioDevice),
 }))
 

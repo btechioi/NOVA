@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/server-sdk",
+  "name": "@proj-nova/server-sdk",
   "type": "module",
   "version": "0.10.2",
   "description": "Client-side SDK implementation for connecting to AIRI server components and runtimes",
@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@moeru/std": "catalog:",
-    "@proj-airi/server-shared": "workspace:^",
+    "@proj-nova/server-shared": "workspace:^",
     "crossws": "^0.4.5",
     "superjson": "catalog:"
   }

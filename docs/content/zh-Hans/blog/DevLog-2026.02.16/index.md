@@ -79,8 +79,8 @@ dome / enemy / player 仍然偏少，需要后续补样本。
 
 ## 下一步
 
-还记得 `airi-factorio` 仓库里的纯视觉方向的 Playground 吗？我打算扩展它，让它支持 Dome Keeper，让 `proj-airi` 整个组织都可以复用。还有，我们还需要更多的样本，尤其是 `dome`、`enemy` 和 `player` 类别的样本。
+还记得 `airi-factorio` 仓库里的纯视觉方向的 Playground 吗？我打算扩展它，让它支持 Dome Keeper，让 `proj-nova` 整个组织都可以复用。还有，我们还需要更多的样本，尤其是 `dome`、`enemy` 和 `player` 类别的样本。
 
-让我们期待接下来的进展吧！哦对了，mod 代码已经开源了，欢迎大家[来玩](https://github.com/proj-airi/game-playing-ai-dome-keeper)！
+让我们期待接下来的进展吧！哦对了，mod 代码已经开源了，欢迎大家[来玩](https://github.com/proj-nova/game-playing-ai-dome-keeper)！
 
 除夕快乐！

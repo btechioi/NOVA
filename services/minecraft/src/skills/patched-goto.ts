@@ -7,19 +7,20 @@ const logger = useLogger()
 
 // --- ETA Calibration Constants ---
 const SPRINT_SPEED = 5.6 // blocks/s
-const JUMP_TIME = 0.6 // seconds per jump move
-const PARKOUR_TIME = 1.0 // seconds per parkour move
-const PLACE_TIME = 0.5 // seconds per block placement
-const GRACE_FACTOR = 2.0 // multiply ETA by this for timeout
-const BASE_GRACE_S = 10 // minimum grace seconds
-const MIN_TIMEOUT_MS = 15_000 // absolute floor 15s
+const JUMP_TIME = 0.4 // seconds per jump move
+const PARKOUR_TIME = 0.8 // seconds per parkour move
+const PLACE_TIME = 0.4 // seconds per block placement
+const DIG_TIME = 1.0 // seconds per block dug (conservative average)
+const GRACE_FACTOR = 2.5 // multiply ETA by this for timeout
+const BASE_GRACE_S = 15 // minimum grace seconds
+const MIN_TIMEOUT_MS = 20_000 // absolute floor 20s
 const MAX_TIMEOUT_MS = 300_000 // absolute ceiling 5min
 
 // --- Progress / Stagnation ---
 const PROGRESS_INTERVAL_MS = 5_000 // check progress every 5s
-const STAGNATION_THRESHOLD = 1.5 // blocks — less than this = stagnant
-const MAX_STAGNANT_TICKS = 3 // 3 stagnant ticks (~15s) → cancel
-const DISTANCE_IMPROVEMENT_THRESHOLD = 0.75 // blocks — enough target-distance improvement to count as progress
+const STAGNATION_THRESHOLD = 1.0 // blocks — less than this = stagnant
+const MAX_STAGNANT_TICKS = 5 // 5 stagnant ticks (~25s) → cancel
+const DISTANCE_IMPROVEMENT_THRESHOLD = 1.0 // blocks — enough target-distance improvement to count as progress
 
 export interface PathfindResult {
   ok: boolean
@@ -85,13 +86,10 @@ function vecToCoord(v: Vec3): { x: number, y: number, z: number } {
  * Estimate real-world seconds to traverse a computed A* path.
  *
  * Walks each Move node and sums up time for walking, digging, placing, and parkour.
- * The dig time is estimated from the cost model: `laborCost = (1 + 3 * digTime_ms / 1000) * digCost`.
- * Since digCost defaults to 1, we can reverse: `digTime_ms ≈ (laborCost - 1) * 1000 / 3`.
- * But we don't have per-block labor cost separated out. Instead, we use heuristics:
- * - Each toBreak block: ~1.5s average (conservative; stone with iron pick is ~0.75s, obsidian is 9.4s)
- * - Each toPlace block: ~0.5s
- * - Parkour moves: ~1.0s
- * - Jump moves (cost >= 2 without parkour): ~0.6s
+ * - Each toBreak block: ~1.0s average (conservative; stone with iron pick is ~0.75s, obsidian is 9.4s)
+ * - Each toPlace block: ~0.4s
+ * - Parkour moves: ~0.8s
+ * - Jump moves (cost >= 2 without parkour): ~0.4s
  * - Normal moves: distance / walk speed
  */
 export function estimatePathTimeMs(path: MoveNode[]): number {
@@ -104,7 +102,7 @@ export function estimatePathTimeMs(path: MoveNode[]): number {
     const node = path[i]
 
     // Dig time: each block to break
-    totalTimeS += node.toBreak.length * 1.5
+    totalTimeS += node.toBreak.length * DIG_TIME
 
     // Place time: each block to place
     totalTimeS += node.toPlace.length * PLACE_TIME
@@ -115,6 +113,10 @@ export function estimatePathTimeMs(path: MoveNode[]): number {
     else if (node.cost >= 2 && node.toBreak.length === 0 && node.toPlace.length === 0) {
       // Jump move (cost=2 base for jump-up)
       totalTimeS += JUMP_TIME
+    }
+    else if (node.cost > 5) {
+      // Liquid or high-cost move (swimming, lava) — use liquidCost factor
+      totalTimeS += 1.0
     }
     else {
       // Normal walking move — estimate from node distance

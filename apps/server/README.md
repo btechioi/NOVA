@@ -1,4 +1,4 @@
-# `@proj-airi/server`
+# `@proj-nova/server`
 
 HTTP and WebSocket backend for AIRI. This app owns auth, billing, chat synchronization, gateway forwarding, and server-side observability export.
 
@@ -15,9 +15,9 @@ HTTP and WebSocket backend for AIRI. This app owns auth, billing, chat synchroni
 Install dependencies from the repo root and run scoped commands:
 
 ```sh
-pnpm -F @proj-airi/server typecheck
-pnpm -F @proj-airi/server exec vitest run
-pnpm -F @proj-airi/server build
+pnpm -F @proj-nova/server typecheck
+pnpm -F @proj-nova/server exec vitest run
+pnpm -F @proj-nova/server build
 ```
 
 For local observability infrastructure, use:

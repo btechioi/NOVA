@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { DataSettingsStatusEmits } from '../status'
 
-import { useDataMaintenance } from '@proj-airi/stage-ui/composables/use-data-maintenance'
-import { Button, DoubleCheckButton } from '@proj-airi/ui'
+import { useDataMaintenance } from '@proj-nova/stage-ui/composables/use-data-maintenance'
+import { Button, DoubleCheckButton } from '@proj-nova/ui'
 import { shallowRef, useTemplateRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 

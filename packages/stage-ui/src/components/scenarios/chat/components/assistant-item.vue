@@ -2,7 +2,7 @@
 import type { ChatAssistantMessage, ChatHistoryItem, ChatSlices, ChatSlicesText, ChatSlicesToolCallResult } from '../../../../types/chat'
 import type { ChatToolCallRendererRegistry } from './tool-call-renderer'
 
-import { isStageCapacitor, isStageWeb } from '@proj-airi/stage-shared'
+import { isStageCapacitor, isStageWeb } from '@proj-nova/stage-shared'
 import { computed } from 'vue'
 
 import ChatResponsePart from './response-part.vue'

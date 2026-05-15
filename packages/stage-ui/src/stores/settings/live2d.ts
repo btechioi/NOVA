@@ -1,4 +1,4 @@
-import { useLocalStorageManualReset, useVersionedLocalStorageManualReset } from '@proj-airi/stage-shared/composables'
+import { useLocalStorageManualReset, useVersionedLocalStorageManualReset } from '@proj-nova/stage-shared/composables'
 import { defineStore } from 'pinia'
 
 export const useSettingsLive2d = defineStore('settings-live2d', () => {

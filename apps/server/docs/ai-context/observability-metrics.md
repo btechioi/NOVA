@@ -130,7 +130,7 @@ OTel SDK 在导出到 Prometheus 时做两件事：
 
 ## 已落地的 dashboard 行映射
 
-[airi-server-overview-cloud.json](../../otel/grafana/dashboards/airi-server-overview-cloud.json) 由 [`build.ts`](../../otel/grafana/dashboards/build.ts) 生成（**直接改 JSON 会在下次 regenerate 时被覆盖；改 build.ts**），跑 `pnpm -F @proj-airi/server otel:dashboards` 重新生成。从上到下：
+[airi-server-overview-cloud.json](../../otel/grafana/dashboards/airi-server-overview-cloud.json) 由 [`build.ts`](../../otel/grafana/dashboards/build.ts) 生成（**直接改 JSON 会在下次 regenerate 时被覆盖；改 build.ts**），跑 `pnpm -F @proj-nova/server otel:dashboards` 重新生成。从上到下：
 
 | Row | viz | 关键 metric |
 |---|---|---|
@@ -150,7 +150,7 @@ OTel SDK 在导出到 Prometheus 时做两件事：
 [`src/scripts/otel/smoke.ts`](../../src/scripts/otel/smoke.ts) 跑一遍：
 
 ```sh
-pnpm -F @proj-airi/server exec node --import tsx ./src/scripts/otel/smoke.ts
+pnpm -F @proj-nova/server exec node --import tsx ./src/scripts/otel/smoke.ts
 ```
 
 会打印 SDK 启动时立即 export 的所有 instrument 名字。**Counter 通过 `.add(0)` priming**（[otel/index.ts](../../src/otel/index.ts) `primeCounter`）后会出现在这里 —— Histogram 不会，要等真实 `.record()` 才出现。
@@ -162,5 +162,5 @@ pnpm -F @proj-airi/server exec node --import tsx ./src/scripts/otel/smoke.ts
 3. 在 [otel/index.ts](../../src/otel/index.ts) 的对应 metric group 接口（`HttpMetrics`/`AuthMetrics`/...）加字段，并在 `initOtel` 里 `meter.create*` 创建
 4. **如果是 Counter，在 `primeCounter` 调用列表里加一行** —— 否则低流量时 panel 看起来"没数据"
 5. 在 callsite 通过 DI 拿到 metrics 对象后调 `.add()` / `.record()`
-6. 跑 `pnpm -F @proj-airi/server exec node --import tsx ./src/scripts/otel/smoke.ts` 确认注册
+6. 跑 `pnpm -F @proj-nova/server exec node --import tsx ./src/scripts/otel/smoke.ts` 确认注册
 7. 更新本文档对应章节

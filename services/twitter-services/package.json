@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/twitter-services",
+  "name": "@proj-nova/twitter-services",
   "type": "module",
   "version": "0.10.2",
   "private": true,
@@ -15,7 +15,7 @@
     "@guiiai/logg": "catalog:",
     "@modelcontextprotocol/sdk": "^1.29.0",
     "@moeru/std": "catalog:",
-    "@proj-airi/server-sdk": "workspace:*",
+    "@proj-nova/server-sdk": "workspace:*",
     "h3": "2.0.1-rc.20",
     "playwright": "^1.59.1",
     "zod": "^4.3.6"

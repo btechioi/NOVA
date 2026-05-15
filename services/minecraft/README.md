@@ -35,7 +35,7 @@ Treat this service as a local-development and trusted-server tool only.
 4. Start the service:
 
    ```bash
-   pnpm -F @proj-airi/minecraft-bot dev
+   pnpm -F @proj-nova/minecraft-bot dev
    ```
 
    Or, from `services/minecraft/`:

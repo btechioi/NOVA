@@ -1,4 +1,4 @@
-import type { WebSocketEventOf } from '@proj-airi/server-sdk'
+import type { WebSocketEventOf } from '@proj-nova/server-sdk'
 
 import { describe, expect, it, vi } from 'vitest'
 
@@ -39,7 +39,7 @@ describe('setupAgentSparkNotifyHandler', () => {
 
     const event: WebSocketEventOf<'spark:notify'> = {
       type: 'spark:notify',
-      source: 'plugin:airi-plugin-game-chess',
+      source: 'plugin:nova-plugin-game-chess',
       data: {
         id: 'spark-1',
         eventId: 'evt-1',
@@ -77,7 +77,7 @@ describe('setupAgentSparkNotifyHandler', () => {
 
     const event: WebSocketEventOf<'spark:notify'> = {
       type: 'spark:notify',
-      source: 'plugin:airi-plugin-game-chess',
+      source: 'plugin:nova-plugin-game-chess',
       data: {
         id: 'spark-2',
         eventId: 'evt-2',
@@ -125,7 +125,7 @@ describe('setupAgentSparkNotifyHandler', () => {
 
     const event: WebSocketEventOf<'spark:notify'> = {
       type: 'spark:notify',
-      source: 'plugin:airi-plugin-game-chess',
+      source: 'plugin:nova-plugin-game-chess',
       data: {
         id: 'spark-3',
         eventId: 'evt-3',

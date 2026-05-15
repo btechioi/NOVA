@@ -2,8 +2,8 @@
 import type { DisplayModel } from '../../../../stores/display-models'
 import type { ModelSettingsRuntimeSnapshot } from './runtime'
 
-import { useLive2d } from '@proj-airi/stage-ui-live2d'
-import { Button, Callout } from '@proj-airi/ui'
+import { useLive2d } from '@proj-nova/stage-ui-live2d'
+import { Button, Callout } from '@proj-nova/ui'
 import { storeToRefs } from 'pinia'
 import { computed, ref } from 'vue'
 

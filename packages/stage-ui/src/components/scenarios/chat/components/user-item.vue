@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ChatHistoryItem, ChatMessage } from '../../../../types/chat'
 
-import { isStageCapacitor, isStageWeb } from '@proj-airi/stage-shared'
+import { isStageCapacitor, isStageWeb } from '@proj-nova/stage-shared'
 import { computed } from 'vue'
 
 import { MarkdownRenderer } from '../../../markdown'

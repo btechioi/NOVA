@@ -2,7 +2,7 @@ import type { AboutBuildInfo } from '../../components/scenarios/about/types'
 
 import posthog from 'posthog-js'
 
-import { isStageCapacitor, isStageTamagotchi } from '@proj-airi/stage-shared'
+import { isStageCapacitor, isStageTamagotchi } from '@proj-nova/stage-shared'
 
 import {
   DEFAULT_POSTHOG_CONFIG,

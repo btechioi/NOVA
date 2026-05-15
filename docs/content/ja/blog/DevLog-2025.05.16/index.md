@@ -95,26 +95,26 @@ Project AIRI の DevLog 更新が遅れてしまい申し訳ありません。�
 
 その時、VAD、ASR、TTS ワークフローのデモを簡素化するために、より多くの例を実験し始めました。
 
-最終的に、これを得ました：[WebAI リアルタイムボイスチャット例](https://github.com/proj-airi/webai-example-realtime-voice-chat)。私は、Web ブラウザで 300〜500 行の TypeScript コードを使用して ChatGPT ボイスチャットシステムを実装できることを証明しました。
+最終的に、これを得ました：[WebAI リアルタイムボイスチャット例](https://github.com/proj-nova/webai-example-realtime-voice-chat)。私は、Web ブラウザで 300〜500 行の TypeScript コードを使用して ChatGPT ボイスチャットシステムを実装できることを証明しました。
 
 <ThemedVideo controls muted src="/en/blog/DevLog-2025.05.16/assets/webai-examples-demo.MP4" style="height: 640px;" />
 
 リアルタイムボイスチャットシステムをゼロから構築する方法をデモするのに役立つように、可能なすべてのステップを小さな再利用可能な断片に分解することに最善を尽くしました：
 
-- [VAD](https://github.com/proj-airi/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad)
-- [VAD + ASR](https://github.com/proj-airi/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad-asr)
-- [VAD + ASR + LLM チャット](https://github.com/proj-airi/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad-asr-chat)
-- [VAD + ASR + LLM チャット + TTS](https://github.com/proj-airi/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad-asr-chat-tts)
+- [VAD](https://github.com/proj-nova/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad)
+- [VAD + ASR](https://github.com/proj-nova/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad-asr)
+- [VAD + ASR + LLM チャット](https://github.com/proj-nova/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad-asr-chat)
+- [VAD + ASR + LLM チャット + TTS](https://github.com/proj-nova/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad-asr-chat-tts)
 
 > ここから何かを学べることを願っています。
 
 この期間中、[k2-fsa/sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) という興味深く強力なリポジトリを発見しました。これは macOS、Windows、Linux、Android、iOS などで12言語の18の音声処理タスクをサポートしています。魅力的です！
 
-そこで [@luoling](https://github.com/luoling8192) もこのために別の小さなデモを作成しました：[Sherpa ONNX 駆動の VAD + ASR + LLM チャット + TTS](https://github.com/proj-airi/webai-example-realtime-voice-chat/tree/main/apps/sherpa-onnx-demo)
+そこで [@luoling](https://github.com/luoling8192) もこのために別の小さなデモを作成しました：[Sherpa ONNX 駆動の VAD + ASR + LLM チャット + TTS](https://github.com/proj-nova/webai-example-realtime-voice-chat/tree/main/apps/sherpa-onnx-demo)
 
 #### xsAI 🤗 Transformers.js の誕生
 
-VAD、ASR、チャット、TTS デモのために行った作業により、[xsAI 🤗 Transformers.js](https://github.com/proj-airi/xsai-transformers) という新しいサイドプロジェクトが生まれました。これは、以前の成功したプロジェクト [xsAI](https://github.com/moeru-ai/xsai) との API 互換性を維持しながら、WebGPU 駆動のモデル推論の呼び出しとワーカーを使用したサービス提供を簡素化します。
+VAD、ASR、チャット、TTS デモのために行った作業により、[xsAI 🤗 Transformers.js](https://github.com/proj-nova/xsai-transformers) という新しいサイドプロジェクトが生まれました。これは、以前の成功したプロジェクト [xsAI](https://github.com/moeru-ai/xsai) との API 互換性を維持しながら、WebGPU 駆動のモデル推論の呼び出しとワーカーを使用したサービス提供を簡素化します。
 
 これのためのプレイグラウンドも作成しました... [https://xsai-transformers.netlify.app](https://xsai-transformers.netlify.app) で遊んでみてください。
 

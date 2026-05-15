@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/plugin-protocol",
+  "name": "@proj-nova/plugin-protocol",
   "type": "module",
   "version": "0.10.2",
   "description": "Plugin protocol event definitions and shared websocket types for Project AIRI",

@@ -1,6 +1,6 @@
-import type { BeatSyncDetectorState } from '@proj-airi/stage-shared/beat-sync'
+import type { BeatSyncDetectorState } from '@proj-nova/stage-shared/beat-sync'
 
-import { getBeatSyncState, listenBeatSyncStateChange } from '@proj-airi/stage-shared/beat-sync'
+import { getBeatSyncState, listenBeatSyncStateChange } from '@proj-nova/stage-shared/beat-sync'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -12,7 +12,10 @@ import { useDiscordStore } from '../stores/modules/discord'
 import { useFactorioStore } from '../stores/modules/gaming-factorio'
 import { useMinecraftStore } from '../stores/modules/gaming-minecraft'
 import { useHearingStore } from '../stores/modules/hearing'
+import { useMemoryLongTermStore } from '../stores/modules/memory-long-term'
+import { useMemoryShortTermStore } from '../stores/modules/memory-short-term'
 import { useSpeechStore } from '../stores/modules/speech'
+import { useTwitchStore } from '../stores/modules/twitch'
 import { useTwitterStore } from '../stores/modules/twitter'
 import { useVisionStore } from '../stores/modules/vision'
 
@@ -37,10 +40,13 @@ export function useModulesList() {
   const hearingStore = useHearingStore()
   const visionStore = useVisionStore()
   const discordStore = useDiscordStore()
+  const twitchStore = useTwitchStore()
   const twitterStore = useTwitterStore()
   const minecraftStore = useMinecraftStore()
   const factorioStore = useFactorioStore()
   const artistryStore = useArtistryStore()
+  const memoryShortTermStore = useMemoryShortTermStore()
+  const memoryLongTermStore = useMemoryLongTermStore()
   const beatSyncState = ref<BeatSyncDetectorState>()
 
   minecraftStore.initialize()
@@ -97,7 +103,7 @@ export function useModulesList() {
       description: t('settings.pages.modules.memory-short-term.description'),
       icon: 'i-solar:bookmark-bold-duotone',
       to: '/settings/modules/memory-short-term',
-      configured: false,
+      configured: memoryShortTermStore.configured,
       category: 'essential',
     },
     {
@@ -106,7 +112,7 @@ export function useModulesList() {
       description: t('settings.pages.modules.memory-long-term.description'),
       icon: 'i-solar:book-bookmark-bold-duotone',
       to: '/settings/modules/memory-long-term',
-      configured: false,
+      configured: memoryLongTermStore.configured,
       category: 'essential',
     },
     {
@@ -116,6 +122,15 @@ export function useModulesList() {
       icon: 'i-simple-icons:discord',
       to: '/settings/modules/messaging-discord',
       configured: discordStore.configured,
+      category: 'messaging',
+    },
+    {
+      id: 'messaging-twitch',
+      name: t('settings.pages.modules.messaging-twitch.title'),
+      description: t('settings.pages.modules.messaging-twitch.description'),
+      icon: 'i-simple-icons:twitch',
+      to: '/settings/modules/messaging-twitch',
+      configured: twitchStore.configured,
       category: 'messaging',
     },
     {

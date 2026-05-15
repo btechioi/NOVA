@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useElectronEventaInvoke } from '@proj-airi/electron-vueuse'
-import { useBackgroundStore } from '@proj-airi/stage-ui/stores/background'
-import { useAiriCardStore } from '@proj-airi/stage-ui/stores/modules/airi-card'
+import { useElectronEventaInvoke } from '@proj-nova/electron-vueuse'
+import { useBackgroundStore } from '@proj-nova/stage-ui/stores/background'
+import { useAiriCardStore } from '@proj-nova/stage-ui/stores/modules/airi-card'
 import { computed, ref, watch } from 'vue'
 
 import { widgetsHideWindow, widgetsRemove } from '../../../../shared/eventa'
@@ -112,7 +112,7 @@ async function handleSetAsBackground() {
       extension.airi.modules.activeBackgroundId = entry.id
 
       await cardStore.updateCard(cardId, { ...card, extensions: extension })
-      console.log(`[ComfyWidget] Set activeBackgroundId to ${entry.id} for ${cardId}`)
+      console.info(`[ComfyWidget] Set activeBackgroundId to ${entry.id} for ${cardId}`)
     }
   }
   catch (e) {

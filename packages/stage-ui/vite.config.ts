@@ -15,8 +15,8 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   resolve: {
     alias: {
-      '@proj-airi/i18n': resolve(join(import.meta.dirname, '..', '..', 'packages', 'i18n', 'src')),
-      '@proj-airi/stage-shared': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-shared', 'src')),
+      '@proj-nova/i18n': resolve(join(import.meta.dirname, '..', '..', 'packages', 'i18n', 'src')),
+      '@proj-nova/stage-shared': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-shared', 'src')),
     },
   },
   server: {
@@ -62,7 +62,7 @@ export default defineConfig({
       ? []
       : [
           Basemove({
-            prefix: env.STAGE_UI_WARP_DRIVE_PREFIX || 'proj-airi/stage-ui/main/',
+            prefix: env.STAGE_UI_WARP_DRIVE_PREFIX || 'proj-nova/stage-ui/main/',
             include: [/\.wasm$/i, /\.ttf$/i, /\.vrm$/i, /\.zip$/i], // in existing assets, wasm, ttf, vrm files are the largest ones
             manifest: true,
             contentTypeBy: (filename: string) => {

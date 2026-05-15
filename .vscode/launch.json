@@ -50,10 +50,10 @@
       "type": "extensionHost",
       "request": "launch",
       "args": [
-        "--extensionDevelopmentPath=${workspaceFolder}/plugins/airi-plugin-vscode"
+        "--extensionDevelopmentPath=\${workspaceFolder}/integrations/vscode/nova-plugin-vscode"
       ],
       "outFiles": [
-        "${workspaceFolder}/plugins/airi-plugin-vscode/dist/**/*.cjs"
+        "\${workspaceFolder}/integrations/vscode/nova-plugin-vscode/dist/**/*.cjs"
       ]
     }
   ],

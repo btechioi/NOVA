@@ -3,7 +3,7 @@ import type { CommonContentPart } from '@xsai/shared-chat'
 import type { VisionWorkloadId } from '../../../composables/vision/use-vision-workloads'
 
 import { errorMessageFrom } from '@moeru/std'
-import { ContextUpdateStrategy } from '@proj-airi/server-sdk'
+import { ContextUpdateStrategy } from '@proj-nova/server-sdk'
 import { defineStore, storeToRefs } from 'pinia'
 import { ref } from 'vue'
 

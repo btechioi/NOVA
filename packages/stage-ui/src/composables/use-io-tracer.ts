@@ -9,7 +9,7 @@ import { shallowRef } from 'vue'
 
 export type { ReadableSpan } from '@opentelemetry/sdk-trace-base'
 
-const TRACER_NAME = 'ai.moeru.airi.io-tracer'
+const TRACER_NAME = 'nova.app.io-tracer'
 const BROADCAST_CHANNEL = 'io-tracer-channel' // TODO: Use simple BroadcastChannel for now
 
 export interface SerializedSpan {

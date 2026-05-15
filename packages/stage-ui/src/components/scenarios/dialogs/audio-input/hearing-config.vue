@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Button, Callout, FieldCombobox } from '@proj-airi/ui'
+import { Button, Callout, FieldCombobox } from '@proj-nova/ui'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 

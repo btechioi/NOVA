@@ -11,7 +11,7 @@ import type { WidgetsWindowManager } from '../windows/widgets'
 import { env } from 'node:process'
 
 import { is } from '@electron-toolkit/utils'
-import { isRendererUnavailable } from '@proj-airi/electron-vueuse/main'
+import { isRendererUnavailable } from '@proj-nova/electron-vueuse/main'
 import { effect } from 'alien-signals'
 import { app, Menu, nativeImage, screen, Tray } from 'electron'
 import { debounce, once } from 'es-toolkit'
@@ -233,7 +233,7 @@ export function setupTray(params: {
       rebuildContextMenu()
     })
 
-    appTray.setToolTip('Project AIRI')
+    appTray.setToolTip('Project NOVA')
     appTray.addListener('click', () => toggleWindowShow(params.mainWindow))
 
     // On macOS, there's a special double-click event

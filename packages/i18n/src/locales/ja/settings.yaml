@@ -10,8 +10,8 @@ animations:
 dialogs:
   onboarding:
     official:
-      title: AIRI Official Provider
-    title: AIRI へようこそ！
+      title: NOVA Official Provider
+    title: NOVA へようこそ！
     description: まず最初のAIプロバイダーを設定しましょう。
     selectProvider: AIプロバイダーを選択
     configureProvider: 設定 {provider}
@@ -35,13 +35,13 @@ dialogs:
     retry: 再試行
     credentialsSafeLabel: APIキーと認証情報は安全に管理してください！
     credentialsSafeLocal: >-
-      AIRIはあなたのPC上で完全にローカル環境で動作しており、AI/LLMプロバイダー向けの認証情報を無断で取得することはありません。ただし、APIキーは機密情報であることを十分に認識してください。これらのキーは厳重に管理し、決して第三者と共有しないようご注意ください。
+      NOVAはあなたのPC上で完全にローカル環境で動作しており、AI/LLMプロバイダー向けの認証情報を無断で取得することはありません。ただし、APIキーは機密情報であることを十分に認識してください。これらのキーは厳重に管理し、決して第三者と共有しないようご注意ください。
     credentialsSafeOpenSource: >-
-      AIRIのソースコードは{github}で公開されています。認証情報の取り扱い方法を確認したい場合は、お気軽にコードをご確認ください。
+      NOVAのソースコードは{github}で公開されています。認証情報の取り扱い方法を確認したい場合は、お気軽にコードをご確認ください。
     enableChatCheck: >-
       Airiが最初に利用できるチャットモデルに「ping」メッセージを送信して利用可能状況を確認することを許可する
     start: 始めましょう！
-    loginPrompt: 最適な体験を提供するAIRI公式プロバイダーを利用するには、ログインしてください。
+    loginPrompt: 最適な体験を提供するNOVA公式プロバイダーを利用するには、ログインしてください。
     loginAction: サインイン
     setupWithoutSigningIn: プロバイダーでセットアップ
     flux: Flux
@@ -95,7 +95,7 @@ analytics:
   notice:
     title: 使用状況の分析
     description: >-
-      AIRIは匿名の利用分析データを収集し、アプリの使用方法の把握と安定性の向上に役立てています。個人を特定できる情報は一切収集されません。
+      NOVAは匿名の利用分析データを収集し、アプリの使用方法の把握と安定性の向上に役立てています。個人を特定できる情報は一切収集されません。
     privacyPrefix: 読む
     privacyLink: プライバシーポリシー
     onboardingHint: 分析機能は「設定」>「システム」>「一般」で後からオフにすることができます。
@@ -173,7 +173,7 @@ pages:
     connections:
       tab: Connected accounts
       title: Connected accounts
-      description: Sign in to AIRI through these providers. Unlink to revoke access, then link again to switch to a different account.
+      description: Sign in to NOVA through these providers. Unlink to revoke access, then link again to switch to a different account.
       status:
         linked: Linked
         notLinked: Not linked
@@ -255,7 +255,7 @@ pages:
     delete: 削除
     delete_card: カードを削除
     delete_confirmation: このカードを削除してもよろしいですか？
-    description: AIRIキャラクターカードプリセットを使用する
+    description: NOVAキャラクターカードプリセットを使用する
     description_label: 説明
     drop_here: アップロードするにはここにドラッグ
     create_card: 新しいカードを作成
@@ -325,7 +325,7 @@ pages:
       model: 発話/モデル
       voice: 発話/音声
     systemprompt: システムプロンプト
-    title: AIRIカード
+    title: NOVAカード
     try_different_search: 別の検索ワードを試してください
     upload: アップロード
     upload_desc: ファイルをアップロードするにはクリックまたはドラッグ
@@ -334,7 +334,7 @@ pages:
     title: 記憶
   data:
     title: データ
-    description: AIRIデータの保存、エクスポート、およびリセットの管理
+    description: NOVAデータの保存、エクスポート、およびリセットの管理
     sections:
       chats:
         title: チャット セッション
@@ -363,11 +363,11 @@ pages:
         delete: すべてのデータを削除
       desktop-folder:
         title: アプリデータフォルダを開く
-        description: ファイルマネージャで AIRI のデータフォルダを開きます。
+        description: ファイルマネージャで NOVA のデータフォルダを開きます。
         open: フォルダを開く
       desktop:
         title: デスクトップの設定と状態をリセット
-        description: AIRIデスクトップの設定と実行時の状態を消去します。
+        description: NOVAデスクトップの設定と実行時の状態を消去します。
         reset: デスクトップのデータをリセット
     confirmations:
       tooltip: 本当によろしいですか？
@@ -462,7 +462,7 @@ pages:
           name: Nano Banana (Preview)
           description: Use Google AI Studio for image preview and reactions.
       card:
-        description: Configure how AIRI generates images and visual content.
+        description: Configure how NOVA generates images and visual content.
         comfyui_empty: No ComfyUI workflows configured. Go to Settings → Providers → ComfyUI to upload a workflow template.
         exposed_fields: '{count} exposed fields'
         open_on_replicate: Open on Replicate
@@ -538,7 +538,7 @@ pages:
       description: Factorioをプレイ！
       title: Factorio
       enable: Factorio連携を有効にする
-      enable-description: AIRIがFactorioゲームと通信できるようにする
+      enable-description: NOVAがFactorioゲームと通信できるようにする
       server-address: サーバーアドレス
       server-address-description: FactorioサーバーのIPアドレスまたはホスト名
       server-address-placeholder: サーバーアドレスを入力 (例： localhostまたは192.168.1.100)
@@ -605,7 +605,7 @@ pages:
       description: Discordでのチャットとボイスチャット
       title: Discord
       enable: Discord連携を有効にする
-      enable-description: AIRIがDiscordを介して対話できるようにする
+      enable-description: NOVAがDiscordを介して対話できるようにする
       token: ボットトークン
       token-description: あなたのDiscordボットトークン
       token-placeholder: Discordボットトークンを入力
@@ -657,7 +657,7 @@ pages:
       description: X / Twitterの閲覧と使用
       title: X / Twitter
       enable: X / Twitter連携を有効にする
-      enable-description: AIRIがX / Twitterと対話できるようにする
+      enable-description: NOVAがX / Twitterと対話できるようにする
       api-key: APIキー
       api-key-description: あなたのX / Twitter APIキー
       api-key-placeholder: あなたのX / Twitter APIキーを入力
@@ -673,7 +673,7 @@ pages:
       configured: X / Twitterは適切に設定されています！
     mcp-server:
       title: MCP servers
-      description: Configure MCP servers and bring their tools into AIRI.
+      description: Configure MCP servers and bring their tools into NOVA.
       config-path: Config file
       runtime-title: ランタイムの状態
       empty: No MCP servers yet — click "Add server" below to create one, or paste a config via "Edit JSON".
@@ -914,7 +914,7 @@ pages:
     helpinfo:
       title: ここを初めて利用しますか？
       description: >
-        AIRIが正常に思考し動作するためには、少なくとも1つの{chat}プロバイダーの設定が必要です。 これはAIRIシステム内に存在するキャラクターの脳と考えることができます。
+        NOVAが正常に思考し動作するためには、少なくとも1つの{chat}プロバイダーの設定が必要です。 これはNOVAシステム内に存在するキャラクターの脳と考えることができます。
     explained:
       chat: テキスト生成モデルプロバイダー。例： OpenRouter, OpenAI, Ollama。
       Speech: 音声 (テキスト読み上げ) モデルプロバイダー。例： ElevenLabs, Azure Speech。
@@ -1025,7 +1025,7 @@ pages:
               placeholder: http://localhost:8188
           cors:
             title: CORS Block Detected
-            description: ComfyUI blocks requests from other applications by default. To allow AIRI to connect, you must start ComfyUI with the `--enable-cors-header "*"` flag.
+            description: ComfyUI blocks requests from other applications by default. To allow NOVA to connect, you must start ComfyUI with the `--enable-cors-header "*"` flag.
             command: python main.py --enable-cors-header "*"
           workflows:
             title: Workflow Templates
@@ -1037,7 +1037,7 @@ pages:
             remove: Remove
             config_snippet: Artistry Config Snippet
             copy_json: Copy JSON
-            paste_hint: Paste this into your AIRI Card artistry config to override these nodes.
+            paste_hint: Paste this into your NOVA Card artistry config to override these nodes.
           upload:
             prompt: Drop or select a workflow_api.json file
             invalid_json: Invalid JSON
@@ -1215,6 +1215,9 @@ pages:
       n1n:
         description: n1n.ai - 高性能なAI APIプロバイダー。
         title: n1n
+      opencode:
+        description: opencode.ai
+        title: OpenCode
       openrouter:
         description: openrouter.ai
         title: OpenRouter
@@ -1285,11 +1288,11 @@ pages:
         title: Web Speech API
       official:
         title: 公式プロバイダー
-        description: AIRIが提供する公式AIプロバイダー。
+        description: NOVAが提供する公式AIプロバイダー。
         speech-title: 公式音声プロバイダー
-        speech-description: AIRIが提供する公式テキスト読み上げプロバイダー。
+        speech-description: NOVAが提供する公式テキスト読み上げプロバイダー。
         transcription-title: 公式文字起こしプロバイダー
-        transcription-description: AIRIが提供する公式の音声テキスト変換プロバイダー。
+        transcription-description: NOVAが提供する公式の音声テキスト変換プロバイダー。
       transcriptions:
         playground:
           title: 文字起こし実験場
@@ -1307,7 +1310,7 @@ pages:
     server-hostname:
       label: Expose On Network
       description: >-
-        Choose whether the AIRI gateway only listens on this device or can be reached from your local network.
+        Choose whether the NOVA gateway only listens on this device or can be reached from your local network.
       advanced-label: Bind Hostname
       advanced-description: >-
         Use a specific hostname or IP address when you need manual network binding.
@@ -1318,14 +1321,14 @@ pages:
     server-auth-token:
       label: Auth Token
       description: >-
-        Security token required by remote clients that connect to this gateway. When left empty, AIRI generates a new token automatically.
+        Security token required by remote clients that connect to this gateway. When left empty, NOVA generates a new token automatically.
       placeholder: Auto-generate
     qr:
       title: Connect from Stage Pocket
       description: >-
         Scan this QR code from Stage Pocket to try all reachable local network addresses and save the first working one.
       refresh: Refresh
-      image-alt: AIRI server channel connection QR code
+      image-alt: NOVA server channel connection QR code
       candidates: Candidate addresses
       token-hint: >-
         The QR code includes the auth token so Stage Pocket can authenticate after connecting. Do not share it publicly.
@@ -1335,7 +1338,7 @@ pages:
     qr-scan:
       title: Quick Connect
       description: Scan the QR code from Tamagotchi to quick connect
-      instructions: Point the camera at the AIRI connection QR code.
+      instructions: Point the camera at the NOVA connection QR code.
       action: Scan
       success:
         title: Connected address saved
@@ -1418,8 +1421,8 @@ pages:
           presets:
             default:
               colors:
-                color-1: AIRIグリーン
-              description: AIRIによって用意された、デフォルトの緑がかったテーマカラー！
+                color-1: NOVAグリーン
+              description: NOVAによって用意された、デフォルトの緑がかったテーマカラー！
               title: デフォルトカラー
             morandi:
               colors:
@@ -1520,7 +1523,7 @@ sections:
 theme:
   title: テーマ
   description: |
-    AIRIの基本テーマをライトモードまたはダークモードに切り替えます。
+    NOVAの基本テーマをライトモードまたはダークモードに切り替えます。
 title: 設定
 voices: 音声
 vrm:

@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import type { BugReportDialogSubmitPayload } from '@proj-airi/stage-ui/components'
+import type { BugReportDialogSubmitPayload } from '@proj-nova/stage-ui/components'
 
 import type { ElectronUpdaterChannel } from '../../shared/eventa'
 
 import semver from 'semver'
 
-import { useElectronAutoUpdater, useElectronEventaInvoke } from '@proj-airi/electron-vueuse'
-import { AboutContent, BugReportDialog, createBugReportPageContext, MarkdownRenderer } from '@proj-airi/stage-ui/components'
-import { useBreakpoints } from '@proj-airi/stage-ui/composables'
-import { useSharedAnalyticsStore } from '@proj-airi/stage-ui/stores/analytics'
-import { Button, ContainerError, DoubleCheckButton, FieldSelect, Progress } from '@proj-airi/ui'
+import { useElectronAutoUpdater, useElectronEventaInvoke } from '@proj-nova/electron-vueuse'
+import { AboutContent, BugReportDialog, createBugReportPageContext, MarkdownRenderer } from '@proj-nova/stage-ui/components'
+import { useBreakpoints } from '@proj-nova/stage-ui/composables'
+import { useSharedAnalyticsStore } from '@proj-nova/stage-ui/stores/analytics'
+import { Button, ContainerError, DoubleCheckButton, FieldSelect, Progress } from '@proj-nova/ui'
 import { useClipboard } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 import { DialogContent, DialogDescription, DialogOverlay, DialogPortal, DialogRoot, DialogTitle } from 'reka-ui'
@@ -219,7 +219,7 @@ onMounted(() => {
     <div :class="['mx-auto max-w-[min(960px,calc(100%-2rem))]', 'p-6']">
       <AboutContent
         title="Project"
-        highlight="AIRI"
+        highlight="NOVA"
         :subtitle="t('tamagotchi.stage.about.subtitle')"
       >
         <template #before-build-info>
@@ -269,7 +269,7 @@ onMounted(() => {
                 v-if="requiresWindowsAdminUpdatePrompt"
                 :class="['text-sm rounded-xl border border-amber-500/30 bg-amber-500/10 p-3 text-amber-700 dark:text-amber-200']"
               >
-                AIRI is installed in a protected Windows folder. Update install may require a UAC admin prompt.
+                NOVA is installed in a protected Windows folder. Update install may require a UAC admin prompt.
                 <div :class="['mt-1 text-xs break-all text-amber-700/80 dark:text-amber-100/80']">
                   Path: {{ updateInstallDirectory }}
                 </div>
@@ -286,7 +286,7 @@ onMounted(() => {
                   v-if="isDowngradeUpdate"
                   :class="['text-sm rounded-xl border border-amber-500/30 bg-amber-500/10 p-3 text-amber-700 dark:text-amber-200']"
                 >
-                  Selected channel offers an older build than your current version. Installing this update will downgrade AIRI.
+                  Selected channel offers an older build than your current version. Installing this update will downgrade NOVA.
                 </div>
                 <div>
                   <Button

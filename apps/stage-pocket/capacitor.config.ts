@@ -4,11 +4,11 @@ import { argv, env } from 'node:process'
 
 const serverURL = env.CAPACITOR_DEV_SERVER_URL
 
-const appId = argv.includes('android') ? 'ai.moeru.airi_pocket' : 'ai.moeru.airi-pocket'
+const appId = argv.includes('android') ? 'nova.app_pocket' : 'nova.app-pocket'
 
 const config: CapacitorConfig = {
   appId,
-  appName: 'AIRI',
+  appName: 'NOVA',
   webDir: 'dist',
   server: serverURL
     ? {

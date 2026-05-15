@@ -88,7 +88,7 @@ https://www.youtube.com/watch?v=_AIgv0EsOE4
 ## 开发直播
 
 我将 [yui540](https://github.com/yui540) [仓库](https://github.com/yui540/css-animations) 中的
-许多动画过渡效果移植到了 [https://proj-airi-packages-ui-transitions.netlify.app/#/](https://proj-airi-packages-ui-transitions.netlify.app/#/)。
+许多动画过渡效果移植到了 [https://proj-nova-packages-ui-transitions.netlify.app/#/](https://proj-nova-packages-ui-transitions.netlify.app/#/)。
 
 移植后的效果相当不错：
 

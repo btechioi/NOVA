@@ -12,7 +12,7 @@ import {
   modulePermissionsRequest,
   moduleStatus,
   registryModulesSync,
-} from '@proj-airi/plugin-protocol/types'
+} from '@proj-nova/plugin-protocol/types'
 import { describe, expect, it, vi } from 'vitest'
 
 import { FileSystemLoader, PluginHost } from '.'
@@ -42,14 +42,14 @@ function reportPluginCapability(
 describe('for FileSystemPluginHost', () => {
   const testPermissions: ModulePermissionDeclaration = {
     apis: [
-      { key: 'proj-airi:plugin-sdk:apis:protocol:capabilities:wait', actions: ['invoke'] },
-      { key: 'proj-airi:plugin-sdk:apis:protocol:resources:providers:list-providers', actions: ['invoke'] },
+      { key: 'proj-nova:plugin-sdk:apis:protocol:capabilities:wait', actions: ['invoke'] },
+      { key: 'proj-nova:plugin-sdk:apis:protocol:resources:providers:list-providers', actions: ['invoke'] },
     ],
     resources: [
-      { key: 'proj-airi:plugin-sdk:apis:protocol:resources:providers:list-providers', actions: ['read'] },
+      { key: 'proj-nova:plugin-sdk:apis:protocol:resources:providers:list-providers', actions: ['read'] },
     ],
     capabilities: [
-      { key: 'proj-airi:plugin-sdk:apis:protocol:resources:providers:list-providers', actions: ['wait'] },
+      { key: 'proj-nova:plugin-sdk:apis:protocol:resources:providers:list-providers', actions: ['wait'] },
     ],
   }
 
@@ -184,25 +184,25 @@ describe('for FileSystemPluginHost', () => {
 })
 
 describe('for PluginHost', () => {
-  const providersCapability = 'proj-airi:plugin-sdk:apis:protocol:resources:providers:list-providers'
-  const kitRegistryResourceKey = 'proj-airi:plugin-sdk:resources:kits'
-  const toolRegistryResourceKey = 'proj-airi:plugin-sdk:resources:tools'
-  const widgetKitBindingsResourceKey = 'proj-airi:plugin-sdk:resources:kits:kit.widget:bindings'
-  const customSessionApiPingEventName = 'proj-airi:plugin-sdk:apis:client:test-session-api:ping'
+  const providersCapability = 'proj-nova:plugin-sdk:apis:protocol:resources:providers:list-providers'
+  const kitRegistryResourceKey = 'proj-nova:plugin-sdk:resources:kits'
+  const toolRegistryResourceKey = 'proj-nova:plugin-sdk:resources:tools'
+  const widgetKitBindingsResourceKey = 'proj-nova:plugin-sdk:resources:kits:kit.widget:bindings'
+  const customSessionApiPingEventName = 'proj-nova:plugin-sdk:apis:client:test-session-api:ping'
   const testManifest = {
     apiVersion: 'v1' as const,
     kind: 'manifest.plugin.airi.moeru.ai' as const,
     name: 'test-plugin',
     permissions: {
       apis: [
-        { key: 'proj-airi:plugin-sdk:apis:protocol:capabilities:wait', actions: ['invoke'] },
-        { key: 'proj-airi:plugin-sdk:apis:protocol:resources:providers:list-providers', actions: ['invoke'] },
+        { key: 'proj-nova:plugin-sdk:apis:protocol:capabilities:wait', actions: ['invoke'] },
+        { key: 'proj-nova:plugin-sdk:apis:protocol:resources:providers:list-providers', actions: ['invoke'] },
       ],
       resources: [
-        { key: 'proj-airi:plugin-sdk:apis:protocol:resources:providers:list-providers', actions: ['read'] },
+        { key: 'proj-nova:plugin-sdk:apis:protocol:resources:providers:list-providers', actions: ['read'] },
       ],
       capabilities: [
-        { key: 'proj-airi:plugin-sdk:apis:protocol:resources:providers:list-providers', actions: ['wait'] },
+        { key: 'proj-nova:plugin-sdk:apis:protocol:resources:providers:list-providers', actions: ['wait'] },
       ],
     } satisfies ModulePermissionDeclaration,
     entrypoints: {
@@ -215,20 +215,20 @@ describe('for PluginHost', () => {
       ...testManifest.permissions,
       apis: [
         ...(testManifest.permissions.apis ?? []),
-        { key: 'proj-airi:plugin-sdk:apis:client:kits:list', actions: ['invoke'] },
-        { key: 'proj-airi:plugin-sdk:apis:client:kits:get-capabilities', actions: ['invoke'] },
-        { key: 'proj-airi:plugin-sdk:apis:client:bindings:list', actions: ['invoke'] },
-        { key: 'proj-airi:plugin-sdk:apis:client:bindings:announce', actions: ['invoke'] },
-        { key: 'proj-airi:plugin-sdk:apis:client:bindings:activate', actions: ['invoke'] },
-        { key: 'proj-airi:plugin-sdk:apis:client:bindings:update', actions: ['invoke'] },
-        { key: 'proj-airi:plugin-sdk:apis:client:bindings:withdraw', actions: ['invoke'] },
-        { key: 'proj-airi:plugin-sdk:apis:client:tools:register', actions: ['invoke'] },
+        { key: 'proj-nova:plugin-sdk:apis:client:kits:list', actions: ['invoke'] },
+        { key: 'proj-nova:plugin-sdk:apis:client:kits:get-capabilities', actions: ['invoke'] },
+        { key: 'proj-nova:plugin-sdk:apis:client:bindings:list', actions: ['invoke'] },
+        { key: 'proj-nova:plugin-sdk:apis:client:bindings:announce', actions: ['invoke'] },
+        { key: 'proj-nova:plugin-sdk:apis:client:bindings:activate', actions: ['invoke'] },
+        { key: 'proj-nova:plugin-sdk:apis:client:bindings:update', actions: ['invoke'] },
+        { key: 'proj-nova:plugin-sdk:apis:client:bindings:withdraw', actions: ['invoke'] },
+        { key: 'proj-nova:plugin-sdk:apis:client:tools:register', actions: ['invoke'] },
       ],
       resources: [
         ...(testManifest.permissions.resources ?? []),
         { key: kitRegistryResourceKey, actions: ['read'] },
         { key: toolRegistryResourceKey, actions: ['write'] },
-        { key: 'proj-airi:plugin-sdk:resources:bindings', actions: ['read'] },
+        { key: 'proj-nova:plugin-sdk:resources:bindings', actions: ['read'] },
         { key: widgetKitBindingsResourceKey, actions: ['read', 'write'] },
       ],
     } satisfies ModulePermissionDeclaration,
@@ -249,7 +249,7 @@ describe('for PluginHost', () => {
       ...testManifest.permissions,
       apis: [
         ...(testManifest.permissions.apis ?? []),
-        { key: 'proj-airi:plugin-sdk:apis:client:kits:list', actions: ['invoke'] },
+        { key: 'proj-nova:plugin-sdk:apis:client:kits:list', actions: ['invoke'] },
       ],
     } satisfies ModulePermissionDeclaration,
   }
@@ -899,7 +899,7 @@ describe('for PluginHost', () => {
 
     const session = await host.start(deniedKitReadManifest, { cwd: '' })
 
-    await expect(session.apis.kits.list()).rejects.toThrow('Permission denied: resources.read "proj-airi:plugin-sdk:resources:kits"')
+    await expect(session.apis.kits.list()).rejects.toThrow('Permission denied: resources.read "proj-nova:plugin-sdk:resources:kits"')
   })
 
   it('should reject non in-memory transport for MVP', async () => {
@@ -939,7 +939,7 @@ describe('for PluginHost', () => {
     })
     defineInvokeHandler(ctx, protocolCapabilityWait, async () => {
       return {
-        key: 'proj-airi:plugin-sdk:apis:protocol:resources:providers:list-providers',
+        key: 'proj-nova:plugin-sdk:apis:protocol:resources:providers:list-providers',
         state: 'ready',
         updatedAt: Date.now(),
       }
@@ -1460,11 +1460,11 @@ describe('for PluginHost', () => {
       transport: { kind: 'in-memory' },
       permissionResolver: ({ requested }) => ({
         apis: [
-          ...(requested.apis ?? []).filter(spec => spec.key.startsWith('proj-airi:plugin-sdk:')),
+          ...(requested.apis ?? []).filter(spec => spec.key.startsWith('proj-nova:plugin-sdk:')),
           { key: 'plugin.api.users', actions: ['invoke'] },
         ],
         resources: [
-          ...(requested.resources ?? []).filter(spec => spec.key.startsWith('proj-airi:plugin-sdk:')),
+          ...(requested.resources ?? []).filter(spec => spec.key.startsWith('proj-nova:plugin-sdk:')),
           { key: 'plugin.resource.settings', actions: ['read'] },
         ],
         capabilities: requested.capabilities,

@@ -24,7 +24,7 @@ RUN pnpm install --frozen-lockfile --ignore-scripts
 # distinct from earlier cached variants and prevents a stale dist from masking
 # a failed transform.
 RUN rm -rf packages/server-schema/dist \
- && pnpm -F @proj-airi/server-schema run build \
+ && pnpm -F @proj-nova/server-schema run build \
  && if grep -qE "from ['\"]virtual:" packages/server-schema/dist/index.mjs; then \
       echo "ERROR: server-schema dist/index.mjs still references a virtual: specifier — unplugin-drizzle-orm-migrations transform did not run." >&2; \
       cat packages/server-schema/dist/index.mjs >&2; \
@@ -32,9 +32,9 @@ RUN rm -rf packages/server-schema/dist \
     fi \
  && ls packages/server-schema/dist/virtual_drizzle-migrations-*.mjs >/dev/null
 
-RUN pnpm -F @proj-airi/server-sdk-shared run build
-RUN pnpm -F @proj-airi/server run build
+RUN pnpm -F @proj-nova/server-sdk-shared run build
+RUN pnpm -F @proj-nova/server run build
 
 EXPOSE 3000
 
-CMD ["pnpm", "-F", "@proj-airi/server", "start"]
+CMD ["pnpm", "-F", "@proj-nova/server", "start"]

@@ -1,23 +1,24 @@
 <script setup lang="ts">
 import { defineInvokeHandler } from '@moeru/eventa'
-import { useElectronEventaContext, useElectronEventaInvoke } from '@proj-airi/electron-vueuse'
-import { themeColorFromValue, useThemeColor } from '@proj-airi/stage-layouts/composables/theme-color'
-import { artistrySyncConfig } from '@proj-airi/stage-shared'
-import { ToasterRoot } from '@proj-airi/stage-ui/components'
-import { useInferencePreload } from '@proj-airi/stage-ui/composables'
-import { useSharedAnalyticsStore } from '@proj-airi/stage-ui/stores/analytics'
-import { useCharacterOrchestratorStore } from '@proj-airi/stage-ui/stores/character'
-import { useChatSessionStore } from '@proj-airi/stage-ui/stores/chat/session-store'
-import { usePluginHostInspectorStore } from '@proj-airi/stage-ui/stores/devtools/plugin-host-debug'
-import { useDisplayModelsStore } from '@proj-airi/stage-ui/stores/display-models'
-import { useModsServerChannelStore } from '@proj-airi/stage-ui/stores/mods/api/channel-server'
-import { useContextBridgeStore } from '@proj-airi/stage-ui/stores/mods/api/context-bridge'
-import { useAiriCardStore } from '@proj-airi/stage-ui/stores/modules/airi-card'
-import { useArtistryStore } from '@proj-airi/stage-ui/stores/modules/artistry'
-import { usePerfTracerBridgeStore } from '@proj-airi/stage-ui/stores/perf-tracer-bridge'
-import { listProvidersForPluginHost, shouldPublishPluginHostCapabilities } from '@proj-airi/stage-ui/stores/plugin-host-capabilities'
-import { useSettings, useSettingsAudioDevice } from '@proj-airi/stage-ui/stores/settings'
-import { useTheme } from '@proj-airi/ui'
+import { useElectronEventaContext, useElectronEventaInvoke } from '@proj-nova/electron-vueuse'
+import { themeColorFromValue, useThemeColor } from '@proj-nova/stage-layouts/composables/theme-color'
+import { artistrySyncConfig } from '@proj-nova/stage-shared'
+import { ToasterRoot } from '@proj-nova/stage-ui/components'
+import { useInferencePreload } from '@proj-nova/stage-ui/composables'
+import { useSharedAnalyticsStore } from '@proj-nova/stage-ui/stores/analytics'
+import { useCharacterOrchestratorStore } from '@proj-nova/stage-ui/stores/character'
+import { useChatSessionStore } from '@proj-nova/stage-ui/stores/chat/session-store'
+import { usePluginHostInspectorStore } from '@proj-nova/stage-ui/stores/devtools/plugin-host-debug'
+import { useDisplayModelsStore } from '@proj-nova/stage-ui/stores/display-models'
+import { useModsServerChannelStore } from '@proj-nova/stage-ui/stores/mods/api/channel-server'
+import { useContextBridgeStore } from '@proj-nova/stage-ui/stores/mods/api/context-bridge'
+import { useAiriCardStore } from '@proj-nova/stage-ui/stores/modules/airi-card'
+import { useArtistryStore } from '@proj-nova/stage-ui/stores/modules/artistry'
+import { useTwitchStore } from '@proj-nova/stage-ui/stores/modules/twitch'
+import { usePerfTracerBridgeStore } from '@proj-nova/stage-ui/stores/perf-tracer-bridge'
+import { listProvidersForPluginHost, shouldPublishPluginHostCapabilities } from '@proj-nova/stage-ui/stores/plugin-host-capabilities'
+import { useSettings, useSettingsAudioDevice } from '@proj-nova/stage-ui/stores/settings'
+import { useTheme } from '@proj-nova/ui'
 import { storeToRefs } from 'pinia'
 import { onMounted, onUnmounted, watch } from 'vue'
 import { RouterView, useRoute, useRouter } from 'vue-router'
@@ -48,7 +49,6 @@ import {
   electronPluginSetEnabled,
   electronPluginUnload,
 } from '../shared/eventa/plugin/host'
-import { initializeElectronAuthCallbackBridge } from './bridges/electron-auth-callback'
 import { initializeStageThreeRuntimeTraceBridge } from './bridges/stage-three-runtime-trace'
 import { useLanguage } from './composables/use-language'
 import { useTamagotchiMcpToolsStore } from './stores/mcp-tools'
@@ -58,6 +58,7 @@ import { useStageWindowLifecycleStore } from './stores/stage-window-lifecycle'
 
 const { isDark: dark } = useTheme()
 const contextBridgeStore = useContextBridgeStore()
+const twitchStore = useTwitchStore()
 const displayModelsStore = useDisplayModelsStore()
 const settingsStore = useSettings()
 const { language, themeColorsHue, themeColorsHueDynamic } = storeToRefs(settingsStore)
@@ -80,7 +81,6 @@ const { activeProvider, artistryGlobals, activeModel, defaultPromptPrefix, provi
 const context = useElectronEventaContext()
 usePerfTracerBridgeStore()
 initializeStageThreeRuntimeTraceBridge()
-initializeElectronAuthCallbackBridge()
 void stageWindowLifecycleStore.initializeWindowLifecycleBridge()
 const getServerChannelConfig = useElectronEventaInvoke(electronGetServerChannelConfig)
 const listPlugins = useElectronEventaInvoke(electronPluginList)
@@ -233,6 +233,7 @@ onMounted(async () => {
   }).catch(err => console.error('Failed to initialize Mods Server Channel in App.vue:', err))
   if (!isChatWindowRoute()) {
     contextBridgeStore.initialize()
+    twitchStore.initialize()
     if (!isWidgetsWindowRoute()) {
       characterOrchestratorStore.initialize()
       await startTrackingCursorPoint()

@@ -1,4 +1,4 @@
-# @proj-airi/model-driver-mediapipe
+# @proj-nova/model-driver-mediapipe
 
 Single-person motion capture workshop package.
 

@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/server-sdk-shared",
+  "name": "@proj-nova/server-sdk-shared",
   "type": "module",
   "version": "0.10.2",
   "private": true,

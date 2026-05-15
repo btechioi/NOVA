@@ -1,7 +1,7 @@
 import type { Dirent } from 'node:fs'
 
 import type { useLogg } from '@guiiai/logg'
-import type { ManifestV1 } from '@proj-airi/plugin-sdk/plugin-host'
+import type { ManifestV1 } from '@proj-nova/plugin-sdk/plugin-host'
 
 import type {
   PluginManifestSummary,
@@ -12,10 +12,10 @@ import type { ManifestEntry, PluginConfig } from '../types'
 import { mkdir, readdir, readFile, realpath, stat } from 'node:fs/promises'
 import { dirname, isAbsolute, join, resolve } from 'node:path'
 
-import { manifestV1Schema } from '@proj-airi/plugin-sdk/plugin-host'
+import { manifestV1Schema } from '@proj-nova/plugin-sdk/plugin-host'
 import { safeParse } from 'valibot'
 
-export const pluginManifestFileName = 'plugin.airi.json'
+export const pluginManifestFileName = 'plugin.nova.json'
 
 function isManifestV1(value: unknown): value is ManifestV1 {
   return safeParse(manifestV1Schema, value).success
@@ -50,7 +50,7 @@ async function realPathOf(entry: Dirent<string>, options?: { cwd?: string }): Pr
  * Expects:
  * - Root directory may not exist yet
  * - Each plugin is nested under its own child directory
- * - Each plugin directory may include `plugin.airi.json` and optional `package.json`
+ * - Each plugin directory may include `plugin.nova.json` and optional `package.json`
  *
  * Returns:
  * - Array of validated manifest entries with resolved paths and version metadata

@@ -97,7 +97,7 @@ export async function captureDesktopGrounding(params: {
   // The generic top-N window snapshot is often dominated by system UI and can
   // miss Chrome entirely, which would prevent chrome_dom candidates from being
   // mapped to screen coordinates.
-  let chromeWindowBounds = findChromeWindowBounds(windowObs, foregroundApp)
+  chromeWindowBounds = findChromeWindowBounds(windowObs, foregroundApp)
   if (isChromeInFront && !chromeWindowBounds) {
     try {
       const chromeWindows = await executor.observeWindows({

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { createToolResultError, MarkdownRenderer, normalizeToolResultText } from '@proj-airi/stage-ui/components'
-import { useJournalPreviewStore } from '@proj-airi/stage-ui/stores/journal-preview'
-import { Collapsible, ContainerError } from '@proj-airi/ui'
+import { createToolResultError, MarkdownRenderer, normalizeToolResultText } from '@proj-nova/stage-ui/components'
+import { useJournalPreviewStore } from '@proj-nova/stage-ui/stores/journal-preview'
+import { Collapsible, ContainerError } from '@proj-nova/ui'
 import { computed } from 'vue'
 
 const props = defineProps<{

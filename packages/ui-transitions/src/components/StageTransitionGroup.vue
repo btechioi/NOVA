@@ -59,7 +59,6 @@ export type TransitionStage
 
 // Define hook types
 type TransitionHook = (stage: TransitionStage, data: any) => void | Promise<void>
-type NavigationCallback = () => void
 
 interface TransitionOptions {
   component: TransitionComponent
@@ -130,18 +129,16 @@ async function triggerHooks(stage: TransitionStage, data: any = {}) {
   }
 }
 
-async function triggerTransitionAsyncFn(params: StageTransitionCommonParams, next: NavigationCallback, resolve: (value: void | PromiseLike<void>) => void) {
+async function triggerTransitionAsyncFn(params: StageTransitionCommonParams, navigate: (value: boolean) => void) {
   if (params.name === 'none' || !params.name) {
-    next()
-    resolve()
+    navigate(true)
     return
   }
 
   const transition = transitions.value[params.name]
   if (!transition) {
     console.error(`Transition ${params.name} not found`)
-    next()
-    resolve()
+    navigate(true)
     return
   }
 
@@ -156,7 +153,7 @@ async function triggerTransitionAsyncFn(params: StageTransitionCommonParams, nex
   const navigationHook = (stage: TransitionStage) => {
     if (stage === 'navigation' && !hasNavigated) {
       hasNavigated = true
-      next()
+      navigate(true)
     }
   }
 
@@ -195,7 +192,7 @@ async function triggerTransitionAsyncFn(params: StageTransitionCommonParams, nex
       // Ensure navigation happens even if no hook handled it
       if (!hasNavigated) {
         hasNavigated = true
-        next()
+        navigate(true)
       }
     }, navTiming)
 
@@ -221,7 +218,6 @@ async function triggerTransitionAsyncFn(params: StageTransitionCommonParams, nex
       activeTransitionName.value = ''
       activeStageTransitionParams.value = undefined
       await triggerHooks('after-leave', { transitionName: params.name })
-      resolve()
     }, transition.duration + totalDuration)
   }
   catch (error) {
@@ -235,52 +231,42 @@ async function triggerTransitionAsyncFn(params: StageTransitionCommonParams, nex
     setTimeout(() => {
       if (!hasNavigated) {
         hasNavigated = true
-        next()
+        navigate(true)
       }
     }, transition.duration * 2) // Conservative timeout
   }
 }
 
 // Improved transition trigger with navigation callback
-function triggerTransition(params: StageTransitionCommonParams, next: NavigationCallback) {
-  return new Promise<void>((resolve) => {
-    triggerTransitionAsyncFn(params, next, resolve)
+function triggerTransition(params: StageTransitionCommonParams): Promise<boolean> {
+  return new Promise<boolean>((resolve) => {
+    triggerTransitionAsyncFn(params, resolve)
   })
 }
 
-router.beforeEach((to, _from, next) => {
-  if (props.disableTransitions) {
-    next()
-    return
-  }
+router.beforeEach((to, _from) => {
+  if (props.disableTransitions)
+    return true
 
-  if (typeof to.meta.stageTransition !== 'object') {
-    next()
-    return
-  }
+  if (typeof to.meta.stageTransition !== 'object')
+    return true
 
   const stageTransition = to.meta.stageTransition as StageTransitionCommonParams
-  if (props.usePageSpecificTransitions && stageTransition.pageSpecificAvailable) {
-    next()
-    return
-  }
-  if (typeof props.primaryColor !== 'undefined') {
-    stageTransition.primaryColor = props.primaryColor
-  }
-  if (typeof props.secondaryColor !== 'undefined') {
-    stageTransition.secondaryColor = props.secondaryColor
-  }
-  if (typeof props.tertiaryColor !== 'undefined') {
-    stageTransition.tertiaryColor = props.tertiaryColor
-  }
-  if (typeof props.colors !== 'undefined') {
-    stageTransition.colors = props.colors
-  }
-  if (typeof props.zIndex !== 'undefined') {
-    stageTransition.zIndex = props.zIndex
-  }
+  if (props.usePageSpecificTransitions && stageTransition.pageSpecificAvailable)
+    return true
 
-  triggerTransition(stageTransition, next)
+  if (typeof props.primaryColor !== 'undefined')
+    stageTransition.primaryColor = props.primaryColor
+  if (typeof props.secondaryColor !== 'undefined')
+    stageTransition.secondaryColor = props.secondaryColor
+  if (typeof props.tertiaryColor !== 'undefined')
+    stageTransition.tertiaryColor = props.tertiaryColor
+  if (typeof props.colors !== 'undefined')
+    stageTransition.colors = props.colors
+  if (typeof props.zIndex !== 'undefined')
+    stageTransition.zIndex = props.zIndex
+
+  return triggerTransition(stageTransition)
 })
 </script>
 

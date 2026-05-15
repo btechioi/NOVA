@@ -1,7 +1,7 @@
 /* eslint-disable style/indent-binary-ops */
 /* eslint-disable style/operator-linebreak */
 
-import type { WebSocketEventOf } from '@proj-airi/server-sdk'
+import type { WebSocketEventOf } from '@proj-nova/server-sdk'
 import type { Store, StoreDefinition } from 'pinia'
 import type { Mock } from 'vitest'
 import type { UnwrapRef } from 'vue'
@@ -213,7 +213,7 @@ describe('store character-orchestrator', () => {
     const store = useCharacterOrchestratorStore()
     const event: WebSocketEventOf<'spark:notify'> = {
       type: 'spark:notify',
-      source: 'plugin:airi-plugin-game-chess',
+      source: 'plugin:nova-plugin-game-chess',
       data: {
         id: nanoid(),
         eventId: nanoid(),
@@ -302,7 +302,7 @@ describe('store character-orchestrator', () => {
     const store = useCharacterOrchestratorStore()
     const event: WebSocketEventOf<'spark:notify'> = {
       type: 'spark:notify',
-      source: 'plugin:airi-plugin-game-chess',
+      source: 'plugin:nova-plugin-game-chess',
       data: {
         id: nanoid(),
         eventId: nanoid(),

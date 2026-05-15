@@ -1,4 +1,4 @@
-# `@proj-airi/stage-tamagotchi-godot`
+# `@proj-nova/stage-tamagotchi-godot`
 
 Godot-native desktop stage runtime project for `stage-tamagotchi`.
 
@@ -41,8 +41,8 @@ Godot-native desktop stage runtime project for `stage-tamagotchi`.
 
 ## Build
 
-- `pnpm -F @proj-airi/stage-tamagotchi-godot build`
-- `pnpm -F @proj-airi/stage-tamagotchi-godot typecheck`
+- `pnpm -F @proj-nova/stage-tamagotchi-godot build`
+- `pnpm -F @proj-nova/stage-tamagotchi-godot typecheck`
 
 Both commands currently run `dotnet build` against the Godot-generated C# project file.
 
@@ -103,7 +103,7 @@ into `resources/godot-stage` via `extraResources`. To inspect an unpacked
 Electron build locally, run:
 
 ```bash
-pnpm -F @proj-airi/stage-tamagotchi run build:unpack
+pnpm -F @proj-nova/stage-tamagotchi run build:unpack
 ```
 
 ## Notes

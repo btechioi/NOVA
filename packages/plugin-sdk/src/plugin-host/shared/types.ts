@@ -6,7 +6,7 @@ import type {
   ModulePermissionGrant as ProtocolModulePermissionGrant,
   ModulePhase as ProtocolModulePhase,
   PluginIdentity as ProtocolPluginIdentity,
-} from '@proj-airi/plugin-protocol/types'
+} from '@proj-nova/plugin-protocol/types'
 
 import type { PluginTransport } from '../transports'
 import type { KitDescriptor } from './kits'
@@ -191,7 +191,7 @@ export const nonNegativeIntegerSchema = pipe(number(), safeInteger(), minValue(0
  * Re-exports the protocol module phase literals used by the host.
  *
  * Use when:
- * - Typing module lifecycle phases shared with `@proj-airi/plugin-protocol`
+ * - Typing module lifecycle phases shared with `@proj-nova/plugin-protocol`
  *
  * Expects:
  * - Values follow the protocol package lifecycle model

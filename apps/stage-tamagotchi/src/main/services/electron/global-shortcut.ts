@@ -1,10 +1,10 @@
 import type { createContext } from '@moeru/eventa/adapters/electron/main'
-import type { ShortcutBinding, ShortcutRegistrationResult } from '@proj-airi/stage-shared/global-shortcut'
+import type { ShortcutBinding, ShortcutRegistrationResult } from '@proj-nova/stage-shared/global-shortcut'
 import type { BrowserWindow } from 'electron'
 
 import { useLogg } from '@guiiai/logg'
 import { defineInvokeHandler } from '@moeru/eventa'
-import { formatElectronAccelerator, ShortcutFailureReasons } from '@proj-airi/stage-shared/global-shortcut'
+import { formatElectronAccelerator, ShortcutFailureReasons } from '@proj-nova/stage-shared/global-shortcut'
 import { globalShortcut } from 'electron'
 
 import {

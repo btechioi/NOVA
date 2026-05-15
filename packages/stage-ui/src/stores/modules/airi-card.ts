@@ -1,6 +1,6 @@
-import type { Card, ccv3 } from '@proj-airi/ccc'
+import type { Card, ccv3 } from '@proj-nova/ccc'
 
-import { useLocalStorageManualReset } from '@proj-airi/stage-shared/composables'
+import { useLocalStorageManualReset } from '@proj-nova/stage-shared/composables'
 import { watchDebounced } from '@vueuse/core'
 import { nanoid } from 'nanoid'
 import { defineStore, storeToRefs } from 'pinia'
@@ -286,7 +286,7 @@ export const useAiriCardStore = defineStore('airi-card', () => {
     if (cards.value.has('default'))
       return
     cards.value.set('default', newAiriCard({
-      name: 'ReLU',
+      name: 'NOVA',
       version: '1.0.0',
       description: SystemPromptV2(
         t('base.prompt.prefix'),

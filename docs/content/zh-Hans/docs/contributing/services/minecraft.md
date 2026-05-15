@@ -22,7 +22,7 @@ cp .env .env.local
 启动机器人：
 
 ```shell
-pnpm -F @proj-airi/minecraft-bot start
+pnpm -F @proj-nova/minecraft-bot start
 ```
 
 ::: tip
@@ -30,7 +30,7 @@ pnpm -F @proj-airi/minecraft-bot start
 如果你使用 [@antfu/ni](https://github.com/antfu-collective/ni)，你可以：
 
 ```shell
-nr -F @proj-airi/minecraft-bot dev
+nr -F @proj-nova/minecraft-bot dev
 ```
 
 :::

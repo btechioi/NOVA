@@ -25,7 +25,7 @@ jobs:
     name: Build iOS
     runs-on: macos-26
     env:
-      PRODUCT_NAME: 'AIRI'
+      PRODUCT_NAME: 'NOVA'
       VITE_ENABLE_POSTHOG: 'true'
       UPLOAD_TESTFLIGHT: ${{ github.event_name == 'release' || (github.event_name == 'workflow_dispatch' && inputs.testflight) }}
       RELEASE_TAG: ${{ github.event.release.tag_name || inputs.tag }}
@@ -44,10 +44,10 @@ jobs:
       - run: pnpm run build:packages
 
       - name: Build assets
-        run: pnpm -F @proj-airi/stage-pocket run build
+        run: pnpm -F @proj-nova/stage-pocket run build
 
       - name: Sync assets to iOS
-        run: pnpm -F @proj-airi/stage-pocket exec cap sync ios
+        run: pnpm -F @proj-nova/stage-pocket exec cap sync ios
 
       - name: Install Apple certificate
         env:

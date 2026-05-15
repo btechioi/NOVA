@@ -16,6 +16,9 @@ import { Download } from '@proj-airi/unplugin-fetch'
 import { DownloadLive2DSDK } from '@proj-airi/unplugin-live2d-sdk'
 import { defineConfig } from 'electron-vite'
 
+import { EdgeTTSProxy } from '../../packages/stage-shared/src/vite/edge-tts-proxy'
+import { SuppressSourcemapWarnings } from '../../packages/stage-shared/src/vite/suppress-sourcemap-warnings'
+
 const stageUIAssetsRoot = resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-ui', 'src', 'assets'))
 const sharedCacheDir = resolve(join(import.meta.dirname, '..', '..', '.cache'))
 
@@ -68,9 +71,9 @@ export default defineConfig({
 
     resolve: {
       alias: {
-        '@proj-airi/i18n': resolve(join(import.meta.dirname, '..', '..', 'packages', 'i18n', 'src')),
-        '@proj-airi/server-runtime/server': resolve(join(import.meta.dirname, '..', '..', 'packages', 'server-runtime', 'src', 'server', 'index.ts')),
-        '@proj-airi/server-runtime': resolve(join(import.meta.dirname, '..', '..', 'packages', 'server-runtime', 'src', 'index.ts')),
+        '@proj-nova/i18n': resolve(join(import.meta.dirname, '..', '..', 'packages', 'i18n', 'src')),
+        '@proj-nova/server-runtime/server': resolve(join(import.meta.dirname, '..', '..', 'packages', 'server-runtime', 'src', 'server', 'index.ts')),
+        '@proj-nova/server-runtime': resolve(join(import.meta.dirname, '..', '..', 'packages', 'server-runtime', 'src', 'index.ts')),
       },
     },
   },
@@ -105,10 +108,10 @@ export default defineConfig({
     optimizeDeps: {
       exclude: [
         // Internal Packages
-        '@proj-airi/stage-ui/*',
+        '@proj-nova/stage-ui/*',
         '@proj-airi/drizzle-duckdb-wasm',
         '@proj-airi/drizzle-duckdb-wasm/*',
-        '@proj-airi/electron-screen-capture',
+        '@proj-nova/electron-screen-capture',
 
         // Static Assets: Models, Images, etc.
         'src/renderer/public/assets/*',
@@ -133,16 +136,16 @@ export default defineConfig({
 
     resolve: {
       alias: {
-        '@proj-airi/server-sdk': resolve(join(import.meta.dirname, '..', '..', 'packages', 'server-sdk', 'src')),
-        '@proj-airi/i18n': resolve(join(import.meta.dirname, '..', '..', 'packages', 'i18n', 'src')),
-        // NOTICE: the @proj-airi/stage-ui alias resolves to a directory; rolldown
+        '@proj-nova/server-sdk': resolve(join(import.meta.dirname, '..', '..', 'packages', 'server-sdk', 'src')),
+        '@proj-nova/i18n': resolve(join(import.meta.dirname, '..', '..', 'packages', 'i18n', 'src')),
+        // NOTICE: the @proj-nova/stage-ui alias resolves to a directory; rolldown
         // concatenates sub-paths without a file extension, so bare .ts files at the
         // stores/ root (e.g. mcp-tool-bridge.ts) are not found.  Add explicit aliases
-        // for each such file that the renderer imports from @proj-airi/stage-ui.
-        '@proj-airi/stage-ui/stores/mcp-tool-bridge': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-ui', 'src', 'stores', 'mcp-tool-bridge.ts')),
-        '@proj-airi/stage-ui': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-ui', 'src')),
-        '@proj-airi/stage-pages': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-pages', 'src')),
-        '@proj-airi/stage-shared': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-shared', 'src')),
+        // for each such file that the renderer imports from @proj-nova/stage-ui.
+        '@proj-nova/stage-ui/stores/mcp-tool-bridge': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-ui', 'src', 'stores', 'mcp-tool-bridge.ts')),
+        '@proj-nova/stage-ui': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-ui', 'src')),
+        '@proj-nova/stage-pages': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-pages', 'src')),
+        '@proj-nova/stage-shared': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-shared', 'src')),
       },
     },
 
@@ -160,6 +163,13 @@ export default defineConfig({
           `${resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-pages', 'src'))}/*.vue`,
         ],
       },
+      proxy: {
+        '/api/proxy/tts/5050': {
+          target: 'http://localhost:5050',
+          changeOrigin: true,
+          rewrite: path => path.replace(/^\/api\/proxy\/tts\/5050/, ''),
+        },
+      },
     },
 
     worker: {
@@ -172,10 +182,12 @@ export default defineConfig({
     },
 
     plugins: [
+      SuppressSourcemapWarnings(),
+      EdgeTTSProxy(),
       Info(),
 
       {
-        name: 'proj-airi:defines',
+        name: 'proj-nova:defines',
         config(ctx) {
           const define: Record<string, any> = {
             'import.meta.env.RUNTIME_ENVIRONMENT': '\'electron\'',

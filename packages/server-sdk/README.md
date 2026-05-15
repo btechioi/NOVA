@@ -1,18 +1,18 @@
-# @proj-airi/server-sdk
+# @proj-nova/server-sdk
 
 The SDK for cliet-side code to connect to the server-side components.
 
 ## Usage
 
 ```shell
-ni @proj-airi/server-sdk -D # from @antfu/ni, can be installed via `npm i -g @antfu/ni`
-pnpm i @proj-airi/server-sdk -D
-yarn i @proj-airi/server-sdk -D
-npm i @proj-airi/server-sdk -D
+ni @proj-nova/server-sdk -D # from @antfu/ni, can be installed via `npm i -g @antfu/ni`
+pnpm i @proj-nova/server-sdk -D
+yarn i @proj-nova/server-sdk -D
+npm i @proj-nova/server-sdk -D
 ```
 
 ```typescript
-import { Client } from '@proj-airi/server-sdk'
+import { Client } from '@proj-nova/server-sdk'
 
 const client = new Client({
   name: 'your airi plugin',

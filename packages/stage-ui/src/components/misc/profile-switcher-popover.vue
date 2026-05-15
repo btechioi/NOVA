@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { Select } from '@proj-airi/ui'
-import { onClickOutside } from '@vueuse/core'
+import { Select } from '@proj-nova/ui'
 import { storeToRefs } from 'pinia'
 import { computed, nextTick, ref, toRaw, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -29,7 +28,6 @@ const { cards, activeCardId, activeCard } = storeToRefs(cardStore)
 const creatingNew = ref(false)
 const newProfileName = ref('')
 const nameInputRef = ref<HTMLInputElement>()
-const containerRef = ref<HTMLElement>()
 
 const cardsList = computed(() =>
   Array.from(cards.value.entries()).map(([id, card]) => ({ id, name: card.name })),
@@ -85,11 +83,6 @@ watch(selectedProfile, (value, previousValue) => {
   }
 
   handleSelection(value)
-})
-
-onClickOutside(containerRef, () => {
-  open.value = false
-  cancelCreate()
 })
 
 function handleSelection(value: ProfileSelectValue) {
@@ -150,7 +143,7 @@ function toggleOpen() {
 </script>
 
 <template>
-  <div ref="containerRef" :class="['relative inline-flex flex-col items-end gap-2']">
+  <div :class="['relative inline-flex flex-col items-end gap-2']">
     <!-- Electron -->
     <div
       v-if="$slots.default"

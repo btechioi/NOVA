@@ -1,6 +1,6 @@
 import type { ContextMessage } from '../../../types/chat'
 
-import { ContextUpdateStrategy } from '@proj-airi/server-sdk'
+import { ContextUpdateStrategy } from '@proj-nova/server-sdk'
 import { nanoid } from 'nanoid'
 
 import { useMinecraftStore } from '../../modules/gaming-minecraft'

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { VoiceInfo } from '../../../stores/providers'
 
-import { FieldCheckbox, FieldCombobox } from '@proj-airi/ui'
+import { FieldCheckbox, FieldCombobox } from '@proj-nova/ui'
 import { computed, onUnmounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 

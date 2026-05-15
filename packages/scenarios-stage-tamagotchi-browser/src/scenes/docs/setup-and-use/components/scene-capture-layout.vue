@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ScenarioCanvas, ScreenMarupsProvider, ScreenRouterCaptureRoot } from '@proj-airi/vishot-runtime/vue'
+import { ScenarioCanvas, ScreenMarupsProvider, ScreenRouterCaptureRoot } from '@proj-nova/vishot-runtime/vue'
 
 import Icon from '../../../../components/icon.vue'
 

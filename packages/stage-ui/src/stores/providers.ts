@@ -21,8 +21,8 @@ import type {
 import type { ProviderOnboardingField } from '../libs/providers/types'
 import type { AliyunRealtimeSpeechExtraOptions } from './providers/aliyun/stream-transcription'
 
-import { isStageTamagotchi, isUrl } from '@proj-airi/stage-shared'
-import { getCachedWebGPUCapabilities, isWebGPUSupported } from '@proj-airi/stage-shared/webgpu'
+import { isStageTamagotchi, isUrl } from '@proj-nova/stage-shared'
+import { getCachedWebGPUCapabilities, isWebGPUSupported } from '@proj-nova/stage-shared/webgpu'
 import { computedAsync, useIntervalFn, useLocalStorage } from '@vueuse/core'
 import {
   createOpenAI,
@@ -51,9 +51,9 @@ import { useI18n } from 'vue-i18n'
 import { getKokoroAdapter } from '../libs/inference/adapters/kokoro'
 import { getProviderValidationIntervalMs, listProviders as listDefinedProviders, ProviderValidationCheck } from '../libs/providers'
 import { getDefaultKokoroModel, KOKORO_MODELS, kokoroModelsToModelInfo } from '../workers/kokoro/constants'
-import { useAuthStore } from './auth'
 import { createAliyunNLSProvider as createAliyunNlsStreamProvider } from './providers/aliyun/stream-transcription'
 import { convertProviderDefinitionsToMetadata } from './providers/converters'
+import { createEdgeTTSProvider, EDGE_TTS_VOICES } from './providers/edge-tts'
 import { models as elevenLabsModels } from './providers/elevenlabs/list-models'
 import { buildOpenAICompatibleProvider } from './providers/openai-compatible-builder'
 import { buildOpenRouterAudioSpeechProvider } from './providers/openrouter/audio-speech'
@@ -263,7 +263,6 @@ export const useProvidersStore = defineStore('providers', () => {
   }
 
   // Centralized provider metadata with provider factory functions
-  const authState = useAuthStore()
   const providerMetadata: Record<string, ProviderMetadata> = {
     'speech-noop': {
       id: 'speech-noop',
@@ -2236,6 +2235,37 @@ export const useProvidersStore = defineStore('providers', () => {
         },
       },
     },
+    'edge-tts': {
+      id: 'edge-tts',
+      category: 'speech',
+      tasks: ['text-to-speech', 'tts'],
+      nameKey: 'settings.pages.providers.provider.edge-tts.title',
+      name: 'Microsoft Edge TTS',
+      descriptionKey: 'settings.pages.providers.provider.edge-tts.description',
+      description: 'Free Microsoft Edge TTS endpoint',
+      icon: 'i-lobe-icons:microsoft',
+      requiresCredentials: false,
+      createProvider: async _config => createEdgeTTSProvider(),
+      capabilities: {
+        listVoices: async () => EDGE_TTS_VOICES.map(voice => ({
+          ...voice,
+          provider: 'edge-tts',
+          languages: [{ code: voice.lang, title: voice.lang }],
+          compatibleModels: ['edge-tts'],
+        })),
+        listModels: async () => [{
+          id: 'edge-tts',
+          name: 'Edge TTS',
+          provider: 'edge-tts',
+          description: 'Edge TTS Synthesizer',
+          contextLength: 0,
+        }],
+      },
+      validators: {
+        chatPingCheckAvailable: false,
+        validateProviderConfig: () => ({ errors: [], reason: '', valid: true }),
+      },
+    },
   }
 
   // Progressive migration bridge:
@@ -2424,8 +2454,6 @@ export const useProvidersStore = defineStore('providers', () => {
   // Call initially and watch for changes
   watch(providerCredentials, updateConfigurationStatus, { deep: true, immediate: true })
   startPeriodicRuntimeValidation()
-
-  watch(() => authState.isAuthenticated, updateConfigurationStatus)
 
   // Available providers (only those that are properly configured)
   const availableProviders = computed(() => Object.keys(providerMetadata).filter(providerId => providerRuntimeState.value[providerId]?.isConfigured))

@@ -1,6 +1,6 @@
 ---
 title: Configuration Guide
-description: How to use Project AIRI
+description: How to use Project NOVA
 ---
 
 ## Settings

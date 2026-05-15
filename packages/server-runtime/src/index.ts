@@ -3,7 +3,7 @@ import type {
   MetadataEventSource,
   WebSocketBaseEvent,
   WebSocketEvent,
-} from '@proj-airi/server-shared/types'
+} from '@proj-nova/server-shared/types'
 
 import type {
   RouteMiddleware,
@@ -20,11 +20,11 @@ import { errorMessageFrom } from '@moeru/std'
 import {
   createInvalidJsonServerErrorMessage,
   ServerErrorMessages,
-} from '@proj-airi/server-shared'
+} from '@proj-nova/server-shared'
 import {
   MessageHeartbeat,
   MessageHeartbeatKind,
-} from '@proj-airi/server-shared/types'
+} from '@proj-nova/server-shared/types'
 import { defineWebSocketHandler, H3 } from 'h3'
 import { nanoid } from 'nanoid'
 
@@ -239,8 +239,8 @@ export function setupApp(options?: AppOptions): { app: H3, closeAllPeers: () => 
 
   const { appLogLevel, appLogFormat, websocketLogLevel, websocketLogFormat } = normalizeLoggerConfig(options)
 
-  const appLogger = useLogg('@proj-airi/server-runtime').withLogLevel(logLevelStringToLogLevelMap[appLogLevel]).withFormat(appLogFormat)
-  const logger = useLogg('@proj-airi/server-runtime:websocket').withLogLevel(logLevelStringToLogLevelMap[websocketLogLevel]).withFormat(websocketLogFormat)
+  const appLogger = useLogg('@proj-nova/server-runtime').withLogLevel(logLevelStringToLogLevelMap[appLogLevel]).withFormat(appLogFormat)
+  const logger = useLogg('@proj-nova/server-runtime:websocket').withLogLevel(logLevelStringToLogLevelMap[websocketLogLevel]).withFormat(websocketLogFormat)
 
   const app = new H3({
     onError: error => appLogger.withError(error).error('an error occurred'),

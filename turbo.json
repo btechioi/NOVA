@@ -4,12 +4,24 @@
     "build": {
       "outputs": ["dist/**"]
     },
-    "@proj-airi/server-schema#build": {
+    "@proj-nova/server-schema#build": {
       "cache": false
     },
-    "@proj-airi/electron-vueuse#build": {
-      "dependsOn": ["@proj-airi/electron-eventa#build"],
+    "@proj-nova/electron-vueuse#build": {
+      "dependsOn": ["@proj-nova/electron-eventa#build"],
       "outputs": ["dist/**"]
+    },
+    "@proj-nova/stage-ui#build": {
+      "outputs": []
+    },
+    "@proj-nova/ui-loading-screens#build": {
+      "outputs": []
+    },
+    "@proj-nova/ui-transitions#build": {
+      "outputs": []
+    },
+    "@proj-nova/vishot-runtime#build": {
+      "outputs": []
     }
   }
 }

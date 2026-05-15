@@ -1,9 +1,9 @@
-import type { Client, ContextUpdate, ModuleAnnouncedEvent } from '@proj-airi/server-sdk'
+import type { Client, ContextUpdate, ModuleAnnouncedEvent } from '@proj-nova/server-sdk'
 
 import type { EventBus } from '../cognitive/event-bus'
 
 import { useLogg } from '@guiiai/logg'
-import { ContextUpdateStrategy } from '@proj-airi/server-sdk'
+import { ContextUpdateStrategy } from '@proj-nova/server-sdk'
 import { nanoid } from 'nanoid'
 
 interface SparkCommandData {
@@ -117,7 +117,7 @@ export class AiriBridge {
         urgency,
         headline,
         note,
-        destinations: ['proj-airi:stage-*'],
+        destinations: ['proj-nova:stage-*'],
       },
     } as Parameters<typeof this.client.send>[0])
     this.logger.log('Sent spark:notify', { headline, urgency })

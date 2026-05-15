@@ -5,11 +5,11 @@ import {
   Alert,
   SpeechPlayground,
   SpeechProviderSettings,
-} from '@proj-airi/stage-ui/components'
-import { useProviderValidation } from '@proj-airi/stage-ui/composables/use-provider-validation'
-import { useSpeechStore } from '@proj-airi/stage-ui/stores/modules/speech'
-import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
-import { FieldCombobox, FieldTextArea } from '@proj-airi/ui'
+} from '@proj-nova/stage-ui/components'
+import { useProviderValidation } from '@proj-nova/stage-ui/composables/use-provider-validation'
+import { useSpeechStore } from '@proj-nova/stage-ui/stores/modules/speech'
+import { useProvidersStore } from '@proj-nova/stage-ui/stores/providers'
+import { FieldCombobox, FieldTextArea } from '@proj-nova/ui'
 import { storeToRefs } from 'pinia'
 import { computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -61,6 +61,13 @@ const modelOptions = computed(() => {
   }))
 })
 
+const model = computed({
+  get: () => config.value?.model || defaultModel,
+  set: (value) => {
+    ensureProviderConfig().model = value
+  },
+})
+
 const availableVoices = computed(() => speechStore.availableVoices[providerId] || [])
 
 const isVoiceDesignModel = computed(() => model.value === 'mimo-v2.5-tts-voicedesign')
@@ -83,13 +90,6 @@ const stylePromptDescription = computed(() => {
   }
 
   return 'Natural-language control sent as the user message. You can leave it empty for a neutral delivery.'
-})
-
-const model = computed({
-  get: () => config.value?.model || defaultModel,
-  set: (value) => {
-    ensureProviderConfig().model = value
-  },
 })
 
 const stylePrompt = computed({

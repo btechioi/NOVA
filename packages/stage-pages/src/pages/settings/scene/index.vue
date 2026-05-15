@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Section } from '@proj-airi/stage-ui/components'
-import { useAiriCardStore, useBackgroundStore } from '@proj-airi/stage-ui/stores'
-import { Button, Callout } from '@proj-airi/ui'
+import { Section } from '@proj-nova/stage-ui/components'
+import { useAiriCardStore, useBackgroundStore } from '@proj-nova/stage-ui/stores'
+import { Button, Callout } from '@proj-nova/ui'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -51,7 +51,8 @@ function setAsBackground(id: string) {
 }
 
 function removeBackground(id: string) {
-  if (confirm(t('settings.pages.scene.gallery.delete_confirm', 'Are you sure you want to delete this background?'))) {
+  // eslint-disable-next-line no-alert
+  if (globalThis.confirm(t('settings.pages.scene.gallery.delete_confirm', 'Are you sure you want to delete this background?'))) {
     backgroundStore.removeBackground(id)
   }
 }

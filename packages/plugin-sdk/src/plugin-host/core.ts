@@ -49,7 +49,7 @@ import {
   modulePrepared,
   moduleStatus,
   registryModulesSync,
-} from '@proj-airi/plugin-protocol/types'
+} from '@proj-nova/plugin-protocol/types'
 import { createActor, createMachine } from 'xstate'
 
 import { createApis as createBoundApis } from '../plugin/apis/client'

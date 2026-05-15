@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/server-schema",
+  "name": "@proj-nova/server-schema",
   "type": "module",
   "version": "0.10.2",
   "private": true,

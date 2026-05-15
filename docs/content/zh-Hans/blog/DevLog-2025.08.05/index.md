@@ -172,7 +172,7 @@ Tamagotchi 是 AIRI 桌面版本的名称，你可以让它作为独立的、
 #### 本地 ASR/STT
 
 感谢 [@luoling8192 (Luoling)](https://github.com/luoling8192)，以及我们在仓库
-[candle-examples](https://github.com/proj-airi/candle-examples) 中进行的实验，
+[candle-examples](https://github.com/proj-nova/candle-examples) 中进行的实验，
 我们现在有了一个在 Windows、macOS 和 Linux 上工作的本地 ASR/STT 引擎。
 
 <video autoplay controls muted loop playsinline>
@@ -529,16 +529,16 @@ nix run --extra-experimental-features 'nix-command flakes' github:moeru-ai/airi
 
 > 大声喊出 [@sumimakito](https://github.com/sumimakito)，她做了这么多惊人的事情... 我甚至数不清...
 
-- [`@proj-airi/chromatic`](https://github.com/proj-airi/chromatic)（由 [@sumimakito](https://github.com/sumimakito) 制作）
-- [`@proj-airi/unocss-preset-chromatic`](https://github.com/proj-airi/chromatic)（由 [@sumimakito](https://github.com/sumimakito) 制作）
+- [`@proj-nova/chromatic`](https://github.com/proj-nova/chromatic)（由 [@sumimakito](https://github.com/sumimakito) 制作）
+- [`@proj-nova/unocss-preset-chromatic`](https://github.com/proj-nova/chromatic)（由 [@sumimakito](https://github.com/sumimakito) 制作）
 - [`@moeru-ai/jem`](https://github.com/moeru-ai/inventory/tree/main/packages/jem-validator)（由 [@LemonNekoGH](https://github.com/LemonNekoGH) 制作），统一模型目录
 - [`clustr`](https://github.com/sumimakito/clustr)（由 [@sumimakito](https://github.com/sumimakito) 制作）
-- [`@proj-airi/drizzle-orm-browser`](https://github.com/proj-airi/drizzle-orm-browser)（由我制作）
+- [`@proj-nova/drizzle-orm-browser`](https://github.com/proj-nova/drizzle-orm-browser)（由我制作）
 
 在这个版本之间诞生的副项目：
 
 - [HuggingFace Inspector](https://hf-inspector.moeru.ai/) (https://github.com/moeru-ai/hf-inspector)
-- [关于 whisper & VAD、candle、burn 和 ort 的更多 candle 示例](https://github.com/proj-airi/candle-examples)
+- [关于 whisper & VAD、candle、burn 和 ort 的更多 candle 示例](https://github.com/proj-nova/candle-examples)
 - [（模型目录）Inventory 提交！](https://github.com/moeru-ai/inventory/pull/1)（由 [@LemonNekoGH](https://github.com/LemonNekoGH) 制作）
 
 我们无法在这篇 DevLog 中涵盖所有内容，有关详细信息，你总是可以跟踪和回顾

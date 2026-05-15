@@ -1,9 +1,9 @@
 import type { Attributes } from '@opentelemetry/api'
 import type { ReadableSpan } from '@opentelemetry/sdk-trace-base'
-import type { IOSpan, IOSubsystem, IOTurn } from '@proj-airi/stage-shared'
+import type { IOSpan, IOSubsystem, IOTurn } from '@proj-nova/stage-shared'
 
 import { hrTimeToMilliseconds, hrTimeToNanoseconds } from '@opentelemetry/core'
-import { IOAttributes, IOEvents, IOSpanNames, IOSubsystems } from '@proj-airi/stage-shared'
+import { IOAttributes, IOEvents, IOSpanNames, IOSubsystems } from '@proj-nova/stage-shared'
 import { defineStore } from 'pinia'
 import { computed, ref, triggerRef } from 'vue'
 

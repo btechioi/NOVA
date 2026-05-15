@@ -1,9 +1,9 @@
-import type { ContextUpdate, ModuleAnnouncedEvent } from '@proj-airi/server-sdk'
+import type { ContextUpdate, ModuleAnnouncedEvent } from '@proj-nova/server-sdk'
 
 import type { MineflayerWithAgents } from '../cognitive/types'
 import type { AiriBridge } from './airi-bridge'
 
-import { ContextUpdateStrategy } from '@proj-airi/server-sdk'
+import { ContextUpdateStrategy } from '@proj-nova/server-sdk'
 import { nanoid } from 'nanoid'
 
 interface MinecraftStatusSnapshot {

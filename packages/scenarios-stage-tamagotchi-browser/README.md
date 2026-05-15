@@ -9,7 +9,7 @@ This package is the tamagotchi browser composition layer. It contains:
 - the Vite/Vue scene app
 - the scene composition components and capture roots
 - file-based scene routing from `src/scenes/**` via `unplugin-vue-router`
-- the `capture` script that exports final browser captures through `@proj-airi/vishot-runner-browser`
+- the `capture` script that exports final browser captures through `@proj-nova/vishot-runner-browser`
 
 It expects raw business screenshots to exist in `artifacts/raw` before final export runs.
 
@@ -31,11 +31,11 @@ Current docs capture target route:
 From repo root, run:
 
 ```bash
-pnpm -F @proj-airi/vishot-runner-electron capture ../../packages/scenarios-stage-tamagotchi-electron/src/scenarios/demo-controls-settings-chat-websocket/index.ts --output-dir ../../packages/scenarios-stage-tamagotchi-browser/artifacts/raw --format avif
-pnpm -F @proj-airi/scenarios-stage-tamagotchi-browser capture --format avif --route '/docs/setup-and-use/intro-chat' --output-dir ../../docs/content/en/docs/manual/tamagotchi/setup-and-use/assets --settle-ms 800
-pnpm -F @proj-airi/scenarios-stage-tamagotchi-browser capture --format avif --route '/docs/setup-and-use/intro-websocket' --output-dir ../../docs/content/en/docs/manual/tamagotchi/setup-and-use/assets --settle-ms 800
-pnpm -F @proj-airi/scenarios-stage-tamagotchi-browser capture --format avif --route '/docs/setup-and-use/main-window' --output-dir ../../docs/content/en/docs/manual/tamagotchi/setup-and-use/assets --settle-ms 800
-pnpm -F @proj-airi/scenarios-stage-tamagotchi-browser capture --format avif --route '/docs/setup-and-use/settings' --output-dir ../../docs/content/en/docs/manual/tamagotchi/setup-and-use/assets --settle-ms 800
+pnpm -F @proj-nova/vishot-runner-electron capture ../../packages/scenarios-stage-tamagotchi-electron/src/scenarios/demo-controls-settings-chat-websocket/index.ts --output-dir ../../packages/scenarios-stage-tamagotchi-browser/artifacts/raw --format avif
+pnpm -F @proj-nova/scenarios-stage-tamagotchi-browser capture --format avif --route '/docs/setup-and-use/intro-chat' --output-dir ../../docs/content/en/docs/manual/tamagotchi/setup-and-use/assets --settle-ms 800
+pnpm -F @proj-nova/scenarios-stage-tamagotchi-browser capture --format avif --route '/docs/setup-and-use/intro-websocket' --output-dir ../../docs/content/en/docs/manual/tamagotchi/setup-and-use/assets --settle-ms 800
+pnpm -F @proj-nova/scenarios-stage-tamagotchi-browser capture --format avif --route '/docs/setup-and-use/main-window' --output-dir ../../docs/content/en/docs/manual/tamagotchi/setup-and-use/assets --settle-ms 800
+pnpm -F @proj-nova/scenarios-stage-tamagotchi-browser capture --format avif --route '/docs/setup-and-use/settings' --output-dir ../../docs/content/en/docs/manual/tamagotchi/setup-and-use/assets --settle-ms 800
 ```
 
 Expected results:
@@ -55,10 +55,10 @@ The browser capture script supports:
 Examples:
 
 ```bash
-pnpm -F @proj-airi/scenarios-stage-tamagotchi-browser capture --format avif --settle-ms 800
-pnpm -F @proj-airi/scenarios-stage-tamagotchi-browser capture --route /docs/setup-and-use --settle-ms 800
-pnpm -F @proj-airi/scenarios-stage-tamagotchi-browser capture --route /docs/setup-and-use/settings --settle-ms 800
-pnpm -F @proj-airi/scenarios-stage-tamagotchi-browser capture --format avif --route /docs/setup-and-use --output-dir ../../docs/content/en/docs/manual/tamagotchi/setup-and-use/assets --settle-ms 800
+pnpm -F @proj-nova/scenarios-stage-tamagotchi-browser capture --format avif --settle-ms 800
+pnpm -F @proj-nova/scenarios-stage-tamagotchi-browser capture --route /docs/setup-and-use --settle-ms 800
+pnpm -F @proj-nova/scenarios-stage-tamagotchi-browser capture --route /docs/setup-and-use/settings --settle-ms 800
+pnpm -F @proj-nova/scenarios-stage-tamagotchi-browser capture --format avif --route /docs/setup-and-use --output-dir ../../docs/content/en/docs/manual/tamagotchi/setup-and-use/assets --settle-ms 800
 ```
 
 The browser capture flow starts from Playwright PNG screenshots, then optionally transforms to AVIF via Vishot `imageTransformers`.

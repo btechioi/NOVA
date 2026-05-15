@@ -1,7 +1,7 @@
-import type { SparkNotifyReactionOptions } from '@proj-airi/stage-ui/stores/mods/api/spark-notify-reaction'
+import type { SparkNotifyReactionOptions } from '@proj-nova/stage-ui/stores/mods/api/spark-notify-reaction'
 
-import { widgetsIframeBroadcastEvent } from '@proj-airi/plugin-sdk-tamagotchi/widgets'
-import { sparkNotifyReactionOptionsSchema } from '@proj-airi/stage-ui/stores/mods/api/spark-notify-reaction'
+import { widgetsIframeBroadcastEvent } from '@proj-nova/plugin-sdk-tamagotchi/widgets'
+import { sparkNotifyReactionOptionsSchema } from '@proj-nova/stage-ui/stores/mods/api/spark-notify-reaction'
 import { looseObject, nonEmpty, optional, pipe, record, safeParse, string, trim, unknown } from 'valibot'
 
 interface PublishWidgetSparkNotifyReactionOptions {

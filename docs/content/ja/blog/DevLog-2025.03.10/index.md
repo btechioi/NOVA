@@ -32,12 +32,12 @@ date: 2025-03-10
 
 > どこへ行くの？
 
-いい質問です！GitHub 上で [`@proj-airi`](https://github.com/proj-airi) という組織を登録しました。多くのパッケージや静的アプリケーションは Moeru AI にとっても有用ではないため、これらのパッケージを [`@proj-airi`](https://github.com/proj-airi) に移動するのが良いかもしれません。
+いい質問です！GitHub 上で [`@proj-nova`](https://github.com/proj-nova) という組織を登録しました。多くのパッケージや静的アプリケーションは Moeru AI にとっても有用ではないため、これらのパッケージを [`@proj-nova`](https://github.com/proj-nova) に移動するのが良いかもしれません。
 
-というわけで、いくつかのパッケージとアプリケーションを [`@proj-airi`](https://github.com/proj-airi) 組織に移動しました！こちらで確認できます：
+というわけで、いくつかのパッケージとアプリケーションを [`@proj-nova`](https://github.com/proj-nova) 組織に移動しました！こちらで確認できます：
 
-- https://github.com/proj-airi/webai-examples：WebGPU や関連コンテンツのデモ制作用。
-- https://github.com/proj-airi/lobe-icons：[Lobe Icons](https://github.com/lobehub/lobe-icons) の移植版で、Iconify JSON と UnoCSS で使用できます。
+- https://github.com/proj-nova/webai-examples：WebGPU や関連コンテンツのデモ制作用。
+- https://github.com/proj-nova/lobe-icons：[Lobe Icons](https://github.com/lobehub/lobe-icons) の移植版で、Iconify JSON と UnoCSS で使用できます。
 
 これら2つのリポジトリはオープンソースのままであり、通常通り MIT ライセンスを使用しますのでご心配なく。
 

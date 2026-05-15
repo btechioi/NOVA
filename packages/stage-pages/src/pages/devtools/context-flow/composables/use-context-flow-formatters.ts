@@ -1,4 +1,4 @@
-import type { WebSocketEvents } from '@proj-airi/server-sdk'
+import type { WebSocketEvents } from '@proj-nova/server-sdk'
 
 import type { FlowEntry, PreviewItem } from '../context-flow-types'
 

@@ -1,8 +1,8 @@
-import type { ContextInit } from '@proj-airi/plugin-sdk'
-import type { HostDataRecord } from '@proj-airi/plugin-sdk/plugin-host'
+import type { ContextInit } from '@proj-nova/plugin-sdk'
+import type { HostDataRecord } from '@proj-nova/plugin-sdk/plugin-host'
 import type { JsonSchema, Schema as StandardSchemaV1 } from 'xsschema'
 
-import { hostDataRecordSchema } from '@proj-airi/plugin-sdk/plugin-host'
+import { hostDataRecordSchema } from '@proj-nova/plugin-sdk/plugin-host'
 import { parse } from 'valibot'
 import { toJsonSchema } from 'xsschema'
 
@@ -11,7 +11,7 @@ import { toJsonSchema } from 'xsschema'
  *
  * Use when:
  * - Tool execution wants to open, configure, close, or inspect host-managed gamelet surfaces
- * - Runtime validation needs a structural contract independent from `@proj-airi/plugin-sdk`
+ * - Runtime validation needs a structural contract independent from `@proj-nova/plugin-sdk`
  *
  * Expects:
  * - The stage-tamagotchi host contribution installs `gamelets` on the plugin session API object

@@ -20,7 +20,7 @@ cp .env .env.local
 启动机器人：
 
 ```shell
-pnpm -F @proj-airi/satori-bot dev
+pnpm -F @proj-nova/satori-bot dev
 ```
 
 ::: tip
@@ -28,7 +28,7 @@ pnpm -F @proj-airi/satori-bot dev
 如果你使用 [@antfu/ni](https://github.com/antfu-collective/ni)，你可以：
 
 ```shell
-nr -F @proj-airi/satori-bot dev
+nr -F @proj-nova/satori-bot dev
 ```
 
 :::

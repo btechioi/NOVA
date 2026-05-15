@@ -22,7 +22,7 @@
   - `/api/v1/flux` 返回的 `flux` 比之前增加 100
   - `/api/v1/flux/history` 顶部一条 `type='promo'`、`description='local verify'`、`metadata.issuedByUserId` = admin 的 userId
 - **实际输出**：⏳ 待重新实测（架构刚从 batch 改成同步，旧 verification 已无效）。
-- **环境**：本地 `pnpm -F @proj-airi/server dev`，commit SHA 待补，`ADMIN_EMAILS` 含 admin 邮箱且 `email_verified=true`。
+- **环境**：本地 `pnpm -F @proj-nova/server dev`，commit SHA 待补，`ADMIN_EMAILS` 含 admin 邮箱且 `email_verified=true`。
 - **最后验证**：⏳ 待补
 
 ## 用户路径 2：dry-run 预览邮箱列表

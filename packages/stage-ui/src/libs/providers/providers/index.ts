@@ -8,6 +8,7 @@ import './volcengine-coding-plan'
 import './byteplus'
 import './byteplus-coding-plan'
 import './n1n'
+import './opencode'
 import './openrouter-ai'
 import './nvidia'
 import './groq'
@@ -32,7 +33,6 @@ import './ollama'
 import './mimo'
 import './cloudflare-workers-ai'
 import './azure-ai-foundry'
-import './official'
 
 export {
   getDefinedProvider,

@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/core-agent",
+  "name": "@proj-nova/core-agent",
   "type": "module",
   "version": "0.10.2",
   "private": true,
@@ -39,9 +39,9 @@
   },
   "dependencies": {
     "@moeru/std": "catalog:",
-    "@proj-airi/pipelines-audio": "workspace:^",
-    "@proj-airi/server-sdk": "workspace:^",
-    "@proj-airi/server-shared": "workspace:^",
+    "@proj-nova/pipelines-audio": "workspace:^",
+    "@proj-nova/server-sdk": "workspace:^",
+    "@proj-nova/server-shared": "workspace:^",
     "@xsai-ext/providers": "catalog:",
     "@xsai/generate-speech": "catalog:",
     "@xsai/generate-text": "catalog:",

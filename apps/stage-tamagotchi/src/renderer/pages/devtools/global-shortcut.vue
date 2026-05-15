@@ -3,14 +3,14 @@ import type {
   ShortcutAccelerator,
   ShortcutBinding,
   ShortcutRegistrationResult,
-} from '@proj-airi/stage-shared/global-shortcut'
+} from '@proj-nova/stage-shared/global-shortcut'
 
 import type { ElectronShortcutTriggerPhase } from '../../../shared/eventa'
 
 import { errorMessageFrom } from '@moeru/std'
-import { getElectronEventaContext, useElectronEventaInvoke } from '@proj-airi/electron-vueuse'
-import { formatAccelerator, parseAccelerator } from '@proj-airi/stage-shared/global-shortcut'
-import { Button, FieldCheckbox, FieldInput } from '@proj-airi/ui'
+import { getElectronEventaContext, useElectronEventaInvoke } from '@proj-nova/electron-vueuse'
+import { formatAccelerator, parseAccelerator } from '@proj-nova/stage-shared/global-shortcut'
+import { Button, FieldCheckbox, FieldInput } from '@proj-nova/ui'
 import { onMounted, onUnmounted, reactive, ref } from 'vue'
 
 import {

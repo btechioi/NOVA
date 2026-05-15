@@ -3,8 +3,8 @@ import type { Application } from '@pixi/app'
 
 import type { PixiLive2DInternalModel } from '../../../composables/live2d'
 
-import { listenBeatSyncBeatSignal } from '@proj-airi/stage-shared/beat-sync'
-import { useTheme } from '@proj-airi/ui'
+import { listenBeatSyncBeatSignal } from '@proj-nova/stage-shared/beat-sync'
+import { useTheme } from '@proj-nova/ui'
 import { breakpointsTailwind, until, useBreakpoints } from '@vueuse/core'
 import { animate } from 'animejs'
 import { formatHex } from 'culori'

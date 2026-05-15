@@ -20,8 +20,14 @@ export type { PathfindProgressInfo, PathfindResult } from './patched-goto'
 const logger = useLogger()
 const { goals, Movements } = pathfinder
 
-function resetNavigationMovements(mineflayer: Mineflayer): void {
-  mineflayer.bot.pathfinder.setMovements(new Movements(mineflayer.bot))
+function configureMovements(mineflayer: Mineflayer): void {
+  const movements = new Movements(mineflayer.bot)
+  movements.allowFreeMotion = true
+  movements.canDig = true
+  movements.allowSprinting = true
+  movements.allowParkour = true
+  movements.allow1by1towers = true
+  mineflayer.bot.pathfinder.setMovements(movements)
 }
 
 export async function goToPosition(
@@ -73,7 +79,7 @@ export async function goToPosition(
     y += 1
   }
 
-  resetNavigationMovements(mineflayer)
+  configureMovements(mineflayer)
   const result = await patchedGoto(mineflayer.bot, new goals.GoalNear(x, y, z, minDistance), {
     onProgress: options.onProgress,
   })
@@ -182,7 +188,7 @@ export async function goToPlayer(
     }
   }
 
-  resetNavigationMovements(mineflayer)
+  configureMovements(mineflayer)
   const result = await patchedGoto(mineflayer.bot, new goals.GoalFollow(player, distance), {
     onProgress: options.onProgress,
   })
@@ -209,8 +215,7 @@ export async function followPlayer(
 
   log(mineflayer, `I am now actively following player ${username}.`)
 
-  const movements = new Movements(mineflayer.bot)
-  mineflayer.bot.pathfinder.setMovements(movements)
+  configureMovements(mineflayer)
   mineflayer.bot.pathfinder.setGoal(new goals.GoalFollow(player, distance), true)
 
   mineflayer.once('interrupt', () => {

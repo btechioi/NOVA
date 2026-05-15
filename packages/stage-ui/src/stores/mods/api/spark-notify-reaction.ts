@@ -1,5 +1,5 @@
-import type { SparkNotifyResponseControl } from '@proj-airi/core-agent/agents/spark-notify'
-import type { WebSocketEventOf } from '@proj-airi/server-sdk'
+import type { SparkNotifyResponseControl } from '@proj-nova/core-agent/agents/spark-notify'
+import type { WebSocketEventOf } from '@proj-nova/server-sdk'
 
 import { array, boolean, finite, looseObject, nonEmpty, number, optional, picklist, pipe, record, string, trim, unknown } from 'valibot'
 

@@ -2,7 +2,7 @@ import type {
   BindingRecord,
   HostDataRecord,
   PluginHost,
-} from '@proj-airi/plugin-sdk/plugin-host'
+} from '@proj-nova/plugin-sdk/plugin-host'
 
 import type { WidgetWindowSize } from '../../../../../../shared/eventa'
 

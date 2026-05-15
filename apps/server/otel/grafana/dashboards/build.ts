@@ -1,7 +1,7 @@
 /**
  * Dashboard generator for `airi-server-overview-cloud.json`.
  *
- * Run: `pnpm -F @proj-airi/server otel:dashboards`
+ * Run: `pnpm -F @proj-nova/server otel:dashboards`
  *  (or directly: `pnpm exec tsx apps/server/otel/grafana/dashboards/build.ts`)
  *
  * Why a generator instead of hand-edited JSON: the dashboard's Grafana v2

@@ -1,13 +1,13 @@
-import type { ResolvedArtistryConfig } from '@proj-airi/stage-ui/stores/modules/artistry'
+import type { ResolvedArtistryConfig } from '@proj-nova/stage-ui/stores/modules/artistry'
 import type { Tool } from '@xsai/shared-chat'
 import type { JsonSchema } from 'xsschema'
 
 import { defineInvoke } from '@moeru/eventa'
 import { createContext } from '@moeru/eventa/adapters/electron/renderer'
-import { artistryGenerateHeadless } from '@proj-airi/stage-shared'
-import { useBackgroundStore } from '@proj-airi/stage-ui/stores/background'
-import { useAiriCardStore } from '@proj-airi/stage-ui/stores/modules/airi-card'
-import { resolveArtistryConfigFromStore, useArtistryStore } from '@proj-airi/stage-ui/stores/modules/artistry'
+import { artistryGenerateHeadless } from '@proj-nova/stage-shared'
+import { useBackgroundStore } from '@proj-nova/stage-ui/stores/background'
+import { useAiriCardStore } from '@proj-nova/stage-ui/stores/modules/airi-card'
+import { resolveArtistryConfigFromStore, useArtistryStore } from '@proj-nova/stage-ui/stores/modules/artistry'
 import { rawTool } from '@xsai/tool'
 
 import { widgetsAdd } from '../../../../shared/eventa'

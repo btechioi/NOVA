@@ -2,7 +2,7 @@ import type { JsonSchema } from 'xsschema'
 
 import z from 'zod/v4'
 
-import { ContextUpdateStrategy } from '@proj-airi/server-sdk'
+import { ContextUpdateStrategy } from '@proj-nova/server-sdk'
 import { rawTool } from '@xsai/tool'
 import { describe, expect, it, vi } from 'vitest'
 import { toJsonSchema } from 'xsschema'

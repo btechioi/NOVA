@@ -6,12 +6,12 @@ import type {
   WebSocketEventOptionalSource,
   WebSocketEvents,
   WebSocketLikeConstructor,
-} from '@proj-airi/server-sdk'
+} from '@proj-nova/server-sdk'
 import type { CommonContentPart } from '@xsai/shared-chat'
 
 import { errorMessageFrom } from '@moeru/std'
-import { Client, WebSocketEventSource } from '@proj-airi/server-sdk'
-import { isStageTamagotchi, isStageWeb } from '@proj-airi/stage-shared'
+import { Client, WebSocketEventSource } from '@proj-nova/server-sdk'
+import { isStageTamagotchi, isStageWeb } from '@proj-nova/stage-shared'
 import { useLocalStorage } from '@vueuse/core'
 import { nanoid } from 'nanoid'
 import { defineStore } from 'pinia'
@@ -47,7 +47,7 @@ const REPLAYABLE_EVENT_TYPES = new Set<keyof WebSocketEvents>([
   'registry:modules:sync',
 ])
 
-export const useModsServerChannelStore = defineStore('mods:channels:proj-airi:server', () => {
+export const useModsServerChannelStore = defineStore('mods:channels:proj-nova:server', () => {
   const connected = ref(false)
   const client = ref<Client>()
   const initializing = ref<Promise<void> | null>(null)

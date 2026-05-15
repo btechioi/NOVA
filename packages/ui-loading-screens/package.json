@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/ui-loading-screens",
+  "name": "@proj-nova/ui-loading-screens",
   "type": "module",
   "private": true,
   "description": "A collection of loading screens that used by Project AIRI",
@@ -27,14 +27,14 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@proj-airi/font-departure-mono": "workspace:^",
+    "@proj-nova/font-departure-mono": "workspace:^",
     "@rive-app/canvas-lite": "^2.37.2",
     "@vueuse/core": "^14.2.1",
     "@vueuse/motion": "^3.0.3",
     "vue": "catalog:"
   },
   "devDependencies": {
-    "@proj-airi/ui": "workspace:^",
+    "@proj-nova/ui": "workspace:^",
     "@unocss/reset": "^66.6.8",
     "@vitejs/plugin-vue": "^6.0.6",
     "vite": "catalog:",

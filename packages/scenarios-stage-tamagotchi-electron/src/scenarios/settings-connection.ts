@@ -1,4 +1,4 @@
-import { defineScenario } from '@proj-airi/vishot-runner-electron'
+import { defineScenario } from '@proj-nova/vishot-runner-electron'
 
 const websocketServerAddressPattern = /WebSocket Server Address|WebSocket 服务器地址/i
 

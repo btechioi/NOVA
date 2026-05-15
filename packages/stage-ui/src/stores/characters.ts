@@ -9,7 +9,6 @@ import { computed, ref } from 'vue'
 import { client } from '../composables/api'
 import { charactersModel as model } from '../models/characters'
 import { charactersService as service } from '../services/characters'
-import { useAuthStore } from './auth'
 
 interface StoreQuery<TData> {
   error: Ref<Error | null>
@@ -243,7 +242,6 @@ export function createCharacterStoreController(params: {
 export const useCharacterStore = defineStore('characters', () => {
   const characters = ref<Map<string, Character>>(new Map())
   const listAll = ref(false)
-  const auth = useAuthStore()
   const queryCache = useQueryCache()
 
   const listQuery = useQuery(createCharactersListQueryOptions({ client, listAll, service }))
@@ -276,7 +274,7 @@ export const useCharacterStore = defineStore('characters', () => {
   })
 
   return createCharacterStoreController({
-    auth,
+    auth: { userId: 'local' },
     bookmarkMutation,
     characters,
     createMutation,

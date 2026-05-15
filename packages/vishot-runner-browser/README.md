@@ -4,7 +4,7 @@ Browser-side capture tooling for Vishot scene rendering entrypoints.
 
 ## Purpose
 
-This package is the browser capture engine used by scene packages such as `@proj-airi/scenarios-stage-tamagotchi-browser`. It provides:
+This package is the browser capture engine used by scene packages such as `@proj-nova/scenarios-stage-tamagotchi-browser`. It provides:
 
 - the package export surface in `src/index.ts`
 - the `captureBrowserRoots()` programmatic API
@@ -16,8 +16,8 @@ This package is the browser capture engine used by scene packages such as `@proj
 ## Usage
 
 ```bash
-pnpm -F @proj-airi/vishot-runner-browser capture -- ../scenarios-stage-tamagotchi-browser --output-dir ../scenarios-stage-tamagotchi-browser/artifacts/final
-pnpm -F @proj-airi/scenarios-stage-tamagotchi-browser capture
+pnpm -F @proj-nova/vishot-runner-browser capture -- ../scenarios-stage-tamagotchi-browser --output-dir ../scenarios-stage-tamagotchi-browser/artifacts/final
+pnpm -F @proj-nova/scenarios-stage-tamagotchi-browser capture
 ```
 
 The browser capture package can run directly against a scene package root, or indirectly through the consumer package's own `capture` script. In both cases it starts the scene package's Vite app, opens it in Chromium, waits for the frontend ready signal, and exports each capture root into `packages/scenarios-stage-tamagotchi-browser/artifacts/final`.
@@ -27,7 +27,7 @@ Programmatic usage from a scene package looks like this:
 ```ts
 import path from 'node:path'
 
-import { captureBrowserRoots } from '@proj-airi/vishot-runner-browser'
+import { captureBrowserRoots } from '@proj-nova/vishot-runner-browser'
 
 const sceneAppRoot = path.resolve(process.cwd())
 const requestedFormat = 'avif'

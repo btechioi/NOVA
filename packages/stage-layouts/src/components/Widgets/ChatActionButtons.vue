@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useChatMaintenanceStore } from '@proj-airi/stage-ui/stores/chat/maintenance'
-import { useTheme } from '@proj-airi/ui'
+import { useChatMaintenanceStore } from '@proj-nova/stage-ui/stores/chat/maintenance'
+import { useTheme } from '@proj-nova/ui'
 import { ref } from 'vue'
 
 import ViewControls from '../Layouts/InteractiveArea/Actions/ViewControls.vue'

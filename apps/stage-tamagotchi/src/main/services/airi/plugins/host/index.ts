@@ -15,7 +15,7 @@ import type {
 import { dirname, join } from 'node:path'
 
 import { useLogg } from '@guiiai/logg'
-import { PluginHost } from '@proj-airi/plugin-sdk/plugin-host'
+import { PluginHost } from '@proj-nova/plugin-sdk/plugin-host'
 import { app, session as electronSession } from 'electron'
 
 import { createPluginAutoReloadFeature } from '../features/auto-reload'

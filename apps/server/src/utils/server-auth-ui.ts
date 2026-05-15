@@ -31,10 +31,10 @@ export function getServerAuthUiDistDir(): string {
 export function renderServerAuthUiHtml(context: ServerAuthUiContext): string {
   const indexHtml = getServerAuthUiIndexHtml()
 
-  if (!indexHtml.includes('__AIRI_SERVER_AUTH_CONTEXT__'))
-    throw new Error('ui-server-auth index.html is missing __AIRI_SERVER_AUTH_CONTEXT__ placeholder')
+  if (!indexHtml.includes('__NOVA_SERVER_AUTH_CONTEXT__'))
+    throw new Error('ui-server-auth index.html is missing __NOVA_SERVER_AUTH_CONTEXT__ placeholder')
 
-  return indexHtml.replace('__AIRI_SERVER_AUTH_CONTEXT__', serializeInlineJson(context))
+  return indexHtml.replace('__NOVA_SERVER_AUTH_CONTEXT__', serializeInlineJson(context))
 }
 
 function getServerAuthUiIndexHtml(): string {

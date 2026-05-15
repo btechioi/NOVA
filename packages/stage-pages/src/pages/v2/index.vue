@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import { useAuthStore } from '@proj-airi/stage-ui/stores/auth'
-import { useCharacterStore } from '@proj-airi/stage-ui/stores/characters'
-import { Button } from '@proj-airi/ui'
+import { useCharacterStore } from '@proj-nova/stage-ui/stores/characters'
+import { Button } from '@proj-nova/ui'
 import { computed, onMounted } from 'vue'
 
 const characterStore = useCharacterStore()
-const authStore = useAuthStore()
 
 const coverImage = new URL('../../../../stage-ui/src/components/menu/relu.avif', import.meta.url).href
 const characterAvatarImage = new URL('../../../../stage-ui/src/assets/live2d/models/hiyori/preview.png', import.meta.url).href
@@ -54,8 +52,8 @@ const characters = computed(() => Array.from(characterStore.characters.values())
     likes: char.likesCount,
     bookmarks: char.bookmarksCount,
     forks: char.forksCount,
-    liked: char.likes?.some(l => l.userId === authStore.user?.id),
-    bookmarked: char.bookmarks?.some(b => b.userId === authStore.user?.id),
+    liked: (char.likes ?? []).length > 0,
+    bookmarked: (char.bookmarks ?? []).length > 0,
     priceCredit: char.priceCredit,
   }
 }))

@@ -1,6 +1,6 @@
 import type { ManualRuntime } from './shared/types'
 
-import { defineScenario } from '@proj-airi/vishot-runner-electron'
+import { defineScenario } from '@proj-nova/vishot-runner-electron'
 
 import { manualCaptureSections } from './manifest'
 import { formatStepFailure, resetScenarioOutputDirectories } from './shared/output'

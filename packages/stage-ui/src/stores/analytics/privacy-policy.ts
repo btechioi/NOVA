@@ -1,4 +1,4 @@
-import { localeRemap } from '@proj-airi/i18n'
+import { localeRemap } from '@proj-nova/i18n'
 
 // TODO: Replace this with docs-owned metadata so app links cannot drift from
 // the actual locales published under docs/content/*/about/privacy.md.

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ProviderValidationStep } from '@proj-airi/stage-ui/libs'
+import type { ProviderValidationStep } from '@proj-nova/stage-ui/libs'
 import type { ZodType } from 'zod'
 import type { $ZodType } from 'zod/v4/core'
 
@@ -17,10 +17,10 @@ import {
   ProviderSettingsContainer,
   ProviderSettingsLayout,
   ProviderValidationDetailsDialog,
-} from '@proj-airi/stage-ui/components'
-import { getDefinedProvider, getSchemaDefault, getValidatorsOfProvider, validateProvider } from '@proj-airi/stage-ui/libs'
-import { useProviderCatalogStore } from '@proj-airi/stage-ui/stores/provider-catalog'
-import { Button, Callout, FieldCombobox, FieldInput, FieldKeyValues } from '@proj-airi/ui'
+} from '@proj-nova/stage-ui/components'
+import { getDefinedProvider, getSchemaDefault, getValidatorsOfProvider, validateProvider } from '@proj-nova/stage-ui/libs'
+import { useProviderCatalogStore } from '@proj-nova/stage-ui/stores/provider-catalog'
+import { Button, Callout, FieldCombobox, FieldInput, FieldKeyValues } from '@proj-nova/ui'
 import { useCloned, useDebounceFn } from '@vueuse/core'
 import { DropdownMenuContent, DropdownMenuItem, DropdownMenuPortal, DropdownMenuRoot, DropdownMenuTrigger } from 'reka-ui'
 import { computed, onMounted, ref, watch } from 'vue'

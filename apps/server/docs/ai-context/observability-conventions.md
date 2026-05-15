@@ -250,7 +250,7 @@ OTel SDK 的 Counter / UpDownCounter 在第一次 `.add()` 之前**完全不出�
 验证脚本：[apps/server/src/scripts/otel/smoke.ts](/apps/server/src/scripts/otel/smoke.ts)
 
 ```sh
-pnpm -F @proj-airi/server exec node --import tsx ./src/scripts/otel/smoke.ts
+pnpm -F @proj-nova/server exec node --import tsx ./src/scripts/otel/smoke.ts
 ```
 
 打印 SDK 启动后立即可见的所有 instrument 名字。

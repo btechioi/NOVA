@@ -91,7 +91,7 @@ CLI 入口在 `src/bin/run.ts`，只有一种角色：
 在 `src/schemas/`：
 
 - Drizzle schema 基本覆盖了所有核心表
-- 数据迁移由 `@proj-airi/server-schema` 提供
+- 数据迁移由 `@proj-nova/server-schema` 提供
 - `app.ts` 启动时会执行迁移
 
 ## 中间件与通用约束

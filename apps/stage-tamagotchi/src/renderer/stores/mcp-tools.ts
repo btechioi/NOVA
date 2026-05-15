@@ -1,6 +1,6 @@
-import { useElectronEventaInvoke } from '@proj-airi/electron-vueuse'
-import { useLlmToolsStore } from '@proj-airi/stage-ui/stores/llm-tools'
-import { createMcpTools } from '@proj-airi/stage-ui/tools/mcp'
+import { useElectronEventaInvoke } from '@proj-nova/electron-vueuse'
+import { useLlmToolsStore } from '@proj-nova/stage-ui/stores/llm-tools'
+import { createMcpTools } from '@proj-nova/stage-ui/tools/mcp'
 import { defineStore } from 'pinia'
 
 import { electronMcpCallTool, electronMcpListTools } from '../../shared/eventa'

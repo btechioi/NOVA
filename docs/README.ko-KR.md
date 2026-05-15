@@ -140,13 +140,13 @@
 
 > [!NOTE]
 >
-> Project AIRI에서 탄생한 모든 하위 프로젝트를 위한 전용 조직 [@proj-airi](https://github.com/proj-airi)가 있습니다. 확인해 보세요!
+> Project AIRI에서 탄생한 모든 하위 프로젝트를 위한 전용 조직 [@proj-nova](https://github.com/proj-nova)가 있습니다. 확인해 보세요!
 >
 > RAG, 메모리 시스템, 임베디드 데이터베이스, 아이콘, Live2D 유틸리티 등 다양한 프로젝트가 있습니다!
 
 > [!TIP]
-> [Crowdin](https://crowdin.com/project/proj-airi)에 번역 프로젝트가 있습니다. 번역이 부정확하다고 느끼시면 자유롭게 기여해 주세요.
-> <a href="https://crowdin.com/project/proj-airi" target="_blank" rel="nofollow"><img style="width: 140px; height: 40px;" src="https://badges.crowdin.net/badge/light/crowdin-on-dark.png" srcset="https://badges.crowdin.net/badge/light/crowdin-on-dark.png 1x, https://badges.crowdin.net/badge/light/crowdin-on-dark@2x.png 2x" alt="Crowdin | Agile localization for tech companies" width="140" height="40" /></a>
+> [Crowdin](https://crowdin.com/project/proj-nova)에 번역 프로젝트가 있습니다. 번역이 부정확하다고 느끼시면 자유롭게 기여해 주세요.
+> <a href="https://crowdin.com/project/proj-nova" target="_blank" rel="nofollow"><img style="width: 140px; height: 40px;" src="https://badges.crowdin.net/badge/light/crowdin-on-dark.png" srcset="https://badges.crowdin.net/badge/light/crowdin-on-dark.png 1x, https://badges.crowdin.net/badge/light/crowdin-on-dark@2x.png 2x" alt="Crowdin | Agile localization for tech companies" width="140" height="40" /></a>
 
 사이버 생명체(사이버 와이프, 디지털 펫)나 함께 놀고 대화할 수 있는 디지털 동반자를 꿈꿔 본 적이 있으신가요?
 
@@ -359,13 +359,13 @@ npx bumpp --no-commit --no-tag
 
 ## 이 프로젝트에서 탄생한 하위 프로젝트
 
-- [Awesome AI VTuber](https://github.com/proj-airi/awesome-ai-vtuber): AI VTuber 및 관련 프로젝트의 큐레이션 목록
+- [Awesome AI VTuber](https://github.com/proj-nova/awesome-ai-vtuber): AI VTuber 및 관련 프로젝트의 큐레이션 목록
 - [`unspeech`](https://github.com/moeru-ai/unspeech): `/audio/transcriptions` 및 `/audio/speech`를 위한 범용 엔드포인트 프록시 서버, LiteLLM과 유사하지만 모든 ASR 및 TTS에 대응
 - [`hfup`](https://github.com/moeru-ai/hfup): HuggingFace Spaces로의 배포 및 번들링을 지원하는 도구
 - [`xsai-transformers`](https://github.com/moeru-ai/xsai-transformers): [xsAI](https://github.com/moeru-ai/xsai)용 실험적 [Transformers.js](https://github.com/huggingface/transformers.js) 프로바이더
-- [WebAI: Realtime Voice Chat](https://github.com/proj-airi/webai-realtime-voice-chat): VAD + STT + LLM + TTS로 ChatGPT 실시간 음성을 처음부터 구현한 완전한 예제
-- [`@proj-airi/drizzle-duckdb-wasm`](https://github.com/moeru-ai/airi/tree/main/packages/drizzle-duckdb-wasm/README.md): DuckDB WASM용 Drizzle ORM 드라이버
-- [`@proj-airi/duckdb-wasm`](https://github.com/moeru-ai/airi/tree/main/packages/duckdb-wasm/README.md): 사용하기 쉬운 `@duckdb/duckdb-wasm` 래퍼
+- [WebAI: Realtime Voice Chat](https://github.com/proj-nova/webai-realtime-voice-chat): VAD + STT + LLM + TTS로 ChatGPT 실시간 음성을 처음부터 구현한 완전한 예제
+- [`@proj-nova/drizzle-duckdb-wasm`](https://github.com/moeru-ai/airi/tree/main/packages/drizzle-duckdb-wasm/README.md): DuckDB WASM용 Drizzle ORM 드라이버
+- [`@proj-nova/duckdb-wasm`](https://github.com/moeru-ai/airi/tree/main/packages/duckdb-wasm/README.md): 사용하기 쉬운 `@duckdb/duckdb-wasm` 래퍼
 - [AIRI Factorio](https://github.com/moeru-ai/airi-factorio): AIRI가 Factorio를 플레이할 수 있게 하는 프로젝트
 - [Factorio RCON API](https://github.com/nekomeowww/factorio-rcon-api): Factorio 헤드리스 서버 콘솔용 RESTful API 래퍼
 - [`autorio`](https://github.com/moeru-ai/airi-factorio/tree/main/packages/autorio): Factorio 자동화 라이브러리
@@ -382,15 +382,15 @@ npx bumpp --no-commit --no-tag
 flowchart TD
   Core("Core")
   Unspeech("unspeech")
-  DBDriver("@proj-airi/drizzle-duckdb-wasm")
+  DBDriver("@proj-nova/drizzle-duckdb-wasm")
   MemoryDriver("[WIP] Memory Alaya")
-  DB1("@proj-airi/duckdb-wasm")
-  SVRT("@proj-airi/server-runtime")
+  DB1("@proj-nova/duckdb-wasm")
+  SVRT("@proj-nova/server-runtime")
   Memory("메모리")
   STT("STT")
   Stage("스테이지")
-  StageUI("@proj-airi/stage-ui")
-  UI("@proj-airi/ui")
+  StageUI("@proj-nova/stage-ui")
+  UI("@proj-nova/ui")
 
   subgraph AIRI
     DB1 --> DBDriver --> MemoryDriver --> Memory --> Core
@@ -401,22 +401,22 @@ flowchart TD
 
   subgraph UI_컴포넌트
     UI --> StageUI
-    UITransitions("@proj-airi/ui-transitions") --> StageUI
-    UILoadingScreens("@proj-airi/ui-loading-screens") --> StageUI
-    FontCJK("@proj-airi/font-cjkfonts-allseto") --> StageUI
-    FontXiaolai("@proj-airi/font-xiaolai") --> StageUI
+    UITransitions("@proj-nova/ui-transitions") --> StageUI
+    UILoadingScreens("@proj-nova/ui-loading-screens") --> StageUI
+    FontCJK("@proj-nova/font-cjkfonts-allseto") --> StageUI
+    FontXiaolai("@proj-nova/font-xiaolai") --> StageUI
   end
 
   subgraph 앱
-    Stage --> StageWeb("@proj-airi/stage-web")
-    Stage --> StageTamagotchi("@proj-airi/stage-tamagotchi")
-    Core --> RealtimeAudio("@proj-airi/realtime-audio")
-    Core --> PromptEngineering("@proj-airi/playground-prompt-engineering")
+    Stage --> StageWeb("@proj-nova/stage-web")
+    Stage --> StageTamagotchi("@proj-nova/stage-tamagotchi")
+    Core --> RealtimeAudio("@proj-nova/realtime-audio")
+    Core --> PromptEngineering("@proj-nova/playground-prompt-engineering")
   end
 
   subgraph 서버_컴포넌트
-    Core --> ServerSDK("@proj-airi/server-sdk")
-    ServerShared("@proj-airi/server-shared") --> SVRT
+    Core --> ServerSDK("@proj-nova/server-sdk")
+    ServerShared("@proj-nova/server-shared") --> SVRT
     ServerShared --> ServerSDK
   end
 
@@ -446,7 +446,7 @@ flowchart TD
   XSAI --> F_AGENT
   XSAI --> MC_AGENT
 
-  Memory_PGVector("@proj-airi/memory-pgvector") --> Memory
+  Memory_PGVector("@proj-nova/memory-pgvector") --> Memory
 
   style Core fill:#f9d4d4,stroke:#333,stroke-width:1px
   style AIRI fill:#fcf7f7,stroke:#333,stroke-width:1px

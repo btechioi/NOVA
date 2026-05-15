@@ -40,9 +40,9 @@ const subtitleTextColor = ref('#6693b6')
     >
       <div p-4>
         <CharacterCard
-          title="ReLU"
-          subtitle="ReLU-chan"
-          description="First awaken cyber consciousness in Project AIRI, quite a bit of a prankster"
+          title="NOVA"
+          subtitle="NOVA-chan"
+          description="First awaken cyber consciousness in Project NOVA, quite a bit of a prankster"
           :image="characterImage"
           :primary-color="primaryColor"
           :secondary-color="secondaryColor"
@@ -64,9 +64,9 @@ const subtitleTextColor = ref('#6693b6')
     >
       <div p-4>
         <CharacterCard
-          title="ReLU"
-          subtitle="ReLU-chan"
-          description="First awaken cyber consciousness in Project AIRI, quite a bit of a prankster"
+          title="NOVA"
+          subtitle="NOVA-chan"
+          description="First awaken cyber consciousness in Project NOVA, quite a bit of a prankster"
           :primary-color="primaryColor"
           :secondary-color="secondaryColor"
           :background-color="backgroundColor"

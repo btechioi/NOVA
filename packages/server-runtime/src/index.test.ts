@@ -1,4 +1,4 @@
-import type { WebSocketBaseEvent, WebSocketEvents } from '@proj-airi/server-shared/types'
+import type { WebSocketBaseEvent, WebSocketEvents } from '@proj-nova/server-shared/types'
 
 import { describe, expect, it } from 'vitest'
 

@@ -117,7 +117,7 @@ export default defineConfig<ThemeConfig>({
           next: 'Next page',
         },
         editLink: {
-          pattern: 'https://github.com/moeru-ai/airi/edit/main/docs/content/:path',
+          pattern: 'https://github.com/btechioi/NOVA/edit/main/docs/content/:path',
           text: 'Edit this page on GitHub',
         },
         lastUpdated: {
@@ -259,7 +259,7 @@ export default defineConfig<ThemeConfig>({
           next: '下一页',
         },
         editLink: {
-          pattern: 'https://github.com/moeru-ai/airi/edit/main/docs/content/:path',
+          pattern: 'https://github.com/btechioi/NOVA/edit/main/docs/content/:path',
           text: '在 GitHub 编辑此页',
         },
         lastUpdated: {
@@ -404,7 +404,7 @@ export default defineConfig<ThemeConfig>({
           next: '次のページ',
         },
         editLink: {
-          pattern: 'https://github.com/moeru-ai/airi/edit/main/docs/content/:path',
+          pattern: 'https://github.com/btechioi/NOVA/edit/main/docs/content/:path',
           text: 'GitHub でこのページを編集',
         },
         lastUpdated: {
@@ -525,7 +525,7 @@ export default defineConfig<ThemeConfig>({
       provider: 'local',
     },
     editLink: {
-      pattern: 'https://github.com/moeru-ai/airi/edit/main/docs/content/:path',
+      pattern: 'https://github.com/btechioi/NOVA/edit/main/docs/content/:path',
     },
   },
   srcDir: 'content',
@@ -581,8 +581,8 @@ export default defineConfig<ThemeConfig>({
   vite: {
     resolve: {
       alias: {
-        '@proj-airi/stage-ui/components': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-ui', 'src', 'components')),
-        '@proj-airi/i18n': resolve(join(import.meta.dirname, '..', '..', 'packages', 'i18n', 'src')),
+        '@proj-nova/stage-ui/components': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-ui', 'src', 'components')),
+        '@proj-nova/i18n': resolve(join(import.meta.dirname, '..', '..', 'packages', 'i18n', 'src')),
       },
     },
     plugins: [

@@ -1,12 +1,12 @@
 import type {
   ModelSettingsRuntimeSnapshot,
-} from '@proj-airi/stage-ui/components/scenarios/settings/model-settings/runtime'
+} from '@proj-nova/stage-ui/components/scenarios/settings/model-settings/runtime'
 
 import type { ModelSettingsRuntimeChannelEvent } from '../../shared/model-settings-runtime'
 
 import {
   createEmptyModelSettingsRuntimeSnapshot,
-} from '@proj-airi/stage-ui/components/scenarios/settings/model-settings/runtime'
+} from '@proj-nova/stage-ui/components/scenarios/settings/model-settings/runtime'
 import { useBroadcastChannel } from '@vueuse/core'
 import { onMounted, onUnmounted, ref, watch } from 'vue'
 

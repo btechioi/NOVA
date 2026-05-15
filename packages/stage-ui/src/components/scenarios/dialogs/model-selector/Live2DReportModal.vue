@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import type { Live2DValidationReport } from '@proj-airi/stage-ui-live2d'
+import type { Live2DValidationReport } from '@proj-nova/stage-ui-live2d'
 
-import { Button } from '@proj-airi/ui'
+import { Button } from '@proj-nova/ui'
 import { useMediaQuery, useResizeObserver, useScreenSafeArea } from '@vueuse/core'
 import { DialogContent, DialogOverlay, DialogPortal, DialogRoot, DialogTitle } from 'reka-ui'
 import { DrawerContent, DrawerHandle, DrawerOverlay, DrawerPortal, DrawerRoot } from 'vaul-vue'
 import { onMounted } from 'vue'
 
-const props = defineProps<{
+defineProps<{
   report: Live2DValidationReport | null
 }>()
 
 const emits = defineEmits<{
   (e: 'close'): void
   (e: 'confirm'): void
-  (e: 'fix-error', error: string): void
+  (e: 'fixError', error: string): void
 }>()
 
 const showDialog = defineModel<boolean>('open', { default: false })
@@ -41,7 +41,7 @@ function canFixError(err: string) {
 }
 
 function handleFix(err: string) {
-  emits('fix-error', err)
+  emits('fixError', err)
 }
 </script>
 

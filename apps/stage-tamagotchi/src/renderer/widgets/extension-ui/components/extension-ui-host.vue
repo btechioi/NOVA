@@ -3,8 +3,8 @@ import type { ComponentPublicInstance } from 'vue'
 
 import type { PluginHostModuleSummary, PluginModuleWidgetPayload } from '../../../../shared/eventa/plugin/host'
 
-import { useElectronEventaInvoke } from '@proj-airi/electron-vueuse'
-import { useContextBridgeStore } from '@proj-airi/stage-ui/stores/mods/api/context-bridge'
+import { useElectronEventaInvoke } from '@proj-nova/electron-vueuse'
+import { useContextBridgeStore } from '@proj-nova/stage-ui/stores/mods/api/context-bridge'
 import { isPlainObject } from 'es-toolkit'
 import { computed, shallowRef } from 'vue'
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Button, Callout } from '@proj-airi/ui'
+import { Button, Callout } from '@proj-nova/ui'
 import { useI18n } from 'vue-i18n'
 
 const props = defineProps<{

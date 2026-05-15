@@ -1,5 +1,5 @@
 import { createContext } from '@moeru/eventa/adapters/window-message'
-import { widgetsIframeInitEvent, widgetsIframePublishEvent } from '@proj-airi/plugin-sdk-tamagotchi/widgets'
+import { widgetsIframeInitEvent, widgetsIframePublishEvent } from '@proj-nova/plugin-sdk-tamagotchi/widgets'
 import { describe, expect, it } from 'vitest'
 
 class MockWindow {

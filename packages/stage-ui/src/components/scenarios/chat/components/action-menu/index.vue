@@ -5,7 +5,7 @@ import type { ComponentPublicInstance } from 'vue'
 import type { ChatActionMenuAction } from '.'
 
 import { errorMessageFrom } from '@moeru/std'
-import { isStageCapacitor, isStageWeb } from '@proj-airi/stage-shared'
+import { isStageCapacitor, isStageWeb } from '@proj-nova/stage-shared'
 import { useElementVisibility, useIntervalFn } from '@vueuse/core'
 import { createTimeline } from 'animejs'
 import { clamp } from 'es-toolkit'

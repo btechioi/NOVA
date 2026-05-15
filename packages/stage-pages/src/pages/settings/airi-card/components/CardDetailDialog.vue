@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { AiriCard } from '@proj-airi/stage-ui/stores/modules/airi-card'
+import type { AiriCard } from '@proj-nova/stage-ui/stores/modules/airi-card'
 
 import DOMPurify from 'dompurify'
 
-import { useBackgroundStore } from '@proj-airi/stage-ui/stores/background'
-import { useAiriCardStore } from '@proj-airi/stage-ui/stores/modules/airi-card'
-import { useConsciousnessStore } from '@proj-airi/stage-ui/stores/modules/consciousness'
-import { useSpeechStore } from '@proj-airi/stage-ui/stores/modules/speech'
-import { Button, Select } from '@proj-airi/ui'
+import { useBackgroundStore } from '@proj-nova/stage-ui/stores/background'
+import { useAiriCardStore } from '@proj-nova/stage-ui/stores/modules/airi-card'
+import { useConsciousnessStore } from '@proj-nova/stage-ui/stores/modules/consciousness'
+import { useSpeechStore } from '@proj-nova/stage-ui/stores/modules/speech'
+import { Button, Select } from '@proj-nova/ui'
 import { storeToRefs } from 'pinia'
 import {
   DialogContent,
@@ -214,7 +214,8 @@ async function handleSetAsBackground(entry: any) {
 }
 
 async function handleDeleteEntry(id: string) {
-  if (confirm('Are you sure you want to delete this image from the journal?')) {
+  // eslint-disable-next-line no-alert
+  if (globalThis.confirm('Are you sure you want to delete this image from the journal?')) {
     await backgroundStore.removeBackground(id)
   }
 }

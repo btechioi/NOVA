@@ -14,7 +14,7 @@ export async function resolveElectronAppInfo(): Promise<ElectronAppInfo> {
   const mainEntrypoint = resolve(stageTamagotchiRoot, 'out', 'main', 'index.js')
 
   await access(mainEntrypoint).catch(() => {
-    throw new Error(`Built Electron entrypoint not found at ${mainEntrypoint}. Run "pnpm -F @proj-airi/stage-tamagotchi build" first.`)
+    throw new Error(`Built Electron entrypoint not found at ${mainEntrypoint}. Run "pnpm -F @proj-nova/stage-tamagotchi build" first.`)
   })
 
   return {

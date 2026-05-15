@@ -1,3 +1,4 @@
+import type { Buffer } from 'node:buffer'
 import type { ChildProcessWithoutNullStreams } from 'node:child_process'
 
 import { spawn } from 'node:child_process'
@@ -266,7 +267,7 @@ async function prepareMcpConfig() {
     mcpServers: {
       computer_use: {
         command: 'pnpm',
-        args: ['-F', '@proj-airi/computer-use-mcp', 'start'],
+        args: ['-F', '@proj-nova/computer-use-mcp', 'start'],
         cwd: repoDir,
         enabled: true,
         env: mcpEnv,
@@ -299,7 +300,7 @@ async function ensureSmokePrerequisites() {
     'APP_START_FAILED: required workspace build outputs are missing.',
     `Missing: ${missingOutputs.join(', ')}`,
     'Build stage-tamagotchi dependencies manually before this smoke. The smoke command does not auto-build them to avoid saturating the local machine.',
-    'Suggested command: pnpm -F \'@proj-airi/stage-tamagotchi^...\' --if-present build',
+    'Suggested command: pnpm -F \'@proj-nova/stage-tamagotchi^...\' --if-present build',
   ].join(' '))
 }
 
@@ -388,7 +389,7 @@ function requireRunState(result: McpResult, label: string): Record<string, unkno
 }
 
 function startStage(debugPort: number, heartbeatLines: string[]): ChildProcessWithoutNullStreams {
-  const stageProcess = spawn('pnpm', ['-F', '@proj-airi/stage-tamagotchi', 'dev'], {
+  const stageProcess = spawn('pnpm', ['-F', '@proj-nova/stage-tamagotchi', 'dev'], {
     cwd: repoDir,
     detached: true,
     env: {

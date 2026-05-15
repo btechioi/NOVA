@@ -1,4 +1,4 @@
-import { widgetsIframeBroadcastEvent } from '@proj-airi/plugin-sdk-tamagotchi/widgets'
+import { widgetsIframeBroadcastEvent } from '@proj-nova/plugin-sdk-tamagotchi/widgets'
 import { describe, expect, it, vi } from 'vitest'
 
 import { publishWidgetSparkNotifyReaction } from './use-bridge-spark'
@@ -33,7 +33,7 @@ describe('publishWidgetSparkNotifyReaction', () => {
           headline: 'AIRI move',
           note: 'Explain the chess move.',
           destinations: ['character'],
-          source: 'plugin:airi-plugin-game-chess',
+          source: 'plugin:nova-plugin-game-chess',
           payload: {
             moveSan: 'Nf3',
           },
@@ -53,7 +53,7 @@ describe('publishWidgetSparkNotifyReaction', () => {
       headline: 'AIRI move',
       note: 'Explain the chess move.',
       destinations: ['character'],
-      source: 'plugin:airi-plugin-game-chess',
+      source: 'plugin:nova-plugin-game-chess',
       payload: {
         moveSan: 'Nf3',
       },

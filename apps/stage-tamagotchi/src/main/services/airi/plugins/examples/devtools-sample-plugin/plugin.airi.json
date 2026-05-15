@@ -5,23 +5,23 @@
   "permissions": {
     "apis": [
       {
-        "key": "proj-airi:plugin-sdk:apis:protocol:capabilities:wait",
+        "key": "proj-nova:plugin-sdk:apis:protocol:capabilities:wait",
         "actions": ["invoke"]
       },
       {
-        "key": "proj-airi:plugin-sdk:apis:protocol:resources:providers:list-providers",
+        "key": "proj-nova:plugin-sdk:apis:protocol:resources:providers:list-providers",
         "actions": ["invoke"]
       }
     ],
     "resources": [
       {
-        "key": "proj-airi:plugin-sdk:apis:protocol:resources:providers:list-providers",
+        "key": "proj-nova:plugin-sdk:apis:protocol:resources:providers:list-providers",
         "actions": ["read"]
       }
     ],
     "capabilities": [
       {
-        "key": "proj-airi:plugin-sdk:apis:protocol:resources:providers:list-providers",
+        "key": "proj-nova:plugin-sdk:apis:protocol:resources:providers:list-providers",
         "actions": ["wait"]
       }
     ]

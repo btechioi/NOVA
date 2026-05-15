@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/vishot-runner-electron",
+  "name": "@proj-nova/vishot-runner-electron",
   "type": "module",
   "version": "0.10.2",
   "private": true,

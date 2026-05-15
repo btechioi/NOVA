@@ -27,7 +27,7 @@ jobs:
     name: Build Android APK
     runs-on: ubuntu-latest
     env:
-      PRODUCT_NAME: 'AIRI'
+      PRODUCT_NAME: 'NOVA'
       # Every current trigger path produces an installable APK artifact, so ship the analytics-enabled build consistently.
       VITE_ENABLE_POSTHOG: 'true'
     steps:
@@ -64,19 +64,19 @@ jobs:
           exit 1
 
       - name: Build web assets
-        run: pnpm -F @proj-airi/stage-pocket run build
+        run: pnpm -F @proj-nova/stage-pocket run build
 
       - name: Capacitor sync
-        run: pnpm -F @proj-airi/stage-pocket exec cap sync android
+        run: pnpm -F @proj-nova/stage-pocket exec cap sync android
 
       - name: Extract android keystore
-        run: echo "${{ secrets.CAPACITOR_ANDROID_KEYSTORE_BASE64 }}" | base64 -d > ${{ github.workspace }}/apps/stage-pocket/airi-pocket.jks
+        run: echo "${{ secrets.CAPACITOR_ANDROID_KEYSTORE_BASE64 }}" | base64 -d > ${{ github.workspace }}/apps/stage-pocket/nova-pocket.jks
 
       - name: Build APK
         working-directory: apps/stage-pocket/android
-        run: pnpm -F @proj-airi/stage-pocket exec cap build android
+        run: pnpm -F @proj-nova/stage-pocket exec cap build android
         env:
-          CAPACITOR_ANDROID_KEYSTORE_PATH: ${{ github.workspace }}/apps/stage-pocket/airi-pocket.jks
+          CAPACITOR_ANDROID_KEYSTORE_PATH: ${{ github.workspace }}/apps/stage-pocket/nova-pocket.jks
           CAPACITOR_ANDROID_KEYSTORE_ALIAS: ${{ secrets.CAPACITOR_ANDROID_KEYSTORE_ALIAS }}
           CAPACITOR_ANDROID_KEYSTORE_PASSWORD: ${{ secrets.CAPACITOR_ANDROID_KEYSTORE_PASSWORD }}
           CAPACITOR_ANDROID_KEYSTORE_ALIAS_PASSWORD: ${{ secrets.CAPACITOR_ANDROID_KEYSTORE_ALIAS_PASSWORD }}
@@ -87,7 +87,7 @@ jobs:
         run: |
           VERSION="${RELEASE_TAG_NAME#v}"
           if [ -z "$VERSION" ]; then
-            VERSION="$(sed -n 's/^AIRI_VERSION_NAME=//p' apps/stage-pocket/android/app-version.properties)"
+            VERSION="$(sed -n 's/^NOVA_VERSION_NAME=//p' apps/stage-pocket/android/app-version.properties)"
           fi
 
           APK_NAME="${PRODUCT_NAME}-${VERSION}-android.apk"
@@ -121,6 +121,6 @@ jobs:
       # https://itch.io/docs/butler/pushing.html
       - name: Upload Android to itch.io
         if: ${{ github.event_name == 'release' }}
-        run: butler push apps/stage-pocket/android/bundle/${{ env.APK_NAME }} nekomeowww/airi:android --userversion ${{ env.VERSION }}
+        run: butler push apps/stage-pocket/android/bundle/${{ env.APK_NAME }} btechioi/NOVA:android --userversion ${{ env.VERSION }}
         env:
           BUTLER_API_KEY: ${{ secrets.GAME_PUBLISHING_ITCHIO }}

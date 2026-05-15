@@ -226,14 +226,14 @@ Edit the credentials in `.env.local`.
 Migrate the database
 
 ```shell
-pnpm -F @proj-airi/telegram-bot db:generate
-pnpm -F @proj-airi/telegram-bot db:push
+pnpm -F @proj-nova/telegram-bot db:generate
+pnpm -F @proj-nova/telegram-bot db:push
 ```
 
 Run the bot
 
 ```shell
-pnpm -F @proj-airi/telegram-bot start
+pnpm -F @proj-nova/telegram-bot start
 ```
 
 > [!NOTE]
@@ -241,7 +241,7 @@ pnpm -F @proj-airi/telegram-bot start
 > For [@antfu/ni](https://github.com/antfu-collective/ni) users, you can
 >
 > ```shell
-> nr -F @proj-airi/telegram-bot dev
+> nr -F @proj-nova/telegram-bot dev
 > ```
 
 ### Discord bot integration
@@ -261,7 +261,7 @@ Edit the credentials in `.env.local`.
 Run the bot
 
 ```shell
-pnpm -F @proj-airi/discord-bot start
+pnpm -F @proj-nova/discord-bot start
 ```
 
 > [!NOTE]
@@ -269,7 +269,7 @@ pnpm -F @proj-airi/discord-bot start
 > For [@antfu/ni](https://github.com/antfu-collective/ni) users, you can
 >
 > ```shell
-> nr -F @proj-airi/discord-bot dev
+> nr -F @proj-nova/discord-bot dev
 > ```
 
 ### Minecraft agent
@@ -291,7 +291,7 @@ Edit the credentials in `.env.local`.
 Run the bot
 
 ```shell
-pnpm -F @proj-airi/minecraft-bot start
+pnpm -F @proj-nova/minecraft-bot start
 ```
 
 > [!NOTE]
@@ -299,7 +299,7 @@ pnpm -F @proj-airi/minecraft-bot start
 > For [@antfu/ni](https://github.com/antfu-collective/ni) users, you can
 >
 > ```shell
-> nr -F @proj-airi/minecraft-bot dev
+> nr -F @proj-nova/minecraft-bot dev
 > ```
 
 ## Commit

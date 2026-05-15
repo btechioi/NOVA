@@ -9,8 +9,6 @@ import { computed, onMounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import { useBreakpoints } from '../../../../composables/use-breakpoints'
-import { extractMessageText } from '../../../../libs/chat-sync'
-import { useAuthStore } from '../../../../stores/auth'
 import { useChatSessionStore } from '../../../../stores/chat/session-store'
 import { useAiriCardStore } from '../../../../stores/modules/airi-card'
 
@@ -43,7 +41,6 @@ const { t } = useI18n()
 const chatSession = useChatSessionStore()
 const { sessionMetas, sessionMessages, activeSessionId } = storeToRefs(chatSession)
 const { activeCardId } = storeToRefs(useAiriCardStore())
-const { userId } = storeToRefs(useAuthStore())
 
 useResizeObserver(document.documentElement, () => screenSafeArea.update())
 onMounted(() => screenSafeArea.update())
@@ -66,7 +63,7 @@ interface SessionRow {
  *   defense in depth).
  */
 const ownedSessions = computed(() => {
-  const effectiveUserId = userId.value || 'local'
+  const effectiveUserId = 'local'
   return Object.values(sessionMetas.value).filter(meta => meta.userId === effectiveUserId)
 })
 
@@ -88,7 +85,8 @@ function previewFor(meta: ChatSessionMeta): string {
   for (const message of messages) {
     if (message.role === 'system')
       continue
-    const trimmed = extractMessageText(message).replace(/\s+/g, ' ').trim()
+    const content = typeof message.content === 'string' ? message.content : ''
+    const trimmed = content.replace(/\s+/g, ' ').trim()
     if (trimmed)
       return trimmed.length > 80 ? `${trimmed.slice(0, 80)}…` : trimmed
   }
@@ -243,14 +241,6 @@ watch(showDialog, async (open) => {
               >
                 <div :class="['flex items-center gap-2 text-sm font-medium text-neutral-700 dark:text-neutral-200']">
                   <span :class="['truncate flex-1']">{{ row.preview }}</span>
-                  <span
-                    v-if="row.meta.cloudChatId"
-                    :class="['shrink-0 text-[10px] uppercase tracking-wide rounded px-1.5 py-0.5', 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300']"
-                    :title="t('stage.chat.sessions.cloud-badge')"
-                  >
-                    cloud
-                  </span>
-                  <!-- placeholder for trash icon to reserve hit space -->
                   <span :class="['w-7']" />
                 </div>
                 <div :class="['text-[11px] text-neutral-500 dark:text-neutral-400']">
@@ -327,13 +317,7 @@ watch(showDialog, async (open) => {
             >
               <div :class="['flex items-center gap-2 text-sm font-medium text-neutral-700 dark:text-neutral-200']">
                 <span :class="['truncate flex-1']">{{ row.preview }}</span>
-                <span
-                  v-if="row.meta.cloudChatId"
-                  :class="['shrink-0 text-[10px] uppercase tracking-wide rounded px-1.5 py-0.5', 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300']"
-                  :title="t('stage.chat.sessions.cloud-badge')"
-                >
-                  cloud
-                </span>
+
                 <span :class="['w-7']" />
               </div>
               <div :class="['text-[11px] text-neutral-500 dark:text-neutral-400']">

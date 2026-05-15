@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { RadioCardSimple } from '@proj-airi/stage-ui/components'
-import { useArtistryStore } from '@proj-airi/stage-ui/stores/modules/artistry'
+import { RadioCardSimple } from '@proj-nova/stage-ui/components'
+import { useArtistryStore } from '@proj-nova/stage-ui/stores/modules/artistry'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'

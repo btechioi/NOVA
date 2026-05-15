@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { DataSettingsStatusEmits } from '@proj-airi/stage-pages/pages/settings/data/status'
+import type { DataSettingsStatusEmits } from '@proj-nova/stage-pages/pages/settings/data/status'
 
-import { createDataSettingsStatusHelpers } from '@proj-airi/stage-pages/pages/settings/data/status'
-import { useDataMaintenance } from '@proj-airi/stage-ui/composables/use-data-maintenance'
-import { DoubleCheckButton } from '@proj-airi/ui'
+import { createDataSettingsStatusHelpers } from '@proj-nova/stage-pages/pages/settings/data/status'
+import { useDataMaintenance } from '@proj-nova/stage-ui/composables/use-data-maintenance'
+import { DoubleCheckButton } from '@proj-nova/ui'
 import { useI18n } from 'vue-i18n'
 
 const emit = defineEmits<DataSettingsStatusEmits>()

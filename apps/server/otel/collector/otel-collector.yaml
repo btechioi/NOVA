@@ -17,7 +17,7 @@ processors:
   resource:
     attributes:
       - key: service.namespace
-        value: proj-airi
+        value: proj-nova
         action: upsert
   # Tail-based sampling: keeps all errors and slow requests,
   # samples a percentage of normal traffic to reduce storage costs.

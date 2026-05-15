@@ -3,7 +3,7 @@ import type {
   KitDescriptor,
   PluginHost,
   PluginHostContribution,
-} from '@proj-airi/plugin-sdk/plugin-host'
+} from '@proj-nova/plugin-sdk/plugin-host'
 
 import type { PluginHostGameletWidgetsManager } from '../../types'
 
@@ -31,7 +31,7 @@ import {
  * Returns:
  * - The permission/event key string for opening gamelets
  */
-export const pluginGameletApiOpenEventName = 'proj-airi:plugin-sdk:apis:client:gamelets:open'
+export const pluginGameletApiOpenEventName = 'proj-nova:plugin-sdk:apis:client:gamelets:open'
 
 /**
  * Identifies the stage-tamagotchi permission key used to update a host-backed gamelet surface.
@@ -46,7 +46,7 @@ export const pluginGameletApiOpenEventName = 'proj-airi:plugin-sdk:apis:client:g
  * Returns:
  * - The permission/event key string for configuring gamelets
  */
-export const pluginGameletApiConfigureEventName = 'proj-airi:plugin-sdk:apis:client:gamelets:configure'
+export const pluginGameletApiConfigureEventName = 'proj-nova:plugin-sdk:apis:client:gamelets:configure'
 
 /**
  * Identifies the stage-tamagotchi permission key used to request data from a host-backed gamelet surface.
@@ -61,7 +61,7 @@ export const pluginGameletApiConfigureEventName = 'proj-airi:plugin-sdk:apis:cli
  * Returns:
  * - The permission/event key string for request-response gamelet commands
  */
-export const pluginGameletApiRequestEventName = 'proj-airi:plugin-sdk:apis:client:gamelets:request'
+export const pluginGameletApiRequestEventName = 'proj-nova:plugin-sdk:apis:client:gamelets:request'
 
 /**
  * Identifies the stage-tamagotchi permission key used to close a host-backed gamelet surface.
@@ -76,7 +76,7 @@ export const pluginGameletApiRequestEventName = 'proj-airi:plugin-sdk:apis:clien
  * Returns:
  * - The permission/event key string for closing gamelets
  */
-export const pluginGameletApiCloseEventName = 'proj-airi:plugin-sdk:apis:client:gamelets:close'
+export const pluginGameletApiCloseEventName = 'proj-nova:plugin-sdk:apis:client:gamelets:close'
 
 /**
  * Identifies the stage-tamagotchi permission key used to query whether a gamelet is open.
@@ -91,7 +91,7 @@ export const pluginGameletApiCloseEventName = 'proj-airi:plugin-sdk:apis:client:
  * Returns:
  * - The permission/event key string for querying gamelets
  */
-export const pluginGameletApiIsOpenEventName = 'proj-airi:plugin-sdk:apis:client:gamelets:is-open'
+export const pluginGameletApiIsOpenEventName = 'proj-nova:plugin-sdk:apis:client:gamelets:is-open'
 
 function cloneRecord<TValue>(value: TValue): TValue {
   return structuredClone(value)

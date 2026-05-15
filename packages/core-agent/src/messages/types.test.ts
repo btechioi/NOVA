@@ -95,7 +95,7 @@ describe('message types', () => {
     const structuredMessage: Message = {
       id: 'msg-1',
       role: 'event',
-      source: 'plugin:airi-plugin-game-chess',
+      source: 'plugin:nova-plugin-game-chess',
       segments,
       metadata: {
         domain: 'chess',

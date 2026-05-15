@@ -1,4 +1,4 @@
-import type { PluginHost } from '@proj-airi/plugin-sdk/plugin-host'
+import type { PluginHost } from '@proj-nova/plugin-sdk/plugin-host'
 
 import type { SetupPluginHostOptions } from '../types'
 

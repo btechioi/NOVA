@@ -43,16 +43,16 @@ title: Chronicles v0.1.0
     - Tutorials:
       - [Realtime video transcription and translation with Whisper and NLLB on MacBook Air | by Wei Lu | Medium](https://medium.com/@GenerationAI/realtime-video-transcription-and-translation-with-whisper-and-nllb-on-macbook-air-31db4c62c074)
       - [🤗 Transformers.js + ONNX Runtime WebGPU in Chrome extension | by Wei Lu | Medium](https://medium.com/@GenerationAI/transformers-js-onnx-runtime-webgpu-in-chrome-extension-13b563933ca9)
-  - [ ] [Whisper WebGPU Demo (December 10)](https://github.com/moeru-ai/airi/commit/ae3b9468d74c5d38c507ae2877799fd36339f8c1)
-  - [ ] [MicVAD Demo (December 11)](https://github.com/moeru-ai/airi/commit/e4a0cc71006639669e9d71f0db27086fca47a03a)
-  - [ ] [MicVAD + ONNX Whisper real-time transcription (December 12)](https://github.com/moeru-ai/airi/commit/01dbaeb9317ab7491743e50dd6c58fc7e19a880d)
+  - [ ] [Whisper WebGPU Demo (December 10)](https://github.com/btechioi/NOVA/commit/ae3b9468d74c5d38c507ae2877799fd36339f8c1)
+  - [ ] [MicVAD Demo (December 11)](https://github.com/btechioi/NOVA/commit/e4a0cc71006639669e9d71f0db27086fca47a03a)
+  - [ ] [MicVAD + ONNX Whisper real-time transcription (December 12)](https://github.com/btechioi/NOVA/commit/01dbaeb9317ab7491743e50dd6c58fc7e19a880d)
   - [ ] [dcrebbin/oai-voice-mode-chat-mac: Adds realtime chat for ChatGPT Voice Mode [Unofficial]](https://github.com/dcrebbin/oai-voice-mode-chat-mac)
 - [x] Facial Expressions (July 9)
   - [x] [Frontend VRM facial expression control (December 7)](https://github.com/nekomeowww/airi-vtuber/commit/b69abd2b5ab70aa1d72b5e7224f146c8426394eb)
 
 - [ ] Multilingual Support
   - [x] UI multilingual support
-    - [x] [feat: basic i18n (#2) (December 13)](https://github.com/moeru-ai/airi/commit/38cda9e957aa4d66bed115ebf96d3d81ce085f68)
+    - [x] [feat: basic i18n (#2) (December 13)](https://github.com/btechioi/NOVA/commit/38cda9e957aa4d66bed115ebf96d3d81ce085f68)
 
 - [ ] UI Optimization
   - [x] [Canvas scene mobile adaptation (December 5)](https://github.com/nekomeowww/airi-vtuber/commit/bc04dbaf2ba98f13a367a8dd153cef4a19d1b83d)

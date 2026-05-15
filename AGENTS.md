@@ -1,6 +1,6 @@
-# Project AIRI Agent Guide
+# Project NOVA Agent Guide
 
-Concise but detailed reference for contributors working across the `moeru-ai/airi` monorepo. Improve code when you touch it; avoid one-off patterns.
+Concise but detailed reference for contributors working across the `btechioi/NOVA` monorepo. Improve code when you touch it; avoid one-off patterns.
 
 ## Tech Stack (by surface)
 
@@ -27,7 +27,7 @@ Concise but detailed reference for contributors working across the `moeru-ai/air
   - Stage pages: `apps/stage-web/src/pages`, `apps/stage-tamagotchi/src/renderer/pages` (plus devtools folders).
 - **Stage UI internals** (`packages/stage-ui/src`)
   - Providers: `stores/providers.ts` and `stores/providers/` (standardized provider definitions).
-  - Modules: `stores/modules/` (AIRI orchestration building blocks).
+  - Modules: `stores/modules/` (NOVA orchestration building blocks).
   - Composables: `composables/` (business-oriented Vue helpers).
   - Components: `components/`; scenarios in `components/scenarios/` for page/use-case-specific pieces.
   - Stories: `packages/stage-ui/stories`, `packages/stage-ui/histoire.config.ts` (e.g. `components/misc/Button.story.vue`).
@@ -62,16 +62,16 @@ Concise but detailed reference for contributors working across the `moeru-ai/air
 
 ## Commands (pnpm with filters)
 
-> Use pnpm workspace filters to scope tasks. Examples below are generic; replace the filter with the target workspace name (e.g. `@proj-airi/stage-tamagotchi`, `@proj-airi/stage-web`, `@proj-airi/stage-ui`, etc.).
+> Use pnpm workspace filters to scope tasks. Examples below are generic; replace the filter with the target workspace name (e.g. `@proj-nova/stage-tamagotchi`, `@proj-nova/stage-web`, `@proj-nova/stage-ui`, etc.).
 
 - **Typecheck**
   - `pnpm -F <package.json name> typecheck`
-  - Example: `pnpm -F @proj-airi/stage-tamagotchi typecheck` (runs `tsc` + `vue-tsc`).
+  - Example: `pnpm -F @proj-nova/stage-tamagotchi typecheck` (runs `tsc` + `vue-tsc`).
 - **Unit tests (Vitest)**
   - Targeted: `pnpm exec vitest run <path/to/file>`
     e.g. `pnpm exec vitest run apps/stage-tamagotchi/src/renderer/stores/tools/builtin/widgets.test.ts`
   - Workspace: `pnpm -F <package.json name> exec vitest run`
-    e.g. `pnpm -F @proj-airi/stage-tamagotchi exec vitest run`
+    e.g. `pnpm -F @proj-nova/stage-tamagotchi exec vitest run`
   - Root `pnpm test:run`: runs all tests across registered projects. If no tests are found, check `vitest.config.ts` include patterns.
   - Root `vitest.config.ts` includes `apps/stage-tamagotchi` and other projects; each app/package can have its own `vitest.config`.
 - **Lint**
@@ -79,7 +79,7 @@ Concise but detailed reference for contributors working across the `moeru-ai/air
   - Formatting is handled via ESLint; `pnpm lint:fix` applies formatting.
 - **Build**
   - `pnpm -F <package.json name> build`
-  - Example: `pnpm -F @proj-airi/stage-tamagotchi build` (typecheck + electron-vite build).
+  - Example: `pnpm -F @proj-nova/stage-tamagotchi build` (typecheck + electron-vite build).
 
 ## Development Practices
 
@@ -98,7 +98,7 @@ Concise but detailed reference for contributors working across the `moeru-ai/air
 - Prefer Vue v-bind class arrays for readability when working with UnoCSS & tailwindcss: do `:class="['px-2 py-1','flex items-center','bg-white/50 dark:bg-black/50']"`, don't do `class="px-2 py-1 flex items-center bg-white/50 dark:bg-black/50"`, don't do `px="2" py="1" flex="~ items-center" bg="white/50 dark:black/50"`; avoid long inline `class=""`. Refactor legacy when you touch it.
 - Use/extend UnoCSS shortcuts/rules in `uno.config.ts`; add new shortcuts/rules/plugins there when standardizing styles. Prefer UnoCSS over Tailwind.
 - Check `apps/stage-web/src/styles` for existing animations; reuse or extend before adding new ones. If you need config references, see `apps/stage-web/tsconfig.json` and `uno.config.ts`.
-- Build primitives on `@proj-airi/ui` (reka-ui) instead of raw DOM; see [`docs/ai/context/ui-components.md`](docs/ai/context/ui-components.md) for the full component API reference and `packages/ui/src/components/Form` for implementation patterns.
+- Build primitives on `@proj-nova/ui` (reka-ui) instead of raw DOM; see [`docs/ai/context/ui-components.md`](docs/ai/context/ui-components.md) for the full component API reference and `packages/ui/src/components/Form` for implementation patterns.
 - **When adding or updating components in `packages/ui`**, update [`docs/ai/context/ui-components.md`](docs/ai/context/ui-components.md) to reflect the change (props, slots, emits, description).
 - Use Iconify icon sets; avoid bespoke SVGs.
 - Animations: keep intuitive, lively, and readable.

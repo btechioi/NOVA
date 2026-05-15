@@ -1,6 +1,6 @@
 import { errorMessageFrom } from '@moeru/std'
-import { useElectronEventaInvoke } from '@proj-airi/electron-vueuse'
-import { useLlmToolsStore } from '@proj-airi/stage-ui/stores/llm-tools'
+import { useElectronEventaInvoke } from '@proj-nova/electron-vueuse'
+import { useLlmToolsStore } from '@proj-nova/stage-ui/stores/llm-tools'
 import { rawTool } from '@xsai/tool'
 import { defineStore } from 'pinia'
 

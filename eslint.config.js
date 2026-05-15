@@ -28,6 +28,7 @@ export default defineConfig({
     '.agents/**',
     '.github/**',
     'CLAUDE.md', // Skip the symbolic link
+    '**/*.md',
   ],
 }, {
   rules: {
@@ -50,7 +51,7 @@ export default defineConfig({
       'warn',
       {
         selector: 'ConditionalExpression[test.type=\'BinaryExpression\'][test.operator=\'instanceof\'][test.right.name=\'Error\'][consequent.type=\'MemberExpression\'][consequent.property.name=\'message\']',
-        message: 'Avoid `error instanceof Error ? error.message : ...`. Use `errorMessageFrom(error)` from \'@moeru/std\' (or `errorMessageFromUnknown(error, fallback)` from \'@proj-airi/stage-shared\'). Pair with `?? \'fallback\'` when a default is needed.',
+        message: 'Avoid `error instanceof Error ? error.message : ...`. Use `errorMessageFrom(error)` from \'@moeru/std\' (or `errorMessageFromUnknown(error, fallback)` from \'@proj-nova/stage-shared\'). Pair with `?? \'fallback\'` when a default is needed.',
       },
       'TSEnumDeclaration[const=true]',
       'TSExportAssignment',

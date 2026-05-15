@@ -1,6 +1,6 @@
 ---
 title: Guide to Desktop version
-description: How to use Tamagotchi version of Project AIRI
+description: How to use Tamagotchi version of Project NOVA
 ---
 
 ## I want to chat, now!

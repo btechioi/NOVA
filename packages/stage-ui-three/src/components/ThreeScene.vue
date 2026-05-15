@@ -14,7 +14,7 @@ import type { DirectionalLight, SphericalHarmonics3, Texture, WebGLRenderer, Web
 import type { SceneBootstrap, ScenePhase, Vec3 } from '../stores/model-store'
 import type { VrmLifecycleReason } from '../trace'
 
-import { Screen } from '@proj-airi/ui'
+import { Screen } from '@proj-nova/ui'
 import { TresCanvas } from '@tresjs/core'
 import { EffectComposerPmndrs, HueSaturationPmndrs } from '@tresjs/post-processing'
 import { formatHex } from 'culori'

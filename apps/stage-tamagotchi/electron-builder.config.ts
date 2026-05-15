@@ -41,8 +41,8 @@ else {
 }
 
 export default {
-  appId: 'ai.moeru.airi',
-  productName: 'AIRI',
+  appId: 'nova.app',
+  productName: 'NOVA',
   directories: {
     output: 'dist',
     buildResources: 'build',
@@ -105,22 +105,22 @@ export default {
     },
   ],
   extraMetadata: {
-    name: 'ai.moeru.airi',
+    name: 'nova',
     main: 'out/main/index.js',
-    homepage: 'https://airi.moeru.ai/docs/',
-    repository: 'https://github.com/moeru-ai/airi',
+    homepage: 'https://github.com/btechioi/NOVA',
+    repository: 'https://github.com/btechioi/NOVA',
     license: 'MIT',
   },
   win: {
-    executableName: 'airi',
+    executableName: 'nova',
     // NOTICE: Keep `channel: 'latest-${arch}'` for architecture-aware updater metadata.
     // electron-builder expands `${arch}` at publish-time (for example: `latest-x64`, `latest-arm64`),
     // and electron-updater later consumes that expanded channel to resolve platform-specific *.yml files.
     // This prevents cross-arch lookups such as arm64 clients reading x64 metadata.
     publish: {
       provider: 'github',
-      owner: 'moeru-ai',
-      repo: 'airi',
+      owner: 'btechioi',
+      repo: 'NOVA',
       channel: 'latest-${arch}',
     },
   },
@@ -139,8 +139,8 @@ export default {
     // to architecture-specific update feeds on macOS (for example: `latest-x64-mac.yml`, `latest-arm64-mac.yml`).
     publish: {
       provider: 'github',
-      owner: 'moeru-ai',
-      repo: 'airi',
+      owner: 'btechioi',
+      repo: 'NOVA',
       // NOTICE: `channel: 'latest-${arch}'` matters because electron-builder expands
       // `${arch}` before it writes any publish metadata, and electron-updater later
       // reuses that expanded channel string when deciding which `*.yml` file to fetch.
@@ -207,10 +207,10 @@ export default {
     },
     extendInfo: [
       {
-        NSMicrophoneUsageDescription: 'AIRI requires microphone access for voice interaction',
+        NSMicrophoneUsageDescription: 'NOVA requires microphone access for voice interaction',
       },
       {
-        NSCameraUsageDescription: 'AIRI requires camera access for vision understanding',
+        NSCameraUsageDescription: 'NOVA requires camera access for vision understanding',
       },
     ],
     // For self-publishing, testing, and distribution after modified the code without access to
@@ -221,7 +221,7 @@ export default {
     hardenedRuntime: true,
     // notarize: false,
     notarize: true,
-    executableName: 'airi',
+    executableName: 'nova',
     icon: useIconFormattedMacAppIcon ? 'icon.icon' : 'icon.icns',
   },
   dmg: {
@@ -235,14 +235,14 @@ export default {
     // NOTICE: Same channel rule as Windows/macOS. Keep `${arch}` to avoid x64/arm64 feed collisions on Linux.
     publish: {
       provider: 'github',
-      owner: 'moeru-ai',
-      repo: 'airi',
+      owner: 'btechioi',
+      repo: 'NOVA',
       channel: 'latest-${arch}',
     },
     category: 'Utility',
-    synopsis: 'AI VTuber/Waifu chatbot app inspired by Neuro-sama.',
-    description: 'AIRI is an AI VTuber/Waifu chatbot supporting Live2D/VRM avatars, featuring human-like interactions and modular stage-based rendering.',
-    executableName: 'airi',
+    synopsis: 'AI VTuber/Waifu chatbot app.',
+    description: 'NOVA is an AI VTuber/Waifu chatbot supporting Live2D/VRM avatars, featuring human-like interactions and modular stage-based rendering.',
+    executableName: 'nova',
     artifactName: '${productName}-${version}-linux-${arch}.${ext}',
     icon: 'build/icons/icon.png',
   },

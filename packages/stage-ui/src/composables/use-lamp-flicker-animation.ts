@@ -1,6 +1,6 @@
 import type { MaybeRefOrGetter } from 'vue'
 
-import { lampFlickerAnimationClass } from '@proj-airi/ui'
+import { lampFlickerAnimationClass } from '@proj-nova/ui'
 import { computed, ref, toValue, watch } from 'vue'
 
 export { lampFlickerAnimationClass }
@@ -9,8 +9,8 @@ const LAMP_FLICKER_DELAY_VAR = '--lamp-flicker-delay'
 const LAMP_FLICKER_DURATION_VAR = '--lamp-flicker-duration'
 
 /**
- * Drives randomized keyframe timing for `.lamp-flicker-animation` from `@proj-airi/ui/main.css` while `flickerActive` is true.
- * Import `@proj-airi/ui/main.css` from the app global stylesheet (e.g. `styles/main.css`). When inactive, delay resets to 0s.
+ * Drives randomized keyframe timing for `.lamp-flicker-animation` from `@proj-nova/ui/main.css` while `flickerActive` is true.
+ * Import `@proj-nova/ui/main.css` from the app global stylesheet (e.g. `styles/main.css`). When inactive, delay resets to 0s.
  */
 export function useLampFlickerAnimation(flickerActive: MaybeRefOrGetter<boolean>) {
   const flickerDuration = ref('6.4s')

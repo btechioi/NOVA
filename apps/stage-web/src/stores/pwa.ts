@@ -1,5 +1,5 @@
-import { isEnvTruthy } from '@proj-airi/stage-shared'
-import { ToasterPWAUpdateReady } from '@proj-airi/stage-ui/components'
+import { isEnvTruthy } from '@proj-nova/stage-shared'
+import { ToasterPWAUpdateReady } from '@proj-nova/stage-ui/components'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { nanoid } from 'nanoid'
 import { defineStore } from 'pinia'

@@ -43,7 +43,7 @@ What this proves:
 
 `apps/server/public/ui-server-auth/` is a build artifact (Vite `outDir`). New
 pages added under `apps/ui-server-auth/src/pages/` only show up after
-running `pnpm -F @proj-airi/ui-server-auth build`. Symptom of forgetting:
+running `pnpm -F @proj-nova/ui-server-auth build`. Symptom of forgetting:
 the success page returns `200` with the SPA HTML but renders blank because
 vue-router never registered the route. Re-build → fixes.
 
@@ -52,13 +52,13 @@ vue-router never registered the route. Re-build → fixes.
 | Layer | Evidence | Date |
 |---|---|---|
 | Schema migration generated | `apps/server/drizzle/0009_perpetual_lilandra.sql`: 11 `DROP CONSTRAINT` + 7 `ADD COLUMN deleted_at` (no destructive ALTER beyond FK drop) | 2026-04-28 |
-| Server typecheck | `pnpm -F @proj-airi/server typecheck` exits clean | 2026-04-28 |
+| Server typecheck | `pnpm -F @proj-nova/server typecheck` exits clean | 2026-04-28 |
 | Monorepo typecheck | `pnpm typecheck` exits clean across all packages | 2026-04-28 |
 | Lint | `pnpm lint` reports 0 errors in deletion-service / handler / UI files | 2026-04-28 |
 | Deletion service unit tests | `pnpm exec vitest run apps/server/src/services/user-deletion` → `2 files / 14 tests pass` (registry priority order, abort-on-error, serial execution, idempotency, per-service `deleteAllForUser` correctness) | 2026-04-28 |
 | Architecture refactor | Domain knowledge moved out of `*-deletion-handler.ts` files into each business service's own `deleteAllForUser` method. Registry retained as a thin scheduler. `auth → userDeletionService → 5 business services` (auth and services no longer depend on each other). | 2026-04-28 |
-| Server full test suite | `pnpm -F @proj-airi/server exec vitest run` → 244/245 pass; the single failure (`origin.test.ts`) is pre-existing on `main` and unrelated | 2026-04-28 |
-| UI typecheck | `pnpm -F @proj-airi/stage-pages typecheck` and `pnpm -F @proj-airi/ui-server-auth typecheck` both clean | 2026-04-28 |
+| Server full test suite | `pnpm -F @proj-nova/server exec vitest run` → 244/245 pass; the single failure (`origin.test.ts`) is pre-existing on `main` and unrelated | 2026-04-28 |
+| UI typecheck | `pnpm -F @proj-nova/stage-pages typecheck` and `pnpm -F @proj-nova/ui-server-auth typecheck` both clean | 2026-04-28 |
 | Live server-side trace | See "Live trace" section above — full pipeline ran against real DB + Stripe sandbox + Resend | 2026-04-28 |
 
 ## What is **not** verified yet (action items)
@@ -66,7 +66,7 @@ vue-router never registered the route. Re-build → fixes.
 ### Path A — Migration applies cleanly to live DB
 **Command (run by user):**
 ```sh
-pnpm -F @proj-airi/server db:push
+pnpm -F @proj-nova/server db:push
 ```
 **Expected:** Drizzle reports `Changes applied` for 11 FK drops + 7 column additions on the local Postgres pointed to by `DATABASE_URL`.
 **Risk:** if any business table currently has rows whose `userId` references a now-missing user (orphans from older bugs), DROP CONSTRAINT will succeed (unlike ADD CONSTRAINT). No data loss expected.
@@ -74,7 +74,7 @@ pnpm -F @proj-airi/server db:push
 ### Path B — Server boots with deletion service wired
 **Command:**
 ```sh
-pnpm -F @proj-airi/server dev
+pnpm -F @proj-nova/server dev
 ```
 **Expected log lines:**
 - `injeca` resolves `services:userDeletion` without error
@@ -84,7 +84,7 @@ pnpm -F @proj-airi/server dev
 
 ### Path C — End-to-end deletion flow (UI → email → DB)
 **Setup:**
-1. Server up (Path B), UI up (`pnpm -F @proj-airi/stage-web dev` with `VITE_SERVER_URL=http://localhost:3000`)
+1. Server up (Path B), UI up (`pnpm -F @proj-nova/stage-web dev` with `VITE_SERVER_URL=http://localhost:3000`)
 2. `RESEND_API_KEY` valid, use `rbxin2003+delete@outlook.com` (bare address suppressed — see Resend memory)
 3. Pre-populate the user with non-trivial data so soft-delete has something to mark:
    - Register user

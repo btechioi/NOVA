@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ModelSettingsRuntimeSnapshot } from './runtime'
 
-import { Callout } from '@proj-airi/ui'
+import { Callout } from '@proj-nova/ui'
 import { computed } from 'vue'
 
 const props = defineProps<{

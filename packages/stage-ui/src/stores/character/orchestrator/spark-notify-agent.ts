@@ -11,9 +11,9 @@ export type {
   SparkNotifyTracingHooks,
   SparkTraceCapture,
   SparkTraceEvent,
-} from '@proj-airi/core-agent/agents/spark-notify'
+} from '@proj-nova/core-agent/agents/spark-notify'
 export {
   getSparkNotifyHandlingAgentInstruction,
   setupAgentSparkNotifyHandler,
   sparkNotifyCommandSchema,
-} from '@proj-airi/core-agent/agents/spark-notify'
+} from '@proj-nova/core-agent/agents/spark-notify'

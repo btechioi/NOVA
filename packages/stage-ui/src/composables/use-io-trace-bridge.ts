@@ -1,7 +1,7 @@
 import type { Span } from '@opentelemetry/api'
-import type { createSpeechPipeline } from '@proj-airi/pipelines-audio'
+import type { createSpeechPipeline } from '@proj-nova/pipelines-audio'
 
-import { IOAttributes, IOSpanNames, IOSubsystems } from '@proj-airi/stage-shared'
+import { IOAttributes, IOSpanNames, IOSubsystems } from '@proj-nova/stage-shared'
 import { onScopeDispose } from 'vue'
 
 import { activeTurnSpan, startSpan } from './use-io-tracer'

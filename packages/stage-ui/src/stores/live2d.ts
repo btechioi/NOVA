@@ -1,1 +1,1 @@
-export * from '@proj-airi/stage-ui-live2d/stores'
+export * from '@proj-nova/stage-ui-live2d/stores'

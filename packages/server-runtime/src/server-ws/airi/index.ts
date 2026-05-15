@@ -1,4 +1,4 @@
-import type { DeliveryConfig, MessageHeartbeat, MetadataEventSource, WebSocketBaseEvent, WebSocketEvent } from '@proj-airi/server-shared/types'
+import type { DeliveryConfig, MessageHeartbeat, MetadataEventSource, WebSocketBaseEvent, WebSocketEvent } from '@proj-nova/server-shared/types'
 
 import type {
   RouteContext,
@@ -7,12 +7,12 @@ import type {
 } from '../../middlewares'
 import type { Peer } from '../../types'
 
-import { ServerErrorMessages } from '@proj-airi/server-shared'
+import { ServerErrorMessages } from '@proj-nova/server-shared'
 import {
   getProtocolEventMetadata,
   MessageHeartbeatKind,
   WebSocketEventSource,
-} from '@proj-airi/server-shared/types'
+} from '@proj-nova/server-shared/types'
 import { nanoid } from 'nanoid'
 import { parse, stringify } from 'superjson'
 

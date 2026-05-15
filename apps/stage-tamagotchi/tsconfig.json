@@ -11,16 +11,16 @@
     ],
     "useDefineForClassFields": true,
     "paths": {
-      "@proj-airi/stage-pages/*.vue": [
+      "@proj-nova/stage-pages/*.vue": [
         "../../packages/stage-pages/src/*.vue"
       ],
-      "@proj-airi/stage-pages/*": [
+      "@proj-nova/stage-pages/*": [
         "../../packages/stage-pages/src/*.ts"
       ],
-      "@proj-airi/stage-ui/*": [
+      "@proj-nova/stage-ui/*": [
         "../../packages/stage-ui/src/*"
       ],
-      "@proj-airi/stage-layouts/*": [
+      "@proj-nova/stage-layouts/*": [
         "../../packages/stage-layouts/src/*"
       ]
     },
@@ -33,7 +33,7 @@
       "vue-macros/macros-global",
       "electron-vite/node",
       "unplugin-info/client",
-      "@proj-airi/stage-shared/electron-renderer",
+      "@proj-nova/stage-shared/electron-renderer",
       "@webgpu/types"
     ],
     "allowJs": true,

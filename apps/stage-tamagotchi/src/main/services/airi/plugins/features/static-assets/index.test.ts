@@ -14,7 +14,7 @@ vi.mock('../../../http-server/static-assets', () => ({
   createStaticAssetService: mockState.createStaticAssetService,
 }))
 
-function createSession(assetSessionId: string, extensionId = 'airi-plugin-game-chess'): StaticAssetSession {
+function createSession(assetSessionId: string, extensionId = 'nova-plugin-game-chess'): StaticAssetSession {
   return {
     assetSessionId,
     cookieName: `airi_extension_asset_session_${assetSessionId}`,
@@ -81,7 +81,7 @@ describe('createPluginAssetService', () => {
     })
 
     const result = await service.createAssetSession({
-      pluginId: 'airi-plugin-game-chess',
+      pluginId: 'nova-plugin-game-chess',
       version: '1.0.0',
       ownerSessionId: 'owner-session-1',
       routeAssetPath: 'assets/app.js',
@@ -90,7 +90,7 @@ describe('createPluginAssetService', () => {
     })
 
     expect(server.createSession).toHaveBeenCalledWith({
-      extensionId: 'airi-plugin-game-chess',
+      extensionId: 'nova-plugin-game-chess',
       version: '1.0.0',
       ownerSessionId: 'owner-session-1',
       pathPrefix: 'assets/',
@@ -101,13 +101,13 @@ describe('createPluginAssetService', () => {
       {
         name: 'airi_extension_asset_session_asset-session-1',
         value: 'cookie-value-asset-session-1',
-        url: 'http://127.0.0.1:48123/_airi/extensions/airi-plugin-game-chess/sessions/asset-session-1/ui',
-        path: '/_airi/extensions/airi-plugin-game-chess/sessions/asset-session-1/ui',
+        url: 'http://127.0.0.1:48123/_airi/extensions/nova-plugin-game-chess/sessions/asset-session-1/ui',
+        path: '/_airi/extensions/nova-plugin-game-chess/sessions/asset-session-1/ui',
         expiresAt: 123_456,
       },
     ])
     expect(result).toEqual({
-      url: 'http://127.0.0.1:48123/_airi/extensions/airi-plugin-game-chess/sessions/asset-session-1/ui/assets/app.js',
+      url: 'http://127.0.0.1:48123/_airi/extensions/nova-plugin-game-chess/sessions/asset-session-1/ui/assets/app.js',
       assetSessionId: 'asset-session-1',
       cookie: setCookies[0],
       expiresAt: 123_456,
@@ -128,7 +128,7 @@ describe('createPluginAssetService', () => {
     })
 
     await expect(service.createAssetSession({
-      pluginId: 'airi-plugin-game-chess',
+      pluginId: 'nova-plugin-game-chess',
       version: '1.0.0',
       ownerSessionId: 'owner-session-1',
       routeAssetPath: 'assets/app.js',
@@ -154,7 +154,7 @@ describe('createPluginAssetService', () => {
     })
 
     await expect(service.createAssetSession({
-      pluginId: 'airi-plugin-game-chess',
+      pluginId: 'nova-plugin-game-chess',
       version: '1.0.0',
       ownerSessionId: 'owner-session-1',
       routeAssetPath: '../secret.txt',
@@ -169,7 +169,7 @@ describe('createPluginAssetService', () => {
     adapter.setCookie.mockRejectedValueOnce(new Error('cookie jar unavailable'))
 
     await expect(service.createAssetSession({
-      pluginId: 'airi-plugin-game-chess',
+      pluginId: 'nova-plugin-game-chess',
       version: '1.0.0',
       ownerSessionId: 'owner-session-1',
       routeAssetPath: 'assets/app.js',
@@ -202,41 +202,41 @@ describe('createPluginAssetService', () => {
 
     await service.revokeSession('direct-asset-session')
     await service.revokeByOwnerSessionId('owner-session-1')
-    await service.revokeByPluginId('airi-plugin-game-chess')
+    await service.revokeByPluginId('nova-plugin-game-chess')
     await service.revokeAll()
 
     expect(server.revokeSession).toHaveBeenCalledWith('direct-asset-session')
     expect(server.revokeByOwnerSessionId).toHaveBeenCalledWith('owner-session-1')
-    expect(server.revokeByExtensionId).toHaveBeenCalledWith('airi-plugin-game-chess')
+    expect(server.revokeByExtensionId).toHaveBeenCalledWith('nova-plugin-game-chess')
     expect(server.revokeAll).toHaveBeenCalledOnce()
     expect(adapter.removeCookie).toHaveBeenCalledTimes(4)
     expect(removedCookies).toEqual([
       {
         name: 'airi_extension_asset_session_direct-asset-session',
         value: 'cookie-value-direct-asset-session',
-        url: 'http://127.0.0.1:48123/_airi/extensions/airi-plugin-game-chess/sessions/direct-asset-session/ui',
-        path: '/_airi/extensions/airi-plugin-game-chess/sessions/direct-asset-session/ui',
+        url: 'http://127.0.0.1:48123/_airi/extensions/nova-plugin-game-chess/sessions/direct-asset-session/ui',
+        path: '/_airi/extensions/nova-plugin-game-chess/sessions/direct-asset-session/ui',
         expiresAt: 123_456,
       },
       {
         name: 'airi_extension_asset_session_owner-asset-session',
         value: 'cookie-value-owner-asset-session',
-        url: 'http://127.0.0.1:48123/_airi/extensions/airi-plugin-game-chess/sessions/owner-asset-session/ui',
-        path: '/_airi/extensions/airi-plugin-game-chess/sessions/owner-asset-session/ui',
+        url: 'http://127.0.0.1:48123/_airi/extensions/nova-plugin-game-chess/sessions/owner-asset-session/ui',
+        path: '/_airi/extensions/nova-plugin-game-chess/sessions/owner-asset-session/ui',
         expiresAt: 123_456,
       },
       {
         name: 'airi_extension_asset_session_plugin-asset-session',
         value: 'cookie-value-plugin-asset-session',
-        url: 'http://127.0.0.1:48123/_airi/extensions/airi-plugin-game-chess/sessions/plugin-asset-session/ui',
-        path: '/_airi/extensions/airi-plugin-game-chess/sessions/plugin-asset-session/ui',
+        url: 'http://127.0.0.1:48123/_airi/extensions/nova-plugin-game-chess/sessions/plugin-asset-session/ui',
+        path: '/_airi/extensions/nova-plugin-game-chess/sessions/plugin-asset-session/ui',
         expiresAt: 123_456,
       },
       {
         name: 'airi_extension_asset_session_all-asset-session',
         value: 'cookie-value-all-asset-session',
-        url: 'http://127.0.0.1:48123/_airi/extensions/airi-plugin-game-chess/sessions/all-asset-session/ui',
-        path: '/_airi/extensions/airi-plugin-game-chess/sessions/all-asset-session/ui',
+        url: 'http://127.0.0.1:48123/_airi/extensions/nova-plugin-game-chess/sessions/all-asset-session/ui',
+        path: '/_airi/extensions/nova-plugin-game-chess/sessions/all-asset-session/ui',
         expiresAt: 123_456,
       },
     ])
@@ -265,8 +265,8 @@ describe('createPluginAssetService', () => {
       {
         name: 'airi_extension_asset_session_stop-asset-session',
         value: 'cookie-value-stop-asset-session',
-        url: 'http://127.0.0.1:48123/_airi/extensions/airi-plugin-game-chess/sessions/stop-asset-session/ui',
-        path: '/_airi/extensions/airi-plugin-game-chess/sessions/stop-asset-session/ui',
+        url: 'http://127.0.0.1:48123/_airi/extensions/nova-plugin-game-chess/sessions/stop-asset-session/ui',
+        path: '/_airi/extensions/nova-plugin-game-chess/sessions/stop-asset-session/ui',
         expiresAt: 123_456,
       },
     ])

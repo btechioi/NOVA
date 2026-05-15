@@ -169,7 +169,7 @@ Steam や Battle.net のように、さまざまなモジュールと必要な�
 #### ローカル ASR/STT
 
 [@luoling8192 (Luoling)](https://github.com/luoling8192) と、リポジトリ
-[candle-examples](https://github.com/proj-airi/candle-examples) で行った実験のおかげで、
+[candle-examples](https://github.com/proj-nova/candle-examples) で行った実験のおかげで、
 Windows、macOS、Linux で動作するローカル ASR/STT エンジンができました。
 
 <ThemedVideo autoplay src="/en/blog/DevLog-2025.08.05/assets/airi-demo-settings-hearing.mp4" />
@@ -518,16 +518,16 @@ NVIDIA CUDA に依存していたため、ビルドは本当に混乱してお�
 
 > [@sumimakito](https://github.com/sumimakito) に大声で感謝を叫びます。彼女は数え切れないほど多くの素晴らしいことをしてくれました...
 
-- [`@proj-airi/chromatic`](https://github.com/proj-airi/chromatic)（[@sumimakito](https://github.com/sumimakito) 作）
-- [`@proj-airi/unocss-preset-chromatic`](https://github.com/proj-airi/chromatic)（[@sumimakito](https://github.com/sumimakito) 作）
+- [`@proj-nova/chromatic`](https://github.com/proj-nova/chromatic)（[@sumimakito](https://github.com/sumimakito) 作）
+- [`@proj-nova/unocss-preset-chromatic`](https://github.com/proj-nova/chromatic)（[@sumimakito](https://github.com/sumimakito) 作）
 - [`@moeru-ai/jem`](https://github.com/moeru-ai/inventory/tree/main/packages/jem-validator)（[@LemonNekoGH](https://github.com/LemonNekoGH) 作）、統一モデルディレクトリ
 - [`clustr`](https://github.com/sumimakito/clustr)（[@sumimakito](https://github.com/sumimakito) 作）
-- [`@proj-airi/drizzle-orm-browser`](https://github.com/proj-airi/drizzle-orm-browser)（私作）
+- [`@proj-nova/drizzle-orm-browser`](https://github.com/proj-nova/drizzle-orm-browser)（私作）
 
 このバージョンの間に誕生したサイドプロジェクト：
 
 - [HuggingFace Inspector](https://hf-inspector.moeru.ai/) (https://github.com/moeru-ai/hf-inspector)
-- [whisper & VAD、candle、burn、ort に関するその他の candle の例](https://github.com/proj-airi/candle-examples)
+- [whisper & VAD、candle、burn、ort に関するその他の candle の例](https://github.com/proj-nova/candle-examples)
 - [（モデルディレクトリ）Inventory 提出！](https://github.com/moeru-ai/inventory/pull/1)（[@LemonNekoGH](https://github.com/LemonNekoGH) 作）
 
 この DevLog ですべてを網羅することはできません。詳細については、いつでも

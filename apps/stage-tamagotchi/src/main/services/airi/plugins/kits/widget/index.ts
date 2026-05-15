@@ -1,7 +1,7 @@
 import type {
   KitDescriptor,
   PluginHost,
-} from '@proj-airi/plugin-sdk/plugin-host'
+} from '@proj-nova/plugin-sdk/plugin-host'
 
 export {
   resolveWidgetAssetRoute,

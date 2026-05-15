@@ -23,6 +23,8 @@ import type { I18n } from '../../libs/i18n'
 import type { ServerChannel } from '../../services/airi/channel-server'
 import type { McpStdioManager } from '../../services/airi/mcp-servers'
 
+import process from 'node:process'
+
 import { join, resolve } from 'node:path'
 
 import { BrowserWindow, screen } from 'electron'
@@ -47,7 +49,7 @@ export function isDesktopOverlayEnabled(): boolean {
  * mount the in-page smoke bridge.
  */
 export function isDesktopOverlayPollHeartbeatEnabled(): boolean {
-  return process.env.AIRI_DESKTOP_OVERLAY_POLL_HEARTBEAT === '1'
+  return import.meta.env.AIRI_DESKTOP_OVERLAY_POLL_HEARTBEAT === '1'
 }
 
 let overlayWindow: BrowserWindow | null = null

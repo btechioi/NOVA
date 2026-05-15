@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import type { Card } from '@proj-airi/ccc'
-import type { AiriExtension } from '@proj-airi/stage-ui/stores/modules/airi-card'
+import type { Card } from '@proj-nova/ccc'
+import type { AiriExtension } from '@proj-nova/stage-ui/stores/modules/airi-card'
 
 import kebabcase from '@stdlib/string-base-kebabcase'
 
-import { DEFAULT_ARTISTRY_WIDGET_INSTRUCTION } from '@proj-airi/stage-ui/constants/prompts/artistry-instruction'
-import { useDisplayModelsStore } from '@proj-airi/stage-ui/stores/display-models'
-import { useAiriCardStore } from '@proj-airi/stage-ui/stores/modules/airi-card'
-import { useArtistryStore } from '@proj-airi/stage-ui/stores/modules/artistry'
-import { useConsciousnessStore } from '@proj-airi/stage-ui/stores/modules/consciousness'
-import { useSpeechStore } from '@proj-airi/stage-ui/stores/modules/speech'
-import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
-import { useSettingsStageModel } from '@proj-airi/stage-ui/stores/settings/stage-model'
-import { Button, FieldInput, FieldValues } from '@proj-airi/ui'
-import { ComboboxSelect } from '@proj-airi/ui/components/form'
+import { DEFAULT_ARTISTRY_WIDGET_INSTRUCTION } from '@proj-nova/stage-ui/constants/prompts/artistry-instruction'
+import { useDisplayModelsStore } from '@proj-nova/stage-ui/stores/display-models'
+import { useAiriCardStore } from '@proj-nova/stage-ui/stores/modules/airi-card'
+import { useArtistryStore } from '@proj-nova/stage-ui/stores/modules/artistry'
+import { useConsciousnessStore } from '@proj-nova/stage-ui/stores/modules/consciousness'
+import { useSpeechStore } from '@proj-nova/stage-ui/stores/modules/speech'
+import { useProvidersStore } from '@proj-nova/stage-ui/stores/providers'
+import { useSettingsStageModel } from '@proj-nova/stage-ui/stores/settings/stage-model'
+import { Button, FieldInput, FieldValues } from '@proj-nova/ui'
+import { ComboboxSelect } from '@proj-nova/ui/components/form'
 import { storeToRefs } from 'pinia'
 import {
   DialogContent,
@@ -316,7 +316,7 @@ function saveCard(card: Card): boolean {
         throw new Error('Not an object')
       }
     }
-    catch (e) {
+    catch {
       showError.value = true
       errorMessage.value = t('settings.pages.card.creation.errors.invalid_artistry_json')
       return false

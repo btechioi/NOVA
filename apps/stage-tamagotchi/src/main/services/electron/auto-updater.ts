@@ -1,5 +1,5 @@
 import type { createContext } from '@moeru/eventa/adapters/electron/main'
-import type { AutoUpdaterState } from '@proj-airi/electron-eventa/electron-updater'
+import type { AutoUpdaterState } from '@proj-nova/electron-eventa/electron-updater'
 import type { BrowserWindow } from 'electron'
 import type { UpdateInfo } from 'electron-updater'
 
@@ -52,8 +52,8 @@ function getLegacyCacheRoot() {
 
 const UPDATER_DEBUG_CACHE_DIR = join(getCacheRoot(), 'stage-tamagotchi-updater')
 const UPDATER_LOG_FILE = join(UPDATER_DEBUG_CACHE_DIR, 'updater-log.txt')
-const OFFICIAL_UPDATER_CACHE_DIR = join(getCacheRoot(), 'ai.moeru.airi-updater')
-const LEGACY_OFFICIAL_UPDATER_CACHE_DIR = join(getLegacyCacheRoot(), 'ai.moeru.airi-updater')
+const OFFICIAL_UPDATER_CACHE_DIR = join(getCacheRoot(), 'nova-updater')
+const LEGACY_OFFICIAL_UPDATER_CACHE_DIR = join(getLegacyCacheRoot(), 'nova-updater')
 const OFFICIAL_UPDATER_CACHE_DIRS = Array.from(new Set([
   OFFICIAL_UPDATER_CACHE_DIR,
   LEGACY_OFFICIAL_UPDATER_CACHE_DIR,

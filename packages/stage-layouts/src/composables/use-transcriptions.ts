@@ -1,8 +1,8 @@
 import type { MaybeRefOrGetter, Ref } from 'vue'
 
-import { useHearingSpeechInputPipeline, useHearingStore } from '@proj-airi/stage-ui/stores/modules/hearing'
-import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
-import { useSettingsAudioDevice } from '@proj-airi/stage-ui/stores/settings'
+import { useHearingSpeechInputPipeline, useHearingStore } from '@proj-nova/stage-ui/stores/modules/hearing'
+import { useProvidersStore } from '@proj-nova/stage-ui/stores/providers'
+import { useSettingsAudioDevice } from '@proj-nova/stage-ui/stores/settings'
 import { until } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 import { nextTick, onScopeDispose, ref, toValue, watch } from 'vue'

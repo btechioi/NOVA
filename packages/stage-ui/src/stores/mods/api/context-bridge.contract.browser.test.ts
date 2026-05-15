@@ -1,4 +1,4 @@
-import { ContextUpdateStrategy } from '@proj-airi/server-sdk'
+import { ContextUpdateStrategy } from '@proj-nova/server-sdk'
 import { createPinia, setActivePinia } from 'pinia'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { ref } from 'vue'
@@ -173,7 +173,7 @@ vi.mock('pinia', async () => {
   }
 })
 
-vi.mock('@proj-airi/stage-shared', () => ({
+vi.mock('@proj-nova/stage-shared', () => ({
   isStageWeb: () => true,
   isStageTamagotchi: () => false,
 }))

@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import type { Live2DLipSync, Live2DLipSyncOptions } from '@proj-airi/model-driver-lipsync'
-import type { Profile } from '@proj-airi/model-driver-lipsync/shared/wlipsync'
+import type { Live2DLipSync, Live2DLipSyncOptions } from '@proj-nova/model-driver-lipsync'
+import type { Profile } from '@proj-nova/model-driver-lipsync/shared/wlipsync'
 import type { SpeechProviderWithExtraOptions } from '@xsai-ext/providers/utils'
 import type { UnElevenLabsOptions } from 'unspeech'
 
 import type { EmotionPayload } from '../../constants/emotions'
 
-import { createLive2DLipSync } from '@proj-airi/model-driver-lipsync'
-import { wlipsyncProfile } from '@proj-airi/model-driver-lipsync/shared/wlipsync'
-import { createPlaybackManager, createSpeechPipeline } from '@proj-airi/pipelines-audio'
-import { Live2DScene, useLive2d } from '@proj-airi/stage-ui-live2d'
-import { ThreeScene } from '@proj-airi/stage-ui-three'
-import { animations } from '@proj-airi/stage-ui-three/assets/vrm'
-import { createQueue } from '@proj-airi/stream-kit'
-import { Callout } from '@proj-airi/ui'
+import { createLive2DLipSync } from '@proj-nova/model-driver-lipsync'
+import { wlipsyncProfile } from '@proj-nova/model-driver-lipsync/shared/wlipsync'
+import { createPlaybackManager, createSpeechPipeline } from '@proj-nova/pipelines-audio'
+import { Live2DScene, useLive2d } from '@proj-nova/stage-ui-live2d'
+import { ThreeScene } from '@proj-nova/stage-ui-three'
+import { animations } from '@proj-nova/stage-ui-three/assets/vrm'
+import { createQueue } from '@proj-nova/stream-kit'
+import { Callout } from '@proj-nova/ui'
 import { useBroadcastChannel } from '@vueuse/core'
 // import { createTransformers } from '@xsai-transformers/embed'
 // import embedWorkerURL from '@xsai-transformers/embed/worker?worker&url'
@@ -23,7 +23,6 @@ import { storeToRefs } from 'pinia'
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 
 import { useDelayMessageQueue, useEmotionsMessageQueue } from '../../composables/queues'
-import { useAuthProviderSync } from '../../composables/use-auth-provider-sync'
 import { useDuckDb } from '../../composables/use-duck-db'
 import { useIOTraceBridge } from '../../composables/use-io-trace-bridge'
 import { initIOTracer } from '../../composables/use-io-tracer'
@@ -80,7 +79,6 @@ const chatHookCleanups: Array<() => void> = []
 //             cross-window broadcast wiring.
 
 const providersStore = useProvidersStore()
-useAuthProviderSync()
 const live2dStore = useLive2d()
 const showStage = ref(true)
 const viewUpdateCleanups: Array<() => void> = []

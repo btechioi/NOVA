@@ -1,5 +1,5 @@
-import type { ContextInit } from '@proj-airi/plugin-sdk'
-import type { HostDataRecord } from '@proj-airi/plugin-sdk/plugin-host'
+import type { ContextInit } from '@proj-nova/plugin-sdk'
+import type { HostDataRecord } from '@proj-nova/plugin-sdk/plugin-host'
 
 /**
  * Describes a widget hint contributed by a gamelet to the tamagotchi host.

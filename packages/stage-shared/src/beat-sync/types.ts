@@ -2,6 +2,7 @@ import type { AnalyserBeatEvent } from '@nekopaw/tempora'
 
 export interface BeatSyncDetectorState {
   isActive: boolean
+  sourceName?: string
 }
 
 export interface BeatSyncDetectorEventMap {

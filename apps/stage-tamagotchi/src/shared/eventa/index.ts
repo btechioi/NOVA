@@ -1,10 +1,10 @@
 import type { Locale } from '@intlify/core'
-import type { ServerOptions } from '@proj-airi/server-runtime/server'
+import type { ServerOptions } from '@proj-nova/server-runtime/server'
 import type {
   ShortcutBinding,
   ShortcutRegistrationResult,
-} from '@proj-airi/stage-shared/global-shortcut'
-import type { ServerChannelQrPayload } from '@proj-airi/stage-shared/server-channel-qr'
+} from '@proj-nova/stage-shared/global-shortcut'
+import type { ServerChannelQrPayload } from '@proj-nova/stage-shared/server-channel-qr'
 import type {
   ThreeHitTestReadTracePayload,
   ThreeSceneRenderInfoTracePayload,
@@ -14,7 +14,7 @@ import type {
   VrmLoadErrorTracePayload,
   VrmLoadStartTracePayload,
   VrmUpdateFrameTracePayload,
-} from '@proj-airi/stage-ui-three/trace'
+} from '@proj-nova/stage-ui-three/trace'
 
 import { defineEventa, defineInvokeEventa } from '@moeru/eventa'
 
@@ -145,7 +145,7 @@ export interface PluginRegistrySnapshot {
 }
 
 // TODO: Replace these manually duplicated IPC types with re-exports from
-// @proj-airi/plugin-sdk (CapabilityDescriptor) once stage-ui and the shared
+// @proj-nova/plugin-sdk (CapabilityDescriptor) once stage-ui and the shared
 // eventa layer can depend on the SDK without introducing unwanted coupling.
 export interface PluginCapabilityPayload {
   key: string
@@ -416,5 +416,5 @@ export const electronAuthLogout = defineInvokeEventa<void>('eventa:invoke:electr
 export const i18nSetLocale = defineInvokeEventa<void, Locale>('eventa:invoke:electron:i18n:set-locale')
 export const i18nGetLocale = defineInvokeEventa<string | undefined>('eventa:invoke:electron:i18n:get-locale')
 
-export { electron } from '@proj-airi/electron-eventa'
-export * from '@proj-airi/electron-eventa/electron-updater'
+export { electron } from '@proj-nova/electron-eventa'
+export * from '@proj-nova/electron-eventa/electron-updater'

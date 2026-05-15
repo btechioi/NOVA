@@ -172,7 +172,7 @@ export function createMcpStdioManager(): McpStdioManager {
       stderr: 'pipe',
     })
     const client = new Client({
-      name: `proj-airi:stage-tamagotchi:mcp:${name}`,
+      name: `proj-nova:stage-tamagotchi:mcp:${name}`,
       version: app.getVersion(),
     })
 
@@ -377,7 +377,7 @@ export function createMcpStdioManager(): McpStdioManager {
         stderr: 'pipe',
       })
       client = new Client({
-        name: `proj-airi:stage-tamagotchi:mcp:test:${payload.name}`,
+        name: `proj-nova:stage-tamagotchi:mcp:test:${payload.name}`,
         version: app.getVersion(),
       })
 

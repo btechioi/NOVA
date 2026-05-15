@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/vishot-runner-browser",
+  "name": "@proj-nova/vishot-runner-browser",
   "type": "module",
   "version": "0.10.2",
   "private": true,

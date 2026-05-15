@@ -1,4 +1,4 @@
-import type { WidgetsIframeInitPayload } from '@proj-airi/plugin-sdk-tamagotchi/widgets'
+import type { WidgetsIframeInitPayload } from '@proj-nova/plugin-sdk-tamagotchi/widgets'
 import type { MaybeElementRef } from '@vueuse/core'
 import type { ComputedRef } from 'vue'
 
@@ -11,7 +11,7 @@ import {
   widgetsIframeInitEvent,
   widgetsIframePublishEvent,
   widgetsIframeReadyEvent,
-} from '@proj-airi/plugin-sdk-tamagotchi/widgets'
+} from '@proj-nova/plugin-sdk-tamagotchi/widgets'
 import { unrefElement } from '@vueuse/core'
 import { onBeforeUnmount, shallowRef, toRaw, watch } from 'vue'
 

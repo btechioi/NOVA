@@ -1,0 +1,26 @@
+{
+  "name": "@proj-nova/nova-screenshot",
+  "type": "module",
+  "version": "0.10.2",
+  "private": true,
+  "description": "NOVA screenshot orchestration CLI",
+  "author": {
+    "name": "btechioi",
+    "url": "https://github.com/btechioi"
+  },
+  "license": "MIT",
+  "exports": "./src/index.ts",
+  "bin": {
+    "nova-screenshot": "./src/cli.ts"
+  },
+  "scripts": {
+    "capture": "tsx src/cli.ts capture",
+    "test:run": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@moeru/std": "catalog:",
+    "cac": "catalog:",
+    "tinyexec": "catalog:"
+  }
+}

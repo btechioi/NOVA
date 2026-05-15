@@ -1,1 +1,1 @@
-export { mergeLoadedSessionMessages } from '@proj-airi/core-agent'
+export { mergeLoadedSessionMessages } from '@proj-nova/core-agent'

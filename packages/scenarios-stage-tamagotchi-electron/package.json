@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/scenarios-stage-tamagotchi-electron",
+  "name": "@proj-nova/scenarios-stage-tamagotchi-electron",
   "type": "module",
   "version": "0.10.2",
   "private": true,
@@ -16,6 +16,6 @@
   },
   "dependencies": {
     "@moeru/std": "catalog:",
-    "@proj-airi/vishot-runner-electron": "workspace:^"
+    "@proj-nova/vishot-runner-electron": "workspace:^"
   }
 }

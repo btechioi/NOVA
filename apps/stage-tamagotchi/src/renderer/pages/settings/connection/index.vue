@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { isStageTamagotchi } from '@proj-airi/stage-shared'
-import { ConnectionSettings } from '@proj-airi/stage-ui/components'
-import { Callout, FieldCheckbox, FieldInput, SelectTab } from '@proj-airi/ui'
+import { isStageTamagotchi } from '@proj-nova/stage-shared'
+import { ConnectionSettings } from '@proj-nova/stage-ui/components'
+import { Callout, FieldCheckbox, FieldInput, SelectTab } from '@proj-nova/ui'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'

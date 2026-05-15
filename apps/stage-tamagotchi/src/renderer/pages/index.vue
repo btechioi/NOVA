@@ -1,33 +1,33 @@
 <script setup lang="ts">
-import type { ModelSettingsRuntimeSnapshot } from '@proj-airi/stage-ui/components/scenarios/settings/model-settings/runtime'
+import type { ModelSettingsRuntimeSnapshot } from '@proj-nova/stage-ui/components/scenarios/settings/model-settings/runtime'
 
 import type { ModelSettingsRuntimeChannelEvent } from '../../shared/model-settings-runtime'
 
-import workletUrl from '@proj-airi/stage-ui/workers/vad/process.worklet?worker&url'
+import workletUrl from '@proj-nova/stage-ui/workers/vad/process.worklet?worker&url'
 
 import { tryCatch } from '@moeru/std'
-import { electron } from '@proj-airi/electron-eventa'
+import { electron } from '@proj-nova/electron-eventa'
 import {
   useElectronEventaInvoke,
   useElectronMouseAroundWindowBorder,
   useElectronMouseInElement,
   useElectronMouseInWindow,
   useElectronRelativeMouse,
-} from '@proj-airi/electron-vueuse'
-import { IS_DEV } from '@proj-airi/stage-shared'
-import { useModelStore, useThreeSceneIsTransparentAtPoint } from '@proj-airi/stage-ui-three'
-import { HoloCoupon } from '@proj-airi/stage-ui/components'
+} from '@proj-nova/electron-vueuse'
+import { IS_DEV } from '@proj-nova/stage-shared'
+import { useModelStore, useThreeSceneIsTransparentAtPoint } from '@proj-nova/stage-ui-three'
+import { HoloCoupon } from '@proj-nova/stage-ui/components'
 import {
   createEmptyModelSettingsRuntimeSnapshot,
   resolveComponentStateToRuntimePhase,
-} from '@proj-airi/stage-ui/components/scenarios/settings/model-settings/runtime'
-import { WidgetStage } from '@proj-airi/stage-ui/components/scenes'
-import { useAudioRecorder } from '@proj-airi/stage-ui/composables/audio/audio-recorder'
-import { useCanvasPixelIsTransparentAtPoint } from '@proj-airi/stage-ui/composables/canvas-alpha'
-import { useVAD } from '@proj-airi/stage-ui/stores/ai/models/vad'
-import { useHearingSpeechInputPipeline } from '@proj-airi/stage-ui/stores/modules/hearing'
-import { useOnboardingStore } from '@proj-airi/stage-ui/stores/onboarding'
-import { useSettings, useSettingsAudioDevice } from '@proj-airi/stage-ui/stores/settings'
+} from '@proj-nova/stage-ui/components/scenarios/settings/model-settings/runtime'
+import { WidgetStage } from '@proj-nova/stage-ui/components/scenes'
+import { useAudioRecorder } from '@proj-nova/stage-ui/composables/audio/audio-recorder'
+import { useCanvasPixelIsTransparentAtPoint } from '@proj-nova/stage-ui/composables/canvas-alpha'
+import { useVAD } from '@proj-nova/stage-ui/stores/ai/models/vad'
+import { useHearingSpeechInputPipeline } from '@proj-nova/stage-ui/stores/modules/hearing'
+import { useOnboardingStore } from '@proj-nova/stage-ui/stores/onboarding'
+import { useSettings, useSettingsAudioDevice } from '@proj-nova/stage-ui/stores/settings'
 import { refDebounced, useBroadcastChannel } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 import { computed, onMounted, onUnmounted, ref, toRef, watch } from 'vue'

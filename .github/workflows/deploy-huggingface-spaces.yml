@@ -35,7 +35,7 @@ jobs:
           VITE_APP_TARGET_HUGGINGFACE_SPACE: 'true'
           VITE_ENABLE_POSTHOG: 'true'
 
-      - id: airi_diff
+      - id: nova_diff
         working-directory: ./apps/stage-web/dist
         run: |-
           git lfs ls-files --all
@@ -44,7 +44,7 @@ jobs:
               echo "changes=true" >> "$GITHUB_OUTPUT";
           fi
 
-      - if: steps.airi_diff.outputs.changes == 'true'
+      - if: steps.nova_diff.outputs.changes == 'true'
         working-directory: ./apps/stage-web/dist
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}

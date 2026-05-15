@@ -22,7 +22,7 @@ import NmsIou from '../../../en/blog/DevLog-2025.08.26/components/nms-iou.vue'
 
 <ThemedVideo src="/en/blog/DevLog-2025.08.26/assets/airi-factorio-yolo-v0-playground-vnc.mp4" controls playsinline />
 
-動画では、Web ページ内で VNC に接続して Factorio をプレイしています。右側は物体検出の結果で、ほぼリアルタイムです。[HuggingFace Space](https://huggingface.co/spaces/proj-airi/factorio-yolo-v0-playground) にもデプロイしたので、ぜひ遊んでみてください。
+動画では、Web ページ内で VNC に接続して Factorio をプレイしています。右側は物体検出の結果で、ほぼリアルタイムです。[HuggingFace Space](https://huggingface.co/spaces/proj-nova/factorio-yolo-v0-playground) にもデプロイしたので、ぜひ遊んでみてください。
 
 さて、どうやって実現したのでしょうか？
 

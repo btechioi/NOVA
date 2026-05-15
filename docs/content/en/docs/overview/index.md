@@ -1,6 +1,6 @@
 ---
 title: Introduction
-description: Get to know the UI of Project AIRI
+description: Get to know the UI of Project NOVA
 ---
 
 ### TL;DR
@@ -44,7 +44,7 @@ We do support both Web and Desktop.
       <div i-lucide:app-window />
     </div>
     <span>Web</span>
-    <a href="https://airi.moeru.ai/" target="_blank" decoration-none class="text-primary-900 dark:text-primary-400 text-base not-prose bg-primary-400/10 dark:bg-primary-600/10 block px-4 py-2 rounded-lg active:scale-95 transition-all duration-200 ease-in-out">
+    <a href="https://github.com/btechioi/NOVA/" target="_blank" decoration-none class="text-primary-900 dark:text-primary-400 text-base not-prose bg-primary-400/10 dark:bg-primary-600/10 block px-4 py-2 rounded-lg active:scale-95 transition-all duration-200 ease-in-out">
       Open
     </a>
   </div>
@@ -55,7 +55,7 @@ We do support both Web and Desktop.
       <div i-lucide:computer />
     </div>
     <span>Desktop</span>
-    <a href="https://github.com/moeru-ai/airi/releases/latest" target="_blank" decoration-none class="text-primary-900 dark:text-primary-400 text-base not-prose bg-primary-400/10 dark:bg-primary-600/10 block px-4 py-2 rounded-lg active:scale-95 transition-all duration-200 ease-in-out">
+    <a href="https://github.com/btechioi/NOVA/releases/latest" target="_blank" decoration-none class="text-primary-900 dark:text-primary-400 text-base not-prose bg-primary-400/10 dark:bg-primary-600/10 block px-4 py-2 rounded-lg active:scale-95 transition-all duration-200 ease-in-out">
       Download
     </a>
   </div>
@@ -95,4 +95,4 @@ of tokens for running AIRI.
 
 For guides that help you understand how to contribute to this project, please refer to [Contributing](../contributing/) page.
 
-For references to help you design and improve the UI of Project AIRI, please refer to [Design Guidelines](../contributing/design-guidelines/resources) page.
+For references to help you design and improve the UI of Project NOVA, please refer to [Design Guidelines](../contributing/design-guidelines/resources) page.

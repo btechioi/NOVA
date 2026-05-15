@@ -137,6 +137,19 @@ export const actionsList: Action[] = [
     },
   },
   {
+    name: 'jump',
+    description: 'Make the bot jump once.',
+    execution: 'async',
+    schema: z.object({}),
+    perform: mineflayer => async () => {
+      const bot = mineflayer.bot
+      bot.setControlState('jump', true)
+      await new Promise(resolve => setTimeout(resolve, 200))
+      bot.setControlState('jump', false)
+      return 'Jumped'
+    },
+  },
+  {
     name: 'goToCoordinate',
     description: 'Go to the given x, y, z location. Uses full A* pathfinding that automatically breaks/digs blocks in the way. Do NOT manually mine-then-move block by block; just call this with the destination.',
     execution: 'async',

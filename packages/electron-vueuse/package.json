@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/electron-vueuse",
+  "name": "@proj-nova/electron-vueuse",
   "type": "module",
   "version": "0.10.2",
   "private": true,
@@ -43,6 +43,6 @@
     "std-env": "catalog:"
   },
   "devDependencies": {
-    "@proj-airi/electron-eventa": "workspace:^"
+    "@proj-nova/electron-eventa": "workspace:^"
   }
 }

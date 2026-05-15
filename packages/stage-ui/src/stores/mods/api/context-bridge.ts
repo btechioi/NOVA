@@ -1,4 +1,4 @@
-import type { WebSocketEventOf } from '@proj-airi/server-sdk'
+import type { WebSocketEventOf } from '@proj-nova/server-sdk'
 import type { ChatProvider } from '@xsai-ext/providers/utils'
 import type { UserMessage } from '@xsai/shared-chat'
 
@@ -6,7 +6,7 @@ import type { ChatStreamEvent, ChatStreamEventContext, ContextMessage } from '..
 import type { SparkNotifyReactionOptions } from './spark-notify-reaction'
 
 import { errorMessageFrom } from '@moeru/std'
-import { isStageTamagotchi, isStageWeb } from '@proj-airi/stage-shared'
+import { isStageTamagotchi, isStageWeb } from '@proj-nova/stage-shared'
 import { useBroadcastChannel } from '@vueuse/core'
 import { Mutex } from 'es-toolkit'
 import { nanoid } from 'nanoid'
@@ -462,7 +462,7 @@ export const useContextBridgeStore = defineStore('mods:api:context-bridge', () =
           }
 
           let messageText = text
-          const targetSessionId = overrides?.sessionId
+          const targetSessionId = undefined
 
           if (overrides?.messagePrefix) {
             messageText = `${overrides.messagePrefix}${text}`

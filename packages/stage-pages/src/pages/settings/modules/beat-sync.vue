@@ -1,18 +1,19 @@
 <script setup lang="ts">
-import type { BeatSyncDetectorState } from '@proj-airi/stage-shared/beat-sync'
+import type { BeatSyncDetectorState } from '@proj-nova/stage-shared/beat-sync'
 
 import {
   DEFAULT_BEAT_SYNC_PARAMETERS,
   getBeatSyncInputByteFrequencyData,
+  getBeatSyncInputByteTimeDomainData,
   getBeatSyncState,
   listenBeatSyncBeatSignal,
   listenBeatSyncStateChange,
   toggleBeatSync,
   updateBeatSyncParameters,
-} from '@proj-airi/stage-shared/beat-sync'
-import { Alert, AudioSpectrumVisualizer } from '@proj-airi/stage-ui/components'
-import { useSettingsBeatSync } from '@proj-airi/stage-ui/stores/settings'
-import { Button, FieldCheckbox, FieldRange, SelectTab } from '@proj-airi/ui'
+} from '@proj-nova/stage-shared/beat-sync'
+import { Alert, AudioSpectrumVisualizer, AudioWaveform } from '@proj-nova/stage-ui/components'
+import { useSettingsBeatSync } from '@proj-nova/stage-ui/stores/settings'
+import { Button, FieldCheckbox, FieldRange, SelectTab } from '@proj-nova/ui'
 import { createTimeline } from 'animejs'
 import { nanoid } from 'nanoid'
 import { storeToRefs } from 'pinia'
@@ -21,6 +22,7 @@ import { useI18n } from 'vue-i18n'
 
 const state = ref<BeatSyncDetectorState>()
 const frequencies = ref<number[]>([])
+const timeDomainData = ref<number[]>([])
 const totalFreqHistory = ref<number[]>([])
 const isUpdatingFrequencies = ref(false)
 const beatSyncSettings = useSettingsBeatSync()
@@ -81,7 +83,14 @@ function resetDefaultParameters() {
 }
 
 async function updateFrequencies() {
-  frequencies.value = Array.from(await getBeatSyncInputByteFrequencyData())
+  const [freqData, timeData] = await Promise.all([
+    getBeatSyncInputByteFrequencyData(),
+    getBeatSyncInputByteTimeDomainData(),
+  ])
+
+  frequencies.value = Array.from(freqData).map(v => v / 255)
+  timeDomainData.value = Array.from(timeData)
+
   totalFreqHistory.value.push(frequencies.value.reduce((a, b) => a + b, 0))
 
   while (totalFreqHistory.value.length > 50)
@@ -92,6 +101,7 @@ async function updateFrequencies() {
   }
   else {
     frequencies.value = frequencies.value.map(() => 0)
+    timeDomainData.value = []
     totalFreqHistory.value = []
   }
 }
@@ -162,13 +172,26 @@ onUnmounted(() => {
               <Button @click="toggleBeatSync(false)">
                 {{ t('settings.pages.modules.beat_sync.sections.audio_source.actions.stop') }}
               </Button>
+              <span v-if="state?.sourceName" text-sm text-neutral-400>
+                Capturing: {{ state.sourceName }}
+              </span>
             </template>
 
             <template v-else>
               <Button @click="toggleBeatSync(true)">
-                {{ t('settings.pages.modules.beat_sync.sections.audio_source.actions.start_screen_capture') }}
+                {{ t('settings.pages.modules.beat_sync.sections.audio_source.actions.start') }}
               </Button>
             </template>
+          </div>
+        </div>
+
+        <div v-if="state?.isActive" flex="~ col gap-2" w-full>
+          <div class="h-24 w-full overflow-hidden rounded-xl" bg="neutral/10">
+            <AudioWaveform
+              v-if="timeDomainData.length > 0"
+              :data="timeDomainData"
+              h-full w-full
+            />
           </div>
         </div>
 

@@ -1,5 +1,5 @@
 ---
-title: Project AIRI Manual
+title: Project NOVA Manual
 authors:
   - name: MuGewRayce
     role: Lead writing team
@@ -21,8 +21,8 @@ Corresponding version: AIRI-0.10.2
 - Due to limitations in capability and time, this manual currently only includes the Windows installation package version and some detailed tutorials for the web version.
 - Some parts of the software use English without translation. This manual attempts to translate those parts, but the final interpretation should follow the actual software.
 - The version updates of AIRI may change some content. This manual only introduces the features of the latest version at the time of writing. For other versions before or after, this manual may retain some feature descriptions; if there are differences, please handle them yourself.
-- If you have any questions about this manual, please @jhicefair and leave a message on the official Project AIRI Discord channel.
-- For any other questions, please leave a message on the official Project AIRI Discord channel.
+- If you have any questions about this manual, please @jhicefair and leave a message on the official Project NOVA Discord channel.
+- For any other questions, please leave a message on the official Project NOVA Discord channel.
 - Have fun! AwA
 :::
 
@@ -54,7 +54,7 @@ Corresponding version: AIRI-0.10.2
 <a id="chapter-1-installation"></a>
 ## Chapter 1 – Installation
 
-Go to the Project AIRI GitHub homepage: [moeru-ai/airi](https://github.com/moeru-ai/airi)
+Go to the Project NOVA GitHub homepage: [moeru-ai/airi](https://github.com/btechioi/NOVA)
 
 Follow these steps:
 

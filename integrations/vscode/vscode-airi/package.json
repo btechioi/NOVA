@@ -1,14 +1,14 @@
 {
-  "publisher": "proj-airi",
+  "publisher": "proj-nova",
   "name": "vscode-airi",
-  "displayName": "AIRI VSCode adapter",
+  "displayName": "NOVA VSCode adapter",
   "type": "module",
   "version": "0.10.2",
   "private": true,
-  "description": "Adapter that connects VSCode into Project AIRI",
+  "description": "Adapter that connects VSCode into Project NOVA",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/airi.git",
+    "url": "https://github.com/btechioi/NOVA.git",
     "directory": "integrations/vscode/vscode-airi"
   },
   "categories": [
@@ -70,7 +70,7 @@
   "devDependencies": {
     "@guiiai/logg": "catalog:",
     "@moeru/std": "catalog:",
-    "@proj-airi/server-sdk": "workspace:*",
+    "@proj-nova/server-sdk": "workspace:*",
     "@types/vscode": "^1.116.0",
     "es-toolkit": "catalog:",
     "injeca": "catalog:",

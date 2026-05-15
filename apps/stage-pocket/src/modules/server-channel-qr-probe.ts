@@ -1,7 +1,7 @@
-import type { ServerChannelQrPayload } from '@proj-airi/stage-shared/server-channel-qr'
+import type { ServerChannelQrPayload } from '@proj-nova/stage-shared/server-channel-qr'
 
 import { errorMessageFrom } from '@moeru/std'
-import { Client, WebSocketEventSource } from '@proj-airi/server-sdk'
+import { Client, WebSocketEventSource } from '@proj-nova/server-sdk'
 
 import { getHostWebSocketConstructor } from './websocket-bridge'
 

@@ -8,7 +8,7 @@
  * 4. `desktop_click_target` updates pointer intent and clicked-candidate state.
  *
  * Usage:
- *   pnpm -F @proj-airi/computer-use-mcp smoke:desktop-v3
+ *   pnpm -F @proj-nova/computer-use-mcp smoke:desktop-v3
  */
 
 import { dirname, resolve } from 'node:path'
@@ -344,7 +344,7 @@ export async function runDesktopV3Smoke(): Promise<Record<string, unknown>> {
     stderr: 'pipe',
   })
   const client = new Client({
-    name: '@proj-airi/computer-use-mcp-smoke-desktop-v3',
+    name: '@proj-nova/computer-use-mcp-smoke-desktop-v3',
     version: '0.1.0',
   })
 
@@ -475,7 +475,7 @@ const invokedPath = argv[1] ? pathToFileURL(argv[1]).href : undefined
 if (invokedPath === import.meta.url) {
   if (argv.includes('--help') || argv.includes('-h')) {
     console.info(`Usage:
-  pnpm -F @proj-airi/computer-use-mcp smoke:desktop-v3
+  pnpm -F @proj-nova/computer-use-mcp smoke:desktop-v3
 
 Environment:
   COMPUTER_USE_DESKTOP_V3_SMOKE_URL            Target URL. Defaults to an inline data: smoke page.

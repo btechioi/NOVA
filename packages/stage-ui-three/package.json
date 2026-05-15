@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/stage-ui-three",
+  "name": "@proj-nova/stage-ui-three",
   "type": "module",
   "private": true,
   "description": "A collection of 3D scene components that used by Project AIRI",
@@ -29,8 +29,8 @@
     "@pixiv/three-vrm": "^3.5.2",
     "@pixiv/three-vrm-animation": "^3.5.2",
     "@pixiv/three-vrm-core": "^3.5.2",
-    "@proj-airi/stage-shared": "workspace:*",
-    "@proj-airi/ui": "workspace:*",
+    "@proj-nova/stage-shared": "workspace:*",
+    "@proj-nova/ui": "workspace:*",
     "@tresjs/cientos": "^5.7.0",
     "@tresjs/core": "^5.8.0",
     "@tresjs/post-processing": "^3.7.1",

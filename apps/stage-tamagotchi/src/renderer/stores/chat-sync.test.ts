@@ -76,7 +76,7 @@ interface MockState {
 
 let mockState: MockState
 
-vi.mock('@proj-airi/stage-ui/stores/chat/session-store', () => ({
+vi.mock('@proj-nova/stage-ui/stores/chat/session-store', () => ({
   useChatSessionStore: () => ({
     activeSessionId: mockState.activeSessionId,
     sessionMessages: mockState.sessionMessages,
@@ -92,32 +92,32 @@ vi.mock('@proj-airi/stage-ui/stores/chat/session-store', () => ({
   }),
 }))
 
-vi.mock('@proj-airi/stage-ui/stores/chat/stream-store', () => ({
+vi.mock('@proj-nova/stage-ui/stores/chat/stream-store', () => ({
   useChatStreamStore: () => ({
     streamingMessage: ref({ role: 'assistant', content: '', slices: [], tool_results: [] }),
   }),
 }))
 
-vi.mock('@proj-airi/stage-ui/stores/chat', () => ({
+vi.mock('@proj-nova/stage-ui/stores/chat', () => ({
   useChatOrchestratorStore: () => ({
     sending: ref(false),
     ingest: mockState.ingest,
   }),
 }))
 
-vi.mock('@proj-airi/stage-ui/stores/chat/maintenance', () => ({
+vi.mock('@proj-nova/stage-ui/stores/chat/maintenance', () => ({
   useChatMaintenanceStore: () => ({
     cleanupMessages: vi.fn(),
   }),
 }))
 
-vi.mock('@proj-airi/stage-ui/stores/providers', () => ({
+vi.mock('@proj-nova/stage-ui/stores/providers', () => ({
   useProvidersStore: () => ({
     getProviderInstance: vi.fn(async () => ({ id: 'provider' })),
   }),
 }))
 
-vi.mock('@proj-airi/stage-ui/stores/modules/consciousness', () => ({
+vi.mock('@proj-nova/stage-ui/stores/modules/consciousness', () => ({
   useConsciousnessStore: () => ({
     activeProvider: computed(() => 'provider-id'),
     activeModel: computed(() => 'model-id'),

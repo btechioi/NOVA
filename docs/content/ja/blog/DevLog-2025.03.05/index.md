@@ -88,7 +88,7 @@ https://www.youtube.com/watch?v=_AIgv0EsOE4
 ## 開発配信
 
 [yui540](https://github.com/yui540) の[リポジトリ](https://github.com/yui540/css-animations)にある
-多くのアニメーション・トランジション効果を [https://proj-airi-packages-ui-transitions.netlify.app/#/](https://proj-airi-packages-ui-transitions.netlify.app/#/) に移植しました。
+多くのアニメーション・トランジション効果を [https://proj-nova-packages-ui-transitions.netlify.app/#/](https://proj-nova-packages-ui-transitions.netlify.app/#/) に移植しました。
 
 移植後の効果はかなり良い感じです：
 

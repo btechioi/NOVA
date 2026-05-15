@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useElectronAutoUpdater } from '@proj-airi/electron-vueuse'
-import { Button, Progress } from '@proj-airi/ui'
+import { useElectronAutoUpdater } from '@proj-nova/electron-vueuse'
+import { Button, Progress } from '@proj-nova/ui'
 import { computed } from 'vue'
 
 const {

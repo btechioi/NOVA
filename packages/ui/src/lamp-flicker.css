@@ -1,8 +1,8 @@
 /**
  * Opacity “lamp flicker” for offline / warning icons.
- * Timing is driven by useLampFlickerAnimation (@proj-airi/stage-ui) via
+ * Timing is driven by useLampFlickerAnimation (@proj-nova/stage-ui) via
  * --lamp-flicker-delay and --lamp-flicker-duration.
- * Loaded via @proj-airi/ui/main.css (import from app `styles/main.css`).
+ * Loaded via @proj-nova/ui/main.css (import from app `styles/main.css`).
  */
 @keyframes lamp-flicker-keyframes {
   0%,

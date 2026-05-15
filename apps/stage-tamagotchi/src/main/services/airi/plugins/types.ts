@@ -1,4 +1,4 @@
-import type { ManifestV1, PluginHost } from '@proj-airi/plugin-sdk/plugin-host'
+import type { ManifestV1, PluginHost } from '@proj-nova/plugin-sdk/plugin-host'
 
 import type {
   WidgetsAddPayload,
@@ -133,7 +133,7 @@ export interface PluginConfig {
  *
  * Expects:
  * - `manifest` is schema-validated
- * - `path` points to `plugin.airi.json`
+ * - `path` points to `plugin.nova.json`
  * - `rootDir` is the plugin root directory
  * - `version` is discovered from package metadata or fallback
  *

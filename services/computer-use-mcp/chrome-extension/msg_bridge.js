@@ -28,6 +28,7 @@
   let seqId = 0
 
   // Receive commands from background.js
+  // eslint-disable-next-line no-undef
   chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
     if (msg.type !== 'CU_ACTION')
       return false

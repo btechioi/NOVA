@@ -3,7 +3,7 @@ chat:
     retry: Повторить
   message:
     character-name:
-      airi: AIRI
+      airi: NOVA
       core-system: Core система
       you: Ты
   reasoning: Причина
@@ -11,7 +11,6 @@ chat:
     title: Диалоги
     new: + Новый
     empty: Диалогов пока нет
-    cloud-badge: Синхронизировано с облаком
     new-chat-fallback: Новый чат
     delete: Удалить диалог
 message: Спроси что-нибудь

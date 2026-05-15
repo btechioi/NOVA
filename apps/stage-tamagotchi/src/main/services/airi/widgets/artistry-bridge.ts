@@ -16,7 +16,7 @@ import {
   artistryGenerateHeadless,
   artistrySyncConfig,
   artistryTestComfyUIConnection,
-} from '@proj-airi/stage-shared'
+} from '@proj-nova/stage-shared'
 import { injeca } from 'injeca'
 
 import { ComfyUIProvider } from './providers/comfyui'

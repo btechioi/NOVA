@@ -562,7 +562,7 @@ importers:
 
   apps/component-calling:
     dependencies:
-      '@proj-airi/ui':
+      '@proj-nova/ui':
         specifier: workspace:^
         version: link:../../packages/ui
       '@vueuse/core':
@@ -695,10 +695,10 @@ importers:
       '@proj-airi/drizzle-orm-browser-migrator':
         specifier: ^0.1.6
         version: 0.1.6(drizzle-orm@0.45.2(@electric-sql/pglite@0.4.4)(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.5.0)(kysely@0.28.14)(pg@8.20.0)(postgres@3.4.9))
-      '@proj-airi/server-schema':
+      '@proj-nova/server-schema':
         specifier: workspace:*
         version: link:../../packages/server-schema
-      '@proj-airi/server-sdk-shared':
+      '@proj-nova/server-sdk-shared':
         specifier: workspace:*
         version: link:../../packages/server-sdk-shared
       better-auth:
@@ -792,52 +792,52 @@ importers:
       '@moeru/std':
         specifier: 'catalog:'
         version: 0.1.0-beta.17
-      '@proj-airi/audio':
-        specifier: workspace:^
-        version: link:../../packages/audio
-      '@proj-airi/ccc':
-        specifier: workspace:^
-        version: link:../../packages/ccc
       '@proj-airi/drizzle-duckdb-wasm':
         specifier: 'catalog:'
         version: 0.5.0(drizzle-orm@0.45.2(@electric-sql/pglite@0.4.4)(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.5.0)(kysely@0.28.14)(pg@8.20.0)(postgres@3.4.9))
-      '@proj-airi/font-chillroundm':
+      '@proj-nova/audio':
+        specifier: workspace:^
+        version: link:../../packages/audio
+      '@proj-nova/ccc':
+        specifier: workspace:^
+        version: link:../../packages/ccc
+      '@proj-nova/font-chillroundm':
         specifier: workspace:^
         version: link:../../packages/font-chillroundm
-      '@proj-airi/font-cjkfonts-allseto':
+      '@proj-nova/font-cjkfonts-allseto':
         specifier: workspace:^
         version: link:../../packages/font-cjkfonts-allseto
-      '@proj-airi/font-xiaolai':
+      '@proj-nova/font-xiaolai':
         specifier: workspace:^
         version: link:../../packages/font-xiaolai
-      '@proj-airi/i18n':
+      '@proj-nova/i18n':
         specifier: workspace:^
         version: link:../../packages/i18n
-      '@proj-airi/pipelines-audio':
+      '@proj-nova/pipelines-audio':
         specifier: workspace:^
         version: link:../../packages/pipelines-audio
-      '@proj-airi/server-sdk':
+      '@proj-nova/server-sdk':
         specifier: workspace:^
         version: link:../../packages/server-sdk
-      '@proj-airi/stage-layouts':
+      '@proj-nova/stage-layouts':
         specifier: workspace:^
         version: link:../../packages/stage-layouts
-      '@proj-airi/stage-shared':
+      '@proj-nova/stage-shared':
         specifier: workspace:^
         version: link:../../packages/stage-shared
-      '@proj-airi/stage-ui':
+      '@proj-nova/stage-ui':
         specifier: workspace:^
         version: link:../../packages/stage-ui
-      '@proj-airi/stage-ui-three':
+      '@proj-nova/stage-ui-three':
         specifier: workspace:^
         version: link:../../packages/stage-ui-three
-      '@proj-airi/stream-kit':
+      '@proj-nova/stream-kit':
         specifier: workspace:^
         version: link:../../packages/stream-kit
-      '@proj-airi/ui':
+      '@proj-nova/ui':
         specifier: workspace:^
         version: link:../../packages/ui
-      '@proj-airi/ui-transitions':
+      '@proj-nova/ui-transitions':
         specifier: workspace:^
         version: link:../../packages/ui-transitions
       '@tresjs/cientos':
@@ -1048,9 +1048,6 @@ importers:
       '@intlify/unplugin-vue-i18n':
         specifier: ^11.0.7
         version: 11.0.7(@vue/compiler-dom@3.5.32)(eslint@10.2.1(jiti@2.6.1))(rollup@2.80.0)(typescript@5.9.3)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue-i18n@11.3.2(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3))
-      '@proj-airi/cap-vite':
-        specifier: workspace:*
-        version: link:../../packages/cap-vite
       '@proj-airi/iconify-meteocons':
         specifier: 'catalog:'
         version: 0.1.5
@@ -1063,6 +1060,9 @@ importers:
       '@proj-airi/unplugin-live2d-sdk':
         specifier: ^0.1.7
         version: 0.1.7(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
+      '@proj-nova/cap-vite':
+        specifier: workspace:*
+        version: link:../../packages/cap-vite
       '@shikijs/markdown-it':
         specifier: ^4.0.2
         version: 4.0.2
@@ -1198,49 +1198,49 @@ importers:
       '@pinia/colada':
         specifier: 'catalog:'
         version: 1.2.1(pinia@3.0.4(typescript@5.9.3)(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3))
-      '@proj-airi/audio':
-        specifier: workspace:^
-        version: link:../../packages/audio
-      '@proj-airi/ccc':
-        specifier: workspace:^
-        version: link:../../packages/ccc
       '@proj-airi/drizzle-duckdb-wasm':
         specifier: 'catalog:'
         version: 0.5.0(drizzle-orm@0.45.2(@electric-sql/pglite@0.4.4)(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.5.0)(kysely@0.28.14)(pg@8.20.0)(postgres@3.4.9))
-      '@proj-airi/font-chillroundm':
+      '@proj-nova/audio':
+        specifier: workspace:^
+        version: link:../../packages/audio
+      '@proj-nova/ccc':
+        specifier: workspace:^
+        version: link:../../packages/ccc
+      '@proj-nova/font-chillroundm':
         specifier: workspace:^
         version: link:../../packages/font-chillroundm
-      '@proj-airi/font-cjkfonts-allseto':
+      '@proj-nova/font-cjkfonts-allseto':
         specifier: workspace:^
         version: link:../../packages/font-cjkfonts-allseto
-      '@proj-airi/font-xiaolai':
+      '@proj-nova/font-xiaolai':
         specifier: workspace:^
         version: link:../../packages/font-xiaolai
-      '@proj-airi/i18n':
+      '@proj-nova/i18n':
         specifier: workspace:^
         version: link:../../packages/i18n
-      '@proj-airi/plugin-sdk-tamagotchi':
+      '@proj-nova/plugin-sdk-tamagotchi':
         specifier: workspace:^
         version: link:../../packages/plugin-sdk-tamagotchi
-      '@proj-airi/server-sdk':
+      '@proj-nova/server-sdk':
         specifier: workspace:*
         version: link:../../packages/server-sdk
-      '@proj-airi/stage-layouts':
+      '@proj-nova/stage-layouts':
         specifier: workspace:^
         version: link:../../packages/stage-layouts
-      '@proj-airi/stage-pages':
+      '@proj-nova/stage-pages':
         specifier: workspace:^
         version: link:../../packages/stage-pages
-      '@proj-airi/stage-ui':
+      '@proj-nova/stage-ui':
         specifier: workspace:^
         version: link:../../packages/stage-ui
-      '@proj-airi/stage-ui-live2d':
+      '@proj-nova/stage-ui-live2d':
         specifier: workspace:^
         version: link:../../packages/stage-ui-live2d
-      '@proj-airi/stage-ui-three':
+      '@proj-nova/stage-ui-three':
         specifier: workspace:^
         version: link:../../packages/stage-ui-three
-      '@proj-airi/ui':
+      '@proj-nova/ui':
         specifier: workspace:^
         version: link:../../packages/ui
       '@shikijs/markdown-it':
@@ -1450,7 +1450,7 @@ importers:
         version: 3.0.2(electron@41.2.1)
       '@electron-toolkit/tsconfig':
         specifier: ^2.0.0
-        version: 2.0.0(@types/node@24.12.2)
+        version: 2.0.0(@types/node@25.6.0)
       '@electron-toolkit/utils':
         specifier: ^4.0.0
         version: 4.0.0(electron@41.2.1)
@@ -1489,46 +1489,46 @@ importers:
         version: 3.1.0
       '@intlify/unplugin-vue-i18n':
         specifier: ^11.0.7
-        version: 11.0.7(@vue/compiler-dom@3.5.32)(eslint@10.2.1(jiti@2.6.1))(rollup@4.60.1)(typescript@5.9.3)(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue-i18n@11.3.2(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3))
+        version: 11.0.7(@vue/compiler-dom@3.5.32)(eslint@10.2.1(jiti@2.6.1))(rollup@4.60.1)(typescript@5.9.3)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue-i18n@11.3.2(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3))
       '@modelcontextprotocol/sdk':
         specifier: 'catalog:'
         version: 1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.6)
       '@pnpm/find-workspace-dir':
         specifier: ^1000.1.5
         version: 1000.1.5
-      '@proj-airi/electron-eventa':
-        specifier: workspace:^
-        version: link:../../packages/electron-eventa
-      '@proj-airi/electron-screen-capture':
-        specifier: workspace:^
-        version: link:../../packages/electron-screen-capture
-      '@proj-airi/electron-vueuse':
-        specifier: workspace:^
-        version: link:../../packages/electron-vueuse
       '@proj-airi/iconify-meteocons':
         specifier: 'catalog:'
         version: 0.1.5
       '@proj-airi/lobe-icons':
         specifier: ^1.0.19
         version: 1.0.19
-      '@proj-airi/plugin-sdk':
-        specifier: workspace:^
-        version: link:../../packages/plugin-sdk
-      '@proj-airi/server-runtime':
-        specifier: workspace:^
-        version: link:../../packages/server-runtime
-      '@proj-airi/stage-shared':
-        specifier: workspace:^
-        version: link:../../packages/stage-shared
-      '@proj-airi/ui-transitions':
-        specifier: workspace:^
-        version: link:../../packages/ui-transitions
       '@proj-airi/unplugin-fetch':
         specifier: 'catalog:'
-        version: 0.2.3(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
+        version: 0.2.3(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
       '@proj-airi/unplugin-live2d-sdk':
         specifier: ^0.1.7
-        version: 0.1.7(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
+        version: 0.1.7(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
+      '@proj-nova/electron-eventa':
+        specifier: workspace:^
+        version: link:../../packages/electron-eventa
+      '@proj-nova/electron-screen-capture':
+        specifier: workspace:^
+        version: link:../../packages/electron-screen-capture
+      '@proj-nova/electron-vueuse':
+        specifier: workspace:^
+        version: link:../../packages/electron-vueuse
+      '@proj-nova/plugin-sdk':
+        specifier: workspace:^
+        version: link:../../packages/plugin-sdk
+      '@proj-nova/server-runtime':
+        specifier: workspace:^
+        version: link:../../packages/server-runtime
+      '@proj-nova/stage-shared':
+        specifier: workspace:^
+        version: link:../../packages/stage-shared
+      '@proj-nova/ui-transitions':
+        specifier: workspace:^
+        version: link:../../packages/ui-transitions
       '@types/audioworklet':
         specifier: 'catalog:'
         version: 0.0.97
@@ -1555,7 +1555,7 @@ importers:
         version: 2.10.3
       '@vitejs/plugin-vue':
         specifier: ^6.0.6
-        version: 6.0.6(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue@3.5.32(typescript@5.9.3))
+        version: 6.0.6(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue@3.5.32(typescript@5.9.3))
       '@vue-macros/volar':
         specifier: ^3.1.2
         version: 3.1.2(typescript@5.9.3)(vue-tsc@3.2.6(typescript@5.9.3))(vue@3.5.32(typescript@5.9.3))
@@ -1588,7 +1588,7 @@ importers:
         version: 6.8.3
       electron-vite:
         specifier: ^5.0.0
-        version: 5.0.0(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
+        version: 5.0.0(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
       get-port-please:
         specifier: 'catalog:'
         version: 3.2.0
@@ -1609,31 +1609,31 @@ importers:
         version: 2.2.6
       unocss-preset-scrollbar:
         specifier: ^4.0.0
-        version: 4.0.0(unocss@66.6.8(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)))
+        version: 4.0.0(unocss@66.6.8(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)))
       unplugin-info:
         specifier: ^1.3.2
-        version: 1.3.2(esbuild@0.27.2)(rollup@4.60.1)(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
+        version: 1.3.2(esbuild@0.27.2)(rollup@4.60.1)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
       unplugin-yaml:
         specifier: ^4.1.0
-        version: 4.1.0(esbuild@0.27.2)(rolldown@1.0.0-rc.16)(rollup@4.60.1)(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
+        version: 4.1.0(@nuxt/kit@3.20.2(magicast@0.5.2))(esbuild@0.27.2)(rolldown@1.0.0-rc.16)(rollup@4.60.1)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
       vite:
         specifier: 'catalog:'
-        version: 8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
+        version: 8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
       vite-bundle-visualizer:
         specifier: ^1.2.1
         version: 1.2.1(rolldown@1.0.0-rc.16)(rollup@4.60.1)
       vite-plugin-mkcert:
         specifier: 'catalog:'
-        version: 2.0.0(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
+        version: 2.0.0(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
       vite-plugin-vue-devtools:
         specifier: ^8.1.1
-        version: 8.1.1(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue@3.5.32(typescript@5.9.3))
+        version: 8.1.1(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue@3.5.32(typescript@5.9.3))
       vite-plugin-vue-layouts:
         specifier: ^0.11.0
-        version: 0.11.0(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue-router@5.0.4(@pinia/colada@1.2.1(pinia@3.0.4(typescript@5.9.3)(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3)))(@vue/compiler-sfc@3.5.32)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3))
+        version: 0.11.0(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue-router@5.0.4(@pinia/colada@1.2.1(pinia@3.0.4(typescript@5.9.3)(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3)))(@vue/compiler-sfc@3.5.32)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3))
       vue-macros:
         specifier: ^3.1.2
-        version: 3.1.2(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@vueuse/core@14.2.1(vue@3.5.32(typescript@5.9.3)))(esbuild@0.27.2)(rolldown@1.0.0-rc.16)(rollup@4.60.1)(typescript@5.9.3)(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue-tsc@3.2.6(typescript@5.9.3))(vue@3.5.32(typescript@5.9.3))
+        version: 3.1.2(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@vueuse/core@14.2.1(vue@3.5.32(typescript@5.9.3)))(esbuild@0.27.2)(rolldown@1.0.0-rc.16)(rollup@4.60.1)(typescript@5.9.3)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue-tsc@3.2.6(typescript@5.9.3))(vue@3.5.32(typescript@5.9.3))
       vue-tsc:
         specifier: ^3.2.6
         version: 3.2.6(typescript@5.9.3)
@@ -1667,58 +1667,58 @@ importers:
       '@pinia/colada':
         specifier: 'catalog:'
         version: 1.2.1(pinia@3.0.4(typescript@5.9.3)(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3))
-      '@proj-airi/audio':
-        specifier: workspace:^
-        version: link:../../packages/audio
-      '@proj-airi/ccc':
-        specifier: workspace:^
-        version: link:../../packages/ccc
       '@proj-airi/drizzle-duckdb-wasm':
         specifier: 'catalog:'
         version: 0.5.0(drizzle-orm@0.45.2(@electric-sql/pglite@0.4.4)(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.5.0)(kysely@0.28.14)(pg@8.20.0)(postgres@3.4.9))
-      '@proj-airi/font-chillroundm':
+      '@proj-nova/audio':
+        specifier: workspace:^
+        version: link:../../packages/audio
+      '@proj-nova/ccc':
+        specifier: workspace:^
+        version: link:../../packages/ccc
+      '@proj-nova/font-chillroundm':
         specifier: workspace:^
         version: link:../../packages/font-chillroundm
-      '@proj-airi/font-cjkfonts-allseto':
+      '@proj-nova/font-cjkfonts-allseto':
         specifier: workspace:^
         version: link:../../packages/font-cjkfonts-allseto
-      '@proj-airi/font-xiaolai':
+      '@proj-nova/font-xiaolai':
         specifier: workspace:^
         version: link:../../packages/font-xiaolai
-      '@proj-airi/i18n':
+      '@proj-nova/i18n':
         specifier: workspace:^
         version: link:../../packages/i18n
-      '@proj-airi/model-driver-mediapipe':
+      '@proj-nova/model-driver-mediapipe':
         specifier: workspace:^
         version: link:../../packages/model-driver-mediapipe
-      '@proj-airi/pipelines-audio':
+      '@proj-nova/pipelines-audio':
         specifier: workspace:^
         version: link:../../packages/pipelines-audio
-      '@proj-airi/server-sdk':
+      '@proj-nova/server-sdk':
         specifier: workspace:^
         version: link:../../packages/server-sdk
-      '@proj-airi/stage-layouts':
+      '@proj-nova/stage-layouts':
         specifier: workspace:^
         version: link:../../packages/stage-layouts
-      '@proj-airi/stage-pages':
+      '@proj-nova/stage-pages':
         specifier: workspace:^
         version: link:../../packages/stage-pages
-      '@proj-airi/stage-shared':
+      '@proj-nova/stage-shared':
         specifier: workspace:^
         version: link:../../packages/stage-shared
-      '@proj-airi/stage-ui':
+      '@proj-nova/stage-ui':
         specifier: workspace:^
         version: link:../../packages/stage-ui
-      '@proj-airi/stage-ui-three':
+      '@proj-nova/stage-ui-three':
         specifier: workspace:^
         version: link:../../packages/stage-ui-three
-      '@proj-airi/stream-kit':
+      '@proj-nova/stream-kit':
         specifier: workspace:^
         version: link:../../packages/stream-kit
-      '@proj-airi/ui':
+      '@proj-nova/ui':
         specifier: workspace:^
         version: link:../../packages/ui
-      '@proj-airi/ui-transitions':
+      '@proj-nova/ui-transitions':
         specifier: workspace:^
         version: link:../../packages/ui-transitions
       '@tresjs/cientos':
@@ -2026,193 +2026,6 @@ importers:
         specifier: ^3.2.6
         version: 3.2.6(typescript@5.9.3)
 
-  apps/ui-server-auth:
-    dependencies:
-      '@date-fns/utc':
-        specifier: ^2.1.1
-        version: 2.1.1
-      '@fontsource-variable/nunito':
-        specifier: 'catalog:'
-        version: 5.2.7
-      '@formkit/auto-animate':
-        specifier: ^0.9.0
-        version: 0.9.0(vue@3.5.32(typescript@5.9.3))
-      '@huggingface/transformers':
-        specifier: ^3.8.1
-        version: 3.8.1
-      '@moeru/eventa':
-        specifier: 'catalog:'
-        version: 1.0.0-beta.4(electron@41.2.1)(h3@2.0.1-rc.20(crossws@0.4.5(srvx@0.11.15)))
-      '@moeru/std':
-        specifier: 'catalog:'
-        version: 0.1.0-beta.17
-      '@proj-airi/font-chillroundm':
-        specifier: workspace:^
-        version: link:../../packages/font-chillroundm
-      '@proj-airi/font-cjkfonts-allseto':
-        specifier: workspace:^
-        version: link:../../packages/font-cjkfonts-allseto
-      '@proj-airi/font-xiaolai':
-        specifier: workspace:^
-        version: link:../../packages/font-xiaolai
-      '@proj-airi/i18n':
-        specifier: workspace:^
-        version: link:../../packages/i18n
-      '@proj-airi/stage-layouts':
-        specifier: workspace:^
-        version: link:../../packages/stage-layouts
-      '@proj-airi/stage-shared':
-        specifier: workspace:^
-        version: link:../../packages/stage-shared
-      '@proj-airi/stage-ui':
-        specifier: workspace:^
-        version: link:../../packages/stage-ui
-      '@proj-airi/ui':
-        specifier: workspace:^
-        version: link:../../packages/ui
-      '@vueuse/core':
-        specifier: ^14.2.1
-        version: 14.2.1(vue@3.5.32(typescript@5.9.3))
-      '@vueuse/shared':
-        specifier: ^14.2.1
-        version: 14.2.1(vue@3.5.32(typescript@5.9.3))
-      animejs:
-        specifier: ^4.3.6
-        version: 4.3.6
-      better-auth:
-        specifier: 'catalog:'
-        version: 1.6.5(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(better-sqlite3@12.5.0)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@electric-sql/pglite@0.4.4)(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.5.0)(kysely@0.28.14)(pg@8.20.0)(postgres@3.4.9))(pg@8.20.0)(react@19.2.3)(vitest@4.1.4)(vue@3.5.32(typescript@5.9.3))
-      colorjs.io:
-        specifier: ^0.6.1
-        version: 0.6.1
-      culori:
-        specifier: ^4.0.2
-        version: 4.0.2
-      date-fns:
-        specifier: ^4.1.0
-        version: 4.1.0
-      nanoid:
-        specifier: ^5.1.9
-        version: 5.1.9
-      nprogress:
-        specifier: ^0.2.0
-        version: 0.2.0
-      pinia:
-        specifier: ^3.0.4
-        version: 3.0.4(typescript@5.9.3)(vue@3.5.32(typescript@5.9.3))
-      posthog-js:
-        specifier: 'catalog:'
-        version: 1.306.1
-      uuid:
-        specifier: ^13.0.0
-        version: 13.0.0
-      vaul-vue:
-        specifier: ^0.4.1
-        version: 0.4.1(reka-ui@2.9.6(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3))
-      vue:
-        specifier: 'catalog:'
-        version: 3.5.32(typescript@5.9.3)
-      vue-i18n:
-        specifier: ^11.3.2
-        version: 11.3.2(vue@3.5.32(typescript@5.9.3))
-      vue-router:
-        specifier: ^5.0.4
-        version: 5.0.4(@pinia/colada@1.2.1(pinia@3.0.4(typescript@5.9.3)(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3)))(@vue/compiler-sfc@3.5.32)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3))
-      vue-sonner:
-        specifier: ^2.0.9
-        version: 2.0.9(vue@3.5.32(typescript@5.9.3))
-    devDependencies:
-      '@iconify-json/carbon':
-        specifier: ^1.2.20
-        version: 1.2.20
-      '@iconify-json/eos-icons':
-        specifier: ^1.2.4
-        version: 1.2.4
-      '@iconify-json/logos':
-        specifier: 'catalog:'
-        version: 1.2.11
-      '@iconify-json/lucide':
-        specifier: ^1.2.102
-        version: 1.2.102
-      '@iconify-json/mingcute':
-        specifier: ^1.2.7
-        version: 1.2.7
-      '@iconify-json/ph':
-        specifier: ^1.2.2
-        version: 1.2.2
-      '@iconify-json/simple-icons':
-        specifier: ^1.2.78
-        version: 1.2.78
-      '@iconify-json/solar':
-        specifier: ^1.2.5
-        version: 1.2.5
-      '@iconify-json/svg-spinners':
-        specifier: ^1.2.4
-        version: 1.2.4
-      '@iconify-json/tabler':
-        specifier: 'catalog:'
-        version: 1.2.33
-      '@iconify-json/vscode-icons':
-        specifier: ^1.2.45
-        version: 1.2.45
-      '@intlify/unplugin-vue-i18n':
-        specifier: ^11.0.7
-        version: 11.0.7(@vue/compiler-dom@3.5.32)(eslint@10.2.1(jiti@2.6.1))(rollup@4.60.1)(typescript@5.9.3)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue-i18n@11.3.2(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3))
-      '@proj-airi/iconify-meteocons':
-        specifier: 'catalog:'
-        version: 0.1.5
-      '@proj-airi/lobe-icons':
-        specifier: ^1.0.19
-        version: 1.0.19
-      '@shikijs/markdown-it':
-        specifier: ^4.0.2
-        version: 4.0.2
-      '@types/culori':
-        specifier: ^4.0.1
-        version: 4.0.1
-      '@types/nprogress':
-        specifier: ^0.2.3
-        version: 0.2.3
-      '@types/splitpanes':
-        specifier: 'catalog:'
-        version: 2.2.6
-      '@unocss/reset':
-        specifier: ^66.6.8
-        version: 66.6.8
-      '@vitejs/plugin-vue':
-        specifier: ^6.0.6
-        version: 6.0.6(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/volar':
-        specifier: ^3.1.2
-        version: 3.1.2(typescript@5.9.3)(vue-tsc@3.2.6(typescript@5.9.3))(vue@3.5.32(typescript@5.9.3))
-      '@vueuse/motion':
-        specifier: ^3.0.3
-        version: 3.0.3(magicast@0.5.2)(vue@3.5.32(typescript@5.9.3))
-      '@webgpu/types':
-        specifier: 'catalog:'
-        version: 0.1.69
-      unplugin-info:
-        specifier: ^1.3.2
-        version: 1.3.2(esbuild@0.27.2)(rollup@4.60.1)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
-      unplugin-yaml:
-        specifier: ^4.1.0
-        version: 4.1.0(@nuxt/kit@3.20.2(magicast@0.5.2))(esbuild@0.27.2)(rolldown@1.0.0-rc.16)(rollup@4.60.1)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
-      vite:
-        specifier: 'catalog:'
-        version: 8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
-      vite-plugin-vue-devtools:
-        specifier: ^8.1.1
-        version: 8.1.1(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue@3.5.32(typescript@5.9.3))
-      vite-plugin-vue-layouts:
-        specifier: ^0.11.0
-        version: 0.11.0(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue-router@5.0.4(@pinia/colada@1.2.1(pinia@3.0.4(typescript@5.9.3)(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3)))(@vue/compiler-sfc@3.5.32)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3))
-      vue-macros:
-        specifier: ^3.1.2
-        version: 3.1.2(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@vueuse/core@14.2.1(vue@3.5.32(typescript@5.9.3)))(esbuild@0.27.2)(rolldown@1.0.0-rc.16)(rollup@4.60.1)(typescript@5.9.3)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue-tsc@3.2.6(typescript@5.9.3))(vue@3.5.32(typescript@5.9.3))
-      vue-tsc:
-        specifier: ^3.2.6
-        version: 3.2.6(typescript@5.9.3)
-
   docs:
     dependencies:
       '@fontsource-variable/comfortaa':
@@ -2236,7 +2049,7 @@ importers:
       '@proj-airi/chromatic':
         specifier: ^1.1.1
         version: 1.1.1
-      '@proj-airi/i18n':
+      '@proj-nova/i18n':
         specifier: workspace:^
         version: link:../packages/i18n
       '@vueuse/core':
@@ -2300,7 +2113,7 @@ importers:
       '@napi-rs/image':
         specifier: ^1.12.0
         version: 1.12.0(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
-      '@proj-airi/stage-ui':
+      '@proj-nova/stage-ui':
         specifier: workspace:^
         version: link:../packages/stage-ui
       '@radix-ui/colors':
@@ -2363,9 +2176,9 @@ importers:
 
   engines/stage-tamagotchi-godot: {}
 
-  integrations/vscode/airi-plugin-vscode:
+  integrations/vscode/nova-plugin-vscode:
     devDependencies:
-      '@proj-airi/plugin-sdk':
+      '@proj-nova/plugin-sdk':
         specifier: workspace:*
         version: link:../../../packages/plugin-sdk
 
@@ -2377,7 +2190,7 @@ importers:
       '@moeru/std':
         specifier: 'catalog:'
         version: 0.1.0-beta.17
-      '@proj-airi/server-sdk':
+      '@proj-nova/server-sdk':
         specifier: workspace:*
         version: link:../../../packages/server-sdk
       '@types/vscode':
@@ -2398,18 +2211,6 @@ importers:
       vscode-ext-gen:
         specifier: ^1.6.0
         version: 1.6.0
-
-  packages/airi-screenshot:
-    dependencies:
-      '@moeru/std':
-        specifier: 'catalog:'
-        version: 0.1.0-beta.17
-      cac:
-        specifier: 'catalog:'
-        version: 7.0.0
-      tinyexec:
-        specifier: 'catalog:'
-        version: 1.1.1
 
   packages/audio:
     dependencies:
@@ -2462,13 +2263,13 @@ importers:
       '@moeru/std':
         specifier: 'catalog:'
         version: 0.1.0-beta.17
-      '@proj-airi/pipelines-audio':
+      '@proj-nova/pipelines-audio':
         specifier: workspace:^
         version: link:../pipelines-audio
-      '@proj-airi/server-sdk':
+      '@proj-nova/server-sdk':
         specifier: workspace:^
         version: link:../server-sdk
-      '@proj-airi/server-shared':
+      '@proj-nova/server-shared':
         specifier: workspace:^
         version: link:../server-shared
       '@xsai-ext/providers':
@@ -2520,7 +2321,7 @@ importers:
       '@moeru/std':
         specifier: 'catalog:'
         version: 0.1.0-beta.17
-      '@proj-airi/stream-kit':
+      '@proj-nova/stream-kit':
         specifier: workspace:^
         version: link:../stream-kit
       clustr:
@@ -2597,7 +2398,7 @@ importers:
         specifier: '>=3'
         version: 3.5.32(typescript@5.9.3)
     devDependencies:
-      '@proj-airi/electron-eventa':
+      '@proj-nova/electron-eventa':
         specifier: workspace:^
         version: link:../electron-eventa
 
@@ -2620,7 +2421,7 @@ importers:
       '@guiiai/logg':
         specifier: 'catalog:'
         version: 1.2.11
-      '@proj-airi/server-sdk':
+      '@proj-nova/server-sdk':
         specifier: workspace:^
         version: link:../server-sdk
       drizzle-orm:
@@ -2668,6 +2469,18 @@ importers:
         specifier: 'catalog:'
         version: 4.21.0
 
+  packages/nova-screenshot:
+    dependencies:
+      '@moeru/std':
+        specifier: 'catalog:'
+        version: 0.1.0-beta.17
+      cac:
+        specifier: 'catalog:'
+        version: 7.0.0
+      tinyexec:
+        specifier: 'catalog:'
+        version: 1.1.1
+
   packages/pipelines-audio:
     dependencies:
       '@moeru/eventa':
@@ -2694,10 +2507,10 @@ importers:
       '@moeru/eventa':
         specifier: 'catalog:'
         version: 1.0.0-beta.4(electron@41.2.1)(h3@2.0.1-rc.20(crossws@0.4.5(srvx@0.11.15)))
-      '@proj-airi/plugin-protocol':
+      '@proj-nova/plugin-protocol':
         specifier: workspace:*
         version: link:../plugin-protocol
-      '@proj-airi/server-shared':
+      '@proj-nova/server-shared':
         specifier: workspace:*
         version: link:../server-shared
       nanoid:
@@ -2719,7 +2532,7 @@ importers:
       '@moeru/eventa':
         specifier: 'catalog:'
         version: 1.0.0-beta.4(electron@41.2.1)(h3@2.0.1-rc.20(crossws@0.4.5(srvx@0.11.15)))
-      '@proj-airi/plugin-sdk':
+      '@proj-nova/plugin-sdk':
         specifier: workspace:*
         version: link:../plugin-sdk
       valibot:
@@ -2737,10 +2550,10 @@ importers:
       '@napi-rs/image':
         specifier: ^1.12.0
         version: 1.12.0(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
-      '@proj-airi/vishot-runner-browser':
+      '@proj-nova/vishot-runner-browser':
         specifier: workspace:^
         version: link:../vishot-runner-browser
-      '@proj-airi/vishot-runtime':
+      '@proj-nova/vishot-runtime':
         specifier: workspace:^
         version: link:../vishot-runtime
       '@vueuse/core':
@@ -2789,7 +2602,7 @@ importers:
       '@moeru/std':
         specifier: 'catalog:'
         version: 0.1.0-beta.17
-      '@proj-airi/vishot-runner-electron':
+      '@proj-nova/vishot-runner-electron':
         specifier: workspace:^
         version: link:../vishot-runner-electron
 
@@ -2801,7 +2614,7 @@ importers:
       '@moeru/std':
         specifier: 'catalog:'
         version: 0.1.0-beta.17
-      '@proj-airi/server-shared':
+      '@proj-nova/server-shared':
         specifier: workspace:^
         version: link:../server-shared
       crossws:
@@ -2831,7 +2644,7 @@ importers:
       '@moeru/std':
         specifier: 'catalog:'
         version: 0.1.0-beta.17
-      '@proj-airi/server-shared':
+      '@proj-nova/server-shared':
         specifier: workspace:^
         version: link:../server-shared
       crossws:
@@ -2849,7 +2662,7 @@ importers:
 
   packages/server-shared:
     dependencies:
-      '@proj-airi/plugin-protocol':
+      '@proj-nova/plugin-protocol':
         specifier: workspace:*
         version: link:../plugin-protocol
 
@@ -2861,22 +2674,22 @@ importers:
       '@moeru/std':
         specifier: 'catalog:'
         version: 0.1.0-beta.17
-      '@proj-airi/ccc':
+      '@proj-nova/ccc':
         specifier: workspace:*
         version: link:../ccc
-      '@proj-airi/i18n':
+      '@proj-nova/i18n':
         specifier: workspace:*
         version: link:../i18n
-      '@proj-airi/server-sdk':
+      '@proj-nova/server-sdk':
         specifier: workspace:*
         version: link:../server-sdk
-      '@proj-airi/stage-ui':
+      '@proj-nova/stage-ui':
         specifier: workspace:*
         version: link:../stage-ui
-      '@proj-airi/stage-ui-three':
+      '@proj-nova/stage-ui-three':
         specifier: workspace:*
         version: link:../stage-ui-three
-      '@proj-airi/ui':
+      '@proj-nova/ui':
         specifier: workspace:*
         version: link:../ui
       '@vueuse/core':
@@ -2940,7 +2753,7 @@ importers:
       '@nekopaw/tempora':
         specifier: 'catalog:'
         version: 0.4.0-alpha.1
-      '@proj-airi/stage-shared':
+      '@proj-nova/stage-shared':
         specifier: workspace:^
         version: link:../stage-shared
       '@types/audioworklet':
@@ -2976,25 +2789,25 @@ importers:
       '@moeru/std':
         specifier: 'catalog:'
         version: 0.1.0-beta.17
-      '@proj-airi/ccc':
+      '@proj-nova/ccc':
         specifier: workspace:*
         version: link:../ccc
-      '@proj-airi/i18n':
+      '@proj-nova/i18n':
         specifier: workspace:*
         version: link:../i18n
-      '@proj-airi/server-sdk':
+      '@proj-nova/server-sdk':
         specifier: workspace:*
         version: link:../server-sdk
-      '@proj-airi/stage-ui':
+      '@proj-nova/stage-ui':
         specifier: workspace:*
         version: link:../stage-ui
-      '@proj-airi/stage-ui-live2d':
+      '@proj-nova/stage-ui-live2d':
         specifier: workspace:*
         version: link:../stage-ui-live2d
-      '@proj-airi/stage-ui-three':
+      '@proj-nova/stage-ui-three':
         specifier: workspace:*
         version: link:../stage-ui-three
-      '@proj-airi/ui':
+      '@proj-nova/ui':
         specifier: workspace:*
         version: link:../ui
       '@shopify/draggable':
@@ -3070,7 +2883,7 @@ importers:
       '@nekopaw/tempora':
         specifier: 'catalog:'
         version: 0.4.0-alpha.1
-      '@proj-airi/stage-shared':
+      '@proj-nova/stage-shared':
         specifier: workspace:^
         version: link:../stage-shared
       '@types/audioworklet':
@@ -3122,7 +2935,7 @@ importers:
       '@nekopaw/tempora':
         specifier: 'catalog:'
         version: 0.4.0-alpha.1
-      '@proj-airi/electron-screen-capture':
+      '@proj-nova/electron-screen-capture':
         specifier: workspace:^
         version: link:../electron-screen-capture
       '@types/audioworklet':
@@ -3158,58 +2971,58 @@ importers:
       '@pinia/colada':
         specifier: 'catalog:'
         version: 1.2.1(pinia@3.0.4(typescript@5.9.3)(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3))
-      '@proj-airi/audio':
-        specifier: workspace:^
-        version: link:../audio
-      '@proj-airi/ccc':
-        specifier: workspace:^
-        version: link:../ccc
       '@proj-airi/chromatic':
         specifier: ^1.1.1
         version: 1.1.1
-      '@proj-airi/core-agent':
-        specifier: workspace:^
-        version: link:../core-agent
-      '@proj-airi/core-character':
-        specifier: workspace:^
-        version: link:../core-character
       '@proj-airi/drizzle-duckdb-wasm':
         specifier: 'catalog:'
         version: 0.5.0(drizzle-orm@0.45.2(@electric-sql/pglite@0.4.4)(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.5.0)(kysely@0.28.14)(pg@8.20.0)(postgres@3.4.9))
-      '@proj-airi/font-chillroundm':
+      '@proj-nova/audio':
+        specifier: workspace:^
+        version: link:../audio
+      '@proj-nova/ccc':
+        specifier: workspace:^
+        version: link:../ccc
+      '@proj-nova/core-agent':
+        specifier: workspace:^
+        version: link:../core-agent
+      '@proj-nova/core-character':
+        specifier: workspace:^
+        version: link:../core-character
+      '@proj-nova/font-chillroundm':
         specifier: workspace:^
         version: link:../font-chillroundm
-      '@proj-airi/font-cjkfonts-allseto':
+      '@proj-nova/font-cjkfonts-allseto':
         specifier: workspace:^
         version: link:../font-cjkfonts-allseto
-      '@proj-airi/font-xiaolai':
+      '@proj-nova/font-xiaolai':
         specifier: workspace:^
         version: link:../font-xiaolai
-      '@proj-airi/i18n':
+      '@proj-nova/i18n':
         specifier: workspace:^
         version: link:../i18n
-      '@proj-airi/model-driver-lipsync':
+      '@proj-nova/model-driver-lipsync':
         specifier: workspace:^
         version: link:../model-driver-lipsync
-      '@proj-airi/pipelines-audio':
+      '@proj-nova/pipelines-audio':
         specifier: workspace:^
         version: link:../pipelines-audio
-      '@proj-airi/server-sdk':
+      '@proj-nova/server-sdk':
         specifier: workspace:^
         version: link:../server-sdk
-      '@proj-airi/server-sdk-shared':
+      '@proj-nova/server-sdk-shared':
         specifier: workspace:^
         version: link:../server-sdk-shared
-      '@proj-airi/stage-shared':
+      '@proj-nova/stage-shared':
         specifier: workspace:^
         version: link:../stage-shared
-      '@proj-airi/stage-ui-live2d':
+      '@proj-nova/stage-ui-live2d':
         specifier: workspace:^
         version: link:../stage-ui-live2d
-      '@proj-airi/stage-ui-three':
+      '@proj-nova/stage-ui-three':
         specifier: workspace:^
         version: link:../stage-ui-three
-      '@proj-airi/ui':
+      '@proj-nova/ui':
         specifier: workspace:^
         version: link:../ui
       '@ricky0123/vad-web':
@@ -3480,7 +3293,7 @@ importers:
       '@proj-airi/lobe-icons':
         specifier: ^1.0.19
         version: 1.0.19
-      '@proj-airi/stream-kit':
+      '@proj-nova/stream-kit':
         specifier: workspace:*
         version: link:../stream-kit
       '@types/audioworklet':
@@ -3591,10 +3404,10 @@ importers:
       '@pixi/utils':
         specifier: ^6.5.10
         version: 6.5.10(@pixi/constants@6.5.10)(@pixi/settings@6.5.10(@pixi/constants@6.5.10))
-      '@proj-airi/stage-shared':
+      '@proj-nova/stage-shared':
         specifier: workspace:^
         version: link:../stage-shared
-      '@proj-airi/ui':
+      '@proj-nova/ui':
         specifier: workspace:^
         version: link:../ui
       '@vueuse/core':
@@ -3658,10 +3471,10 @@ importers:
       '@pixiv/three-vrm-core':
         specifier: ^3.5.2
         version: 3.5.2(@types/three@0.184.0)(three@0.184.0)
-      '@proj-airi/stage-shared':
+      '@proj-nova/stage-shared':
         specifier: workspace:*
         version: link:../stage-shared
-      '@proj-airi/ui':
+      '@proj-nova/ui':
         specifier: workspace:*
         version: link:../ui
       '@tresjs/cientos':
@@ -3737,7 +3550,7 @@ importers:
 
   packages/ui-loading-screens:
     dependencies:
-      '@proj-airi/font-departure-mono':
+      '@proj-nova/font-departure-mono':
         specifier: workspace:^
         version: link:../font-departure-mono
       '@rive-app/canvas-lite':
@@ -3753,7 +3566,7 @@ importers:
         specifier: 'catalog:'
         version: 3.5.32(typescript@5.9.3)
     devDependencies:
-      '@proj-airi/ui':
+      '@proj-nova/ui':
         specifier: workspace:^
         version: link:../ui
       '@unocss/reset':
@@ -3808,13 +3621,13 @@ importers:
 
   packages/unocss-preset-fonts:
     dependencies:
-      '@proj-airi/font-cjkfonts-allseto':
+      '@proj-nova/font-cjkfonts-allseto':
         specifier: workspace:^
         version: link:../font-cjkfonts-allseto
-      '@proj-airi/font-departure-mono':
+      '@proj-nova/font-departure-mono':
         specifier: workspace:^
         version: link:../font-departure-mono
-      '@proj-airi/font-xiaolai':
+      '@proj-nova/font-xiaolai':
         specifier: workspace:^
         version: link:../font-xiaolai
       '@unocss/core':
@@ -3873,7 +3686,7 @@ importers:
         specifier: ^3.2.6
         version: 3.2.6(typescript@5.9.3)
 
-  plugins/airi-plugin-bilibili-laplace:
+  plugins/nova-plugin-bilibili-laplace:
     dependencies:
       '@guiiai/logg':
         specifier: 'catalog:'
@@ -3884,16 +3697,16 @@ importers:
       '@laplace.live/event-types':
         specifier: ^2.0.14
         version: 2.0.14(typescript@5.9.3)
-      '@proj-airi/server-sdk':
+      '@proj-nova/server-sdk':
         specifier: workspace:*
         version: link:../../packages/server-sdk
 
-  plugins/airi-plugin-claude-code:
+  plugins/nova-plugin-claude-code:
     dependencies:
       '@guiiai/logg':
         specifier: 'catalog:'
         version: 1.2.11
-      '@proj-airi/server-sdk':
+      '@proj-nova/server-sdk':
         specifier: workspace:*
         version: link:../../packages/server-sdk
       cac:
@@ -3919,7 +3732,7 @@ importers:
         specifier: ^3.2.6
         version: 3.2.6(typescript@5.9.3)
 
-  plugins/airi-plugin-game-chess:
+  plugins/nova-plugin-game-chess:
     dependencies:
       '@moeru/eventa':
         specifier: 'catalog:'
@@ -3927,13 +3740,13 @@ importers:
       '@moeru/std':
         specifier: 'catalog:'
         version: 0.1.0-beta.17
-      '@proj-airi/plugin-protocol':
+      '@proj-nova/plugin-protocol':
         specifier: workspace:*
         version: link:../../packages/plugin-protocol
-      '@proj-airi/plugin-sdk-tamagotchi':
+      '@proj-nova/plugin-sdk-tamagotchi':
         specifier: workspace:*
         version: link:../../packages/plugin-sdk-tamagotchi
-      '@proj-airi/ui':
+      '@proj-nova/ui':
         specifier: workspace:^
         version: link:../../packages/ui
       animejs:
@@ -3958,18 +3771,18 @@ importers:
       '@ax-llm/ax':
         specifier: 'catalog:'
         version: 19.0.45(zod@4.3.6)
-      '@proj-airi/core-agent':
-        specifier: workspace:^
-        version: link:../../packages/core-agent
-      '@proj-airi/plugin-sdk':
-        specifier: workspace:*
-        version: link:../../packages/plugin-sdk
-      '@proj-airi/stage-ui':
-        specifier: workspace:^
-        version: link:../../packages/stage-ui
       '@proj-airi/unocss-preset-chromatic':
         specifier: ^1.0.2
         version: 1.1.1
+      '@proj-nova/core-agent':
+        specifier: workspace:^
+        version: link:../../packages/core-agent
+      '@proj-nova/plugin-sdk':
+        specifier: workspace:*
+        version: link:../../packages/plugin-sdk
+      '@proj-nova/stage-ui':
+        specifier: workspace:^
+        version: link:../../packages/stage-ui
       '@unocss/reset':
         specifier: ^66.6.7
         version: 66.6.8
@@ -4001,16 +3814,16 @@ importers:
         specifier: 'catalog:'
         version: 0.5.0-beta.2(@valibot/to-json-schema@1.0.0-rc.0(valibot@1.3.1(typescript@5.9.3)))(zod-to-json-schema@3.25.2(zod@4.3.6))(zod@4.3.6)
 
-  plugins/airi-plugin-homeassistant:
+  plugins/nova-plugin-homeassistant:
     dependencies:
       '@guiiai/logg':
         specifier: 'catalog:'
         version: 1.2.11
-      '@proj-airi/server-sdk':
+      '@proj-nova/server-sdk':
         specifier: workspace:*
         version: link:../../packages/server-sdk
 
-  plugins/airi-plugin-web-extension:
+  plugins/nova-plugin-web-extension:
     devDependencies:
       '@iconify-json/solar':
         specifier: ^1.2.5
@@ -4021,10 +3834,10 @@ importers:
       '@moeru/eventa':
         specifier: 'catalog:'
         version: 1.0.0-beta.4(electron@41.2.1)(h3@2.0.1-rc.20(crossws@0.4.5(srvx@0.11.15)))
-      '@proj-airi/server-sdk':
+      '@proj-nova/server-sdk':
         specifier: workspace:^
         version: link:../../packages/server-sdk
-      '@proj-airi/ui':
+      '@proj-nova/ui':
         specifier: workspace:^
         version: link:../../packages/ui
       '@unocss/reset':
@@ -4082,13 +3895,13 @@ importers:
       '@huggingface/transformers':
         specifier: ^3.8.1
         version: 3.8.1
-      '@proj-airi/audio':
+      '@proj-nova/audio':
         specifier: workspace:^
         version: link:../../packages/audio
-      '@proj-airi/server-sdk':
+      '@proj-nova/server-sdk':
         specifier: workspace:^
         version: link:../../packages/server-sdk
-      '@proj-airi/server-shared':
+      '@proj-nova/server-shared':
         specifier: workspace:^
         version: link:../../packages/server-shared
       '@snazzah/davey':
@@ -4136,7 +3949,7 @@ importers:
       '@moeru/std':
         specifier: 'catalog:'
         version: 0.1.0-beta.17
-      '@proj-airi/server-sdk':
+      '@proj-nova/server-sdk':
         specifier: workspace:*
         version: link:../../packages/server-sdk
       '@xsai/generate-text':
@@ -4167,14 +3980,14 @@ importers:
         specifier: 'catalog:'
         version: 6.1.2
       minecraft-data:
-        specifier: 3.102.3
-        version: 3.102.3
+        specifier: ^3.110.0
+        version: 3.110.2
       mineflayer:
-        specifier: ^4.33.0
-        version: 4.33.0(encoding@0.1.13)
+        specifier: ^4.37.0
+        version: 4.37.1(encoding@0.1.13)
       mineflayer-armor-manager:
         specifier: ^2.0.1
-        version: 2.0.1(mineflayer@4.33.0(encoding@0.1.13))
+        version: 2.0.1(mineflayer@4.37.1(encoding@0.1.13))
       mineflayer-auto-eat:
         specifier: ^5.0.3
         version: 5.0.3(encoding@0.1.13)
@@ -4406,7 +4219,7 @@ importers:
       '@moeru/std':
         specifier: 'catalog:'
         version: 0.1.0-beta.17
-      '@proj-airi/server-sdk':
+      '@proj-nova/server-sdk':
         specifier: workspace:*
         version: link:../../packages/server-sdk
       h3:
@@ -10597,6 +10410,10 @@ packages:
   '@xboxreplay/xboxlive-auth@3.3.3':
     resolution: {integrity: sha512-j0AU8pW10LM8O68CTZ5QHnvOjSsnPICy0oQcP7zyM7eWkDQ/InkiQiirQKsPn1XRYDl4ccNu0WM582s3UKwcBg==}
 
+  '@xboxreplay/xboxlive-auth@5.1.0':
+    resolution: {integrity: sha512-UngHHsehZbiTjyyNmo8HvdoUDKMID1U9uVfrpFWUK/2UxPuVTKy5n+CzZQ3S488sW5vOhgh0lHqqynT8ouwgvw==}
+    engines: {node: '>=16.0.0'}
+
   '@xmldom/xmldom@0.8.11':
     resolution: {integrity: sha512-cQzWCtO6C8TQiYl1ruKNn2U6Ao4o4WBBcbL61yJl84x+j5sOWWFU9X7DpND8XZG3daDppSsigMdfAIl2upQBRw==}
     engines: {node: '>=10.0.0'}
@@ -14749,14 +14566,18 @@ packages:
   minecraft-data@2.221.0:
     resolution: {integrity: sha512-0AhqzbIKb6WqPSF6qBevaPryeWOz545hLxt6q+gfJF8YIQX/YfkyX/nXWhl+pSIS2rTBcQ0RJkRCtTeRzQwHDA==}
 
-  minecraft-data@3.102.3:
-    resolution: {integrity: sha512-JxUPTUlamQ04GSK7YI3657BRurHLBRAhsmPb4gajd4z/p6t3LJh4l0HWIyNHRpJbQiUCIjn+mhos5oB+yqH0mQ==}
+  minecraft-data@3.110.2:
+    resolution: {integrity: sha512-u0aCCSpQWVreGnZGU/Lu0jmZmc0Y37M0Fvw6eQVQY0BdS/BGRDDU+ug6/qP3QDuZRJCSzi8wNW8ODnOhwpnkpA==}
 
   minecraft-folder-path@1.2.0:
     resolution: {integrity: sha512-qaUSbKWoOsH9brn0JQuBhxNAzTDMwrOXorwuRxdJKKKDYvZhtml+6GVCUrY5HRiEsieBEjCUnhVpDuQiKsiFaw==}
 
   minecraft-protocol@1.62.0:
     resolution: {integrity: sha512-+Rm7DdwgDiiq5ASXLNixs6TA7tsNn8zJAlhmOh0ccfuMYnlr/5+FliKacf87ZO6MPs5p/mJitIAwONbfqiX2+A==}
+    engines: {node: '>=22'}
+
+  minecraft-protocol@1.66.2:
+    resolution: {integrity: sha512-keY1IY1E2AeurcekCfcXrg0TDbykGVFiMe1E4wR8QkNtQRieNwfr2xaF3g3vT9ChkwzvENqp3jxgmtFCKSUKPg==}
     engines: {node: '>=22'}
 
   mineflayer-armor-manager@2.0.1:
@@ -14787,8 +14608,8 @@ packages:
     resolution: {integrity: sha512-IFFy4NgF24FU2PkAwazJphl2F+3gpbpN578ex0sq1XfcBBRge3kCz1UC2KDMjKI+V/8vffOL+OEnug9jt3f7Vw==}
     engines: {node: '>=14'}
 
-  mineflayer@4.33.0:
-    resolution: {integrity: sha512-tysUKVhUpEvHKDn8Awex/wz8WYyRGYrl6EujOVLJsGOU775AwKcapBVAS1BrP0UbM2di6MDwb74muGAFytY+TQ==}
+  mineflayer@4.37.1:
+    resolution: {integrity: sha512-kchZCJb1znzz8ZhE0+gLQ3e2t/9xUsqUy/IM/sGfceINxi3h6KXKY9luaUEa59vnD/x0OKwYdERY4sscm0ErNQ==}
     engines: {node: '>=22'}
 
   minimatch@10.2.4:
@@ -15659,6 +15480,9 @@ packages:
 
   prismarine-auth@2.7.0:
     resolution: {integrity: sha512-L8wTF6sdtnN6hViPNy+Nx39a8iQBwR5iO92AWCiym5cSXp/92pmnuwnTdcmNDWyqq6zY4hbibVGYhgLA1Ox8sQ==}
+
+  prismarine-auth@3.1.1:
+    resolution: {integrity: sha512-NuNrMGZdoigFKsvi1ZZgAEvNYNuE5qe6lo/tw+bqeNbkhpjHC0u1JNxLEujnfqduXI18e19PvUtWNMDl/gH7yw==}
 
   prismarine-biome@1.3.0:
     resolution: {integrity: sha512-GY6nZxq93mTErT7jD7jt8YS1aPrOakbJHh39seYsJFXvueIOdHAmW16kYQVrTVMW5MlWLQVxV/EquRwOgr4MnQ==}
@@ -19804,9 +19628,9 @@ snapshots:
     dependencies:
       electron: 41.2.1
 
-  '@electron-toolkit/tsconfig@2.0.0(@types/node@24.12.2)':
+  '@electron-toolkit/tsconfig@2.0.0(@types/node@25.6.0)':
     dependencies:
-      '@types/node': 24.12.2
+      '@types/node': 25.6.0
 
   '@electron-toolkit/utils@4.0.0(electron@41.2.1)':
     dependencies:
@@ -20690,31 +20514,6 @@ snapshots:
       picocolors: 1.1.1
       unplugin: 2.3.11
       vite: 8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
-      vue: 3.5.32(typescript@5.9.3)
-    optionalDependencies:
-      vue-i18n: 11.3.2(vue@3.5.32(typescript@5.9.3))
-    transitivePeerDependencies:
-      - '@vue/compiler-dom'
-      - eslint
-      - rollup
-      - supports-color
-      - typescript
-
-  '@intlify/unplugin-vue-i18n@11.0.7(@vue/compiler-dom@3.5.32)(eslint@10.2.1(jiti@2.6.1))(rollup@4.60.1)(typescript@5.9.3)(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue-i18n@11.3.2(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3))':
-    dependencies:
-      '@eslint-community/eslint-utils': 4.9.1(eslint@10.2.1(jiti@2.6.1))
-      '@intlify/bundle-utils': 11.0.7(vue-i18n@11.3.2(vue@3.5.32(typescript@5.9.3)))
-      '@intlify/shared': 11.3.2
-      '@intlify/vue-i18n-extensions': 8.0.0(@intlify/shared@11.3.2)(@vue/compiler-dom@3.5.32)(vue-i18n@11.3.2(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3))
-      '@rollup/pluginutils': 5.3.0(rollup@4.60.1)
-      '@typescript-eslint/scope-manager': 8.58.1
-      '@typescript-eslint/typescript-estree': 8.58.1(typescript@5.9.3)
-      debug: 4.4.3(supports-color@10.2.2)
-      fast-glob: 3.3.3
-      pathe: 2.0.3
-      picocolors: 1.1.1
-      unplugin: 2.3.11
-      vite: 8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
       vue: 3.5.32(typescript@5.9.3)
     optionalDependencies:
       vue-i18n: 11.3.2(vue@3.5.32(typescript@5.9.3))
@@ -22701,34 +22500,10 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@proj-airi/unplugin-fetch@0.2.3(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))':
-    dependencies:
-      ofetch: 1.5.1
-      vite: 8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
-
   '@proj-airi/unplugin-fetch@0.2.3(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))':
     dependencies:
       ofetch: 1.5.1
       vite: 8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
-
-  '@proj-airi/unplugin-live2d-sdk@0.1.7(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)':
-    dependencies:
-      ofetch: 1.5.1
-      vite: 8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
-      yauzl: 3.3.0
-    transitivePeerDependencies:
-      - '@types/node'
-      - '@vitejs/devtools'
-      - esbuild
-      - jiti
-      - less
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - terser
-      - tsx
-      - yaml
 
   '@proj-airi/unplugin-live2d-sdk@0.1.7(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)':
     dependencies:
@@ -23630,7 +23405,6 @@ snapshots:
   '@types/node@25.6.0':
     dependencies:
       undici-types: 7.19.2
-    optional: true
 
   '@types/nprogress@0.2.3': {}
 
@@ -24296,12 +24070,6 @@ snapshots:
       vite: 6.4.2(@types/node@25.6.0)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
       vue: 3.5.32(typescript@5.9.3)
 
-  '@vitejs/plugin-vue@6.0.6(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue@3.5.32(typescript@5.9.3))':
-    dependencies:
-      '@rolldown/pluginutils': 1.0.0-rc.13
-      vite: 8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
-      vue: 3.5.32(typescript@5.9.3)
-
   '@vitejs/plugin-vue@6.0.6(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue@3.5.32(typescript@5.9.3))':
     dependencies:
       '@rolldown/pluginutils': 1.0.0-rc.13
@@ -24603,15 +24371,6 @@ snapshots:
       unplugin: 2.3.11
     transitivePeerDependencies:
       - vue
-
-  '@vue-macros/devtools@3.1.2(typescript@5.9.3)(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))':
-    dependencies:
-      sirv: 3.0.2
-      vue: 3.5.32(typescript@5.9.3)
-    optionalDependencies:
-      vite: 8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
-    transitivePeerDependencies:
-      - typescript
 
   '@vue-macros/devtools@3.1.2(typescript@5.9.3)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))':
     dependencies:
@@ -25073,6 +24832,8 @@ snapshots:
     dependencies:
       '@xboxreplay/errors': 0.1.0
       axios: feaxios@0.0.23
+
+  '@xboxreplay/xboxlive-auth@5.1.0': {}
 
   '@xmldom/xmldom@0.8.11': {}
 
@@ -26754,7 +26515,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  electron-vite@5.0.0(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)):
+  electron-vite@5.0.0(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)):
     dependencies:
       '@babel/core': 7.29.0
       '@babel/plugin-transform-arrow-functions': 7.27.1(@babel/core@7.29.0)
@@ -26762,7 +26523,7 @@ snapshots:
       esbuild: 0.25.12
       magic-string: 0.30.21
       picocolors: 1.1.1
-      vite: 8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
+      vite: 8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -29759,7 +29520,7 @@ snapshots:
 
   minecraft-data@2.221.0: {}
 
-  minecraft-data@3.102.3: {}
+  minecraft-data@3.110.2: {}
 
   minecraft-folder-path@1.2.0: {}
 
@@ -29772,7 +29533,7 @@ snapshots:
       debug: 4.4.3(supports-color@10.2.2)
       endian-toggle: 0.0.0
       lodash.merge: 4.6.2
-      minecraft-data: 3.102.3
+      minecraft-data: 3.110.2
       minecraft-folder-path: 1.2.0
       node-fetch: 2.7.0(encoding@0.1.13)
       node-rsa: 0.4.2
@@ -29788,22 +29549,47 @@ snapshots:
       - encoding
       - supports-color
 
-  mineflayer-armor-manager@2.0.1(mineflayer@4.33.0(encoding@0.1.13)):
+  minecraft-protocol@1.66.2(encoding@0.1.13):
     dependencies:
-      minecraft-data: 3.102.3
-      mineflayer: 4.33.0(encoding@0.1.13)
+      '@types/node-rsa': 1.1.4
+      '@types/readable-stream': 4.0.23
+      aes-js: 3.1.2
+      buffer-equal: 1.0.1
+      debug: 4.4.3(supports-color@10.2.2)
+      endian-toggle: 0.0.0
+      lodash.merge: 4.6.2
+      minecraft-data: 3.110.2
+      minecraft-folder-path: 1.2.0
+      node-fetch: 2.7.0(encoding@0.1.13)
+      node-rsa: 0.4.2
+      prismarine-auth: 3.1.1
+      prismarine-chat: 1.12.0
+      prismarine-nbt: 2.8.0
+      prismarine-realms: 1.4.1(encoding@0.1.13)
+      protodef: 1.19.0
+      readable-stream: 4.7.0
+      uuid-1345: 1.0.2
+      yggdrasil: 1.7.0(encoding@0.1.13)
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+
+  mineflayer-armor-manager@2.0.1(mineflayer@4.37.1(encoding@0.1.13)):
+    dependencies:
+      minecraft-data: 3.110.2
+      mineflayer: 4.37.1(encoding@0.1.13)
 
   mineflayer-auto-eat@5.0.3(encoding@0.1.13):
     dependencies:
       '@nxg-org/mineflayer-util-plugin': 1.8.4
-      mineflayer: 4.33.0(encoding@0.1.13)
+      mineflayer: 4.37.1(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
       - supports-color
 
   mineflayer-collectblock@1.6.0(encoding@0.1.13):
     dependencies:
-      mineflayer: 4.33.0(encoding@0.1.13)
+      mineflayer: 4.37.1(encoding@0.1.13)
       mineflayer-pathfinder: 2.4.5(patch_hash=4bbfdca823ab48b74086e6e7d4b2f9baf5ee7c0ba9aee0c279b3c91c50bfd797)
       mineflayer-tool: 1.2.0(encoding@0.1.13)
     transitivePeerDependencies:
@@ -29812,7 +29598,7 @@ snapshots:
 
   mineflayer-pathfinder@2.4.5(patch_hash=4bbfdca823ab48b74086e6e7d4b2f9baf5ee7c0ba9aee0c279b3c91c50bfd797):
     dependencies:
-      minecraft-data: 3.102.3
+      minecraft-data: 3.110.2
       prismarine-block: 1.23.0
       prismarine-entity: 2.6.0
       prismarine-item: 1.18.0
@@ -29822,7 +29608,7 @@ snapshots:
 
   mineflayer-pvp@1.3.2(encoding@0.1.13)(prismarine-registry@1.11.0):
     dependencies:
-      mineflayer: 4.33.0(encoding@0.1.13)
+      mineflayer: 4.37.1(encoding@0.1.13)
       mineflayer-pathfinder: 2.4.5(patch_hash=4bbfdca823ab48b74086e6e7d4b2f9baf5ee7c0ba9aee0c279b3c91c50bfd797)
       mineflayer-utils: 0.1.4(encoding@0.1.13)(prismarine-registry@1.11.0)
     transitivePeerDependencies:
@@ -29832,7 +29618,7 @@ snapshots:
 
   mineflayer-tool@1.2.0(encoding@0.1.13):
     dependencies:
-      mineflayer: 4.33.0(encoding@0.1.13)
+      mineflayer: 4.37.1(encoding@0.1.13)
       mineflayer-pathfinder: 2.4.5(patch_hash=4bbfdca823ab48b74086e6e7d4b2f9baf5ee7c0ba9aee0c279b3c91c50bfd797)
       prismarine-nbt: 2.8.0
     transitivePeerDependencies:
@@ -29873,14 +29659,15 @@ snapshots:
       - prismarine-registry
       - supports-color
 
-  mineflayer@4.33.0(encoding@0.1.13):
+  mineflayer@4.37.1(encoding@0.1.13):
     dependencies:
-      minecraft-data: 3.102.3
-      minecraft-protocol: 1.62.0(encoding@0.1.13)
-      prismarine-biome: 1.3.0(minecraft-data@3.102.3)(prismarine-registry@1.11.0)
+      minecraft-data: 3.110.2
+      minecraft-protocol: 1.66.2(encoding@0.1.13)
+      mojangson: 2.0.4
+      prismarine-biome: 1.3.0(minecraft-data@3.110.2)(prismarine-registry@1.11.0)
       prismarine-block: 1.23.0
       prismarine-chat: 1.12.0
-      prismarine-chunk: 1.39.0(minecraft-data@3.102.3)
+      prismarine-chunk: 1.39.0(minecraft-data@3.110.2)
       prismarine-entity: 2.6.0
       prismarine-item: 1.18.0
       prismarine-nbt: 2.8.0
@@ -29891,6 +29678,7 @@ snapshots:
       prismarine-world: 3.6.3
       protodef: 1.19.0
       typed-emitter: 1.4.0
+      uuid-1345: 1.0.2
       vec3: 0.1.10
     transitivePeerDependencies:
       - encoding
@@ -30882,20 +30670,30 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  prismarine-auth@3.1.1:
+    dependencies:
+      '@azure/msal-node': 2.16.3
+      '@xboxreplay/xboxlive-auth': 5.1.0
+      debug: 4.4.3(supports-color@10.2.2)
+      smart-buffer: 4.2.0
+      uuid-1345: 1.0.2
+    transitivePeerDependencies:
+      - supports-color
+
   prismarine-biome@1.3.0(minecraft-data@2.221.0)(prismarine-registry@1.11.0):
     dependencies:
       minecraft-data: 2.221.0
       prismarine-registry: 1.11.0
 
-  prismarine-biome@1.3.0(minecraft-data@3.102.3)(prismarine-registry@1.11.0):
+  prismarine-biome@1.3.0(minecraft-data@3.110.2)(prismarine-registry@1.11.0):
     dependencies:
-      minecraft-data: 3.102.3
+      minecraft-data: 3.110.2
       prismarine-registry: 1.11.0
 
   prismarine-block@1.23.0:
     dependencies:
-      minecraft-data: 3.102.3
-      prismarine-biome: 1.3.0(minecraft-data@3.102.3)(prismarine-registry@1.11.0)
+      minecraft-data: 3.110.2
+      prismarine-biome: 1.3.0(minecraft-data@3.110.2)(prismarine-registry@1.11.0)
       prismarine-chat: 1.12.0
       prismarine-item: 1.18.0
       prismarine-nbt: 2.8.0
@@ -30920,9 +30718,9 @@ snapshots:
     transitivePeerDependencies:
       - minecraft-data
 
-  prismarine-chunk@1.39.0(minecraft-data@3.102.3):
+  prismarine-chunk@1.39.0(minecraft-data@3.110.2):
     dependencies:
-      prismarine-biome: 1.3.0(minecraft-data@3.102.3)(prismarine-registry@1.11.0)
+      prismarine-biome: 1.3.0(minecraft-data@3.110.2)(prismarine-registry@1.11.0)
       prismarine-block: 1.23.0
       prismarine-nbt: 2.8.0
       prismarine-registry: 1.11.0
@@ -30955,7 +30753,7 @@ snapshots:
 
   prismarine-physics@1.10.0:
     dependencies:
-      minecraft-data: 3.102.3
+      minecraft-data: 3.110.2
       prismarine-nbt: 2.8.0
       vec3: 0.1.10
 
@@ -30973,7 +30771,7 @@ snapshots:
 
   prismarine-registry@1.11.0:
     dependencies:
-      minecraft-data: 3.102.3
+      minecraft-data: 3.110.2
       prismarine-block: 1.23.0
       prismarine-nbt: 2.8.0
 
@@ -30982,9 +30780,9 @@ snapshots:
       '@tweenjs/tween.js': 23.1.3
       compression: 1.8.1
       express: 4.22.1
-      minecraft-data: 3.102.3
+      minecraft-data: 3.110.2
       prismarine-block: 1.23.0
-      prismarine-chunk: 1.39.0(minecraft-data@3.102.3)
+      prismarine-chunk: 1.39.0(minecraft-data@3.110.2)
       prismarine-world: 3.6.3
       socket.io: 4.8.3(bufferutil@4.1.0)(utf-8-validate@5.0.10)
       socket.io-client: 4.8.3(bufferutil@4.1.0)(utf-8-validate@5.0.10)
@@ -32666,8 +32464,7 @@ snapshots:
 
   undici-types@7.16.0: {}
 
-  undici-types@7.19.2:
-    optional: true
+  undici-types@7.19.2: {}
 
   undici@6.24.1: {}
 
@@ -32779,6 +32576,11 @@ snapshots:
       '@unocss/preset-mini': 66.6.8
       unocss: 66.6.8(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
 
+  unocss-preset-scrollbar@4.0.0(unocss@66.6.8(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))):
+    dependencies:
+      '@unocss/preset-mini': 66.6.8
+      unocss: 66.6.8(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
+
   unocss@66.6.8(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(vite@6.4.2(@types/node@25.6.0)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)):
     dependencies:
       '@unocss/cli': 66.6.8
@@ -32875,14 +32677,6 @@ snapshots:
       unplugin: 2.3.11
       vite: 8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
 
-  unplugin-combine@2.3.0(esbuild@0.27.2)(rolldown@1.0.0-rc.16)(rollup@4.60.1)(unplugin@2.3.11)(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)):
-    optionalDependencies:
-      esbuild: 0.27.2
-      rolldown: 1.0.0-rc.16
-      rollup: 4.60.1
-      unplugin: 2.3.11
-      vite: 8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
-
   unplugin-combine@2.3.0(esbuild@0.27.2)(rolldown@1.0.0-rc.16)(rollup@4.60.1)(unplugin@2.3.11)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)):
     optionalDependencies:
       esbuild: 0.27.2
@@ -32914,19 +32708,6 @@ snapshots:
       esbuild: 0.27.2
       rollup: 4.60.1
       vite: 6.4.2(@types/node@25.6.0)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
-    transitivePeerDependencies:
-      - supports-color
-
-  unplugin-info@1.3.2(esbuild@0.27.2)(rollup@4.60.1)(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)):
-    dependencies:
-      ci-info: 4.4.0
-      git-url-parse: 16.1.0
-      simple-git: 3.36.0
-      unplugin: 2.3.11
-    optionalDependencies:
-      esbuild: 0.27.2
-      rollup: 4.60.1
-      vite: 8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -33038,17 +32819,6 @@ snapshots:
       rolldown: 1.0.0-rc.16
       rollup: 4.60.1
       vite: 6.4.2(@types/node@25.6.0)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
-
-  unplugin-yaml@4.1.0(esbuild@0.27.2)(rolldown@1.0.0-rc.16)(rollup@4.60.1)(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)):
-    dependencies:
-      '@rollup/pluginutils': 5.3.0(rollup@4.60.1)
-      unplugin: 3.0.0
-      yaml: 2.8.3
-    optionalDependencies:
-      esbuild: 0.27.2
-      rolldown: 1.0.0-rc.16
-      rollup: 4.60.1
-      vite: 8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
 
   unplugin@2.3.11:
     dependencies:
@@ -33281,21 +33051,11 @@ snapshots:
       - rollup
       - supports-color
 
-  vite-dev-rpc@1.1.0(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)):
-    dependencies:
-      birpc: 2.9.0
-      vite: 8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
-      vite-hot-client: 2.1.0(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
-
   vite-dev-rpc@1.1.0(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)):
     dependencies:
       birpc: 2.9.0
       vite: 8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
       vite-hot-client: 2.1.0(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
-
-  vite-hot-client@2.1.0(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)):
-    dependencies:
-      vite: 8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
 
   vite-hot-client@2.1.0(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)):
     dependencies:
@@ -33342,21 +33102,6 @@ snapshots:
       - tsx
       - yaml
 
-  vite-plugin-inspect@11.3.3(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)):
-    dependencies:
-      ansis: 4.2.0
-      debug: 4.4.3(supports-color@10.2.2)
-      error-stack-parser-es: 1.0.5
-      ohash: 2.0.11
-      open: 10.2.0
-      perfect-debounce: 2.1.0
-      sirv: 3.0.2
-      unplugin-utils: 0.3.1
-      vite: 8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
-      vite-dev-rpc: 1.1.0(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
-    transitivePeerDependencies:
-      - supports-color
-
   vite-plugin-inspect@11.3.3(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)):
     dependencies:
       ansis: 4.2.0
@@ -33388,13 +33133,6 @@ snapshots:
       - typescript
       - ws
 
-  vite-plugin-mkcert@2.0.0(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)):
-    dependencies:
-      debug: 4.4.3(supports-color@10.2.2)
-      supports-color: 10.2.2
-      undici: 8.1.0
-      vite: 8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
-
   vite-plugin-mkcert@2.0.0(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)):
     dependencies:
       debug: 4.4.3(supports-color@10.2.2)
@@ -33413,20 +33151,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vite-plugin-vue-devtools@8.1.1(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue@3.5.32(typescript@5.9.3)):
-    dependencies:
-      '@vue/devtools-core': 8.1.1(vue@3.5.32(typescript@5.9.3))
-      '@vue/devtools-kit': 8.1.1
-      '@vue/devtools-shared': 8.1.1
-      sirv: 3.0.2
-      vite: 8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
-      vite-plugin-inspect: 11.3.3(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
-      vite-plugin-vue-inspector: 5.3.2(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
-    transitivePeerDependencies:
-      - '@nuxt/kit'
-      - supports-color
-      - vue
-
   vite-plugin-vue-devtools@8.1.1(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue@3.5.32(typescript@5.9.3)):
     dependencies:
       '@vue/devtools-core': 8.1.1(vue@3.5.32(typescript@5.9.3))
@@ -33441,21 +33165,6 @@ snapshots:
       - supports-color
       - vue
 
-  vite-plugin-vue-inspector@5.3.2(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)):
-    dependencies:
-      '@babel/core': 7.29.0
-      '@babel/plugin-proposal-decorators': 7.28.0(@babel/core@7.29.0)
-      '@babel/plugin-syntax-import-attributes': 7.28.6(@babel/core@7.29.0)
-      '@babel/plugin-syntax-import-meta': 7.10.4(@babel/core@7.29.0)
-      '@babel/plugin-transform-typescript': 7.28.5(@babel/core@7.29.0)
-      '@vue/babel-plugin-jsx': 1.5.0(@babel/core@7.29.0)
-      '@vue/compiler-dom': 3.5.32
-      kolorist: 1.8.0
-      magic-string: 0.30.21
-      vite: 8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
-    transitivePeerDependencies:
-      - supports-color
-
   vite-plugin-vue-inspector@5.3.2(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)):
     dependencies:
       '@babel/core': 7.29.0
@@ -33468,16 +33177,6 @@ snapshots:
       kolorist: 1.8.0
       magic-string: 0.30.21
       vite: 8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
-    transitivePeerDependencies:
-      - supports-color
-
-  vite-plugin-vue-layouts@0.11.0(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue-router@5.0.4(@pinia/colada@1.2.1(pinia@3.0.4(typescript@5.9.3)(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3)))(@vue/compiler-sfc@3.5.32)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3)):
-    dependencies:
-      debug: 4.4.3(supports-color@10.2.2)
-      fast-glob: 3.3.3
-      vite: 8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
-      vue: 3.5.32(typescript@5.9.3)
-      vue-router: 5.0.4(@pinia/colada@1.2.1(pinia@3.0.4(typescript@5.9.3)(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3)))(@vue/compiler-sfc@3.5.32)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3))
     transitivePeerDependencies:
       - supports-color
 
@@ -33732,54 +33431,6 @@ snapshots:
       '@vue-macros/volar': 3.1.2(typescript@5.9.3)(vue-tsc@3.2.6(typescript@5.9.3))(vue@3.5.32(typescript@5.9.3))
       unplugin: 2.3.11
       unplugin-combine: 2.3.0(esbuild@0.27.2)(rolldown@1.0.0-rc.16)(rollup@2.80.0)(unplugin@2.3.11)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
-      unplugin-vue-define-options: 3.1.2(vue@3.5.32(typescript@5.9.3))
-      vue: 3.5.32(typescript@5.9.3)
-    transitivePeerDependencies:
-      - '@emnapi/core'
-      - '@emnapi/runtime'
-      - '@rspack/core'
-      - '@vueuse/core'
-      - esbuild
-      - rolldown
-      - rollup
-      - typescript
-      - vite
-      - vue-tsc
-      - webpack
-
-  vue-macros@3.1.2(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@vueuse/core@14.2.1(vue@3.5.32(typescript@5.9.3)))(esbuild@0.27.2)(rolldown@1.0.0-rc.16)(rollup@4.60.1)(typescript@5.9.3)(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue-tsc@3.2.6(typescript@5.9.3))(vue@3.5.32(typescript@5.9.3)):
-    dependencies:
-      '@vue-macros/better-define': 3.1.2(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/boolean-prop': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/chain-call': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/common': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/config': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/define-emit': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/define-models': 3.1.2(@vueuse/core@14.2.1(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/define-prop': 3.1.2(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/define-props': 3.1.2(@vue-macros/reactivity-transform@3.1.2(vue@3.5.32(typescript@5.9.3)))(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/define-props-refs': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/define-render': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/define-slots': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/define-stylex': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/devtools': 3.1.2(typescript@5.9.3)(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
-      '@vue-macros/export-expose': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/export-props': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/export-render': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/hoist-static': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/jsx-directive': 3.1.2(typescript@5.9.3)
-      '@vue-macros/named-template': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/reactivity-transform': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/script-lang': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/setup-block': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/setup-component': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/setup-sfc': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/short-bind': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/short-emits': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/short-vmodel': 3.1.2(vue@3.5.32(typescript@5.9.3))
-      '@vue-macros/volar': 3.1.2(typescript@5.9.3)(vue-tsc@3.2.6(typescript@5.9.3))(vue@3.5.32(typescript@5.9.3))
-      unplugin: 2.3.11
-      unplugin-combine: 2.3.0(esbuild@0.27.2)(rolldown@1.0.0-rc.16)(rollup@4.60.1)(unplugin@2.3.11)(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(less@4.6.4)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
       unplugin-vue-define-options: 3.1.2(vue@3.5.32(typescript@5.9.3))
       vue: 3.5.32(typescript@5.9.3)
     transitivePeerDependencies:

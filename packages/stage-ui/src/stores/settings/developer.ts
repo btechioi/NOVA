@@ -1,4 +1,4 @@
-import { useLocalStorageManualReset } from '@proj-airi/stage-shared/composables'
+import { useLocalStorageManualReset } from '@proj-nova/stage-shared/composables'
 import { defineStore } from 'pinia'
 
 export const useSettingsDeveloper = defineStore('settings-developer', () => {

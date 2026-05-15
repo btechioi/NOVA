@@ -14,7 +14,7 @@ import type { PluginToolDefinitionRecord } from '../../../../plugin-host/shared'
  * Returns:
  * - The permission/event key string for tool registration
  */
-export const pluginToolApiRegisterEventName = 'proj-airi:plugin-sdk:apis:client:tools:register'
+export const pluginToolApiRegisterEventName = 'proj-nova:plugin-sdk:apis:client:tools:register'
 /**
  * Identifies the shared resource namespace that stores plugin tool records.
  *
@@ -27,7 +27,7 @@ export const pluginToolApiRegisterEventName = 'proj-airi:plugin-sdk:apis:client:
  * Returns:
  * - The resource key string for the tool registry
  */
-export const pluginToolRegistryResourceKey = 'proj-airi:plugin-sdk:resources:tools'
+export const pluginToolRegistryResourceKey = 'proj-nova:plugin-sdk:resources:tools'
 
 /**
  * Carries a low-level plugin tool registration request into the host.

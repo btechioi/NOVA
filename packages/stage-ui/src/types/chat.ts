@@ -11,4 +11,4 @@ export type {
   ContextMessage,
   ErrorMessage,
   StreamingAssistantMessage,
-} from '@proj-airi/core-agent'
+} from '@proj-nova/core-agent'

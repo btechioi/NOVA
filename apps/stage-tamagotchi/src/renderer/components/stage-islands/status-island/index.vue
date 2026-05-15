@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useElectronEventaInvoke } from '@proj-airi/electron-vueuse'
-import { useLampFlickerAnimation } from '@proj-airi/stage-ui/composables/use-lamp-flicker-animation'
-import { useModsServerChannelStore } from '@proj-airi/stage-ui/stores/mods/api/channel-server'
-import { lampFlickerAnimationClass } from '@proj-airi/ui'
+import { useElectronEventaInvoke } from '@proj-nova/electron-vueuse'
+import { useLampFlickerAnimation } from '@proj-nova/stage-ui/composables/use-lamp-flicker-animation'
+import { useModsServerChannelStore } from '@proj-nova/stage-ui/stores/mods/api/channel-server'
+import { lampFlickerAnimationClass } from '@proj-nova/ui'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'

@@ -8,10 +8,10 @@ import {
   ProviderSettingsContainer,
   ProviderSettingsLayout,
   ProviderValidationAlerts,
-} from '@proj-airi/stage-ui/components'
-import { useProviderValidation } from '@proj-airi/stage-ui/composables/use-provider-validation'
-import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
-import { FieldCombobox, FieldKeyValues } from '@proj-airi/ui'
+} from '@proj-nova/stage-ui/components'
+import { useProviderValidation } from '@proj-nova/stage-ui/composables/use-provider-validation'
+import { useProvidersStore } from '@proj-nova/stage-ui/stores/providers'
+import { FieldCombobox, FieldKeyValues } from '@proj-nova/ui'
 import { storeToRefs } from 'pinia'
 import { computed, onMounted, ref, watch } from 'vue'
 

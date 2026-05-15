@@ -12,9 +12,7 @@ export interface PromoBannerItem {
 
 export type PromoBannerItemKey = 'signin' | 'build' | 'spring' | 'coupon' | 'home'
 
-export type PromoBannerAction
-  = | { type: 'login' }
-    | { type: 'route', to: string }
+export interface PromoBannerAction { type: 'route', to: string }
 
 export interface PromoBannerVisual {
   key: PromoBannerItemKey
@@ -34,7 +32,7 @@ export const promoBannerVisuals: PromoBannerVisual[] = [
   {
     key: 'signin',
     image: onboardingPoster,
-    action: { type: 'login' },
+    action: { type: 'route', to: '/' },
     accentClass: 'from-fuchsia-500/30 via-rose-400/18 to-transparent',
     fallbackIcon: 'i-solar:stars-line-duotone',
     fallbackIconClass: 'text-amber-100',

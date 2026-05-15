@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=NOVA
+Exec=nova %U
+Terminal=false
+Type=Application
+Icon=nova.app
+StartupWMClass=NOVA
+Comment=NOVA is an AI VTuber/Waifu chatbot supporting Live2D/VRM avatars, featuring human-like interactions and modular stage-based rendering.
+Categories=Utility;
+

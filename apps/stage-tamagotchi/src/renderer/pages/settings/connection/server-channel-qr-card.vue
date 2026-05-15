@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { ServerChannelQrPayload } from '@proj-airi/stage-shared/server-channel-qr'
+import type { ServerChannelQrPayload } from '@proj-nova/stage-shared/server-channel-qr'
 
 import { errorMessageFrom } from '@moeru/std'
-import { useElectronEventaInvoke } from '@proj-airi/electron-vueuse'
-import { Button, Callout, Collapsible } from '@proj-airi/ui'
+import { useElectronEventaInvoke } from '@proj-nova/electron-vueuse'
+import { Button, Callout, Collapsible } from '@proj-nova/ui'
 import { storeToRefs } from 'pinia'
 import { renderSVG } from 'uqr'
 import { computed, shallowRef, watch } from 'vue'

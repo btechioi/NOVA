@@ -95,26 +95,26 @@ import DemoDayHangzhou3 from './assets/demo-day-hangzhou-3.avif'
 
 那时我开始实验更多的例子，简化 VAD、ASR、TTS 工作流的演示。
 
-最终，我得到了这个：[WebAI 实时语音聊天示例](https://github.com/proj-airi/webai-example-realtime-voice-chat)，我设法证明了这项工作可以在 Web 浏览器中用一个 300 ~ 500 行的 TypeScript 代码来实现 ChatGPT 语音聊天系统。
+最终，我得到了这个：[WebAI 实时语音聊天示例](https://github.com/proj-nova/webai-example-realtime-voice-chat)，我设法证明了这项工作可以在 Web 浏览器中用一个 300 ~ 500 行的 TypeScript 代码来实现 ChatGPT 语音聊天系统。
 
 <ThemedVideo controls muted src="./assets/webai-examples-demo.MP4" style="height: 640px;" />
 
 我尽力将所有可能的步骤分解为小的可重用片段，以帮助演示如何从头开始构建实时语音聊天系统：
 
-- [VAD](https://github.com/proj-airi/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad)
-- [VAD + ASR](https://github.com/proj-airi/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad-asr)
-- [VAD + ASR + LLM 聊天](https://github.com/proj-airi/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad-asr-chat)
-- [VAD + ASR + LLM 聊天 + TTS](https://github.com/proj-airi/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad-asr-chat-tts)
+- [VAD](https://github.com/proj-nova/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad)
+- [VAD + ASR](https://github.com/proj-nova/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad-asr)
+- [VAD + ASR + LLM 聊天](https://github.com/proj-nova/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad-asr-chat)
+- [VAD + ASR + LLM 聊天 + TTS](https://github.com/proj-nova/webai-example-realtime-voice-chat/tree/8462ff6bcb83bb278bce5388d588d2e3e3dd6dae/apps/vad-asr-chat-tts)
 
 > 希望你能从中学到一些东西。
 
 在这段时间里，我们发现了一个有趣且强大的仓库，叫做 [k2-fsa/sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx)，它支持跨 macOS、Windows、Linux、Android、iOS 等 12 种语言的 18 种语音处理任务。令人着迷！
 
-所以 [@luoling](https://github.com/luoling8192) 也为此做了另一个小演示：[Sherpa ONNX 驱动的 VAD + ASR + LLM 聊天 + TTS](https://github.com/proj-airi/webai-example-realtime-voice-chat/tree/main/apps/sherpa-onnx-demo)
+所以 [@luoling](https://github.com/luoling8192) 也为此做了另一个小演示：[Sherpa ONNX 驱动的 VAD + ASR + LLM 聊天 + TTS](https://github.com/proj-nova/webai-example-realtime-voice-chat/tree/main/apps/sherpa-onnx-demo)
 
 #### xsAI 🤗 Transformers.js 的诞生
 
-由于我们为 VAD、ASR、聊天和 TTS 演示所做的工作，这催生了一个名为 [xsAI 🤗 Transformers.js](https://github.com/proj-airi/xsai-transformers) 的新副项目，它简化了调用 WebGPU 驱动的模型推理和使用 workers 提供服务，同时仍然保持与我们之前成功的项目 [xsAI](https://github.com/moeru-ai/xsai) 的 API 兼容性。
+由于我们为 VAD、ASR、聊天和 TTS 演示所做的工作，这催生了一个名为 [xsAI 🤗 Transformers.js](https://github.com/proj-nova/xsai-transformers) 的新副项目，它简化了调用 WebGPU 驱动的模型推理和使用 workers 提供服务，同时仍然保持与我们之前成功的项目 [xsAI](https://github.com/moeru-ai/xsai) 的 API 兼容性。
 
 我们也为此做了一个游乐场...在 [https://xsai-transformers.netlify.app](https://xsai-transformers.netlify.app) 上玩玩吧。
 

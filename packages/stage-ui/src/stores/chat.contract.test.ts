@@ -39,7 +39,7 @@ vi.mock('pinia', async () => {
   }
 })
 
-vi.mock('@proj-airi/stream-kit', () => ({
+vi.mock('@proj-nova/stream-kit', () => ({
   createQueue: ({ handlers }: { handlers: Array<(ctx: { data: any }) => Promise<void> | void> }) => {
     const enqueueListeners: Array<(data: any) => void> = []
     const dequeueListeners: Array<(data: any) => void> = []

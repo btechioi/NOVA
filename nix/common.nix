@@ -49,7 +49,7 @@ stdenvNoCC.mkDerivation (final: {
       runHook preBuild
 
       pnpm run build:packages
-      pnpm -F @proj-airi/stage-web run build
+      pnpm -F @proj-nova/stage-web run build
 
       runHook postBuild
     '';

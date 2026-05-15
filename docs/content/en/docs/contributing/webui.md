@@ -1,9 +1,9 @@
 ---
 title: Web UI
-description: Contribute to Project AIRI
+description: Contribute to Project NOVA
 ---
 
-### Stage Web (Browser version for [airi.moeru.ai](https://airi.moeru.ai))
+### Stage Web (Browser version for [github.com/btechioi/NOVA](https://github.com/btechioi/NOVA))
 
 ```shell
 pnpm dev

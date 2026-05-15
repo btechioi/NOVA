@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/component-calling",
+  "name": "@proj-nova/component-calling",
   "type": "module",
   "private": true,
   "description": "Realtime audio",
@@ -21,7 +21,7 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@proj-airi/ui": "workspace:^",
+    "@proj-nova/ui": "workspace:^",
     "@vueuse/core": "^14.2.1",
     "@xsai/generate-text": "catalog:",
     "@xsai/shared-chat": "catalog:",

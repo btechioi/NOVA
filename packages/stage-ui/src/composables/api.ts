@@ -2,11 +2,6 @@ import type { AppType } from '../../../../apps/server/src/app'
 
 import { hc } from 'hono/client'
 
-import { authedFetch } from '../libs/auth-fetch'
-import { SERVER_URL } from '../libs/server'
+const SERVER_URL = import.meta.env.VITE_SERVER_URL ?? ''
 
-export const client = hc<AppType>(SERVER_URL, {
-  fetch: authedFetch,
-})
-
-export type StageApiClient = typeof client
+export const client = hc<AppType>(SERVER_URL)

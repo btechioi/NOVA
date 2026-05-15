@@ -2,16 +2,14 @@ import type { SpeechProviderWithExtraOptions } from '@xsai-ext/providers/utils'
 
 import type { VoiceInfo } from '../providers'
 
-import { useLocalStorageManualReset } from '@proj-airi/stage-shared/composables'
+import { useLocalStorageManualReset } from '@proj-nova/stage-shared/composables'
 import { refManualReset } from '@vueuse/core'
 import { generateSpeech } from '@xsai/generate-speech'
 import { defineStore, storeToRefs } from 'pinia'
 import { computed, onMounted, watch } from 'vue'
-import { useI18n } from 'vue-i18n'
 import { toXml } from 'xast-util-to-xml'
 import { x } from 'xastscript'
 
-import { setupOfficialSpeechAutoPick } from '../../libs/providers/providers/official'
 import { useProvidersStore } from '../providers'
 
 export function toSignedPercent(value: number): string {
@@ -25,8 +23,6 @@ export function toSignedPercent(value: number): string {
 export const useSpeechStore = defineStore('speech', () => {
   const providersStore = useProvidersStore()
   const { allAudioSpeechProvidersMetadata } = storeToRefs(providersStore)
-  const { locale } = useI18n()
-
   // State
   const activeSpeechProvider = useLocalStorageManualReset<string>('settings/speech/active-provider', 'speech-noop')
   const activeSpeechModel = useLocalStorageManualReset<string>('settings/speech/active-model', '')
@@ -164,13 +160,6 @@ export const useSpeechStore = defineStore('speech', () => {
         activeSpeechVoice.value = availableVoices.value[activeSpeechProvider.value]?.find(voice => voice.id === activeSpeechVoiceId.value)
       }
     })
-  })
-
-  setupOfficialSpeechAutoPick({
-    activeSpeechProvider,
-    activeSpeechVoiceId,
-    availableVoices,
-    uiLocale: locale,
   })
 
   watch([activeSpeechVoiceId, availableVoices], ([voiceId, voices]) => {

@@ -21,13 +21,13 @@ Hono, Better Auth (OIDC provider, RS256 JWT), Drizzle ORM, PostgreSQL, Redis, St
 ## Commands
 
 ```sh
-pnpm -F @proj-airi/server dev                # dev with dotenvx (.env.local)
-pnpm -F @proj-airi/server typecheck
-pnpm -F @proj-airi/server exec vitest run    # all server tests
+pnpm -F @proj-nova/server dev                # dev with dotenvx (.env.local)
+pnpm -F @proj-nova/server typecheck
+pnpm -F @proj-nova/server exec vitest run    # all server tests
 pnpm exec vitest run apps/server/src/...     # single test file
-pnpm -F @proj-airi/server db:generate        # drizzle-kit generate
-pnpm -F @proj-airi/server db:push            # drizzle-kit push
-pnpm -F @proj-airi/server auth:generate      # better-auth → src/schemas/accounts.ts
+pnpm -F @proj-nova/server db:generate        # drizzle-kit generate
+pnpm -F @proj-nova/server db:push            # drizzle-kit push
+pnpm -F @proj-nova/server auth:generate      # better-auth → src/schemas/accounts.ts
 ```
 
 Local observability: `docker compose -f apps/server/docker-compose.otel.yml up -d`
@@ -39,7 +39,7 @@ Local observability: `docker compose -f apps/server/docker-compose.otel.yml up -
 **Layering**:
 - **Routes** (`src/routes/`): thin — param validation (Valibot), auth guards, error mapping. No business logic here.
 - **Services** (`src/services/`): core business logic and DB transactions.
-- **Schemas** (`src/schemas/`): Drizzle table definitions. Migrations in `@proj-airi/server-schema`.
+- **Schemas** (`src/schemas/`): Drizzle table definitions. Migrations in `@proj-nova/server-schema`.
 
 **Middleware chain** (`/api/*`): CORS → hono/logger → optional otel → sessionMiddleware → bodyLimit(1MB) → per-route guards. WebSocket `/ws/chat` registered before bodyLimit.
 

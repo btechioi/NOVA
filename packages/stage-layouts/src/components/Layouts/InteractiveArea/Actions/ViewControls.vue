@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { supportedControl as threeSupportedControl, useThreeViewControl } from '@proj-airi/stage-ui-three'
-import { supportedControl as l2dSupportedCtrl, useL2dViewControl } from '@proj-airi/stage-ui/stores/live2d'
-import { useSettingsStageModel } from '@proj-airi/stage-ui/stores/settings/stage-model'
-import { Button } from '@proj-airi/ui'
+import { supportedControl as threeSupportedControl, useThreeViewControl } from '@proj-nova/stage-ui-three'
+import { supportedControl as l2dSupportedCtrl, useL2dViewControl } from '@proj-nova/stage-ui/stores/live2d'
+import { useSettingsStageModel } from '@proj-nova/stage-ui/stores/settings/stage-model'
+import { Button } from '@proj-nova/ui'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 

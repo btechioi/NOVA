@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Collapsible, ContainerError } from '@proj-airi/ui'
+import { Collapsible, ContainerError } from '@proj-nova/ui'
 import { computed } from 'vue'
 
 import { createToolResultError } from './tool-call-display'

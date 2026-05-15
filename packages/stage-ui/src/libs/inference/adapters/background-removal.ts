@@ -9,7 +9,7 @@
 import type { AllocationToken } from '../gpu-resource-coordinator'
 import type { ProgressPayload } from '../protocol'
 
-import { defaultPerfTracer } from '@proj-airi/stage-shared'
+import { defaultPerfTracer } from '@proj-nova/stage-shared'
 import { Mutex } from 'async-mutex'
 
 import { removeInferenceStatus, updateInferenceStatus } from '../../../composables/use-inference-status'
@@ -111,23 +111,17 @@ export function createBackgroundRemovalAdapter(): BackgroundRemovalAdapter {
       let timeoutId: ReturnType<typeof setTimeout> | undefined
       let abortListener: (() => void) | null = null
 
-      const cleanup = (): void => {
-        if (timeoutId !== undefined)
-          clearTimeout(timeoutId)
-        w.removeEventListener('message', handler)
-        if (abortListener && signal)
-          signal.removeEventListener('abort', abortListener)
-      }
-
       const handler = (event: MessageEvent): void => {
         if (event.data.requestId !== requestId)
           return
 
         if (event.data.type === targetType) {
+          // eslint-disable-next-line ts/no-use-before-define
           cleanup()
           resolve(event.data as T)
         }
         else if (event.data.type === 'error') {
+          // eslint-disable-next-line ts/no-use-before-define
           cleanup()
           const code = event.data.payload?.code
           if (code === 'CANCELLED')
@@ -138,6 +132,14 @@ export function createBackgroundRemovalAdapter(): BackgroundRemovalAdapter {
         else {
           onOther?.(event.data)
         }
+      }
+
+      const cleanup = (): void => {
+        if (timeoutId !== undefined)
+          clearTimeout(timeoutId)
+        w.removeEventListener('message', handler)
+        if (abortListener && signal)
+          signal.removeEventListener('abort', abortListener)
       }
 
       w.addEventListener('message', handler)

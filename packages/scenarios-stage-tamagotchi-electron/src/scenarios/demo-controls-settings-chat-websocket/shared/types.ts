@@ -1,4 +1,4 @@
-import type { ScenarioContext, VishotArtifact } from '@proj-airi/vishot-runner-electron'
+import type { ScenarioContext, VishotArtifact } from '@proj-nova/vishot-runner-electron'
 
 export type ManualSectionId = 'overview' | 'settings' | 'devtools'
 export type ManualCaptureStepKind = 'main-window' | 'controls-island' | 'chat-window' | 'settings-overview' | 'settings-route' | 'connection'

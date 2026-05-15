@@ -56,7 +56,7 @@ describe('projectConversationEntries', () => {
         {
           type: 'spark-notify',
           id: 'notify-1',
-          source: 'plugin:airi-plugin-game-chess',
+          source: 'plugin:nova-plugin-game-chess',
           headline: 'chess update',
           note: 'Project a board update',
           payload: {
@@ -67,7 +67,7 @@ describe('projectConversationEntries', () => {
         {
           type: 'spark-command',
           id: 'command-1',
-          source: 'plugin:airi-plugin-game-chess',
+          source: 'plugin:nova-plugin-game-chess',
           commandId: 'command-1',
           parentEventId: 'notify-1',
           intent: 'action',

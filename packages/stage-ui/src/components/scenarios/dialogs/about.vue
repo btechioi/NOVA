@@ -13,7 +13,7 @@ withDefaults(defineProps<{
   links?: AboutLink[]
 }>(), {
   title: 'Project',
-  highlight: 'AIRI',
+  highlight: 'NOVA',
   subtitle: '',
   links: undefined,
 })

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { IconItem, RippleGrid } from '@proj-airi/stage-ui/components'
-import { useRippleGridState } from '@proj-airi/stage-ui/composables/use-ripple-grid-state'
-import { useSettings } from '@proj-airi/stage-ui/stores/settings'
+import { IconItem, RippleGrid } from '@proj-nova/stage-ui/components'
+import { useRippleGridState } from '@proj-nova/stage-ui/composables/use-ripple-grid-state'
+import { useSettings } from '@proj-nova/stage-ui/stores/settings'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'

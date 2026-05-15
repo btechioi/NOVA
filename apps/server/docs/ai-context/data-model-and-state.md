@@ -35,7 +35,7 @@
 说明：
 
 - `better-auth` 直接用这组表
-- 由 `pnpm -F @proj-airi/server auth:generate` 自动产物，手改会被覆盖
+- 由 `pnpm -F @proj-nova/server auth:generate` 自动产物，手改会被覆盖
 
 ### 角色与用户交互
 

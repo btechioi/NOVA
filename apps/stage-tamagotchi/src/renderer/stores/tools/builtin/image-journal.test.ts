@@ -1,4 +1,4 @@
-import { resolveArtistryConfigFromStore } from '@proj-airi/stage-ui/stores/modules/artistry'
+import { resolveArtistryConfigFromStore } from '@proj-nova/stage-ui/stores/modules/artistry'
 import { describe, expect, it, vi } from 'vitest'
 
 import { installStrictToolSchemaMatchers } from '../testing/strict-tool-schema'

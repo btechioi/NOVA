@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/vishot-runtime",
+  "name": "@proj-nova/vishot-runtime",
   "type": "module",
   "version": "0.10.2",
   "private": true,

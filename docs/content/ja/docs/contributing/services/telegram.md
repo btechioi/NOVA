@@ -23,14 +23,14 @@ cp .env .env.local
 データベースのマイグレーション
 
 ```shell
-pnpm -F @proj-airi/telegram-bot db:generate
-pnpm -F @proj-airi/telegram-bot db:push
+pnpm -F @proj-nova/telegram-bot db:generate
+pnpm -F @proj-nova/telegram-bot db:push
 ```
 
 ボットの実行
 
 ```shell
-pnpm -F @proj-airi/telegram-bot start
+pnpm -F @proj-nova/telegram-bot start
 ```
 
 ::: tip
@@ -38,7 +38,7 @@ pnpm -F @proj-airi/telegram-bot start
 [@antfu/ni](https://github.com/antfu-collective/ni) ユーザーの場合：
 
 ```shell
-nr -F @proj-airi/telegram-bot dev
+nr -F @proj-nova/telegram-bot dev
 ```
 
 :::

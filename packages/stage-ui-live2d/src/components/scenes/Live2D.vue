@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Screen } from '@proj-airi/ui'
+import { Screen } from '@proj-nova/ui'
 import { ref, watch } from 'vue'
 
 import SliderControls from '../ViewControls/SliderControls.vue'

@@ -7,13 +7,13 @@ import type {
 import type { ServerForm } from './mcp-config'
 
 import { errorMessageFrom } from '@moeru/std'
-import { useElectronEventaInvoke } from '@proj-airi/electron-vueuse'
+import { useElectronEventaInvoke } from '@proj-nova/electron-vueuse'
 import {
   Button,
   Callout,
   Checkbox,
   TransitionVertical,
-} from '@proj-airi/ui'
+} from '@proj-nova/ui'
 import { computed, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 

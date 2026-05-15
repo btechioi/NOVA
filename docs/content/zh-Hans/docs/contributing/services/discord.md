@@ -20,7 +20,7 @@ cp .env .env.local
 启动机器人：
 
 ```shell
-pnpm -F @proj-airi/discord-bot start
+pnpm -F @proj-nova/discord-bot start
 ```
 
 ::: tip
@@ -28,7 +28,7 @@ pnpm -F @proj-airi/discord-bot start
 如果你使用 [@antfu/ni](https://github.com/antfu-collective/ni)，你可以：
 
 ```shell
-nr -F @proj-airi/discord-bot dev
+nr -F @proj-nova/discord-bot dev
 ```
 
 :::

@@ -1,6 +1,6 @@
 import type { Tool } from '@xsai/shared-chat'
 
-import { useLlmToolsStore } from '@proj-airi/stage-ui/stores/llm-tools'
+import { useLlmToolsStore } from '@proj-nova/stage-ui/stores/llm-tools'
 import { createPinia, setActivePinia } from 'pinia'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
@@ -19,7 +19,7 @@ const invokeMocks = vi.hoisted(() => ({
   ]),
 }))
 
-vi.mock('@proj-airi/electron-vueuse', () => ({
+vi.mock('@proj-nova/electron-vueuse', () => ({
   useElectronEventaInvoke: (event: { receiveEvent?: { id?: string } }) => {
     if (event?.receiveEvent?.id === 'eventa:invoke:electron:plugins:tools:list-xsai-receive')
       return invokeMocks.listPluginXsaiTools

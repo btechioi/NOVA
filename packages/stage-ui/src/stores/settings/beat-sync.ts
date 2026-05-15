@@ -1,7 +1,7 @@
-import type { AnalyserWorkletParameters, BeatSyncSpectrumScale } from '@proj-airi/stage-shared/beat-sync'
+import type { AnalyserWorkletParameters, BeatSyncSpectrumScale } from '@proj-nova/stage-shared/beat-sync'
 
-import { DEFAULT_BEAT_SYNC_PARAMETERS } from '@proj-airi/stage-shared/beat-sync'
-import { useLocalStorageManualReset } from '@proj-airi/stage-shared/composables'
+import { DEFAULT_BEAT_SYNC_PARAMETERS } from '@proj-nova/stage-shared/beat-sync'
+import { useLocalStorageManualReset } from '@proj-nova/stage-shared/composables'
 import { defineStore } from 'pinia'
 
 export const useSettingsBeatSync = defineStore('settings-beat-sync', () => {

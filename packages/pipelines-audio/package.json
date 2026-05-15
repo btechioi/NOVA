@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/pipelines-audio",
+  "name": "@proj-nova/pipelines-audio",
   "type": "module",
   "version": "0.10.2",
   "private": true,

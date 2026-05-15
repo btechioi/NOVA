@@ -457,9 +457,9 @@ export enum MessageHeartbeat {
 }
 
 export enum WebSocketEventSource {
-  Server = 'proj-airi:server-runtime',
-  StageWeb = 'proj-airi:stage-web',
-  StageTamagotchi = 'proj-airi:stage-tamagotchi',
+  Server = 'proj-nova:server-runtime',
+  StageWeb = 'proj-nova:stage-web',
+  StageTamagotchi = 'proj-nova:stage-tamagotchi',
 }
 
 interface InputSource {

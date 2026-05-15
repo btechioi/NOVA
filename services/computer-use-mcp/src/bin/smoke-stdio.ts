@@ -73,7 +73,7 @@ async function main() {
     stderr: 'pipe',
   })
   const client = new Client({
-    name: '@proj-airi/computer-use-mcp-smoke',
+    name: '@proj-nova/computer-use-mcp-smoke',
     version: '0.1.0',
   })
 

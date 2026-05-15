@@ -30,7 +30,7 @@ export async function activate(context: vscode.ExtensionContext) {
 
   // Initialize
   const vscodeContext = injeca.provide('vscode:context', () => context)
-  const client = injeca.provide('proj-airi:client', () => new Client())
+  const client = injeca.provide('proj-nova:client', () => new Client())
   const contextCollector = injeca.provide('self:context-collector', () => new ContextCollector(contextLines))
   const eventListeners = injeca.provide('self:event-listeners', () => [] as vscode.Disposable[])
   const controlLoopInterval = injeca.provide('self:control-loop:interval:send', () => {
@@ -232,7 +232,7 @@ function stopMonitoring(params: { controlLoopInterval: IntervalHandle }) {
  * Deactivate the plugin
  */
 export async function deactivate() {
-  const { client } = await injeca.resolve({ client: { key: 'proj-airi:client' } as unknown as ProvidedBy<Client> })
+  const { client } = await injeca.resolve({ client: { key: 'proj-nova:client' } as unknown as ProvidedBy<Client> })
   const { eventListeners } = await injeca.resolve({ eventListeners: { key: 'self:event-listeners' } as unknown as ProvidedBy<vscode.Disposable[]> })
   const { controlLoopInterval } = await injeca.resolve({ controlLoopInterval: { key: 'self:control-loop:interval:send' } as unknown as ProvidedBy<IntervalHandle> })
 

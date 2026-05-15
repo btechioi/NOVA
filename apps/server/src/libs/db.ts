@@ -4,7 +4,7 @@ import pg from 'pg'
 
 import { useLogger } from '@guiiai/logg'
 import { migrate } from '@proj-airi/drizzle-orm-browser-migrator/pg'
-import { migrations } from '@proj-airi/server-schema'
+import { migrations } from '@proj-nova/server-schema'
 import { drizzle } from 'drizzle-orm/node-postgres'
 
 import * as fullSchema from '../schemas'

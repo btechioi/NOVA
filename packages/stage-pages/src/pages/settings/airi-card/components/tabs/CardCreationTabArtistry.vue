@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { ComfyUIWorkflowTemplate } from '@proj-airi/stage-ui/stores/modules/artistry'
+import type { ComfyUIWorkflowTemplate } from '@proj-nova/stage-ui/stores/modules/artistry'
 
-import { REPLICATE_IMAGEGEN_PRESETS } from '@proj-airi/stage-shared'
-import { useArtistryStore } from '@proj-airi/stage-ui/stores/modules/artistry'
-import { Button, Checkbox, FieldInput, FieldRange, Select } from '@proj-airi/ui'
+import { REPLICATE_IMAGEGEN_PRESETS } from '@proj-nova/stage-shared'
+import { useArtistryStore } from '@proj-nova/stage-ui/stores/modules/artistry'
+import { Button, Checkbox, FieldInput, FieldRange, Select } from '@proj-nova/ui'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 

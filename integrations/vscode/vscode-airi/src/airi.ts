@@ -1,9 +1,9 @@
-import type { WebSocketEventOptionalSource } from '@proj-airi/server-sdk'
+import type { WebSocketEventOptionalSource } from '@proj-nova/server-sdk'
 
 import type { Events } from './types'
 
 import { useLogger } from '@guiiai/logg'
-import { ContextUpdateStrategy, Client as ServerClient } from '@proj-airi/server-sdk'
+import { ContextUpdateStrategy, Client as ServerClient } from '@proj-nova/server-sdk'
 import { nanoid } from 'nanoid'
 
 export class Client {
@@ -11,7 +11,7 @@ export class Client {
 
   async connect(): Promise<boolean> {
     try {
-      this.client = new ServerClient<Events>({ name: 'proj-airi:plugin-vscode' })
+      this.client = new ServerClient<Events>({ name: 'proj-nova:plugin-vscode' })
       await this.client.connect()
       useLogger().log('AIRI connected to Server Channel')
       return true

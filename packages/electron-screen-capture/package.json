@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/electron-screen-capture",
+  "name": "@proj-nova/electron-screen-capture",
   "type": "module",
   "version": "0.10.2",
   "private": true,

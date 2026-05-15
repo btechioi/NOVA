@@ -1,9 +1,9 @@
-import type { StreamOptions } from '@proj-airi/core-agent'
-import type { WebSocketEvents } from '@proj-airi/server-sdk'
+import type { StreamOptions } from '@proj-nova/core-agent'
+import type { WebSocketEvents } from '@proj-nova/server-sdk'
 import type { ChatProvider } from '@xsai-ext/providers/utils'
 import type { Message, Tool } from '@xsai/shared-chat'
 
-import { streamFrom as coreStreamFrom, isContentArrayRelatedError, isToolRelatedError, modelKey } from '@proj-airi/core-agent'
+import { streamFrom as coreStreamFrom, isContentArrayRelatedError, isToolRelatedError, modelKey } from '@proj-nova/core-agent'
 import { listModels } from '@xsai/model'
 import { uniqBy } from 'es-toolkit'
 import { defineStore } from 'pinia'
@@ -13,8 +13,8 @@ import { createSparkCommandTool, debug, mcp } from '../tools'
 import { useLlmToolsStore } from './llm-tools'
 import { useModsServerChannelStore } from './mods/api/channel-server'
 
-export type { StreamEvent, StreamOptions } from '@proj-airi/core-agent'
-export { isContentArrayRelatedError, isToolRelatedError } from '@proj-airi/core-agent'
+export type { StreamEvent, StreamOptions } from '@proj-nova/core-agent'
+export { isContentArrayRelatedError, isToolRelatedError } from '@proj-nova/core-agent'
 
 function toolNameFrom(tool: Tool) {
   const candidate = tool as Tool & {

@@ -67,10 +67,6 @@ export async function executeSandboxWorker(
       cwd: SANDBOX_SOURCE_DIRECTORY,
       env: {},
       execArgv: [
-        '--permission',
-        '--allow-addons',
-        `--allow-fs-read=${SANDBOX_SOURCE_DIRECTORY}`,
-        `--allow-fs-read=${PNPM_MODULE_STORE_PATH}`,
         '--disable-proto=throw',
         '--frozen-intrinsics',
         '--experimental-transform-types',

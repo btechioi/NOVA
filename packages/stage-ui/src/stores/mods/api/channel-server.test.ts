@@ -90,15 +90,15 @@ const serverSdkMocks = vi.hoisted(() => {
   }
 })
 
-vi.mock('@proj-airi/server-sdk', () => ({
+vi.mock('@proj-nova/server-sdk', () => ({
   Client: serverSdkMocks.MockClient,
   WebSocketEventSource: {
-    StageTamagotchi: 'proj-airi:stage-tamagotchi',
-    StageWeb: 'proj-airi:stage-web',
+    StageTamagotchi: 'proj-nova:stage-tamagotchi',
+    StageWeb: 'proj-nova:stage-web',
   },
 }))
 
-vi.mock('@proj-airi/stage-shared', () => ({
+vi.mock('@proj-nova/stage-shared', () => ({
   isStageTamagotchi: () => true,
   isStageWeb: () => false,
 }))

@@ -2,7 +2,6 @@ import type { Rectangle } from 'electron'
 import type { InferOutput } from 'valibot'
 
 import type { I18n } from '../../libs/i18n'
-import type { WindowAuthManager } from '../../services/airi/auth'
 import type { ServerChannel } from '../../services/airi/channel-server'
 import type { GodotStageManager } from '../../services/airi/godot-stage'
 import type { McpStdioManager } from '../../services/airi/mcp-servers'
@@ -21,7 +20,7 @@ import clickDragPlugin from 'electron-click-drag-plugin'
 import { is } from '@electron-toolkit/utils'
 import { defineInvokeHandler } from '@moeru/eventa'
 import { createContext } from '@moeru/eventa/adapters/electron/main'
-import { initScreenCaptureForWindow } from '@proj-airi/electron-screen-capture/main'
+import { initScreenCaptureForWindow } from '@proj-nova/electron-screen-capture/main'
 import { defu } from 'defu'
 import { BrowserWindow, ipcMain, shell } from 'electron'
 import { isLinux, isMacOS } from 'std-env'
@@ -61,7 +60,6 @@ export async function setupMainWindow(params: {
   mcpStdioManager: McpStdioManager
   i18n: I18n
   onboardingWindowManager: OnboardingWindowManager
-  windowAuthManager: WindowAuthManager
 }) {
   const {
     setup: setupConfig,
@@ -75,10 +73,10 @@ export async function setupMainWindow(params: {
 
   setupConfig()
 
-  const mainWindowConfig = getConfig().windows?.find(w => w.title === 'AIRI' && w.tag === 'main')
+  const mainWindowConfig = getConfig().windows?.find(w => w.title === 'NOVA' && w.tag === 'main')
 
   const window = new BrowserWindow({
-    title: 'AIRI',
+    title: 'NOVA',
     width: mainWindowConfig?.width ?? 450.0,
     height: mainWindowConfig?.height ?? 600.0,
     x: mainWindowConfig?.x,
@@ -122,11 +120,11 @@ export async function setupMainWindow(params: {
       config.windows = []
     }
 
-    const existingConfigIndex = config.windows.findIndex(w => w.title === 'AIRI' && w.tag === 'main')
+    const existingConfigIndex = config.windows.findIndex(w => w.title === 'NOVA' && w.tag === 'main')
 
     if (existingConfigIndex === -1) {
       config.windows.push({
-        title: 'AIRI',
+        title: 'NOVA',
         tag: 'main',
         x: newBounds.x,
         y: newBounds.y,
@@ -135,7 +133,7 @@ export async function setupMainWindow(params: {
       })
     }
     else {
-      const mainWindowConfig = defu(config.windows[existingConfigIndex], { title: 'AIRI', tag: 'main' })
+      const mainWindowConfig = defu(config.windows[existingConfigIndex], { title: 'NOVA', tag: 'main' })
 
       mainWindowConfig.x = newBounds.x
       mainWindowConfig.y = newBounds.y
@@ -188,7 +186,6 @@ export async function setupMainWindow(params: {
     mcpStdioManager: params.mcpStdioManager,
     i18n: params.i18n,
     onboardingWindowManager: params.onboardingWindowManager,
-    windowAuthManager: params.windowAuthManager,
   })
 
   await load(window, baseUrl(resolve(getElectronMainDirname(), '..', 'renderer')))

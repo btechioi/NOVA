@@ -5,7 +5,7 @@
  * without a DOM environment or Vue test-utils.
  */
 
-import type { McpCallToolResult } from '@proj-airi/stage-ui/stores/mcp-tool-bridge'
+import type { McpCallToolResult } from '@proj-nova/stage-ui/stores/mcp-tool-bridge'
 
 import { desktopOverlayPollHeartbeatMarker, desktopOverlayPollHeartbeatQueryParam } from '../../shared/desktop-overlay-heartbeat'
 

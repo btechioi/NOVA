@@ -15,12 +15,12 @@ date: 2025-03-06
 > [https://airi.build/references/design-guidelines/resources/](../references/design-guidelines/resources/)。
 
 最终的移植效果相当不错，已经部署到
-[https://proj-airi-packages-ui-transitions.netlify.app/#/](https://proj-airi-packages-ui-transitions.netlify.app/#/)。
+[https://proj-nova-packages-ui-transitions.netlify.app/#/](https://proj-nova-packages-ui-transitions.netlify.app/#/)。
 
 ![](./assets/animation-transitions.gif)
 
 > 另外，从现在开始，每个包的所有演示场都将使用
-> "proj-airi" + "${subDirectory}" + "${packageName}" 模式进行 Netlify
+> "proj-nova" + "${subDirectory}" + "${packageName}" 模式进行 Netlify
 > 部署。
 
 虽然前一天的主要目标是将 CSS 实现拆分为 Vue 组件，但实际的可重用性部分还没有完全实现。
@@ -30,7 +30,7 @@ date: 2025-03-06
 
 我尝试使用了 [`unplugin-vue-router`](https://github.com/posva/unplugin-vue-router) 提供的 [`definePage`](https://uvr.esm.is/guide/extending-routes.html#definepage) 宏钩子，发现它非常适合我的使用场景，于是决定继续沿着这个方向探索。
 
-我从 [https://cowardly-witch.netlify.app/](https://cowardly-witch.netlify.app/) 移植了 3 个额外的新动画过渡效果，它们已经在 [https://proj-airi-packages-ui-transitions.netlify.app/#/](https://proj-airi-packages-ui-transitions.netlify.app/#/) 上可用。
+我从 [https://cowardly-witch.netlify.app/](https://cowardly-witch.netlify.app/) 移植了 3 个额外的新动画过渡效果，它们已经在 [https://proj-nova-packages-ui-transitions.netlify.app/#/](https://proj-nova-packages-ui-transitions.netlify.app/#/) 上可用。
 
 我昨天将官方文档网站部署到了 [https://airi.build](https://airi.build)，[@kwaa](https://github.com/kwaa) 评论说他建议我尝试 `https://airi.more.ai/docs` 的方法，~~但我没能想出如何为/docs 设置一个 200 重定向代理。~~
 

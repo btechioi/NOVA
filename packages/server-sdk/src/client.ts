@@ -6,7 +6,7 @@ import type {
   WebSocketEvent,
   WebSocketEventOptionalSource,
   WebSocketEvents,
-} from '@proj-airi/server-shared/types'
+} from '@proj-nova/server-shared/types'
 
 import type { WebSocketLike, WebSocketLikeConstructor, WebSocketMessageEventLike } from './websocket-like'
 
@@ -14,8 +14,8 @@ import NativeWebSocket from 'crossws/websocket'
 import superjson from 'superjson'
 
 import { errorMessageFrom, sleep } from '@moeru/std'
-import { isTerminalAuthenticationServerErrorMessage, parseServerErrorMessage } from '@proj-airi/server-shared'
-import { MessageHeartbeat, MessageHeartbeatKind } from '@proj-airi/server-shared/types'
+import { isTerminalAuthenticationServerErrorMessage, parseServerErrorMessage } from '@proj-nova/server-shared'
+import { MessageHeartbeat, MessageHeartbeatKind } from '@proj-nova/server-shared/types'
 
 export type ClientStatus
   = | 'idle'

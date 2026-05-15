@@ -3,7 +3,7 @@ chat:
     retry: Retry
   message:
     character-name:
-      airi: AIRI
+      airi: NOVA
       core-system: 코어
       you: 당신
   reasoning: 추론
@@ -11,7 +11,6 @@ chat:
     title: Conversations
     new: + New
     empty: No conversations yet
-    cloud-badge: Synced to cloud
     new-chat-fallback: New chat
     delete: Delete conversation
 message: 듣고 있어요...

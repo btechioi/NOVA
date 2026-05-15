@@ -1,14 +1,9 @@
-import { getActivePinia } from 'pinia'
 import { ref } from 'vue'
-
-import { useAuthStore } from '../stores/auth'
 
 async function canUseRemote(allowRemote?: () => boolean | Promise<boolean>) {
   if (allowRemote)
     return await allowRemote()
-  if (!getActivePinia())
-    return true
-  return useAuthStore().isAuthenticated
+  return false
 }
 
 export interface UseLocalFirstRequestOptions<T> {

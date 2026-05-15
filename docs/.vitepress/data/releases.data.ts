@@ -35,7 +35,7 @@ export { data }
 
 export default defineLoader({
   async load(): Promise<ReleasesData> {
-    const nightlyUrl = 'https://github.com/moeru-ai/airi/actions/workflows/release-tamagotchi.yml'
+    const nightlyUrl = 'https://github.com/btechioi/NOVA/actions/workflows/release-tamagotchi.yml'
 
     try {
       // Fetch releases from GitHub API

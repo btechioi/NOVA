@@ -2,7 +2,7 @@ import type { Message } from '@xsai/shared-chat'
 
 import { defineInvoke, defineInvokeEventa } from '@moeru/eventa'
 import { createContext } from '@moeru/eventa/adapters/electron/renderer'
-import { artistryGenerateHeadless } from '@proj-airi/stage-shared'
+import { artistryGenerateHeadless } from '@proj-nova/stage-shared'
 import { generateText } from '@xsai/generate-text'
 import { defineStore } from 'pinia'
 import { ref, toRaw } from 'vue'
@@ -182,7 +182,7 @@ LATEST ${target === 'assistant' ? 'COMPANION RESPONSE' : 'USER INPUT'}:
       // 3. Parse and analyze
       // Handle potential markdown fences: ```json ... ```
       let jsonContent = rawContent
-      const fenceMatch = rawContent.match(/```(?:json)?\s*([\s\S]*?)```/)
+      const fenceMatch = rawContent.match(/```(?:json)?\n([\s\S]*?)```/)
       if (fenceMatch) {
         jsonContent = fenceMatch[1].trim()
         artistLog('Extracted JSON from fences:', jsonContent)

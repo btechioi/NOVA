@@ -1,5 +1,5 @@
 {
-  "name": "@proj-airi/server-shared",
+  "name": "@proj-nova/server-shared",
   "type": "module",
   "version": "0.10.2",
   "description": "Server shared types, utilities for AIRI server components and runtimes",
@@ -37,6 +37,6 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@proj-airi/plugin-protocol": "workspace:*"
+    "@proj-nova/plugin-protocol": "workspace:*"
   }
 }

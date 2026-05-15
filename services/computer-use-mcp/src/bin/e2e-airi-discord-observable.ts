@@ -211,7 +211,7 @@ async function findAvailablePort(preferredPort: number, attempts = 20) {
 async function terminateExistingStageTamagotchiInstances() {
   const patterns = [
     resolve(repoDir, 'apps', 'stage-tamagotchi'),
-    '@proj-airi/stage-tamagotchi',
+    '@proj-nova/stage-tamagotchi',
     resolve(repoDir, 'node_modules', '.pnpm', 'electron@'),
   ]
 
@@ -225,7 +225,7 @@ async function terminateExistingStageTamagotchiInstances() {
 async function terminateExistingDiscordBotInstances() {
   const patterns = [
     resolve(repoDir, 'services', 'discord-bot'),
-    '@proj-airi/discord-bot',
+    '@proj-nova/discord-bot',
   ]
 
   for (const pattern of patterns) {
@@ -547,7 +547,7 @@ async function main() {
     const discordBotLogStream = createWriteStream(discordBotLogPath, { flags: 'a' })
 
     addTimeline('start-stage-tamagotchi')
-    stageProcess = spawn('pnpm', ['-F', '@proj-airi/stage-tamagotchi', 'dev'], {
+    stageProcess = spawn('pnpm', ['-F', '@proj-nova/stage-tamagotchi', 'dev'], {
       cwd: repoDir,
       env: {
         ...env,
@@ -602,7 +602,7 @@ async function main() {
     await bringTargetToFront(mainTargetClient, 'main')
 
     addTimeline('start-discord-bot')
-    discordBotProcess = spawn('pnpm', ['-F', '@proj-airi/discord-bot', 'start'], {
+    discordBotProcess = spawn('pnpm', ['-F', '@proj-nova/discord-bot', 'start'], {
       cwd: repoDir,
       env: {
         ...env,
@@ -685,7 +685,7 @@ async function main() {
     })
 
     mcpClient = new Client({
-      name: '@proj-airi/computer-use-mcp-e2e-airi-discord',
+      name: '@proj-nova/computer-use-mcp-e2e-airi-discord',
       version: '0.1.0',
     })
 
