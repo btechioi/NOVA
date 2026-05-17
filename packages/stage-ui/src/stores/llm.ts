@@ -9,7 +9,7 @@ import { uniqBy } from 'es-toolkit'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
-import { createSparkCommandTool, debug, mcp } from '../tools'
+import { createSparkCommandTool, debug, emotion, mcp, web } from '../tools'
 import { useLlmToolsStore } from './llm-tools'
 import { useModsServerChannelStore } from './mods/api/channel-server'
 
@@ -59,6 +59,8 @@ export const useLLM = defineStore('llm', () => {
         [
           ...await mcp(),
           ...await debug(),
+          ...await emotion(),
+          ...await web(),
           ...await createSparkCommandTool({ sendSparkCommand }),
           ...await llmToolsStore.activeTools,
         ].toReversed(),

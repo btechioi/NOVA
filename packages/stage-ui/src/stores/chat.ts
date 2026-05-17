@@ -2,6 +2,7 @@ import type { WebSocketEventInputs } from '@proj-nova/server-sdk'
 import type { ChatProvider } from '@xsai-ext/providers/utils'
 import type { CommonContentPart, Message, ToolMessage } from '@xsai/shared-chat'
 
+import type { Emotion, EmotionPayload } from '../constants/emotions'
 import type { ChatAssistantMessage, ChatSlices, ChatStreamEventContext, StreamingAssistantMessage } from '../types/chat'
 import type { StreamEvent, StreamOptions } from './llm'
 
@@ -124,6 +125,15 @@ export const useChatOrchestratorStore = defineStore('chat-orchestrator', () => {
   const pendingQueuedSends = ref<QueuedSend[]>([])
   const pendingQueuedSendCount = computed(() => pendingQueuedSends.value.length)
   const hooks = createChatHooks()
+  const emotionToolCallHandler = ref<((payload: EmotionPayload) => void) | null>(null)
+
+  function onEmotionToolCall(cb: (payload: EmotionPayload) => void): () => void {
+    emotionToolCallHandler.value = cb
+
+    return () => {
+      emotionToolCallHandler.value = null
+    }
+  }
 
   const sendQueue = createQueue<QueuedSend>({
     handlers: [
@@ -450,6 +460,13 @@ export const useChatOrchestratorStore = defineStore('chat-orchestrator', () => {
           onStreamEvent: async (event: StreamEvent) => {
             switch (event.type) {
               case 'tool-call':
+                if (event.name === 'set_emotion') {
+                  const args = JSON.parse(event.arguments)
+                  const payload: EmotionPayload = { name: args.name as Emotion, intensity: args.intensity ?? 1 }
+                  emotionToolCallHandler.value?.(payload)
+                  break
+                }
+
                 toolCallQueue.enqueue({
                   type: 'tool-call',
                   toolCall: event,
@@ -629,6 +646,8 @@ export const useChatOrchestratorStore = defineStore('chat-orchestrator', () => {
     ingestOnFork,
     cancelPendingSends,
     getPendingQueuedSendSnapshot,
+
+    onEmotionToolCall,
 
     clearHooks: hooks.clearHooks,
 

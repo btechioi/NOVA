@@ -21,7 +21,8 @@ const taskSources: Record<keyof VisionTaskAssets, string> = {
 }
 
 const assetsRoot = fileURLToPath(new URL('./assets', import.meta.url))
-const wasmSourceDir = fileURLToPath(new URL('../node_modules/@mediapipe/tasks-vision/wasm', import.meta.url))
+// NOTE: `node-linker=hoisted` puts deps in root `node_modules`, not package-local
+const wasmSourceDir = fileURLToPath(new URL('../../../node_modules/@mediapipe/tasks-vision/wasm', import.meta.url))
 const wasmOutputDir = fileURLToPath(new URL('./assets/wasm', import.meta.url))
 const taskTargets = Object.entries(taskSources).map(([key, source]) => ({
   key: key as keyof VisionTaskAssets,

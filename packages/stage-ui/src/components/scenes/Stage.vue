@@ -72,7 +72,7 @@ const { mouthOpenSize, nowSpeaking } = storeToRefs(useSpeakingStore())
 const { audioContext } = useAudioContext()
 const currentAudioSource = ref<AudioBufferSourceNode>()
 
-const { onBeforeMessageComposed, onBeforeSend, onTokenLiteral, onTokenSpecial, onStreamEnd, onAssistantResponseEnd } = useChatOrchestratorStore()
+const { onBeforeMessageComposed, onBeforeSend, onTokenLiteral, onTokenSpecial, onStreamEnd, onAssistantResponseEnd, onEmotionToolCall } = useChatOrchestratorStore()
 const chatHookCleanups: Array<() => void> = []
 // WORKAROUND: clear previous handlers on unmount to avoid duplicate calls when this component remounts.
 //             We keep per-hook disposers instead of wiping the global chat hooks to play nicely with
@@ -485,6 +485,10 @@ chatHookCleanups.push(onTokenLiteral(async (literal) => {
 chatHookCleanups.push(onTokenSpecial(async (special) => {
   // console.debug('Stage received special token:', special)
   currentChatIntent?.writeSpecial(special)
+}))
+
+chatHookCleanups.push(onEmotionToolCall((emotion) => {
+  emotionsQueue.enqueue(emotion)
 }))
 
 chatHookCleanups.push(onStreamEnd(async () => {

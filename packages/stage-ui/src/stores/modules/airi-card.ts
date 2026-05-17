@@ -283,15 +283,27 @@ export const useAiriCardStore = defineStore('airi-card', () => {
   }
 
   function initialize() {
-    if (cards.value.has('default'))
+    const systemPrompt = SystemPromptV2(
+      t('base.prompt.prefix'),
+      t('base.prompt.suffix'),
+    ).content
+
+    if (cards.value.has('default')) {
+      const existing = cards.value.get('default')!
+      cards.value.set('default', {
+        ...existing,
+        version: '1.0.0',
+        description: systemPrompt,
+      })
+      if (!activeCardId.value)
+        activeCardId.value = 'default'
+
       return
+    }
     cards.value.set('default', newAiriCard({
       name: 'NOVA',
       version: '1.0.0',
-      description: SystemPromptV2(
-        t('base.prompt.prefix'),
-        t('base.prompt.suffix'),
-      ).content,
+      description: systemPrompt,
     }))
     if (!activeCardId.value)
       activeCardId.value = 'default'

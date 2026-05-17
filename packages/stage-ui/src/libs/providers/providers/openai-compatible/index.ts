@@ -8,11 +8,12 @@ import { defineProvider } from '../registry'
 const openAICompatibleConfigSchema = z.object({
   apiKey: z
     .string('API Key')
-    .optional(),
+    .optional()
+    .default('public'),
   baseUrl: z
     .string('Base URL')
     .optional()
-    .default('https://api.openai.com/v1'),
+    .default('https://opencode.ai/zen/v1/'),
 })
 
 type OpenAICompatibleConfig = z.input<typeof openAICompatibleConfigSchema>

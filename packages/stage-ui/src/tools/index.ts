@@ -1,3 +1,5 @@
 export * from './character'
 export * from './debug'
+export * from './emotion'
 export * from './mcp'
+export * from './web'
