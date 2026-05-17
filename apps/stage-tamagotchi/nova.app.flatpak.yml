@@ -34,6 +34,8 @@ modules:
       - install nova.sh /app/bin/nova.sh
       - chmod +x /app/bin/nova/nova.sh
       - chmod +x /app/bin/nova/nova
+      - install -Dm644 nova.app.desktop /app/share/applications/io.github.btechioi.NOVA.desktop
+      - install -Dm644 io.github.btechioi.NOVA.png /app/share/icons/hicolor/256x256/apps/io.github.btechioi.NOVA.png
     sources:
       - type: dir
         only-arches: [x86_64]
@@ -41,6 +43,11 @@ modules:
       - type: dir
         only-arches: [aarch64]
         path: dist/linux-arm64-unpacked
+      - type: file
+        path: nova.app.desktop
+      - type: file
+        path: resources/icon-512.png
+        dest-filename: io.github.btechioi.NOVA.png
       - type: script
         dest-filename: nova.sh
         commands:
