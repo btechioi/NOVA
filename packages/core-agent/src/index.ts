@@ -16,6 +16,8 @@ export {
   streamOptionsContentArrayCompatibilityOk,
   streamOptionsToolsCompatibilityOk,
 } from './runtime/llm-service'
+export type { ExtractedFact, MemoryCompressionResult, MemoryService, MemoryServiceOptions } from './runtime/memory-service'
+export { createMemoryService } from './runtime/memory-service'
 export { mergeLoadedSessionMessages } from './session/merge-loaded-session-messages'
 export type {
   ChatAssistantMessage,

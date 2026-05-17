@@ -1,16 +1,16 @@
+import type { MemoryService } from '@proj-nova/core-agent'
 import type { UserMessage } from '@xsai/shared-chat'
 
 import { defineStore } from 'pinia'
 import { computed, ref, toRaw, watch } from 'vue'
 
 import { storage } from '../../database/storage'
+import { useMemoryLongTermStore } from '../modules/memory-long-term'
+import { useMemoryShortTermStore } from '../modules/memory-short-term'
 
 const STORAGE_KEY = 'local:memories'
-
-const DEFAULT_MAX_SHORT_TERM = 10
-const DEFAULT_MAX_LONG_TERM = 50
-const DEFAULT_TOKEN_BUDGET = 1500
 const AVG_TOKENS_PER_CHAR = 0.25
+const DEFAULT_TOKEN_BUDGET = 1500
 
 export interface MemoryEntry {
   id: string
@@ -32,6 +32,11 @@ function generateId(): string {
 export const useMemoryStore = defineStore('memory', () => {
   const entries = ref<MemoryEntry[]>([])
   const loaded = ref(false)
+  const memoryService = ref<MemoryService | null>(null)
+  const extracting = ref(false)
+
+  const shortTermStore = useMemoryShortTermStore()
+  const longTermStore = useMemoryLongTermStore()
 
   const shortTermMemories = computed(() =>
     entries.value.filter(e => e.type === 'short-term').sort((a, b) => b.createdAt - a.createdAt),
@@ -46,6 +51,10 @@ export const useMemoryStore = defineStore('memory', () => {
   const totalTokenEstimate = computed(() => {
     return entries.value.reduce((sum, e) => sum + estimateTokens(e.content), 0)
   })
+
+  function configureMemoryService(service: MemoryService) {
+    memoryService.value = service
+  }
 
   async function load() {
     if (loaded.value)
@@ -100,14 +109,23 @@ export const useMemoryStore = defineStore('memory', () => {
     }
   }
 
+  function updateMemory(id: string, updates: Partial<MemoryEntry>) {
+    const idx = entries.value.findIndex(e => e.id === id)
+    if (idx !== -1) {
+      entries.value[idx] = { ...entries.value[idx], ...updates }
+    }
+  }
+
   function prune(type: 'short-term' | 'long-term') {
-    const max = type === 'short-term' ? DEFAULT_MAX_SHORT_TERM : DEFAULT_MAX_LONG_TERM
+    const max = type === 'short-term'
+      ? shortTermStore.maxEntries
+      : longTermStore.maxEntries
     const sameType = entries.value.filter(e => e.type === type)
     if (sameType.length <= max)
       return
 
     sameType.sort((a, b) => {
-      if (a.type === 'long-term') {
+      if (type === 'long-term') {
         return a.importance - b.importance || a.createdAt - b.createdAt
       }
       return a.createdAt - b.createdAt
@@ -162,32 +180,75 @@ export const useMemoryStore = defineStore('memory', () => {
     }
   }
 
-  async function extractFromMessages(messages: Array<{ role: string, content: string }>) {
-    const recent = messages.slice(-4)
-    const userMessages = recent.filter(m => m.role === 'user').map(m => m.content).join(' ')
-    const assistantMessages = recent.filter(m => m.role === 'assistant').map(m => m.content).join(' ')
-
-    if (!userMessages.trim() && !assistantMessages.trim())
+  async function extractFromMessages(
+    messages: Array<{ role: string, content: string }>,
+    sourceMessageId?: string,
+  ) {
+    if (!shortTermStore.enabled || extracting.value)
       return
 
-    const summary = `User: ${userMessages.slice(0, 200)} | Assistant: ${assistantMessages.slice(0, 200)}`
-    if (summary.length > 20) {
-      addMemory(summary, 'short-term', 5)
+    extracting.value = true
+
+    try {
+      const recent = messages.slice(-4)
+      const service = memoryService.value
+
+      if (service && shortTermStore.autoExtract) {
+        const compression = await service.compressConversation(recent)
+        if (compression.summary || compression.keyPoints.length > 0) {
+          const content = [compression.summary, ...compression.keyPoints.map((k: string) => `- ${k}`)].filter(Boolean).join('\n')
+          if (content.length > 20) {
+            addMemory(content, 'short-term', 5, sourceMessageId)
+          }
+        }
+
+        if (longTermStore.enabled && recent.length >= 2) {
+          const facts = await service.extractImportantFacts(recent)
+          const threshold = longTermStore.importanceThreshold
+          for (const fact of facts) {
+            if (fact.importance >= threshold) {
+              addMemory(fact.content, 'long-term', fact.importance, sourceMessageId)
+            }
+          }
+        }
+      }
+      else {
+        const userMessages = recent.filter(m => m.role === 'user').map(m => m.content).join(' ')
+        const assistantMessages = recent.filter(m => m.role === 'assistant').map(m => m.content).join(' ')
+
+        if (!userMessages.trim() && !assistantMessages.trim())
+          return
+
+        const summary = `User: ${userMessages.slice(0, 200)} | Assistant: ${assistantMessages.slice(0, 200)}`
+        if (summary.length > 20) {
+          addMemory(summary, 'short-term', 5, sourceMessageId)
+        }
+      }
+    }
+    catch (error) {
+      console.error('[memory-store] extraction error:', error)
+    }
+    finally {
+      extracting.value = false
     }
   }
 
   return {
     entries,
     loaded,
+    extracting,
     shortTermMemories,
     longTermMemories,
     shortTermCount,
     longTermCount,
     totalTokenEstimate,
+    memoryService,
     load,
+    configureMemoryService,
     addMemory,
     removeMemory,
     clearMemories,
+    updateMemory,
     formatMemoryContext,
     buildMemoryContextMessage,
     extractFromMessages,

@@ -7,11 +7,23 @@ chat:
       core-system: Core System
       you: You
   reasoning: Reasoning
+  memory:
+    extracting: Extracting memories...
+    justNow: Just now
+    minutesAgo: '${n}m ago'
+    hoursAgo: '${n}h ago'
+    noShortTerm: No short-term memories yet
+    noLongTerm: No long-term memories yet
+    searchPlaceholder: Search memories...
+    promote: Promote
+    demote: Demote
+    delete: Delete
+    clear: Clear all
   sessions:
     title: Conversations
-    new: + New
+    new: '+ New'
     empty: No conversations yet
-    new-chat-fallback: New chat
+    new-chat-fallback: 'New chat'
     delete: Delete conversation
 message: Say something...
 send-mode:

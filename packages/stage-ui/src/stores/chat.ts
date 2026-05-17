@@ -6,6 +6,7 @@ import type { Emotion, EmotionPayload } from '../constants/emotions'
 import type { ChatAssistantMessage, ChatSlices, ChatStreamEventContext, StreamingAssistantMessage } from '../types/chat'
 import type { StreamEvent, StreamOptions } from './llm'
 
+import { createMemoryService } from '@proj-nova/core-agent'
 import { IOAttributes, IOEvents, IOSpanNames, IOSubsystems } from '@proj-nova/stage-shared'
 import { createQueue } from '@proj-nova/stream-kit'
 import { nanoid } from 'nanoid'
@@ -21,6 +22,7 @@ import { createMinecraftContext } from './chat/context-providers'
 import { useChatContextStore } from './chat/context-store'
 import { formatTimePrefix } from './chat/datetime-prefix'
 import { createChatHooks } from './chat/hooks'
+import { useMemoryStore } from './chat/memory-store'
 import { useChatSessionStore } from './chat/session-store'
 import { useChatStreamStore } from './chat/stream-store'
 import { useContextObservabilityStore } from './devtools/context-observability'
@@ -116,6 +118,7 @@ export const useChatOrchestratorStore = defineStore('chat-orchestrator', () => {
   const chatSession = useChatSessionStore()
   const chatStream = useChatStreamStore()
   const chatContext = useChatContextStore()
+  const memoryStore = useMemoryStore()
   const cardStore = useAiriCardStore()
   const contextObservability = useContextObservabilityStore()
   const { activeSessionId } = storeToRefs(chatSession)
@@ -177,6 +180,15 @@ export const useChatOrchestratorStore = defineStore('chat-orchestrator', () => {
       return
 
     chatSession.ensureSession(sessionId)
+
+    // Ensure memory store is loaded and configure service with current provider
+    await memoryStore.load()
+    memoryStore.configureMemoryService(
+      createMemoryService({
+        chatProvider: options.chatProvider,
+        model: options.model,
+      }),
+    )
 
     // Datetime is no longer injected through the side-channel context store.
     // It is applied at message-assembly time (see below) as a system-prompt
@@ -411,6 +423,22 @@ export const useChatOrchestratorStore = defineStore('chat-orchestrator', () => {
         })
       }
 
+      // Inject memory context into the latest user message
+      const memoryContextText = memoryStore.formatMemoryContext()
+      if (memoryContextText) {
+        const lastMessage = newMessages.at(-1)
+        if (lastMessage && lastMessage.role === 'user') {
+          const existingParts = typeof lastMessage.content === 'string'
+            ? [{ type: 'text' as const, text: lastMessage.content }]
+            : lastMessage.content
+
+          lastMessage.content = [
+            ...existingParts,
+            { type: 'text' as const, text: `\n${memoryContextText}` },
+          ]
+        }
+      }
+
       streamingMessageContext.composedMessage = newMessages as Message[]
       contextObservability.capturePromptProjection({
         sessionId,
@@ -540,6 +568,19 @@ export const useChatOrchestratorStore = defineStore('chat-orchestrator', () => {
         const finalAssistant = toRaw(buildingMessage)
         chatSession.appendSessionMessage(sessionId, finalAssistant)
       }
+
+      // Extract memories from the conversation turn
+      void memoryStore.extractFromMessages(
+        sessionMessagesForSend.map(msg => ({
+          role: msg.role,
+          content: typeof msg.content === 'string'
+            ? msg.content
+            : Array.isArray(msg.content)
+              ? msg.content.map((p: any) => p.text ?? '').join(' ')
+              : '',
+        })),
+        buildingMessage.id,
+      )
 
       await hooks.emitStreamEndHooks(streamingMessageContext)
       await hooks.emitAssistantResponseEndHooks(fullText, streamingMessageContext)
